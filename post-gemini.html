@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gemini 사용법 완벽 정리 — 구글 AI 무료로 시작하는 법 — 일잘러닷컴</title>
+<meta name="description" content="구글이 만든 AI Gemini, ChatGPT와 뭐가 다를까요? 무료 사용법부터 유료 플랜 차이, 실제 활용 예시까지 한 번에 정리했어요.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --primary: #FF6B35;
+  --primary-light: #FFF0EB;
+  --blue: #3B82F6;
+  --blue-light: #EFF6FF;
+  --green: #10B981;
+  --green-light: #ECFDF5;
+  --yellow: #F59E0B;
+  --yellow-light: #FFFBEB;
+  --text: #1A1A2E;
+  --text-sub: #64748B;
+  --border: #E8EDF2;
+  --bg: #F8FAFC;
+  --white: #FFFFFF;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--white);
+  border-bottom: 2px solid var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.header-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.logo span { color: var(--primary); }
+
+.header-nav {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-sub);
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: var(--text-sub);
+  transition: color 0.15s;
+}
+.header-nav a:hover { color: var(--primary); }
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── ARTICLE HEADER ── */
+.article-header {
+  background: var(--white);
+  padding: 36px 0 0;
+  margin-bottom: 0;
+}
+
+.article-header .container {
+  padding-bottom: 0;
+}
+
+.cat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.article-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(24px, 5vw, 34px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.article-title em {
+  font-style: normal;
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+}
+
+.article-desc {
+  font-size: 15px;
+  color: var(--text-sub);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.meta-divider { color: var(--border); }
+
+.read-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ── THUMBNAIL ── */
+.thumbnail-wrap {
+  background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+  padding: 40px 20px;
+  margin-bottom: 0;
+}
+
+.thumbnail-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.thumb-title {
+  font-size: 13px;
+  color: #94A3B8;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.thumb-big {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(20px, 5vw, 28px);
+  font-weight: 700;
+  color: white;
+  line-height: 1.4;
+  margin-bottom: 28px;
+}
+
+.thumb-big span { color: #F59E0B; }
+
+/* BAR CHART */
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  height: 120px;
+  margin-bottom: 12px;
+}
+
+.bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  max-width: 56px;
+}
+
+.bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.bar-val {
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+.bar-label {
+  font-size: 9px;
+  color: #94A3B8;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.bar-highlight { background: #F59E0B !important; }
+
+.thumb-caption {
+  font-size: 11px;
+  color: #64748B;
+  margin-top: 4px;
+}
+
+/* ── CONTENT ── */
+.article-content {
+  background: var(--white);
+  padding: 36px 0 48px;
+}
+
+/* TOC */
+.toc {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+
+.toc-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.toc-list li {
+  font-size: 14px;
+  color: var(--text-sub);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.toc-list li:hover { color: var(--primary); }
+.toc-num {
+  width: 20px; height: 20px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* SECTIONS */
+.section { margin-bottom: 44px; }
+
+.section-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title .ico {
+  width: 32px; height: 32px;
+  background: var(--primary-light);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+
+strong { color: var(--text); font-weight: 700; }
+
+/* HIGHLIGHT BOX */
+.highlight-box {
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin: 24px 0;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+
+.hb-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.highlight-box.orange .hb-title { color: var(--primary); }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.green .hb-title { color: var(--green); }
+.highlight-box.yellow .hb-title { color: var(--yellow); }
+
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+
+/* INFOGRAPHIC CARD */
+.info-card {
+  background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 28px 0;
+  color: white;
+  text-align: center;
+}
+
+.info-card-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.info-card-num {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.info-card-num span { font-size: 28px; }
+.info-card-desc { font-size: 14px; opacity: 0.85; }
+
+/* COMPARE TABLE */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+
+.compare-table th {
+  padding: 14px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.compare-table th:first-child { background: #F1F5F9; color: var(--text-sub); }
+.compare-table th:nth-child(2) { background: #3B82F6; color: white; }
+.compare-table th:nth-child(3) { background: #10B981; color: white; }
+
+.compare-table td {
+  padding: 13px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.compare-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  background: #FAFAFA;
+  color: var(--text);
+}
+
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table tr:hover td { background: #F8FAFC; }
+
+.badge-yes {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.badge-no {
+  color: var(--text-sub);
+  font-size: 13px;
+}
+
+.badge-limit {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: var(--yellow);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+/* STEP LIST */
+.step-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+
+.step-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: box-shadow 0.15s;
+}
+
+.step-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  border-color: var(--primary);
+}
+
+.step-num {
+  width: 32px; height: 32px;
+  background: var(--primary);
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-content-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.step-content-desc {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* SCREENSHOT MOCK */
+.screenshot-mock {
+  background: #1E293B;
+  border-radius: 12px;
+  padding: 0;
+  margin: 24px 0;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.mock-bar {
+  background: #334155;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mock-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+
+.mock-url {
+  flex: 1;
+  background: #1E293B;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 11px;
+  color: #94A3B8;
+  font-family: monospace;
+}
+
+.mock-body {
+  padding: 20px;
+}
+
+.mock-chat-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.mock-avatar {
+  width: 28px; height: 28px;
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.mock-avatar.user { background: #6366F1; }
+.mock-avatar.ai { background: #10B981; }
+
+.mock-bubble {
+  background: #334155;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #E2E8F0;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.mock-bubble.user-bubble { background: #4F46E5; }
+
+/* SUMMARY BOX */
+.summary-box {
+  background: linear-gradient(135deg, var(--primary) 0%, #FF8C5A 100%);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 36px 0;
+  color: white;
+}
+
+.summary-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-list li {
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.6;
+}
+
+.summary-list li::before {
+  content: '✓';
+  font-weight: 900;
+  color: #FDE68A;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* RELATED */
+.related {
+  background: var(--bg);
+  padding: 36px 0;
+  border-top: 1px solid var(--border);
+}
+
+.related-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.related-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.related-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(255,107,53,0.1);
+  transform: translateY(-2px);
+}
+
+.rc-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.rc-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.rc-meta {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+/* FOOTER */
+footer {
+  background: var(--text);
+  color: #94A3B8;
+  padding: 28px 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+footer strong { color: white; }
+
+/* PROGRESS BAR */
+.reading-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: var(--primary);
+  z-index: 9999;
+  transition: width 0.1s;
+  width: 0%;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .header-nav { display: none; }
+  .related-grid { grid-template-columns: 1fr; }
+  .bar-chart { gap: 6px; }
+  .bar-item { max-width: 40px; }
+}
+</style>
+</head>
+<body>
+
+<div class="reading-bar" id="readingBar"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="#">AI 도구</a>
+      <a href="#">생활정보</a>
+      <a href="#">앱 리뷰</a>
+      <a href="#">꿀팁</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ARTICLE HEADER -->
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">🤖 AI 도구</div>
+    <h1 class="article-title">
+      Gemini 사용법 완벽 정리<br><em>구글 AI</em> 무료로 시작하는 법
+    </h1>
+    <p class="article-desc">
+      구글이 만든 AI <strong>Gemini</strong>, 이미 써보셨나요? ChatGPT 못지않은 성능에 구글 서비스와 연동까지 되는데 아직 모르는 분들이 많아요. 무료 사용법부터 유료 플랜 차이, 실제 활용 예시까지 한 번에 정리했습니다.
+    </p>
+    <div class="article-meta">
+      <span>📅 2025.03.11</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 4분 읽기</span>
+      <span class="meta-divider">|</span>
+      <span>👀 조회 3,241</span>
+    </div>
+  </div>
+</div>
+
+<!-- THUMBNAIL / INFOGRAPHIC -->
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner">
+    <div class="thumb-title">Google Gemini — AI 서비스 비교</div>
+    <div class="thumb-big">Gemini vs ChatGPT<br><span>뭐가 더 나을까?</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:480px;margin:0 auto 12px">
+      <div style="background:rgba(255,255,255,0.08);border-radius:12px;padding:18px;text-align:center">
+        <div style="font-size:32px;margin-bottom:8px">🟢</div>
+        <div style="color:#4ADE80;font-weight:700;font-size:15px;margin-bottom:6px">Gemini</div>
+        <div style="color:#94A3B8;font-size:12px;line-height:1.6">구글 서비스 연동<br>무료 이미지 생성<br>Gmail·Docs 통합</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.08);border-radius:12px;padding:18px;text-align:center">
+        <div style="font-size:32px;margin-bottom:8px">🤖</div>
+        <div style="color:#F59E0B;font-weight:700;font-size:15px;margin-bottom:6px">ChatGPT</div>
+        <div style="color:#94A3B8;font-size:12px;line-height:1.6">가장 많은 사용자<br>플러그인 생태계<br>코딩에 강함</div>
+      </div>
+    </div>
+    <div class="thumb-caption">2025년 3월 기준 | 일잘러닷컴 직접 비교</div>
+  </div>
+</div>
+
+<!-- ARTICLE CONTENT -->
+<div class="article-content">
+  <div class="container">
+
+    <!-- TOC -->
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> Gemini가 뭔가요?</li>
+        <li><span class="toc-num">2</span> Gemini vs ChatGPT 차이</li>
+        <li><span class="toc-num">3</span> 무료 vs 유료 플랜 비교</li>
+        <li><span class="toc-num">4</span> 실제 활용법 4가지</li>
+        <li><span class="toc-num">5</span> 무료로 시작하는 법</li>
+      </ul>
+    </div>
+
+    <!-- SECTION 1 -->
+    <div class="section" id="s1">
+      <h2 class="section-title"><span class="ico">💡</span> Gemini가 뭔가요?</h2>
+
+      <p>Gemini는 구글이 만든 <strong>대화형 AI</strong>예요. 예전 이름이 Bard였는데 2024년부터 Gemini로 바뀌었어요. 구글 검색, Gmail, 구글 Docs 같은 서비스와 연동된다는 게 가장 큰 특징입니다.</p>
+
+      <div class="highlight-box orange">
+        <div class="hb-icon">🌟</div>
+        <div>
+          <div class="hb-title">ChatGPT랑 뭐가 다를까요?</div>
+          <p class="hb-text">Gemini는 <strong>구글 생태계에 깊이 연결</strong>돼 있어요. Gmail 요약, 구글 드라이브 파일 분석, 유튜브 내용 요약까지 가능합니다.</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-label">구글 AI 서비스 통합 수</div>
+        <div class="info-card-num">20<span>개+</span></div>
+        <div class="info-card-desc">Gmail, Docs, Drive, Maps 등 구글 서비스와 직접 연동됩니다</div>
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section" id="s2">
+      <h2 class="section-title"><span class="ico">⚡</span> Gemini vs ChatGPT 차이</h2>
+
+      <p>둘 다 뛰어난 AI지만 <strong>강점이 달라요</strong>. 용도에 맞게 선택하면 됩니다.</p>
+
+      <div class="screenshot-mock">
+        <div class="mock-bar">
+          <div class="mock-dot" style="background:#EF4444"></div>
+          <div class="mock-dot" style="background:#F59E0B"></div>
+          <div class="mock-dot" style="background:#10B981"></div>
+          <div class="mock-url">gemini.google.com</div>
+        </div>
+        <div class="mock-body">
+          <div style="color:#94A3B8;font-size:11px;margin-bottom:14px;letter-spacing:1px">Gemini ∨</div>
+          <div style="background:#1E293B;border:1px solid #334155;border-radius:8px;padding:14px;margin-bottom:10px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+              <span style="font-size:16px">🟢</span>
+              <span style="color:#4ADE80;font-weight:700;font-size:13px">Gemini Advanced</span>
+              <span style="background:#334155;color:#94A3B8;font-size:10px;padding:2px 8px;border-radius:100px">Google One AI 플랜</span>
+            </div>
+            <div style="color:#64748B;font-size:12px">월 $19.99 · 구글 서비스 전체 통합</div>
+          </div>
+          <div style="background:#166534;border-radius:8px;padding:14px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+              <span style="font-size:16px">✓</span>
+              <span style="color:white;font-weight:700;font-size:13px">Gemini 무료</span>
+            </div>
+            <div style="color:#86EFAC;font-size:12px">기본 기능 무제한 사용 가능</div>
+          </div>
+        </div>
+      </div>
+
+      <table class="compare-table">
+        <tr>
+          <th>항목</th>
+          <th>Gemini</th>
+          <th>ChatGPT</th>
+        </tr>
+        <tr>
+          <td>💰 무료 사용</td>
+          <td><span class="badge-yes">✓ 무제한</span></td>
+          <td><span class="badge-yes">✓ 무제한</span></td>
+        </tr>
+        <tr>
+          <td>🔗 구글 서비스 연동</td>
+          <td><span class="badge-yes">✓ 완전 통합</span></td>
+          <td><span class="badge-no">✗ 없음</span></td>
+        </tr>
+        <tr>
+          <td>🖼 이미지 생성</td>
+          <td><span class="badge-yes">✓ 무료 제공</span></td>
+          <td><span class="badge-limit">유료만 가능</span></td>
+        </tr>
+        <tr>
+          <td>🌐 실시간 검색</td>
+          <td><span class="badge-yes">✓ 무료 가능</span></td>
+          <td><span class="badge-limit">유료만 가능</span></td>
+        </tr>
+        <tr>
+          <td>💻 코딩 능력</td>
+          <td>높음</td>
+          <td><span class="badge-yes">✓ 매우 높음</span></td>
+        </tr>
+      </table>
+
+      <div class="highlight-box blue">
+        <div class="hb-icon">💡</div>
+        <div>
+          <div class="hb-title">구글 계정 있으면 Gemini가 유리해요</div>
+          <p class="hb-text">Gmail, 구글 캘린더를 자주 쓴다면 Gemini가 훨씬 편해요. 이메일 요약, 일정 정리를 AI가 바로 도와줍니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section" id="s3">
+      <h2 class="section-title"><span class="ico">💰</span> 무료 vs 유료 플랜 비교</h2>
+
+      <p>Gemini는 <strong>무료로도 충분히 강력</strong>해요. 유료 플랜이 필요한 경우는 한정적입니다.</p>
+
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num" style="background:#10B981">무</div>
+          <div>
+            <div class="step-content-title">✅ 무료 플랜 — 이런 분께 충분해요</div>
+            <p class="step-content-desc">일상 질문, 번역, 글쓰기, 이미지 생성(하루 100회), 실시간 검색. 대부분의 용도는 무료로 가능합니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:#F59E0B">유</div>
+          <div>
+            <div class="step-content-title">⭐ Google AI Pro (월 $19.99)</div>
+            <p class="step-content-desc">Gmail·Docs 전체 통합, 더 긴 대화 가능, Gemini Advanced 모델 접근. 구글 서비스를 업무에 적극 활용하는 분께 추천.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box yellow">
+        <div class="hb-icon">⚠️</div>
+        <div>
+          <div class="hb-title">처음엔 무료로 충분해요</div>
+          <p class="hb-text">무료 플랜도 실시간 검색과 이미지 생성이 되기 때문에 ChatGPT 유료 플랜과 맞먹는 수준이에요. 일단 무료로 써보고 결정하세요.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section" id="s4">
+      <h2 class="section-title"><span class="ico">🛠</span> 실제 활용법 4가지</h2>
+
+      <p>Gemini를 가장 잘 쓸 수 있는 방법 4가지를 직접 테스트해봤어요.</p>
+
+      <div class="screenshot-mock">
+        <div class="mock-bar">
+          <div class="mock-dot" style="background:#EF4444"></div>
+          <div class="mock-dot" style="background:#F59E0B"></div>
+          <div class="mock-dot" style="background:#10B981"></div>
+          <div class="mock-url">gemini.google.com</div>
+        </div>
+        <div class="mock-body">
+          <div class="mock-chat-item">
+            <div class="mock-avatar user">👤</div>
+            <div class="mock-bubble user-bubble">오늘 받은 이메일 중 중요한 것만 요약해줘</div>
+          </div>
+          <div class="mock-chat-item">
+            <div class="mock-avatar ai" style="background:#4ADE80">🟢</div>
+            <div class="mock-bubble">Gmail을 확인했어요. 오늘 받은 이메일 12개 중 중요한 3개를 정리했습니다.<br><br>1. [팀장님] 내일 오전 10시 전체 회의 — 참석 확인 필요<br>2. [거래처 A] 견적서 검토 요청 — 금주 내 회신 필요<br>3. [인사팀] 연차 신청 마감 안내 — 이번 주 금요일까지</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">📧 Gmail 이메일 요약</div>
+            <p class="step-content-desc">오늘 받은 이메일을 한 번에 요약해달라고 하면 중요한 것만 골라줍니다. 업무 효율이 확 올라가요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">🖼 AI 이미지 무료 생성</div>
+            <p class="step-content-desc">원하는 이미지를 설명하면 바로 만들어줘요. ChatGPT는 유료 플랜만 가능한데 Gemini는 무료로 됩니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">🌐 실시간 정보 검색</div>
+            <p class="step-content-desc">오늘 뉴스, 최신 주가, 날씨 등 실시간 정보를 구글 검색 기반으로 바로 알려줍니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div>
+            <div class="step-content-title">📄 구글 Docs 문서 작성</div>
+            <p class="step-content-desc">구글 Docs에서 바로 Gemini를 불러서 문서 초안을 작성하거나 수정할 수 있어요.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="section" id="s5">
+      <h2 class="section-title"><span class="ico">🆓</span> 무료로 시작하는 법</h2>
+
+      <p>구글 계정만 있으면 <strong>지금 바로</strong> 시작할 수 있어요. 별도 가입 불필요합니다.</p>
+
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">gemini.google.com 접속</div>
+            <p class="step-content-desc">크롬에서 바로 접속. 구글 계정으로 로그인하면 끝이에요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">구글 계정으로 바로 로그인</div>
+            <p class="step-content-desc">별도 회원가입 없이 기존 구글 계정 그대로 사용 가능합니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">모바일 앱 설치 (선택)</div>
+            <p class="step-content-desc">App Store, Google Play에서 Gemini 검색 후 설치. 안드로이드는 기본 AI 어시스턴트로 설정 가능.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box green">
+        <div class="hb-icon">✅</div>
+        <div>
+          <div class="hb-title">안드로이드 폰이라면 더 편해요</div>
+          <p class="hb-text">안드로이드 폰에서 Gemini를 기본 어시스턴트로 설정하면 음성으로도 사용할 수 있어요. 기존 구글 어시스턴트를 완전히 대체합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list">
+        <li>Gemini는 구글이 만든 AI — Gmail, Docs, Drive와 완전 통합</li>
+        <li>무료로도 실시간 검색 + 이미지 생성 가능 (ChatGPT 유료 수준)</li>
+        <li>구글 계정만 있으면 gemini.google.com 에서 바로 시작</li>
+        <li>코딩보다 업무 자동화·구글 서비스 연동에 특히 강함</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- RELATED -->
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-chatgpt.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">ChatGPT란? 2억 명이 쓰는 이유 GPT-4 vs GPT-3.5 완벽 정리</div>
+        <div class="rc-meta">2025.03.10 · 5분 읽기</div>
+      </a>
+      <a href="#" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">클로드 AI 사용법 — ChatGPT랑 뭐가 다른가요?</div>
+        <div class="rc-meta">2025.03.08 · 4분 읽기</div>
+      </a>
+      <a href="#" class="related-card">
+        <div class="rc-badge">🛠 유용툴</div>
+        <div class="rc-title">직장인이 매일 쓰는 생산성 앱 TOP 5</div>
+        <div class="rc-meta">2025.03.09 · 4분 읽기</div>
+      </a>
+      <a href="#" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">구글 검색 10배 잘하는 법 — 검색 연산자 완벽 정리</div>
+        <div class="rc-meta">2025.03.07 · 3분 읽기</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>일잘러닷컴</strong> · 생활정보 & 유용툴 리뷰<br>
+  <span style="font-size:12px;opacity:0.6;margin-top:6px;display:block">© 2025 iljaller.com · All rights reserved</span>
+</footer>
+
+<script>
+  // Reading progress bar
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>
