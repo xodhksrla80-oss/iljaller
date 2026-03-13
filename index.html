@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>일잘러닷컴 — 생활정보 & 유용툴 리뷰</title>
-<meta name="google-site-verification" content="FDPcbZhLrG1fz1nVG9mJ9rK2wHkv_SHKWa0Hx1XPuyw" />
 <meta name="description" content="AI 도구, 앱 리뷰, 생활 꿀팁까지. 일 잘하는 사람들이 찾는 정보만 모았습니다.">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
 <style>
@@ -787,7 +786,7 @@ footer {
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="#" class="logo" onclick="showPage('home')">일잘러<span>닷컴</span></a>
+    <a href="javascript:void(0)" class="logo" onclick="showPage('home')">일잘러<span>닷컴</span></a>
     <div class="search-bar">
       <span class="search-icon">🔍</span>
       <input type="text" placeholder="궁금한 거 검색해보세요">
@@ -831,15 +830,15 @@ footer {
       <div class="stat-item">
         <div class="stat-icon" style="background:#EFF6FF">📝</div>
         <div>
-          <div class="stat-num">10</div>
+          <div class="stat-num">16</div>
           <div class="stat-label">발행된 글</div>
         </div>
       </div>
       <div class="stat-item">
         <div class="stat-icon" style="background:#FFF0EB">👀</div>
         <div>
-          <div class="stat-num">매일</div>
-          <div class="stat-label">새 정보 업데이트</div>
+          <div class="stat-num">준비중</div>
+          <div class="stat-label">월간 방문자</div>
         </div>
       </div>
       <div class="stat-item">
@@ -852,8 +851,8 @@ footer {
       <div class="stat-item">
         <div class="stat-icon" style="background:#FFFBEB">⭐</div>
         <div>
-          <div class="stat-num">무료</div>
-          <div class="stat-label">모든 콘텐츠</div>
+          <div class="stat-num">2025</div>
+          <div class="stat-label">서비스 시작</div>
         </div>
       </div>
     </div>
@@ -892,7 +891,33 @@ footer {
       </div>
 
       <div class="card-list">
-        <div class="list-card" onclick="location.href='post-gemini.html'" style="cursor:pointer" style="cursor:pointer">
+        <div class="list-card" onclick="location.href='post-wbc.html'" style="cursor:pointer">
+          <div class="list-icon" style="background:#E0E7FF">⚾</div>
+          <div>
+            <div class="post-cat" style="color:#3B82F6;font-size:11px;font-weight:700;margin-bottom:3px">⚾ 스포츠</div>
+            <div class="list-title">WBC 우승하면 얼마 받을까? 2026 상금 총정리</div>
+            <div class="list-desc">8강 진출만 해도 30억! 우승 시 최대 112억원.</div>
+          </div>
+          <div class="list-right">
+            <div class="list-date">03.13</div>
+            <div class="list-read">4분</div>
+          </div>
+        </div>
+
+        <div class="list-card" onclick="location.href='post-ai-compare.html'" style="cursor:pointer">
+          <div class="list-icon" style="background:#EDE9FE">🤖</div>
+          <div>
+            <div class="post-cat cat-ai" style="font-size:11px;font-weight:700;margin-bottom:3px">🤖 AI 도구</div>
+            <div class="list-title">GPT-5.4 vs Gemini 3.1 Flash Lite 비교</div>
+            <div class="list-desc">2026년 최신 AI, 용도별 어떤 걸 써야 할까?</div>
+          </div>
+          <div class="list-right">
+            <div class="list-date">03.13</div>
+            <div class="list-read">5분</div>
+          </div>
+        </div>
+
+        <div class="list-card" onclick="location.href='post-gemini.html'" style="cursor:pointer">
           <div class="list-icon" style="background:#F0FDF4">🟢</div>
           <div>
             <div class="post-cat cat-ai" style="margin-bottom:5px">🤖 AI 도구</div>
@@ -1040,8 +1065,9 @@ footer {
       <div class="newsletter">
         <div class="nl-title">📬 새 글 알림 받기</div>
         <div class="nl-desc">유용한 정보가 올라오면 이메일로 알려드려요. 스팸 없이 주 1회만.</div>
-        <input class="nl-input" type="email" placeholder="이메일 주소 입력">
-        <button class="nl-btn">구독하기 →</button>
+        <input class="nl-input" type="email" id="nlEmail" placeholder="이메일 주소 입력">
+        <button class="nl-btn" onclick="subscribeEmail()">구독하기 →</button>
+        <div id="nlMsg" style="font-size:12px;margin-top:8px;color:#10B981;display:none">✅ 구독 완료! 감사합니다 😊</div>
       </div>
 
     </aside>
@@ -1054,13 +1080,14 @@ footer {
   <div class="list-page-header">
     <div class="list-page-inner">
       <div class="list-page-title">📋 전체 글</div>
-      <div class="list-page-desc">총 10개의 글이 있습니다</div>
+      <div class="list-page-desc">총 16개의 글이 있습니다</div>
       <div class="filter-row">
         <div class="filter-chip active" onclick="filterCat(this,'전체')">전체</div>
         <div class="filter-chip" onclick="filterCat(this,'AI 도구')">🤖 AI 도구</div>
         <div class="filter-chip" onclick="filterCat(this,'앱 리뷰')">📱 앱 리뷰</div>
         <div class="filter-chip" onclick="filterCat(this,'생활정보')">💡 생활정보</div>
         <div class="filter-chip" onclick="filterCat(this,'꿀팁')">⚡ 꿀팁</div>
+        <div class="filter-chip" onclick="filterCat(this,'스포츠')">⚾ 스포츠</div>
         <select class="sort-select">
           <option>최신순</option>
           <option>인기순</option>
@@ -1073,7 +1100,103 @@ footer {
   <div class="post-grid-wrap">
     <div class="post-grid" id="postGrid">
 
-      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-chatgpt.html'">
+      <div class="post-card" data-cat="스포츠" onclick="location.href='post-wbc.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#1A1A2E,#16213E)">
+          ⚾
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat" style="color:#3B82F6">⚾ 스포츠</div>
+          <div class="post-card-title">WBC 우승하면 얼마 받을까? 2026 상금·진행과정 총정리</div>
+          <div class="post-card-desc">8강 진출만 해도 30억! 우승 시 최대 112억. 한국 일정 & 상금 배분 방식 정리.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.13</div>
+            <div class="post-card-views">⏱ 4분</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-vibecoding.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+          💻
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat cat-ai">🤖 AI 도구</div>
+          <div class="post-card-title">바이브코딩 시작하려면 뭘 깔아야 할까? 필수 프로그램 설치 가이드</div>
+          <div class="post-card-desc">코딩 몰라도 OK. Cursor, Lovable 설치법부터 시작 방법까지 단계별 정리.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.13</div>
+            <div class="post-card-views">⏱ 5분</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="생활정보" onclick="location.href='post-fuel-tax.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#f7971e,#ffd200)">
+          ⛽
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat cat-life">💡 생활정보</div>
+          <div class="post-card-title">2026 유류세 인하 또 연장 — 기름값 언제 오르나?</div>
+          <div class="post-card-desc">4월 말까지 연장 확정. 50리터 주유 시 2,850원 절약. 종료 시 기름값 전망.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.13</div>
+            <div class="post-card-views">⏱ 3분</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-ai-compare.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#0f0c29,#302b63)">
+          🤖
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat cat-ai">🤖 AI 도구</div>
+          <div class="post-card-title">GPT-5.4 vs Gemini 3.1 Flash Lite — 2026 최신 AI 비교</div>
+          <div class="post-card-desc">속도·정확도·무료 범위·한국어 능력까지. 용도별 어떤 AI를 써야 할지 정리.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.13</div>
+            <div class="post-card-views">⏱ 5분</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="생활정보" onclick="location.href='post-electricity.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#f8b500,#ff6b35)">
+          ⚡
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat cat-life">💡 생활정보</div>
+          <div class="post-card-title">2026년 전기요금 오르나? 25년 대비 달라진 점 총정리</div>
+          <div class="post-card-desc">1분기 동결이지만 LMP 지역별 차등제·탄소배출권 비용 인상 압박 쌓이는 중.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.13</div>
+            <div class="post-card-views">⏱ 4분</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="생활정보" onclick="location.href='post-spring-clean.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#11998e,#38ef7d)">
+          🧹
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat cat-life">💡 생활정보</div>
+          <div class="post-card-title">봄맞이 대청소 효율적으로 하는 법 — 2시간 안에 끝내기</div>
+          <div class="post-card-desc">순서만 지키면 2시간 안에 집 전체 청소 완료. 직접 써본 꿀팁만 모았습니다.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.13</div>
+            <div class="post-card-views">⏱ 3분</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-chatgpt.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#EFF6FF,#DBEAFE)">
           🤖
           <div class="post-thumb-badge badge-hot">🔥 HOT</div>
@@ -1089,7 +1212,7 @@ footer {
         </div>
       </div>
 
-      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-gemini.html'">
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-gemini.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#F0FDF4,#DCFCE7)">
           🟢
           <div class="post-thumb-badge badge-new">✨ NEW</div>
@@ -1105,7 +1228,7 @@ footer {
         </div>
       </div>
 
-      <div class="post-card" data-cat="앱 리뷰">
+      <div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-apps.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#F5F3FF,#EDE9FE)">🧰</div>
         <div class="post-body">
           <div class="post-cat cat-app">📱 앱 리뷰</div>
@@ -1118,7 +1241,7 @@ footer {
         </div>
       </div>
 
-      <div class="post-card" data-cat="꿀팁">
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-google-search.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#FFFBEB,#FEF3C7)">🔍</div>
         <div class="post-body">
           <div class="post-cat cat-tip">⚡ 꿀팁</div>
@@ -1131,7 +1254,7 @@ footer {
         </div>
       </div>
 
-      <div class="post-card" data-cat="AI 도구">
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-ai-image.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#FDF4FF,#FAE8FF)">🎨</div>
         <div class="post-body">
           <div class="post-cat cat-ai">🤖 AI 도구</div>
@@ -1144,7 +1267,7 @@ footer {
         </div>
       </div>
 
-      <div class="post-card" data-cat="생활정보">
+      <div class="post-card" data-cat="생활정보" onclick="location.href='post-rent.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#FFF0EB,#FFE4D6)">🏠</div>
         <div class="post-body">
           <div class="post-cat cat-life">💡 생활정보</div>
@@ -1157,7 +1280,7 @@ footer {
         </div>
       </div>
 
-      <div class="post-card" data-cat="생활정보">
+      <div class="post-card" data-cat="생활정보" onclick="location.href='post-tax.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#ECFDF5,#D1FAE5)">💰</div>
         <div class="post-body">
           <div class="post-cat cat-life">💡 생활정보</div>
@@ -1170,7 +1293,7 @@ footer {
         </div>
       </div>
 
-      <div class="post-card" data-cat="앱 리뷰">
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-claude.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#EFF6FF,#DBEAFE)">📊</div>
         <div class="post-body">
           <div class="post-cat cat-app">📱 앱 리뷰</div>
@@ -1183,7 +1306,7 @@ footer {
         </div>
       </div>
 
-      <div class="post-card" data-cat="꿀팁">
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-shortcuts.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#FEF9C3,#FEF08A)">⌨️</div>
         <div class="post-body">
           <div class="post-cat cat-tip">⚡ 꿀팁</div>
@@ -1221,19 +1344,19 @@ footer {
     <div>
       <div class="footer-col-title">카테고리</div>
       <div class="footer-links">
-        <a href="#">🤖 AI 도구</a>
-        <a href="#">📱 앱 리뷰</a>
-        <a href="#">💡 생활정보</a>
-        <a href="#">⚡ 꿀팁</a>
+        <a href="javascript:void(0)" onclick="showCat('AI 도구')">🤖 AI 도구</a>
+        <a href="javascript:void(0)" onclick="showCat('앱 리뷰')">📱 앱 리뷰</a>
+        <a href="javascript:void(0)" onclick="showCat('생활정보')">💡 생활정보</a>
+        <a href="javascript:void(0)" onclick="showCat('꿀팁')">⚡ 꿀팁</a>
       </div>
     </div>
     <div>
       <div class="footer-col-title">사이트 정보</div>
       <div class="footer-links">
-        <a href="#">소개</a>
-        <a href="#">문의하기</a>
+        <a href="javascript:void(0)">소개</a>
+        <a href="javascript:void(0)">문의하기</a>
         <a href="privacy.html">개인정보처리방침</a>
-        <a href="#">광고 문의</a>
+        <a href="javascript:void(0)">광고 문의</a>
       </div>
     </div>
   </div>
@@ -1241,54 +1364,98 @@ footer {
 </footer>
 
 <script>
+// ── 페이지 전환 ──
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.page-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
-  document.getElementById('page-' + name).classList.add('active');
-  document.getElementById('tab-' + name).classList.add('active');
+  var pg = document.getElementById('page-' + name);
+  var tb = document.getElementById('tab-' + name);
+  if (pg) pg.classList.add('active');
+  if (tb) tb.classList.add('active');
+  if (name === 'home') {
+    var nl = document.querySelector('.nav-link[onclick*="home"]');
+    if (nl) nl.classList.add('active');
+  } else if (name === 'list') {
+    var nl = document.querySelector('.nav-link[onclick*="list"]');
+    if (nl) nl.classList.add('active');
+  }
   window.scrollTo(0, 0);
 }
 
+// ── 카테고리 이동 ──
 function showCat(cat) {
   showPage('list');
-  document.querySelectorAll('.filter-chip').forEach(c => {
-    c.classList.toggle('active', c.textContent.includes(cat));
-  });
-  filterByCat(cat);
+  setTimeout(function() {
+    document.querySelectorAll('.filter-chip').forEach(function(chip) {
+      chip.classList.toggle('active', chip.textContent.trim().includes(cat));
+    });
+    filterByCat(cat);
+  }, 50);
 }
 
 function filterCat(el, cat) {
-  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.filter-chip').forEach(function(c) { c.classList.remove('active'); });
   el.classList.add('active');
   filterByCat(cat);
 }
 
 function filterByCat(cat) {
-  document.querySelectorAll('.post-card').forEach(card => {
+  document.querySelectorAll('.post-card').forEach(function(card) {
     if (cat === '전체' || card.dataset.cat === cat) {
-      card.style.display = 'block';
-      card.style.animation = 'fadeUp 0.3s ease';
+      card.style.display = '';
     } else {
       card.style.display = 'none';
     }
   });
 }
 
-// Hero tags
-document.querySelectorAll('.hero-tag').forEach(tag => {
-  tag.addEventListener('click', () => {
-    document.querySelectorAll('.hero-tag').forEach(t => t.classList.remove('active'));
-    tag.classList.add('active');
-  });
-});
+// ── 이메일 구독 ──
+function subscribeEmail() {
+  var email = document.getElementById('nlEmail') ? document.getElementById('nlEmail').value.trim() : '';
+  if (!email || !email.includes('@')) {
+    alert('올바른 이메일 주소를 입력해주세요.');
+    return;
+  }
+  var msg = document.getElementById('nlMsg');
+  if (msg) { msg.style.display = 'block'; }
+  if (document.getElementById('nlEmail')) document.getElementById('nlEmail').value = '';
+  setTimeout(function() { if (msg) msg.style.display = 'none'; }, 4000);
+}
 
-// Pagination
-document.querySelectorAll('.page-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
-    if (!['‹','›'].includes(btn.textContent)) btn.classList.add('active');
+// ── DOMContentLoaded ──
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Hero 태그 → 카테고리 이동
+  document.querySelectorAll('.hero-tag').forEach(function(tag) {
+    tag.addEventListener('click', function() {
+      document.querySelectorAll('.hero-tag').forEach(function(t) { t.classList.remove('active'); });
+      tag.classList.add('active');
+      var txt = tag.textContent.trim();
+      var catMap = {'🤖 AI 도구':'AI 도구','📱 앱 리뷰':'앱 리뷰','💡 생활정보':'생활정보','⚡ 꿀팁':'꿀팁'};
+      if (txt === '전체') {
+        showPage('list');
+        setTimeout(function() { filterByCat('전체'); }, 50);
+      } else if (catMap[txt]) {
+        showCat(catMap[txt]);
+      }
+    });
   });
+
+  // 페이지네이션
+  document.querySelectorAll('.page-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.page-btn').forEach(function(b) { b.classList.remove('active'); });
+      if (btn.textContent !== '‹' && btn.textContent !== '›') btn.classList.add('active');
+    });
+  });
+
+  // URL querystring으로 카테고리 자동 진입 (포스트에서 헤더 클릭 시)
+  var params = new URLSearchParams(window.location.search);
+  var cat = params.get('cat');
+  if (cat) {
+    showCat(decodeURIComponent(cat));
+  }
 });
 </script>
 </body>
