@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>맥북·윈도우 단축키 모음 — 업무 속도 2배 빨라지는 필수 단축키 — 일잘러닷컴</title>
+<meta name="description" content="아는 사람만 쓰는 맥북·윈도우 단축키 50개. 마우스 대신 키보드로 업무 속도를 2배 올려보세요.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --primary: #FF6B35;
+  --primary-light: #FFF0EB;
+  --blue: #3B82F6;
+  --blue-light: #EFF6FF;
+  --green: #10B981;
+  --green-light: #ECFDF5;
+  --yellow: #F59E0B;
+  --yellow-light: #FFFBEB;
+  --text: #1A1A2E;
+  --text-sub: #64748B;
+  --border: #E8EDF2;
+  --bg: #F8FAFC;
+  --white: #FFFFFF;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--white);
+  border-bottom: 2px solid var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.header-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.logo span { color: var(--primary); }
+
+.header-nav {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-sub);
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: var(--text-sub);
+  transition: color 0.15s;
+}
+.header-nav a:hover { color: var(--primary); }
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── ARTICLE HEADER ── */
+.article-header {
+  background: var(--white);
+  padding: 36px 0 0;
+  margin-bottom: 0;
+}
+
+.article-header .container {
+  padding-bottom: 0;
+}
+
+.cat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.article-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(24px, 5vw, 34px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.article-title em {
+  font-style: normal;
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+}
+
+.article-desc {
+  font-size: 15px;
+  color: var(--text-sub);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.meta-divider { color: var(--border); }
+
+.read-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ── THUMBNAIL ── */
+.thumbnail-wrap {
+  background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+  padding: 40px 20px;
+  margin-bottom: 0;
+}
+
+.thumbnail-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.thumb-title {
+  font-size: 13px;
+  color: #94A3B8;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.thumb-big {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(20px, 5vw, 28px);
+  font-weight: 700;
+  color: white;
+  line-height: 1.4;
+  margin-bottom: 28px;
+}
+
+.thumb-big span { color: #F59E0B; }
+
+/* BAR CHART */
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  height: 120px;
+  margin-bottom: 12px;
+}
+
+.bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  max-width: 56px;
+}
+
+.bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.bar-val {
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+.bar-label {
+  font-size: 9px;
+  color: #94A3B8;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.bar-highlight { background: #F59E0B !important; }
+
+.thumb-caption {
+  font-size: 11px;
+  color: #64748B;
+  margin-top: 4px;
+}
+
+/* ── CONTENT ── */
+.article-content {
+  background: var(--white);
+  padding: 36px 0 48px;
+}
+
+/* TOC */
+.toc {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+
+.toc-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.toc-list li {
+  font-size: 14px;
+  color: var(--text-sub);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.toc-list li:hover { color: var(--primary); }
+.toc-num {
+  width: 20px; height: 20px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* SECTIONS */
+.section { margin-bottom: 44px; }
+
+.section-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title .ico {
+  width: 32px; height: 32px;
+  background: var(--primary-light);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+
+strong { color: var(--text); font-weight: 700; }
+
+/* HIGHLIGHT BOX */
+.highlight-box {
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin: 24px 0;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+
+.hb-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.highlight-box.orange .hb-title { color: var(--primary); }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.green .hb-title { color: var(--green); }
+.highlight-box.yellow .hb-title { color: var(--yellow); }
+
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+
+/* INFOGRAPHIC CARD */
+.info-card {
+  background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 28px 0;
+  color: white;
+  text-align: center;
+}
+
+.info-card-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.info-card-num {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.info-card-num span { font-size: 28px; }
+.info-card-desc { font-size: 14px; opacity: 0.85; }
+
+/* COMPARE TABLE */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+
+.compare-table th {
+  padding: 14px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.compare-table th:first-child { background: #F1F5F9; color: var(--text-sub); }
+.compare-table th:nth-child(2) { background: #3B82F6; color: white; }
+.compare-table th:nth-child(3) { background: #10B981; color: white; }
+
+.compare-table td {
+  padding: 13px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.compare-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  background: #FAFAFA;
+  color: var(--text);
+}
+
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table tr:hover td { background: #F8FAFC; }
+
+.badge-yes {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.badge-no {
+  color: var(--text-sub);
+  font-size: 13px;
+}
+
+.badge-limit {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: var(--yellow);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+/* STEP LIST */
+.step-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+
+.step-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: box-shadow 0.15s;
+}
+
+.step-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  border-color: var(--primary);
+}
+
+.step-num {
+  width: 32px; height: 32px;
+  background: var(--primary);
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-content-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.step-content-desc {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* SCREENSHOT MOCK */
+.screenshot-mock {
+  background: #1E293B;
+  border-radius: 12px;
+  padding: 0;
+  margin: 24px 0;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.mock-bar {
+  background: #334155;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mock-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+
+.mock-url {
+  flex: 1;
+  background: #1E293B;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 11px;
+  color: #94A3B8;
+  font-family: monospace;
+}
+
+.mock-body {
+  padding: 20px;
+}
+
+.mock-chat-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.mock-avatar {
+  width: 28px; height: 28px;
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.mock-avatar.user { background: #6366F1; }
+.mock-avatar.ai { background: #10B981; }
+
+.mock-bubble {
+  background: #334155;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #E2E8F0;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.mock-bubble.user-bubble { background: #4F46E5; }
+
+/* SUMMARY BOX */
+.summary-box {
+  background: linear-gradient(135deg, var(--primary) 0%, #FF8C5A 100%);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 36px 0;
+  color: white;
+}
+
+.summary-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-list li {
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.6;
+}
+
+.summary-list li::before {
+  content: '✓';
+  font-weight: 900;
+  color: #FDE68A;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* RELATED */
+.related {
+  background: var(--bg);
+  padding: 36px 0;
+  border-top: 1px solid var(--border);
+}
+
+.related-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.related-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.related-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(255,107,53,0.1);
+  transform: translateY(-2px);
+}
+
+.rc-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.rc-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.rc-meta {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+/* FOOTER */
+footer {
+  background: var(--text);
+  color: #94A3B8;
+  padding: 28px 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+footer strong { color: white; }
+
+/* PROGRESS BAR */
+.reading-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: var(--primary);
+  z-index: 9999;
+  transition: width 0.1s;
+  width: 0%;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .header-nav { display: none; }
+  .related-grid { grid-template-columns: 1fr; }
+  .bar-chart { gap: 6px; }
+  .bar-item { max-width: 40px; }
+}
+</style>
+</head>
+<body>
+
+<div class="reading-bar" id="readingBar"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="#">AI 도구</a>
+      <a href="#">생활정보</a>
+      <a href="#">앱 리뷰</a>
+      <a href="#">꿀팁</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ARTICLE HEADER -->
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">⚡ 꿀팁</div>
+    <h1 class="article-title">맥북·윈도우 단축키 모음 — 업무 속도 2배 빨라지는 필수 단축키</h1>
+    <p class="article-desc">아는 사람만 쓰는 맥북·윈도우 단축키 50개. 마우스 대신 키보드로 업무 속도를 2배 올려보세요.</p>
+    <div class="article-meta">
+      <span>📅 2025.03.01</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 3분 읽기</span>
+    </div>
+  </div>
+</div>
+
+<!-- THUMBNAIL / INFOGRAPHIC -->
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner">
+    <div class="thumb-title">맥북·윈도우 단축키 모음</div>
+    <div class="thumb-big">단축키 50개<br><span>업무 속도 2배 UP</span></div>
+    <div style="font-size:64px;margin:20px 0">⌨️</div>
+    <div class="thumb-caption">일잘러닷컴 직접 정리 | 2025년 기준</div>
+  </div>
+</div>
+
+<!-- ARTICLE CONTENT -->
+<div class="article-content">
+  <div class="container">
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list"><li><span class="toc-num">1</span> 단축키가 왜 중요할까요?</li><li><span class="toc-num">2</span> 윈도우 필수 단축키</li><li><span class="toc-num">3</span> 맥북 필수 단축키</li><li><span class="toc-num">4</span> 공통 꿀팁</li><li><span class="toc-num">5</span> 핵심 요약</li></ul>
+    </div>
+    
+    <div class="section" id="s1">
+      <h2 class="section-title"><span class="ico">💡</span> 단축키가 왜 중요할까요?</h2>
+      <p>마우스로 메뉴를 찾는 데 <strong>3~5초</strong>가 걸려요. 하루 100번이면 5~8분 낭비. 1년이면 30시간 이상입니다.</p>
+<div class="highlight-box orange"><div class="hb-icon">⚡</div><div><div class="hb-title">단축키 20개만 외우면</div><p class="hb-text">업무 속도가 체감상 <strong>30~50% 빨라져요</strong>. 처음엔 불편해도 1주일만 쓰면 손에 익습니다.</p></div></div>
+    </div>
+    <div class="section" id="s2">
+      <h2 class="section-title"><span class="ico">🪟</span> 윈도우 필수 단축키</h2>
+      <table class="compare-table"><tr><th>단축키</th><th>기능</th></tr>
+<tr><td><strong>Win + D</strong></td><td>바탕화면 바로 가기</td></tr>
+<tr><td><strong>Win + E</strong></td><td>파일 탐색기 열기</td></tr>
+<tr><td><strong>Win + L</strong></td><td>화면 잠금</td></tr>
+<tr><td><strong>Ctrl + Shift + Esc</strong></td><td>작업 관리자</td></tr>
+<tr><td><strong>Win + V</strong></td><td>클립보드 기록 (여러 복사 가능)</td></tr>
+<tr><td><strong>Alt + Tab</strong></td><td>창 전환</td></tr>
+<tr><td><strong>Win + →/←</strong></td><td>화면 분할</td></tr>
+<tr><td><strong>Ctrl + Z / Y</strong></td><td>실행취소 / 다시실행</td></tr></table>
+    </div>
+    <div class="section" id="s3">
+      <h2 class="section-title"><span class="ico">🍎</span> 맥북 필수 단축키</h2>
+      <table class="compare-table"><tr><th>단축키</th><th>기능</th></tr>
+<tr><td><strong>Cmd + Space</strong></td><td>스팟라이트 검색</td></tr>
+<tr><td><strong>Cmd + Tab</strong></td><td>앱 전환</td></tr>
+<tr><td><strong>Cmd + Shift + 3</strong></td><td>전체 화면 캡처</td></tr>
+<tr><td><strong>Cmd + Shift + 4</strong></td><td>영역 지정 캡처</td></tr>
+<tr><td><strong>Ctrl + Cmd + Q</strong></td><td>화면 잠금</td></tr>
+<tr><td><strong>Cmd + Option + Esc</strong></td><td>강제 종료</td></tr>
+<tr><td><strong>Cmd + ,</strong></td><td>현재 앱 환경설정</td></tr>
+<tr><td><strong>Cmd + Shift + N</strong></td><td>새 폴더 생성</td></tr></table>
+    </div>
+    <div class="section" id="s4">
+      <h2 class="section-title"><span class="ico">🎯</span> 공통 꿀팁</h2>
+      <div class="step-list">
+<div class="step-item"><div class="step-num">1</div><div><div class="step-content-title">브라우저 탭 관리</div><p class="step-content-desc">Ctrl+T(새 탭) / Ctrl+W(탭 닫기) / Ctrl+Shift+T(닫은 탭 복구) — 맥은 Ctrl 대신 Cmd</p></div></div>
+<div class="step-item"><div class="step-num">2</div><div><div class="step-content-title">텍스트 편집</div><p class="step-content-desc">Ctrl+A(전체선택) / Ctrl+F(찾기) / Ctrl+H(찾아바꾸기) — 어디서든 통합니다.</p></div></div>
+<div class="step-item"><div class="step-num">3</div><div><div class="step-content-title">화면 캡처</div><p class="step-content-desc">윈도우: Win+Shift+S / 맥: Cmd+Shift+4 — 영역 지정 캡처가 가장 유용해요.</p></div></div>
+</div>
+    </div>
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list"><li>윈도우 Win+V로 클립보드 기록 활용 — 복사 여러 개 저장 가능</li><li>맥북 Cmd+Space 스팟라이트로 모든 파일·앱 즉시 검색</li><li>브라우저 Ctrl+Shift+T로 실수로 닫은 탭 복구</li><li>단축키 20개만 외워도 업무 속도 30% 이상 향상</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid"><a href="post-google-search.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">구글 검색 10배 잘하는 법</div>
+        <div class="rc-meta">2025.03.07 · 3분</div>
+      </a><a href="post-apps.html" class="related-card">
+        <div class="rc-badge">📱 앱 리뷰</div>
+        <div class="rc-title">직장인 생산성 앱 TOP 5</div>
+        <div class="rc-meta">2025.03.09 · 4분</div>
+      </a><a href="post-chatgpt.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">ChatGPT 완벽 정리</div>
+        <div class="rc-meta">2025.03.10 · 5분</div>
+      </a><a href="post-claude.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">Claude AI 사용법</div>
+        <div class="rc-meta">2025.03.12 · 4분</div>
+      </a></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>일잘러닷컴</strong> · 생활정보 & 유용툴 리뷰<br>
+  <span style="font-size:12px;opacity:0.6;margin-top:6px;display:block">© 2025 iljaller.com · All rights reserved</span>
+</footer>
+
+<script>
+  // Reading progress bar
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>

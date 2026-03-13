@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>직장인이 매일 쓰는 생산성 앱 TOP 5 (2025 최신) — 일잘러닷컴</title>
+<meta name="description" content="노션, 클로바노트, 토스, 캘린더... 실제로 써보고 진짜 쓸만한 것만 골랐습니다. 무료 위주로 정리했어요.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --primary: #FF6B35;
+  --primary-light: #FFF0EB;
+  --blue: #3B82F6;
+  --blue-light: #EFF6FF;
+  --green: #10B981;
+  --green-light: #ECFDF5;
+  --yellow: #F59E0B;
+  --yellow-light: #FFFBEB;
+  --text: #1A1A2E;
+  --text-sub: #64748B;
+  --border: #E8EDF2;
+  --bg: #F8FAFC;
+  --white: #FFFFFF;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--white);
+  border-bottom: 2px solid var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.header-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.logo span { color: var(--primary); }
+
+.header-nav {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-sub);
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: var(--text-sub);
+  transition: color 0.15s;
+}
+.header-nav a:hover { color: var(--primary); }
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── ARTICLE HEADER ── */
+.article-header {
+  background: var(--white);
+  padding: 36px 0 0;
+  margin-bottom: 0;
+}
+
+.article-header .container {
+  padding-bottom: 0;
+}
+
+.cat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.article-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(24px, 5vw, 34px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.article-title em {
+  font-style: normal;
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+}
+
+.article-desc {
+  font-size: 15px;
+  color: var(--text-sub);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.meta-divider { color: var(--border); }
+
+.read-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ── THUMBNAIL ── */
+.thumbnail-wrap {
+  background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+  padding: 40px 20px;
+  margin-bottom: 0;
+}
+
+.thumbnail-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.thumb-title {
+  font-size: 13px;
+  color: #94A3B8;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.thumb-big {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(20px, 5vw, 28px);
+  font-weight: 700;
+  color: white;
+  line-height: 1.4;
+  margin-bottom: 28px;
+}
+
+.thumb-big span { color: #F59E0B; }
+
+/* BAR CHART */
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  height: 120px;
+  margin-bottom: 12px;
+}
+
+.bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  max-width: 56px;
+}
+
+.bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.bar-val {
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+.bar-label {
+  font-size: 9px;
+  color: #94A3B8;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.bar-highlight { background: #F59E0B !important; }
+
+.thumb-caption {
+  font-size: 11px;
+  color: #64748B;
+  margin-top: 4px;
+}
+
+/* ── CONTENT ── */
+.article-content {
+  background: var(--white);
+  padding: 36px 0 48px;
+}
+
+/* TOC */
+.toc {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+
+.toc-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.toc-list li {
+  font-size: 14px;
+  color: var(--text-sub);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.toc-list li:hover { color: var(--primary); }
+.toc-num {
+  width: 20px; height: 20px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* SECTIONS */
+.section { margin-bottom: 44px; }
+
+.section-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title .ico {
+  width: 32px; height: 32px;
+  background: var(--primary-light);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+
+strong { color: var(--text); font-weight: 700; }
+
+/* HIGHLIGHT BOX */
+.highlight-box {
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin: 24px 0;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+
+.hb-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.highlight-box.orange .hb-title { color: var(--primary); }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.green .hb-title { color: var(--green); }
+.highlight-box.yellow .hb-title { color: var(--yellow); }
+
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+
+/* INFOGRAPHIC CARD */
+.info-card {
+  background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 28px 0;
+  color: white;
+  text-align: center;
+}
+
+.info-card-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.info-card-num {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.info-card-num span { font-size: 28px; }
+.info-card-desc { font-size: 14px; opacity: 0.85; }
+
+/* COMPARE TABLE */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+
+.compare-table th {
+  padding: 14px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.compare-table th:first-child { background: #F1F5F9; color: var(--text-sub); }
+.compare-table th:nth-child(2) { background: #3B82F6; color: white; }
+.compare-table th:nth-child(3) { background: #10B981; color: white; }
+
+.compare-table td {
+  padding: 13px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.compare-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  background: #FAFAFA;
+  color: var(--text);
+}
+
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table tr:hover td { background: #F8FAFC; }
+
+.badge-yes {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.badge-no {
+  color: var(--text-sub);
+  font-size: 13px;
+}
+
+.badge-limit {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: var(--yellow);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+/* STEP LIST */
+.step-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+
+.step-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: box-shadow 0.15s;
+}
+
+.step-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  border-color: var(--primary);
+}
+
+.step-num {
+  width: 32px; height: 32px;
+  background: var(--primary);
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-content-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.step-content-desc {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* SCREENSHOT MOCK */
+.screenshot-mock {
+  background: #1E293B;
+  border-radius: 12px;
+  padding: 0;
+  margin: 24px 0;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.mock-bar {
+  background: #334155;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mock-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+
+.mock-url {
+  flex: 1;
+  background: #1E293B;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 11px;
+  color: #94A3B8;
+  font-family: monospace;
+}
+
+.mock-body {
+  padding: 20px;
+}
+
+.mock-chat-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.mock-avatar {
+  width: 28px; height: 28px;
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.mock-avatar.user { background: #6366F1; }
+.mock-avatar.ai { background: #10B981; }
+
+.mock-bubble {
+  background: #334155;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #E2E8F0;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.mock-bubble.user-bubble { background: #4F46E5; }
+
+/* SUMMARY BOX */
+.summary-box {
+  background: linear-gradient(135deg, var(--primary) 0%, #FF8C5A 100%);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 36px 0;
+  color: white;
+}
+
+.summary-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-list li {
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.6;
+}
+
+.summary-list li::before {
+  content: '✓';
+  font-weight: 900;
+  color: #FDE68A;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* RELATED */
+.related {
+  background: var(--bg);
+  padding: 36px 0;
+  border-top: 1px solid var(--border);
+}
+
+.related-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.related-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.related-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(255,107,53,0.1);
+  transform: translateY(-2px);
+}
+
+.rc-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.rc-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.rc-meta {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+/* FOOTER */
+footer {
+  background: var(--text);
+  color: #94A3B8;
+  padding: 28px 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+footer strong { color: white; }
+
+/* PROGRESS BAR */
+.reading-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: var(--primary);
+  z-index: 9999;
+  transition: width 0.1s;
+  width: 0%;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .header-nav { display: none; }
+  .related-grid { grid-template-columns: 1fr; }
+  .bar-chart { gap: 6px; }
+  .bar-item { max-width: 40px; }
+}
+</style>
+</head>
+<body>
+
+<div class="reading-bar" id="readingBar"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="#">AI 도구</a>
+      <a href="#">생활정보</a>
+      <a href="#">앱 리뷰</a>
+      <a href="#">꿀팁</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ARTICLE HEADER -->
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">📱 앱 리뷰</div>
+    <h1 class="article-title">직장인이 매일 쓰는 생산성 앱 TOP 5 (2025 최신)</h1>
+    <p class="article-desc">노션, 클로바노트, 토스, 캘린더... 실제로 써보고 진짜 쓸만한 것만 골랐습니다. 무료 위주로 정리했어요.</p>
+    <div class="article-meta">
+      <span>📅 2025.03.09</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 4분 읽기</span>
+    </div>
+  </div>
+</div>
+
+<!-- THUMBNAIL / INFOGRAPHIC -->
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner">
+    <div class="thumb-title">직장인 생산성 앱 비교</div>
+    <div class="thumb-big">생산성 앱 TOP 5<br><span>2025년 최신 정리</span></div>
+    <div style="font-size:64px;margin:20px 0">📱</div>
+    <div class="thumb-caption">일잘러닷컴 직접 정리 | 2025년 기준</div>
+  </div>
+</div>
+
+<!-- ARTICLE CONTENT -->
+<div class="article-content">
+  <div class="container">
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list"><li><span class="toc-num">1</span> 왜 앱 선택이 중요할까요?</li><li><span class="toc-num">2</span> TOP 5 앱 소개</li><li><span class="toc-num">3</span> 무료로 쓰는 법</li><li><span class="toc-num">4</span> 추천 조합</li><li><span class="toc-num">5</span> 핵심 요약</li></ul>
+    </div>
+    
+    <div class="section" id="s1">
+      <h2 class="section-title"><span class="ico">💡</span> 왜 앱 선택이 중요할까요?</h2>
+      <p>앱 하나 잘 고르면 <strong>하루 1~2시간</strong>을 아낄 수 있어요. 반대로 쓸모없는 앱만 깔다가 오히려 시간을 낭비하는 경우도 많습니다.</p>
+<div class="highlight-box orange"><div class="hb-icon">⏰</div><div><div class="hb-title">직장인 평균 앱 사용 시간</div><p class="hb-text">직장인 1인당 하루 평균 <strong>4~5시간</strong>을 스마트폰으로 업무 관련 작업을 합니다. 앱 선택이 곧 시간 선택이에요.</p></div></div>
+    </div>
+    <div class="section" id="s2">
+      <h2 class="section-title"><span class="ico">⭐</span> TOP 5 앱 소개</h2>
+      <div class="step-list">
+<div class="step-item"><div class="step-num">1</div><div><div class="step-content-title">📝 노션 (Notion) — 올인원 메모·프로젝트</div><p class="step-content-desc">메모, 할 일, 프로젝트 관리까지 하나로. 개인은 무료, 팀은 유료. AI 기능도 추가됐어요.</p></div></div>
+<div class="step-item"><div class="step-num">2</div><div><div class="step-content-title">🎤 클로바노트 — 회의록 자동 생성</div><p class="step-content-desc">네이버가 만든 AI 회의록 앱. 녹음만 하면 자동으로 텍스트로 변환해줘요. 무료로 월 300분 사용 가능.</p></div></div>
+<div class="step-item"><div class="step-num">3</div><div><div class="step-content-title">💸 토스 — 지출 관리 자동화</div><p class="step-content-desc">카드값, 송금, 가계부까지 하나로. 자동 지출 분류 기능이 정말 편해요.</p></div></div>
+<div class="step-item"><div class="step-num">4</div><div><div class="step-content-title">📅 구글 캘린더 — 일정 관리 표준</div><p class="step-content-desc">직장인 일정 관리의 표준. 팀원과 공유, AI 일정 제안 기능까지. 완전 무료.</p></div></div>
+<div class="step-item"><div class="step-num">5</div><div><div class="step-content-title">🔐 1Password — 비밀번호 관리</div><p class="step-content-desc">비밀번호 하나하나 기억하는 시대는 끝. 1Password 하나로 모든 계정을 안전하게 관리하세요.</p></div></div>
+</div>
+    </div>
+    <div class="section" id="s3">
+      <h2 class="section-title"><span class="ico">🆓</span> 무료로 쓰는 법</h2>
+      <table class="compare-table"><tr><th>앱</th><th>무료 범위</th><th>유료 필요 시점</th></tr>
+<tr><td>노션</td><td><span class="badge-yes">개인 무제한</span></td><td>팀 협업 시</td></tr>
+<tr><td>클로바노트</td><td><span class="badge-yes">월 300분</span></td><td>회의 많은 직군</td></tr>
+<tr><td>토스</td><td><span class="badge-yes">완전 무료</span></td><td>없음</td></tr>
+<tr><td>구글 캘린더</td><td><span class="badge-yes">완전 무료</span></td><td>없음</td></tr>
+<tr><td>1Password</td><td><span class="badge-limit">14일 체험</span></td><td>바로 유료 필요</td></tr></table>
+    </div>
+    <div class="section" id="s4">
+      <h2 class="section-title"><span class="ico">🎯</span> 추천 조합</h2>
+      <div class="highlight-box blue"><div class="hb-icon">💼</div><div><div class="hb-title">직장인 최고 조합 (전부 무료)</div><p class="hb-text"><strong>구글 캘린더</strong>(일정) + <strong>노션</strong>(메모·프로젝트) + <strong>클로바노트</strong>(회의록) + <strong>토스</strong>(지출). 이 4개면 웬만한 업무 효율화는 끝납니다.</p></div></div>
+<div class="highlight-box green"><div class="hb-icon">✅</div><div><div class="hb-title">앱 너무 많이 설치하지 마세요</div><p class="hb-text">앱이 많을수록 오히려 혼란스러워요. 핵심 3~4개만 잘 쓰는 게 훨씬 효과적입니다.</p></div></div>
+    </div>
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list"><li>노션 — 메모·프로젝트 올인원 (개인 무료)</li><li>클로바노트 — 회의록 자동 생성 (월 300분 무료)</li><li>토스·구글 캘린더 — 지출·일정 관리 완전 무료</li><li>추천 조합: 캘린더 + 노션 + 클로바노트 + 토스</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid"><a href="post-chatgpt.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">ChatGPT란? 2억 명이 쓰는 이유 완벽 정리</div>
+        <div class="rc-meta">2025.03.10 · 5분</div>
+      </a><a href="post-gemini.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">Gemini 사용법 완벽 정리</div>
+        <div class="rc-meta">2025.03.11 · 4분</div>
+      </a><a href="#" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">구글 검색 10배 잘하는 법</div>
+        <div class="rc-meta">2025.03.07 · 3분</div>
+      </a><a href="post-claude.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">Claude AI 사용법</div>
+        <div class="rc-meta">2025.03.12 · 4분</div>
+      </a></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>일잘러닷컴</strong> · 생활정보 & 유용툴 리뷰<br>
+  <span style="font-size:12px;opacity:0.6;margin-top:6px;display:block">© 2025 iljaller.com · All rights reserved</span>
+</footer>
+
+<script>
+  // Reading progress bar
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>
