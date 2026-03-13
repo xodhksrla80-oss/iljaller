@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026년 전기세 어떻게 바뀌나 — 지역별 차등 요금제 완벽 정리 — 일잘러닷컴</title>
+<meta name="description" content="2026년부터 사는 지역에 따라 전기요금이 달라져요. 서울은 오르고, 발전소 많은 지방은 내려갈 수도 있다고요? 분산에너지법과 전기세 변화를 쉽게 정리했습니다.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --primary: #FF6B35;
+  --primary-light: #FFF0EB;
+  --blue: #3B82F6;
+  --blue-light: #EFF6FF;
+  --green: #10B981;
+  --green-light: #ECFDF5;
+  --yellow: #F59E0B;
+  --yellow-light: #FFFBEB;
+  --text: #1A1A2E;
+  --text-sub: #64748B;
+  --border: #E8EDF2;
+  --bg: #F8FAFC;
+  --white: #FFFFFF;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--white);
+  border-bottom: 2px solid var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.header-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.logo span { color: var(--primary); }
+
+.header-nav {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-sub);
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: var(--text-sub);
+  transition: color 0.15s;
+}
+.header-nav a:hover { color: var(--primary); }
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── ARTICLE HEADER ── */
+.article-header {
+  background: var(--white);
+  padding: 36px 0 0;
+  margin-bottom: 0;
+}
+
+.article-header .container {
+  padding-bottom: 0;
+}
+
+.cat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.article-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(24px, 5vw, 34px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.article-title em {
+  font-style: normal;
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+}
+
+.article-desc {
+  font-size: 15px;
+  color: var(--text-sub);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.meta-divider { color: var(--border); }
+
+.read-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ── THUMBNAIL ── */
+.thumbnail-wrap {
+  background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+  padding: 40px 20px;
+  margin-bottom: 0;
+}
+
+.thumbnail-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.thumb-title {
+  font-size: 13px;
+  color: #94A3B8;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.thumb-big {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(20px, 5vw, 28px);
+  font-weight: 700;
+  color: white;
+  line-height: 1.4;
+  margin-bottom: 28px;
+}
+
+.thumb-big span { color: #F59E0B; }
+
+/* BAR CHART */
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  height: 120px;
+  margin-bottom: 12px;
+}
+
+.bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  max-width: 56px;
+}
+
+.bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.bar-val {
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+.bar-label {
+  font-size: 9px;
+  color: #94A3B8;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.bar-highlight { background: #F59E0B !important; }
+
+.thumb-caption {
+  font-size: 11px;
+  color: #64748B;
+  margin-top: 4px;
+}
+
+/* ── CONTENT ── */
+.article-content {
+  background: var(--white);
+  padding: 36px 0 48px;
+}
+
+/* TOC */
+.toc {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+
+.toc-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.toc-list li {
+  font-size: 14px;
+  color: var(--text-sub);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.toc-list li:hover { color: var(--primary); }
+.toc-num {
+  width: 20px; height: 20px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* SECTIONS */
+.section { margin-bottom: 44px; }
+
+.section-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title .ico {
+  width: 32px; height: 32px;
+  background: var(--primary-light);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+
+strong { color: var(--text); font-weight: 700; }
+
+/* HIGHLIGHT BOX */
+.highlight-box {
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin: 24px 0;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+
+.hb-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.highlight-box.orange .hb-title { color: var(--primary); }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.green .hb-title { color: var(--green); }
+.highlight-box.yellow .hb-title { color: var(--yellow); }
+
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+
+/* INFOGRAPHIC CARD */
+.info-card {
+  background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 28px 0;
+  color: white;
+  text-align: center;
+}
+
+.info-card-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.info-card-num {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.info-card-num span { font-size: 28px; }
+.info-card-desc { font-size: 14px; opacity: 0.85; }
+
+/* COMPARE TABLE */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+
+.compare-table th {
+  padding: 14px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.compare-table th:first-child { background: #F1F5F9; color: var(--text-sub); }
+.compare-table th:nth-child(2) { background: #3B82F6; color: white; }
+.compare-table th:nth-child(3) { background: #10B981; color: white; }
+
+.compare-table td {
+  padding: 13px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.compare-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  background: #FAFAFA;
+  color: var(--text);
+}
+
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table tr:hover td { background: #F8FAFC; }
+
+.badge-yes {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.badge-no {
+  color: var(--text-sub);
+  font-size: 13px;
+}
+
+.badge-limit {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: var(--yellow);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+/* STEP LIST */
+.step-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+
+.step-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: box-shadow 0.15s;
+}
+
+.step-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  border-color: var(--primary);
+}
+
+.step-num {
+  width: 32px; height: 32px;
+  background: var(--primary);
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-content-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.step-content-desc {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* SCREENSHOT MOCK */
+.screenshot-mock {
+  background: #1E293B;
+  border-radius: 12px;
+  padding: 0;
+  margin: 24px 0;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.mock-bar {
+  background: #334155;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mock-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+
+.mock-url {
+  flex: 1;
+  background: #1E293B;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 11px;
+  color: #94A3B8;
+  font-family: monospace;
+}
+
+.mock-body {
+  padding: 20px;
+}
+
+.mock-chat-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.mock-avatar {
+  width: 28px; height: 28px;
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.mock-avatar.user { background: #6366F1; }
+.mock-avatar.ai { background: #10B981; }
+
+.mock-bubble {
+  background: #334155;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #E2E8F0;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.mock-bubble.user-bubble { background: #4F46E5; }
+
+/* SUMMARY BOX */
+.summary-box {
+  background: linear-gradient(135deg, var(--primary) 0%, #FF8C5A 100%);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 36px 0;
+  color: white;
+}
+
+.summary-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-list li {
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.6;
+}
+
+.summary-list li::before {
+  content: '✓';
+  font-weight: 900;
+  color: #FDE68A;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* RELATED */
+.related {
+  background: var(--bg);
+  padding: 36px 0;
+  border-top: 1px solid var(--border);
+}
+
+.related-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.related-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.related-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(255,107,53,0.1);
+  transform: translateY(-2px);
+}
+
+.rc-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.rc-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.rc-meta {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+/* FOOTER */
+footer {
+  background: var(--text);
+  color: #94A3B8;
+  padding: 28px 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+footer strong { color: white; }
+
+/* PROGRESS BAR */
+.reading-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: var(--primary);
+  z-index: 9999;
+  transition: width 0.1s;
+  width: 0%;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .header-nav { display: none; }
+  .related-grid { grid-template-columns: 1fr; }
+  .bar-chart { gap: 6px; }
+  .bar-item { max-width: 40px; }
+}
+</style>
+</head>
+<body>
+
+<div class="reading-bar" id="readingBar"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="#">AI 도구</a>
+      <a href="#">생활정보</a>
+      <a href="#">앱 리뷰</a>
+      <a href="#">꿀팁</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ARTICLE HEADER -->
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">💡 생활정보</div>
+    <h1 class="article-title">2026년 전기세 어떻게 바뀌나 — 지역별 차등 요금제 완벽 정리</h1>
+    <p class="article-desc">2026년부터 사는 지역에 따라 전기요금이 달라져요. 서울은 오르고, 발전소 많은 지방은 내려갈 수도 있다고요? 분산에너지법과 전기세 변화를 쉽게 정리했습니다.</p>
+    <div class="article-meta">
+      <span>📅 2026.03.13</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 4분 읽기</span>
+    </div>
+  </div>
+</div>
+
+<!-- THUMBNAIL / INFOGRAPHIC -->
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner">
+    <div class="thumb-title">2026 전기요금 변화</div>
+    <div class="thumb-big">지역별로 달라진다!<br><span>전기세 완벽 정리</span></div>
+    <div style="font-size:64px;margin:20px 0">⚡</div>
+    <div class="thumb-caption">일잘러닷컴 직접 정리 | 2026년 기준</div>
+  </div>
+</div>
+
+<!-- ARTICLE CONTENT -->
+<div class="article-content">
+  <div class="container">
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list"><li><span class="toc-num">1</span> 2025년 vs 2026년 전기요금</li><li><span class="toc-num">2</span> 지역별 차등 요금제란?</li><li><span class="toc-num">3</span> 어느 지역이 오르고 내리나?</li><li><span class="toc-num">4</span> 절약하는 방법</li><li><span class="toc-num">5</span> 핵심 요약</li></ul>
+    </div>
+    
+    <div class="section" id="s1">
+      <h2 class="section-title"><span class="ico">📊</span> 2025년 vs 2026년 전기요금</h2>
+      <p>2026년 1분기(1~3월) 전기요금은 <strong>동결</strong>됐어요. 연료비 조정단가 kWh당 +5원 유지. 하지만 하반기 이후 인상 가능성이 있습니다.</p>
+<div class="highlight-box orange"><div class="hb-icon">⚠️</div><div><div class="hb-title">한전 누적 적자 문제</div><p class="hb-text">한전 누적 적자가 수십조 원에 달해요. 하루 이자 비용만 <strong>120억 원</strong>. 요금 인상 압박이 계속되고 있지만 정치적 부담으로 당장 올리기 어려운 상황입니다.</p></div></div>
+    </div>
+    <div class="section" id="s2">
+      <h2 class="section-title"><span class="ico">🗺</span> 지역별 차등 요금제란?</h2>
+      <p>분산에너지 활성화 특별법(분산에너지법)에 따라 <strong>전기를 생산하는 지역과 소비하는 지역의 요금을 다르게</strong> 매기는 제도예요.</p>
+<div class="step-list">
+<div class="step-item"><div class="step-num">1</div><div><div class="step-content-title">왜 만들었나요?</div><p class="step-content-desc">발전소 인근 지역은 환경·소음 피해를 감수하는데, 같은 요금을 내는 건 불공평하다는 문제에서 시작됐어요.</p></div></div>
+<div class="step-item"><div class="step-num">2</div><div><div class="step-content-title">어떻게 적용되나요?</div><p class="step-content-desc">전력 생산량 > 소비량인 지역 → 요금 인하. 생산량 < 소비량인 지역 → 요금 인상.</p></div></div>
+<div class="step-item"><div class="step-num">3</div><div><div class="step-content-title">도입 시기</div><p class="step-content-desc">도매 전기는 이미 차등 적용 시작. 일반 가정·기업 소매 요금은 2026년부터 단계적 시행.</p></div></div>
+</div>
+    </div>
+    <div class="section" id="s3">
+      <h2 class="section-title"><span class="ico">🗺</span> 어느 지역이 오르고 내리나?</h2>
+      <table class="compare-table"><tr><th>지역</th><th>전력 자급률</th><th>요금 전망</th></tr>
+<tr><td>경북·충남·강원</td><td>높음 (발전소 多)</td><td><span class="badge-yes">↓ 인하 전망</span></td></tr>
+<tr><td>부산·울산</td><td>높음</td><td><span class="badge-yes">↓ 인하 전망</span></td></tr>
+<tr><td>서울</td><td>매우 낮음 (10%)</td><td><span class="badge-no">↑ 인상 가능성</span></td></tr>
+<tr><td>대전·광주</td><td>낮음</td><td><span class="badge-no">↑ 인상 가능성</span></td></tr>
+<tr><td>경기도</td><td>보통 (62%)</td><td><span class="badge-limit">소폭 인상 가능</span></td></tr></table>
+<div class="highlight-box blue"><div class="hb-icon">💡</div><div><div class="hb-title">서울 최대 2~3배?</div><p class="hb-text">일부 추계에선 서울이 최대 2~3배까지 오를 수 있다는 분석도 있어요. 하지만 정부가 사회적 충격을 고려해 <strong>단계적으로 도입</strong>할 예정이라 급격한 인상 가능성은 낮아요.</p></div></div>
+    </div>
+    <div class="section" id="s4">
+      <h2 class="section-title"><span class="ico">💡</span> 절약하는 방법</h2>
+      <div class="step-list">
+<div class="step-item"><div class="step-num">1</div><div><div class="step-content-title">🕐 심야 시간대 활용</div><p class="step-content-desc">밤 11시~오전 7시 전기 사용이 상대적으로 저렴해요. 세탁기·식기세척기는 심야에 돌리세요.</p></div></div>
+<div class="step-item"><div class="step-num">2</div><div><div class="step-content-title">🌡 에어컨 온도 1도 올리기</div><p class="step-content-desc">26도 → 27도로 1도만 올려도 전기요금 7% 절감 효과가 있어요.</p></div></div>
+<div class="step-item"><div class="step-num">3</div><div><div class="step-content-title">🔌 대기전력 차단</div><p class="step-content-desc">멀티탭 스위치 끄기만 해도 전기요금의 10%를 아낄 수 있어요.</p></div></div>
+</div>
+    </div>
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list"><li>2026년 1분기 전기요금 동결 — 하지만 하반기 인상 가능성 존재</li><li>분산에너지법으로 지역별 차등 요금제 단계적 도입</li><li>서울·대전 등 전력 소비 많은 지역은 인상, 발전소 많은 지방은 인하 전망</li><li>심야 시간대 활용 + 에어컨 1도 + 대기전력 차단으로 10~15% 절약 가능</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid"><a href="post-tax.html" class="related-card">
+        <div class="rc-badge">💡 생활정보</div>
+        <div class="rc-title">연말정산 환급 최대로 받는 법</div>
+        <div class="rc-meta">2025.02.28 · 5분</div>
+      </a><a href="post-rent.html" class="related-card">
+        <div class="rc-badge">💡 생활정보</div>
+        <div class="rc-title">월세 계약 체크리스트</div>
+        <div class="rc-meta">2025.03.03 · 6분</div>
+      </a><a href="post-oil-price.html" class="related-card">
+        <div class="rc-badge">💡 생활정보</div>
+        <div class="rc-title">기름값 상한선 규제</div>
+        <div class="rc-meta">2026.03.13 · 4분</div>
+      </a><a href="post-free-tools.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">유료인 줄 알았던 무료 툴</div>
+        <div class="rc-meta">2025.02.25 · 4분</div>
+      </a></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>일잘러닷컴</strong> · 생활정보 & 유용툴 리뷰<br>
+  <span style="font-size:12px;opacity:0.6;margin-top:6px;display:block">© 2025 iljaller.com · All rights reserved</span>
+</footer>
+
+<script>
+  // Reading progress bar
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>

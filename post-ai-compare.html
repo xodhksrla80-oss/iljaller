@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPT-5.4 vs 제미나이 3.1 Flash-Lite — 2026년 AI 비교 완벽 정리 — 일잘러닷컴</title>
+<meta name="description" content="2026년 최신 AI GPT-5.4와 구글 제미나이 3.1 Flash-Lite를 직접 비교. 무료 범위, 속도, 성능, 추천 용도까지 한눈에 정리.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --primary:#FF6B35;--primary-light:#FFF0EB;--blue:#3B82F6;--blue-light:#EFF6FF;--green:#10B981;--green-light:#ECFDF5;--yellow:#F59E0B;--yellow-light:#FFFBEB;--text:#1A1A2E;--text-sub:#64748B;--border:#E8EDF2;--bg:#F8FAFC;--white:#FFFFFF; }
+body { font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px; }
+header { background:var(--white);border-bottom:2px solid var(--primary);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.06); }
+.header-inner { max-width:780px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between; }
+.logo { font-size:20px;font-weight:900;color:var(--primary);text-decoration:none; }
+.logo span { color:var(--text); }
+.nav-home { font-size:13px;color:var(--text-sub);text-decoration:none;padding:6px 14px;border:1px solid var(--border);border-radius:20px; }
+.article-header { background:linear-gradient(135deg,#0072ff 0%,#11998e 100%);padding:48px 20px 40px; }
+.container { max-width:780px;margin:0 auto; }
+.cat-badge { display:inline-block;background:rgba(255,107,53,.9);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px; }
+.article-title { font-family:'Noto Serif KR',serif;font-size:clamp(22px,5vw,30px);font-weight:700;color:#fff;line-height:1.4;margin-bottom:14px; }
+.article-desc { font-size:15px;color:rgba(255,255,255,.8);margin-bottom:16px;line-height:1.6; }
+.article-meta { display:flex;gap:12px;font-size:13px;color:rgba(255,255,255,.6);flex-wrap:wrap; }
+.meta-divider { opacity:.4; }
+.thumb-wrap { background:var(--white);padding:0 20px; }
+.thumb-inner { max-width:780px;margin:0 auto;background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:0 0 16px 16px;padding:40px 20px;text-align:center; }
+.article-content { padding:32px 20px; }
+.toc { background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 12px 12px 0;padding:20px 24px;margin-bottom:36px; }
+.toc-title { font-weight:700;color:var(--blue);margin-bottom:12px;font-size:15px; }
+.toc-list { list-style:none; }
+.toc-list li { display:flex;align-items:center;gap:10px;padding:4px 0;font-size:14px;color:var(--text-sub); }
+.toc-num { background:var(--blue);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0; }
+.section { background:var(--white);border-radius:16px;padding:28px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04); }
+.section-title { font-size:20px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px; }
+.ico { font-size:22px; }
+.highlight-box { border-radius:12px;padding:16px 20px;margin:16px 0;display:flex;gap:14px;align-items:flex-start; }
+.highlight-box.orange { background:var(--primary-light);border-left:4px solid var(--primary); }
+.highlight-box.blue { background:var(--blue-light);border-left:4px solid var(--blue); }
+.highlight-box.green { background:var(--green-light);border-left:4px solid var(--green); }
+.highlight-box.yellow { background:var(--yellow-light);border-left:4px solid var(--yellow); }
+.hb-icon { font-size:24px;flex-shrink:0;margin-top:2px; }
+.hb-title { font-weight:700;margin-bottom:4px;font-size:15px; }
+.hb-text { font-size:14px;color:var(--text-sub);line-height:1.6; }
+.compare-table { width:100%;border-collapse:collapse;margin:16px 0;font-size:14px; }
+.compare-table th { background:#f1f5f9;padding:10px 14px;text-align:left;font-weight:700;border:1px solid var(--border); }
+.compare-table td { padding:10px 14px;border:1px solid var(--border);line-height:1.5; }
+.compare-table tr:nth-child(even) td { background:#fafbfc; }
+.badge-yes { background:var(--green-light);color:var(--green);padding:2px 10px;border-radius:20px;font-size:12px;font-weight:700; }
+.badge-no { background:#fef2f2;color:#ef4444;padding:2px 10px;border-radius:20px;font-size:12px;font-weight:700; }
+.badge-limit { background:var(--yellow-light);color:var(--yellow);padding:2px 10px;border-radius:20px;font-size:12px;font-weight:700; }
+.winner-box { display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0; }
+.winner-card { border-radius:12px;padding:20px;text-align:center; }
+.winner-card.gpt { background:linear-gradient(135deg,#0072ff11,#00c6ff11);border:2px solid #0072ff33; }
+.winner-card.gem { background:linear-gradient(135deg,#11998e11,#38ef7d11);border:2px solid #11998e33; }
+.wc-emoji { font-size:36px;margin-bottom:8px; }
+.wc-name { font-weight:900;font-size:15px;margin-bottom:6px; }
+.wc-tag { font-size:12px;color:var(--text-sub);margin-bottom:10px; }
+.wc-strong { font-size:13px;color:var(--text);line-height:1.6; }
+.summary-box { background:linear-gradient(135deg,#FF6B35,#FF8C5A);border-radius:16px;padding:28px;margin-top:32px; }
+.summary-title { font-size:18px;font-weight:700;color:#fff;margin-bottom:16px; }
+.summary-list { list-style:none; }
+.summary-list li { color:rgba(255,255,255,.95);font-size:14px;padding:6px 0 6px 24px;position:relative; }
+.summary-list li::before { content:'✓';position:absolute;left:0;font-weight:700; }
+.related { background:var(--white);padding:40px 20px;border-top:1px solid var(--border); }
+.related-title { font-size:20px;font-weight:700;margin-bottom:20px; }
+.related-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:14px; }
+.related-card { background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px;text-decoration:none;color:var(--text);transition:.2s; }
+.related-card:hover { border-color:var(--primary);transform:translateY(-2px); }
+.rc-badge { font-size:11px;font-weight:700;color:var(--primary);margin-bottom:6px; }
+.rc-title { font-size:14px;font-weight:700;line-height:1.4;margin-bottom:6px; }
+.rc-meta { font-size:12px;color:var(--text-sub); }
+footer { background:var(--text);color:rgba(255,255,255,.7);text-align:center;padding:32px 20px;font-size:13px; }
+footer a { color:rgba(255,255,255,.5);text-decoration:none; }
+@media(max-width:600px){ .winner-box{grid-template-columns:1fr} .related-grid{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <a href="index.html" class="nav-home">← 홈으로</a>
+  </div>
+</header>
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">🤖 AI 도구</div>
+    <h1 class="article-title">GPT-5.4 vs 제미나이 3.1 Flash-Lite — 2026 AI 비교 완벽 정리</h1>
+    <p class="article-desc">최신 AI 두 가지를 직접 비교했어요. 무료 범위, 속도, 성능, 추천 용도까지 한눈에 정리합니다.</p>
+    <div class="article-meta">
+      <span>📅 2026.03.13</span><span class="meta-divider">|</span><span>⏱ 5분 읽기</span>
+    </div>
+  </div>
+</div>
+<div class="thumb-wrap">
+  <div class="thumb-inner">
+    <div style="font-size:64px;margin-bottom:12px">🟦 ⚡ 🟩</div>
+    <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.3">GPT-5.4 vs 제미나이 3.1 Flash-Lite<br>2026 AI 대격돌</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.7);margin-top:10px">일잘러닷컴 직접 비교 | 2026년 3월 기준</div>
+  </div>
+</div>
+<div class="article-content">
+  <div class="container">
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> 두 모델이 뭔가요?</li>
+        <li><span class="toc-num">2</span> 한눈에 비교표</li>
+        <li><span class="toc-num">3</span> 성능 & 속도</li>
+        <li><span class="toc-num">4</span> 무료로 쓸 수 있는 범위</li>
+        <li><span class="toc-num">5</span> 용도별 추천</li>
+        <li><span class="toc-num">6</span> 핵심 요약</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🧠</span> 두 모델이 뭔가요?</h2>
+      <p>AI 세계는 2026년에도 빠르게 발전하고 있어요. 현재 가장 많이 쓰이는 두 AI를 비교해 볼게요.</p>
+      <div class="winner-box">
+        <div class="winner-card gpt">
+          <div class="wc-emoji">🟦</div>
+          <div class="wc-name">GPT-5.4</div>
+          <div class="wc-tag">OpenAI · ChatGPT</div>
+          <div class="wc-strong">OpenAI의 최신 모델. 코딩·수학·복잡한 추론에 강점. 2026년 인텔리전스 지수 공동 1위(57점).</div>
+        </div>
+        <div class="winner-card gem">
+          <div class="wc-emoji">🟩</div>
+          <div class="wc-name">제미나이 3.1 Flash-Lite</div>
+          <div class="wc-tag">Google · Gemini</div>
+          <div class="wc-strong">구글의 초고속·경량 모델. 빠른 응답과 넓은 무료 범위가 장점. Google 검색 연동 최적화.</div>
+        </div>
+      </div>
+      <div class="highlight-box orange"><div class="hb-icon">💡</div><div><div class="hb-title">Flash-Lite가 뭔가요?</div><p class="hb-text">제미나이 3.1 라인업 중 가장 가볍고 빠른 버전이에요. Pro보다 성능은 낮지만 속도와 비용 면에서 압도적으로 유리하고, 무료 사용 범위도 가장 넓어요.</p></div></div>
+    </div>
+    <div class="section">
+      <h2 class="section-title"><span class="ico">⚖️</span> 한눈에 비교표</h2>
+      <table class="compare-table">
+        <tr><th>항목</th><th>GPT-5.4</th><th>제미나이 3.1 Flash-Lite</th></tr>
+        <tr><td>출시사</td><td>OpenAI</td><td>Google</td></tr>
+        <tr><td>무료 사용</td><td><span class="badge-limit">제한적</span></td><td><span class="badge-yes">관대한 무료 API</span></td></tr>
+        <tr><td>속도</td><td><span class="badge-limit">보통</span></td><td><span class="badge-yes">매우 빠름</span></td></tr>
+        <tr><td>지능 지수</td><td><strong>공동 1위 (57점)</strong></td><td>경량 버전 (속도 우선)</td></tr>
+        <tr><td>컨텍스트 창</td><td>~128K 토큰</td><td><span class="badge-yes">최대 1M 토큰</span></td></tr>
+        <tr><td>웹 검색</td><td><span class="badge-yes">지원</span></td><td><span class="badge-yes">Google 검색 직접 연동</span></td></tr>
+        <tr><td>이미지 생성</td><td><span class="badge-yes">GPT Image</span></td><td><span class="badge-yes">Nano Banana Pro</span></td></tr>
+        <tr><td>한국어</td><td><span class="badge-yes">우수</span></td><td><span class="badge-yes">우수</span></td></tr>
+        <tr><td>API 가격</td><td>비쌈</td><td><span class="badge-yes">약 5배 저렴</span></td></tr>
+      </table>
+    </div>
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🏆</span> 성능 & 속도</h2>
+      <p style="margin-bottom:16px">2026년 3월 기준 AI 인텔리전스 지수(Artificial Analysis) 상위 순위예요.</p>
+      <table class="compare-table">
+        <tr><th>순위</th><th>모델</th><th>점수</th><th>특징</th></tr>
+        <tr><td>🥇 공동1위</td><td>제미나이 3.1 Pro Preview</td><td>57</td><td>Google 최강</td></tr>
+        <tr><td>🥇 공동1위</td><td><strong>GPT-5.4 (xhigh)</strong></td><td>57</td><td>OpenAI 최강</td></tr>
+        <tr><td>3위</td><td>GPT-5.3 Codex (xhigh)</td><td>54</td><td>코딩 특화</td></tr>
+        <tr><td>4위</td><td>Claude Opus 4.6</td><td>53</td><td>Anthropic 최강</td></tr>
+        <tr><td>참고</td><td>제미나이 3.1 Flash-Lite</td><td>경량</td><td>속도·가성비 우선</td></tr>
+      </table>
+      <div class="highlight-box blue"><div class="hb-icon">⚡</div><div><div class="hb-title">Flash-Lite = 속도 최우선</div><p class="hb-text">제미나이 3.1 Flash-Lite는 Pro보다 성능은 낮지만, 빠른 번역·요약·일상 질문에서는 GPT-5.4보다 훨씬 빠른 응답 속도를 자랑해요. Gemini 3 Flash는 벤치마크 일부에서 GPT-5.2를 앞서기도 했어요.</p></div></div>
+    </div>
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🆓</span> 무료로 쓸 수 있는 범위</h2>
+      <table class="compare-table">
+        <tr><th>구분</th><th>ChatGPT (GPT-5.4)</th><th>Gemini (Flash-Lite)</th></tr>
+        <tr><td>무료 플랜</td><td>하루 제한 있음<br>GPT-5는 유료 플랜 위주</td><td>앱 무료<br>Flash-Lite가 가장 관대</td></tr>
+        <tr><td>API 무료</td><td>초기 크레딧만 제공</td><td><span class="badge-yes">Google AI Studio 무료 쿼터</span></td></tr>
+        <tr><td>유료 구독</td><td>Plus $20/월<br>Pro $200/월</td><td>Advanced $19.99/월<br>Ultra ~$30/월</td></tr>
+        <tr><td>가성비</td><td><span class="badge-limit">보통</span></td><td><span class="badge-yes">Flash-Lite 압도적 저렴</span></td></tr>
+      </table>
+      <div class="highlight-box green"><div class="hb-icon">✅</div><div><div class="hb-title">API 비용 비교</div><p class="hb-text">제미나이 2.5 Flash 기준 입력 토큰당 $0.30/M. GPT-5 대비 약 5배 저렴해요. 개인 개발자나 소규모 프로젝트엔 제미나이가 훨씬 유리합니다.</p></div></div>
+    </div>
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🎯</span> 용도별 추천</h2>
+      <table class="compare-table">
+        <tr><th>용도</th><th>추천 AI</th><th>이유</th></tr>
+        <tr><td>코딩 · 수학 · 복잡한 추론</td><td>🟦 GPT-5.4</td><td>추론 성능 최상위</td></tr>
+        <tr><td>빠른 검색 · 일상 질문</td><td>🟩 제미나이 Flash</td><td>속도 + Google 검색 연동</td></tr>
+        <tr><td>긴 문서 분석 (100페이지+)</td><td>🟩 제미나이 Flash</td><td>컨텍스트 창 최대 1M 토큰</td></tr>
+        <tr><td>창작 · 글쓰기</td><td>🟦 GPT-5.4</td><td>자연스러운 문체</td></tr>
+        <tr><td>무료로 쓰고 싶을 때</td><td>🟩 제미나이 Flash-Lite</td><td>가장 관대한 무료 범위</td></tr>
+        <tr><td>Google Workspace 연동</td><td>🟩 제미나이</td><td>Gmail·Docs·Drive 통합</td></tr>
+        <tr><td>이미지 생성</td><td>둘 다 우수</td><td>ChatGPT=GPT Image / Gemini=Nano Banana</td></tr>
+      </table>
+      <div class="highlight-box yellow"><div class="hb-icon">💡</div><div><div class="hb-title">결론: 둘 다 쓰세요!</div><p class="hb-text">GPT-5.4는 복잡한 작업에, 제미나이 Flash-Lite는 빠른 일상 질문에 각각 쓰면 돼요. 둘 다 무료 범위 안에서 써보면 자연스럽게 내 용도에 맞는 AI를 알게 됩니다.</p></div></div>
+    </div>
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list">
+        <li>GPT-5.4와 제미나이 3.1 Pro는 2026년 AI 지능 지수 공동 1위 (57점)</li>
+        <li>Flash-Lite = 경량 버전 — 속도 최우선, 무료 범위 가장 넓음</li>
+        <li>복잡한 추론·코딩 → GPT-5.4 / 빠른 검색·요약 → 제미나이 Flash-Lite</li>
+        <li>API 비용: 제미나이 Flash가 GPT-5.4 대비 약 5배 저렴</li>
+        <li>긴 문서는 제미나이 (컨텍스트 1M 토큰), 창작·글쓰기는 GPT-5.4</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-chatgpt.html" class="related-card"><div class="rc-badge">🤖 AI 도구</div><div class="rc-title">ChatGPT 완벽 정리</div><div class="rc-meta">2025.03.10 · 5분</div></a>
+      <a href="post-gemini.html" class="related-card"><div class="rc-badge">🤖 AI 도구</div><div class="rc-title">Gemini 사용법 완벽 정리</div><div class="rc-meta">2025.03.11 · 4분</div></a>
+      <a href="post-claude.html" class="related-card"><div class="rc-badge">🤖 AI 도구</div><div class="rc-title">Claude AI 사용법</div><div class="rc-meta">2025.03.12 · 4분</div></a>
+      <a href="post-vibecoding.html" class="related-card"><div class="rc-badge">🤖 AI 도구</div><div class="rc-title">바이브코딩 설치 가이드</div><div class="rc-meta">2026.03.13 · 5분</div></a>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>© 2026 일잘러닷컴 · <a href="privacy.html">개인정보처리방침</a></p>
+  <p style="margin-top:8px;font-size:12px;opacity:.6">본 사이트의 정보는 참고용이며 정확성을 보장하지 않습니다.</p>
+</footer>
+</body>
+</html>
