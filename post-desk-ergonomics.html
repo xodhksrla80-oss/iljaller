@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>거북목 예방! 일잘러의 데스크테리어 황금 비율 — 모니터·키보드·스트레칭 — 일잘러닷컴</title>
+<meta name="description" content="모니터 높이, 키보드 배치, 50분 집중 5분 스트레칭 루틴까지. 지속 가능한 업무를 위한 데스크 셋업 황금 비율 정리했어요.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #FF6B35; --primary-light: #FFF0EB;
+  --blue: #3B82F6; --blue-light: #EFF6FF;
+  --green: #10B981; --green-light: #ECFDF5;
+  --yellow: #F59E0B; --yellow-light: #FFFBEB;
+  --text: #1A1A2E; --text-sub: #64748B;
+  --border: #E8EDF2; --bg: #F8FAFC; --white: #FFFFFF;
+}
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+header { background: var(--white); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.header-inner { max-width: 780px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; }
+.logo span { color: var(--primary); }
+.header-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 500; }
+.header-nav a { text-decoration: none; color: var(--text-sub); transition: color 0.15s; }
+.header-nav a:hover { color: var(--primary); }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+.article-header { background: var(--white); padding: 36px 0 0; }
+.cat-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--blue-light); color: var(--blue); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+.article-title { font-family: 'Noto Serif KR', serif; font-size: clamp(24px, 5vw, 34px); font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 14px; }
+.article-title em { font-style: normal; color: var(--primary); border-bottom: 3px solid var(--primary); }
+.article-desc { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+.meta-divider { color: var(--border); }
+.read-time { color: var(--primary); font-weight: 600; }
+.thumbnail-wrap { padding: 40px 20px; }
+.thumbnail-inner { max-width: 780px; margin: 0 auto; text-align: center; border-radius: 20px; padding: 40px 24px; }
+.article-content { background: var(--white); padding: 36px 0 48px; }
+.toc { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 36px; }
+.toc-title { font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li { font-size: 14px; color: var(--text-sub); display: flex; align-items: center; gap: 8px; }
+.toc-num { width: 20px; height: 20px; background: var(--primary); color: white; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section { margin-bottom: 44px; }
+.section-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.section-title .ico { width: 32px; height: 32px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+strong { color: var(--text); font-weight: 700; }
+.highlight-box { border-radius: 12px; padding: 20px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.hb-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.highlight-box.orange .hb-title { color: var(--primary); }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.green .hb-title { color: var(--green); }
+.highlight-box.yellow .hb-title { color: var(--yellow); }
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+.step-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.step-item { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; transition: box-shadow 0.15s; }
+.step-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); border-color: var(--primary); }
+.step-num { width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; font-size: 14px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-content-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+.step-content-desc { font-size: 13px; color: var(--text-sub); margin: 0; line-height: 1.6; }
+.compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+.compare-table th { padding: 14px 16px; font-size: 13px; font-weight: 700; text-align: center; }
+.compare-table th:first-child { background: #F1F5F9; color: var(--text-sub); }
+.compare-table th:nth-child(2) { background: #EF4444; color: white; }
+.compare-table th:nth-child(3) { background: #10B981; color: white; }
+.compare-table td { padding: 13px 16px; font-size: 14px; border-bottom: 1px solid var(--border); text-align: center; }
+.compare-table td:first-child { text-align: left; font-weight: 600; background: #FAFAFA; color: var(--text); }
+.compare-table tr:last-child td { border-bottom: none; }
+.info-card { background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%); border-radius: 16px; padding: 28px; margin: 28px 0; color: white; text-align: center; }
+.info-card-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; margin-bottom: 10px; }
+.info-card-num { font-family: 'Noto Serif KR', serif; font-size: 56px; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+.info-card-num span { font-size: 28px; }
+.info-card-desc { font-size: 14px; opacity: 0.85; }
+.summary-box { background: linear-gradient(135deg, var(--primary) 0%, #FF8C5A 100%); border-radius: 16px; padding: 28px; margin: 36px 0; color: white; }
+.summary-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.summary-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.summary-list li { font-size: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+.summary-list li::before { content: '✓'; font-weight: 900; color: #FDE68A; flex-shrink: 0; margin-top: 1px; }
+.related { background: var(--bg); padding: 36px 0; border-top: 1px solid var(--border); }
+.related-title { font-size: 18px; font-weight: 700; margin-bottom: 18px; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.related-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 18px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: block; }
+.related-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(255,107,53,0.1); transform: translateY(-2px); }
+.rc-badge { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.rc-title { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+.rc-meta { font-size: 12px; color: var(--text-sub); }
+footer { background: var(--text); color: #94A3B8; font-size: 13px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 40px 24px 20px; display: flex; gap: 48px; flex-wrap: wrap; }
+.footer-logo { font-size: 20px; font-weight: 900; margin-bottom: 10px; }
+.footer-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+.footer-col-title { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; }
+.footer-links a:hover { color: #FF6B35; }
+.footer-bottom { text-align: center; padding: 16px; font-size: 12px; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.1); }
+.reading-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); z-index: 9999; transition: width 0.1s; width: 0%; }
+@media (max-width: 600px) { .header-nav { display: none; } .related-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="reading-bar" id="readingBar"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+      <a href="index.html?cat=생활정보">💡 생활정보</a>
+      <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+      <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ARTICLE HEADER -->
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">⚡ 꿀팁</div>
+    <h1 class="article-title">거북목 예방! 일잘러의<br><em>데스크테리어 황금 비율</em></h1>
+    <p class="article-desc">AI 도구도 중요하지만, 그걸 사용하는 몸이 고장 나면 무용지물입니다. 모니터 높이부터 50분 스트레칭 루틴까지 — 지속 가능한 업무의 기본 인프라를 정리했어요.</p>
+    <div class="article-meta">
+      <span>📅 2026.03.14</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 4분 읽기</span>
+    </div>
+  </div>
+</div>
+
+<!-- THUMBNAIL -->
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);">
+    <div style="font-size:72px; margin-bottom:16px">🖥️</div>
+    <div style="font-size:22px; font-weight:900; color:#fff; line-height:1.3;">지속 가능한 성장의<br><span style="color:#FDE68A">가장 기본적인 인프라</span></div>
+    <div style="font-size:13px; color:rgba(255,255,255,0.75); margin-top:12px">일잘러닷컴 직접 정리 | 2026년 기준</div>
+  </div>
+</div>
+
+<!-- ARTICLE CONTENT -->
+<div class="article-content">
+  <div class="container">
+
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> 잘못된 자세가 만드는 결과</li>
+        <li><span class="toc-num">2</span> 모니터 높이와 눈높이의 황금 비율</li>
+        <li><span class="toc-num">3</span> 손목 터널 증후군 막는 키보드·마우스 배치</li>
+        <li><span class="toc-num">4</span> 50분 집중 + 5분 스트레칭 루틴</li>
+        <li><span class="toc-num">5</span> 핵심 요약</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">⚠️</span> 잘못된 자세가 만드는 결과</h2>
+      <p>하루 8시간 이상 컴퓨터 앞에 앉아있는 직장인이라면 <strong>자세가 곧 건강 비용</strong>이에요. 잘못된 셋업은 서서히 몸을 망가뜨립니다.</p>
+      <table class="compare-table">
+        <tr><th>잘못된 습관</th><th>단기 증상</th><th>장기 결과</th></tr>
+        <tr><td>모니터가 너무 낮음</td><td>목 통증, 두통</td><td>경추 디스크</td></tr>
+        <tr><td>키보드가 너무 높음</td><td>손목·팔꿈치 통증</td><td>손목 터널 증후군</td></tr>
+        <tr><td>의자가 너무 낮음</td><td>허리 통증</td><td>요추 디스크</td></tr>
+        <tr><td>장시간 같은 자세</td><td>근육 경직</td><td>만성 근골격계 질환</td></tr>
+      </table>
+      <div class="highlight-box orange">
+        <div class="hb-icon">💡</div>
+        <div>
+          <div class="hb-title">일잘러 관점</div>
+          <p class="hb-text">지속 가능한 성장을 위한 <strong>가장 기본적인 인프라 투자</strong>는 몸입니다. 좋은 의자 하나가 병원비 수백만 원을 아껴줘요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🖥</span> 모니터 높이와 눈높이의 황금 비율</h2>
+      <p>거북목의 가장 큰 원인은 <strong>모니터가 눈높이보다 낮은 것</strong>이에요. 아래를 내려다보는 자세가 목에 가하는 압력은 정면을 볼 때의 3배입니다.</p>
+      <div class="info-card">
+        <div class="info-card-label">모니터 황금 위치</div>
+        <div class="info-card-num">15<span>°</span></div>
+        <div class="info-card-desc">화면 상단이 눈높이에서 15° 아래를 향하는 것이 이상적입니다</div>
+      </div>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">모니터 중앙이 눈높이와 같거나 살짝 아래</div>
+            <p class="step-content-desc">앉았을 때 정면을 바라보며 눈이 모니터 상단 1/3 지점을 보면 이상적. 너무 높아도 목 통증이 생겨요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">모니터 거리 — 팔 한 뼘 (50~70cm)</div>
+            <p class="step-content-desc">팔을 뻗어 손끝이 닿는 거리가 적당해요. 너무 가까우면 눈 피로, 너무 멀면 앞으로 구부리게 됩니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">노트북 사용자 — 외장 모니터 또는 스탠드 필수</div>
+            <p class="step-content-desc">노트북 화면은 구조상 항상 아래를 내려다보게 됩니다. 스탠드로 높이거나 외장 모니터 연결이 필수예요.</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box blue">
+        <div class="hb-icon">📱</div>
+        <div>
+          <div class="hb-title">저렴한 해결책 — 노트북 스탠드</div>
+          <p class="hb-text">노트북 스탠드 1~3만 원 투자로 거북목을 상당 부분 예방할 수 있어요. 외장 키보드와 함께 쓰면 완벽합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">⌨️</span> 손목 터널 증후군 막는 키보드·마우스 배치</h2>
+      <p>손목 터널 증후군은 <strong>손목이 꺾인 채로 오래 작업</strong>할 때 생겨요. 배치만 바꿔도 크게 예방할 수 있어요.</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">키보드 — 손목이 수평이어야 함</div>
+            <p class="step-content-desc">키보드 뒤쪽 받침대는 내리는 게 맞아요. 받침대 올리면 손목이 꺾여 압박이 심해집니다. 팔꿈치 높이와 키보드가 같은 선이 이상적.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">마우스 — 팔꿈치 가까이, 손목 패드 활용</div>
+            <p class="step-content-desc">마우스를 멀리 두면 어깨 근육에 지속적으로 부하가 걸려요. 팔꿈치 가까이, 손목 받침대 위에 손목을 올리는 자세가 좋아요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">의자 높이 — 발이 바닥에 평평하게</div>
+            <p class="step-content-desc">발이 공중에 떠있거나 무릎이 90도 이상 꺾이면 허리에 부담이 와요. 발판(풋레스트)을 쓰는 것도 좋습니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box green">
+        <div class="hb-icon">🖱</div>
+        <div>
+          <div class="hb-title">버티컬 마우스 고려해보세요</div>
+          <p class="hb-text">버티컬(세로형) 마우스는 손목을 자연스러운 악수 자세로 유지해줍니다. 이미 손목 통증이 있다면 효과가 확실해요. 2~5만 원대.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">⏰</span> 50분 집중 + 5분 스트레칭 루틴</h2>
+      <p>최고의 자세도 <strong>같은 자세를 2시간 이상 유지하면</strong> 근육이 굳어요. 주기적인 움직임이 필수입니다.</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">알람</div>
+          <div>
+            <div class="step-content-title">50분 타이머 맞추기 — 핸드폰 알람 추천</div>
+            <p class="step-content-desc">포모도로 기법처럼 50분 집중 + 5분 휴식. 핸드폰 알람이 가장 확실해요. 알람 이름을 "일어나서 스트레칭"으로 설정하면 더 잘 됩니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">목</div>
+          <div>
+            <div class="step-content-title">목 좌우 기울이기 — 각 10초씩</div>
+            <p class="step-content-desc">귀를 어깨 쪽으로 기울여 10초 유지, 반대쪽 반복. 뒤로 젖히는 것보다 좌우 스트레칭이 훨씬 효과적이에요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">손목</div>
+          <div>
+            <div class="step-content-title">손목 돌리기 + 손가락 펴기 — 30초</div>
+            <p class="step-content-desc">양손 주먹 쥐었다 펼치기 10회, 손목 시계방향·반시계방향 각 5회. 타이핑이 많은 날일수록 더 자주.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">등</div>
+          <div>
+            <div class="step-content-title">의자에서 등 기지개 켜기 — 10초</div>
+            <p class="step-content-desc">팔을 들어 올리며 등을 뒤로 젖혀주세요. 가슴 근육이 펴지면서 구부정한 자세를 리셋해줍니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box yellow">
+        <div class="hb-icon">📱</div>
+        <div>
+          <div class="hb-title">앱 추천 — Stretchly (무료)</div>
+          <p class="hb-text">PC에 설치하는 무료 앱으로, 설정한 시간마다 자동으로 스트레칭 알림을 띄워줍니다. 강제로 화면을 어둡게 해서 쉬게 만드는 기능도 있어요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list">
+        <li>모니터 — 눈높이와 같거나 살짝 아래, 거리는 팔 한 뼘 (50~70cm)</li>
+        <li>키보드 뒤 받침대는 내리는 게 맞음 — 손목 수평 유지가 핵심</li>
+        <li>마우스는 팔꿈치 가까이, 손목 받침대 활용</li>
+        <li>50분 집중 후 5분 스트레칭 — 알람으로 강제 실행할 것</li>
+        <li>몸이 망가지면 모든 효율이 제로 — 인프라 투자부터</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- RELATED -->
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-apps.html" class="related-card">
+        <div class="rc-badge">📱 앱 리뷰</div>
+        <div class="rc-title">직장인 생산성 앱 TOP 5</div>
+        <div class="rc-meta">2025.03.09 · 4분</div>
+      </a>
+      <a href="post-shortcuts.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">맥북·윈도우 단축키 모음</div>
+        <div class="rc-meta">2025.03.01 · 3분</div>
+      </a>
+      <a href="post-free-tools.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">유료인 줄 알았는데 무료 툴</div>
+        <div class="rc-meta">2025.02.25 · 4분</div>
+      </a>
+      <a href="post-energy-checklist.html" class="related-card">
+        <div class="rc-badge">💡 생활정보</div>
+        <div class="rc-title">에너지 효율 10분 체크리스트</div>
+        <div class="rc-meta">2026.03.14 · 4분</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><a href="index.html" style="color:inherit;text-decoration:none">일잘러<span style="color:#FF6B35">닷컴</span></a></div>
+      <div class="footer-desc">AI 도구, 앱 리뷰, 생활 꿀팁까지.<br>직접 써보고 정리한 정보만 올립니다.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">카테고리</div>
+      <div class="footer-links">
+        <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+        <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+        <a href="index.html?cat=생활정보">💡 생활정보</a>
+        <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">사이트 정보</div>
+      <div class="footer-links">
+        <a href="index.html">홈으로</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 일잘러닷컴 · All rights reserved</div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const progress = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>
