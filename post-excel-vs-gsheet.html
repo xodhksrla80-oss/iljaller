@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>엑셀 vs 구글 시트 — 직장인 뭐 써야 할까? 2026 비교 — 일잘러닷컴</title>
+<meta name="description" content="엑셀과 구글 시트 무엇을 써야 할지 모르겠다면? 기능, 협업, 가격, 용도별 완벽 비교. 직장인 상황별 추천까지.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #FF6B35; --primary-light: #FFF0EB;
+  --blue: #3B82F6; --blue-light: #EFF6FF;
+  --green: #10B981; --green-light: #ECFDF5;
+  --yellow: #F59E0B; --yellow-light: #FFFBEB;
+  --text: #1A1A2E; --text-sub: #64748B;
+  --border: #E8EDF2; --bg: #F8FAFC; --white: #FFFFFF;
+}
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+header { background: var(--white); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.header-inner { max-width: 780px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; }
+.logo span { color: var(--primary); }
+.header-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 500; }
+.header-nav a { text-decoration: none; color: var(--text-sub); transition: color 0.15s; }
+.header-nav a:hover { color: var(--primary); }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+.article-header { background: var(--white); padding: 36px 0 0; }
+.cat-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--yellow-light); color: var(--yellow); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+.article-title { font-family: 'Noto Serif KR', serif; font-size: clamp(24px, 5vw, 34px); font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 14px; }
+.article-title em { font-style: normal; color: var(--primary); border-bottom: 3px solid var(--primary); }
+.article-desc { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+.meta-divider { color: var(--border); }
+.read-time { color: var(--primary); font-weight: 600; }
+.thumbnail-wrap { padding: 40px 20px; }
+.thumbnail-inner { max-width: 780px; margin: 0 auto; text-align: center; border-radius: 20px; padding: 40px 24px; }
+.article-content { background: var(--white); padding: 36px 0 48px; }
+.toc { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 36px; }
+.toc-title { font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li { font-size: 14px; color: var(--text-sub); display: flex; align-items: center; gap: 8px; }
+.toc-num { width: 20px; height: 20px; background: var(--primary); color: white; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section { margin-bottom: 44px; }
+.section-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.section-title .ico { width: 32px; height: 32px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+strong { color: var(--text); font-weight: 700; }
+.highlight-box { border-radius: 12px; padding: 20px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.hb-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.highlight-box.orange .hb-title { color: var(--primary); }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.green .hb-title { color: var(--green); }
+.highlight-box.yellow .hb-title { color: var(--yellow); }
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+.compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+.compare-table th { padding: 14px 16px; font-size: 13px; font-weight: 700; text-align: center; }
+.compare-table th:first-child { background: #F1F5F9; color: var(--text-sub); }
+.compare-table th:nth-child(2) { background: #217346; color: white; }
+.compare-table th:nth-child(3) { background: #0F9D58; color: white; }
+.compare-table td { padding: 13px 16px; font-size: 14px; border-bottom: 1px solid var(--border); text-align: center; }
+.compare-table td:first-child { text-align: left; font-weight: 600; background: #FAFAFA; color: var(--text); }
+.compare-table tr:last-child td { border-bottom: none; }
+.badge-yes { color: var(--green); font-weight: 700; }
+.badge-no { color: var(--text-sub); }
+.badge-limit { display: inline-block; background: var(--yellow-light); color: var(--yellow); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 100px; }
+.step-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.step-item { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; transition: box-shadow 0.15s; }
+.step-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); border-color: var(--primary); }
+.step-num { min-width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; font-size: 13px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0 6px; }
+.step-content-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+.step-content-desc { font-size: 13px; color: var(--text-sub); margin: 0; line-height: 1.6; }
+.verdict-box { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+.verdict-card { border-radius: 14px; padding: 20px; text-align: center; }
+.verdict-card.excel { background: linear-gradient(135deg, #1a6b3a, #217346); color: white; }
+.verdict-card.gsheet { background: linear-gradient(135deg, #0b6e3a, #0F9D58); color: white; }
+.verdict-title { font-size: 18px; font-weight: 900; margin-bottom: 8px; }
+.verdict-emoji { font-size: 36px; margin-bottom: 8px; }
+.verdict-desc { font-size: 12px; opacity: 0.85; line-height: 1.6; }
+.summary-box { background: linear-gradient(135deg, var(--primary) 0%, #FF8C5A 100%); border-radius: 16px; padding: 28px; margin: 36px 0; color: white; }
+.summary-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.summary-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.summary-list li { font-size: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+.summary-list li::before { content: '✓'; font-weight: 900; color: #FDE68A; flex-shrink: 0; margin-top: 1px; }
+.related { background: var(--bg); padding: 36px 0; border-top: 1px solid var(--border); }
+.related-title { font-size: 18px; font-weight: 700; margin-bottom: 18px; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.related-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 18px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: block; }
+.related-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(255,107,53,0.1); transform: translateY(-2px); }
+.rc-badge { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.rc-title { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+.rc-meta { font-size: 12px; color: var(--text-sub); }
+footer { background: var(--text); color: #94A3B8; font-size: 13px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 40px 24px 20px; display: flex; gap: 48px; flex-wrap: wrap; }
+.footer-logo { font-size: 20px; font-weight: 900; margin-bottom: 10px; }
+.footer-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+.footer-col-title { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; }
+.footer-links a:hover { color: #FF6B35; }
+.footer-bottom { text-align: center; padding: 16px; font-size: 12px; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.1); }
+.reading-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); z-index: 9999; transition: width 0.1s; width: 0%; }
+@media (max-width: 600px) { .header-nav { display: none; } .related-grid { grid-template-columns: 1fr; } .verdict-box { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="reading-bar" id="readingBar"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+      <a href="index.html?cat=생활정보">💡 생활정보</a>
+      <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+      <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">⚡ 꿀팁</div>
+    <h1 class="article-title">엑셀 vs 구글 시트<br><em>직장인 뭐 써야 할까?</em> 2026 완벽 비교</h1>
+    <p class="article-desc">둘 다 쓸 줄 아는데 어떤 걸 써야 할지 모르겠다면? 기능, 협업, 가격, 속도까지 — 상황별로 딱 정리했어요.</p>
+    <div class="article-meta">
+      <span>📅 2026.03.16</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 4분 읽기</span>
+    </div>
+  </div>
+</div>
+
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner" style="background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);">
+    <div style="font-size:56px; margin-bottom:12px">📊 vs 📗</div>
+    <div style="font-size:22px; font-weight:900; color:#fff; line-height:1.3;">엑셀 vs 구글 시트<br><span style="color:#FDE68A">상황별 정답이 따로 있어요</span></div>
+    <div style="font-size:13px; color:rgba(255,255,255,0.75); margin-top:12px">일잘러닷컴 직접 정리 | 2026년 기준</div>
+  </div>
+</div>
+
+<div class="article-content">
+  <div class="container">
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> 핵심 기능 비교</li>
+        <li><span class="toc-num">2</span> 협업·공유 비교</li>
+        <li><span class="toc-num">3</span> 가격·접근성 비교</li>
+        <li><span class="toc-num">4</span> 상황별 추천</li>
+        <li><span class="toc-num">5</span> 핵심 요약</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">⚙️</span> 핵심 기능 비교</h2>
+      <p>두 툴 모두 스프레드시트의 기본 기능은 동일해요. 차이는 <strong>고급 기능과 처리 속도</strong>에서 갈립니다.</p>
+      <table class="compare-table">
+        <tr><th>기능</th><th>📊 엑셀</th><th>📗 구글 시트</th></tr>
+        <tr><td>기본 함수</td><td><span class="badge-yes">✓ 동일</span></td><td><span class="badge-yes">✓ 동일</span></td></tr>
+        <tr><td>피벗 테이블</td><td><span class="badge-yes">✓ 강력함</span></td><td>기본 수준</td></tr>
+        <tr><td>대용량 데이터</td><td><span class="badge-yes">✓ 빠름</span></td><td>느려질 수 있음</td></tr>
+        <tr><td>차트·시각화</td><td><span class="badge-yes">✓ 세밀함</span></td><td>무난함</td></tr>
+        <tr><td>매크로·VBA</td><td><span class="badge-yes">✓ 강력</span></td><td><span class="badge-limit">Apps Script</span></td></tr>
+        <tr><td>AI 기능(Copilot)</td><td><span class="badge-yes">✓ 내장</span></td><td><span class="badge-limit">Gemini 연동</span></td></tr>
+      </table>
+      <div class="highlight-box blue">
+        <div class="hb-icon">📊</div>
+        <div>
+          <div class="hb-title">데이터 분석은 엑셀이 여전히 강해요</div>
+          <p class="hb-text">10만 행 이상 대용량 데이터, 복잡한 피벗, VBA 자동화가 필요하다면 엑셀이 압도적입니다. 재무·회계팀이 엑셀을 고집하는 이유예요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🤝</span> 협업·공유 — 구글 시트 압승</h2>
+      <p>협업 측면에서는 구글 시트가 <strong>설계 철학 자체가 다릅니다.</strong> 엑셀은 개인 문서를 공유하는 개념이고, 구글 시트는 처음부터 공동 작업을 위해 만들어졌어요.</p>
+      <table class="compare-table">
+        <tr><th>협업 기능</th><th>📊 엑셀</th><th>📗 구글 시트</th></tr>
+        <tr><td>실시간 공동 편집</td><td><span class="badge-limit">OneDrive 필요</span></td><td><span class="badge-yes">✓ 기본 제공</span></td></tr>
+        <tr><td>링크 공유</td><td><span class="badge-limit">설정 복잡</span></td><td><span class="badge-yes">✓ 1초</span></td></tr>
+        <tr><td>댓글·메모</td><td>기본 수준</td><td><span class="badge-yes">✓ 강력</span></td></tr>
+        <tr><td>버전 기록</td><td><span class="badge-limit">수동 저장</span></td><td><span class="badge-yes">✓ 자동 무제한</span></td></tr>
+        <tr><td>오프라인 사용</td><td><span class="badge-yes">✓ 기본</span></td><td><span class="badge-limit">설정 필요</span></td></tr>
+      </table>
+      <div class="highlight-box green">
+        <div class="hb-icon">✅</div>
+        <div>
+          <div class="hb-title">구글 시트 최고의 장점 — 자동 저장 + 버전 기록</div>
+          <p class="hb-text">실수로 데이터를 지워도 걱정 없어요. 파일 → 버전 기록 → 버전 기록 보기에서 과거 어떤 시점으로도 복원 가능합니다. 저장 버튼이 없어도 돼요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">💰</span> 가격·접근성</h2>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">📊</div>
+          <div>
+            <div class="step-content-title">엑셀 — Microsoft 365 구독 월 9,900원~</div>
+            <p class="step-content-desc">개인 플랜 기준. 회사에서 라이선스 제공하는 경우 무료. 일회성 구매(영구 라이선스)는 30만원대.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">📗</div>
+          <div>
+            <div class="step-content-title">구글 시트 — 완전 무료 (구글 계정만 있으면)</div>
+            <p class="step-content-desc">구글 드라이브 15GB 무료 포함. 추가 저장공간이 필요하면 Google One 구독 (월 2,900원~).</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box yellow">
+        <div class="hb-icon">💸</div>
+        <div>
+          <div class="hb-title">개인·스타트업이라면 구글 시트가 답</div>
+          <p class="hb-text">비용 없이 협업까지 되는 구글 시트는 스타트업과 프리랜서에게 최적이에요. 직장에서 엑셀을 써야 한다면 집에서는 구글 시트로 연습해두는 것도 좋아요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🎯</span> 상황별 최종 추천</h2>
+      <div class="verdict-box">
+        <div class="verdict-card excel">
+          <div class="verdict-emoji">📊</div>
+          <div class="verdict-title">엑셀 추천</div>
+          <div class="verdict-desc">대용량 데이터 분석<br>복잡한 재무·회계 작업<br>VBA 자동화 필요<br>회사가 MS 오피스 환경</div>
+        </div>
+        <div class="verdict-card gsheet">
+          <div class="verdict-emoji">📗</div>
+          <div class="verdict-title">구글 시트 추천</div>
+          <div class="verdict-desc">팀 협업·실시간 공동 편집<br>외부 공유가 잦은 업무<br>비용 절감이 필요할 때<br>어디서든 접속 필요</div>
+        </div>
+      </div>
+      <div class="highlight-box orange">
+        <div class="hb-icon">💡</div>
+        <div>
+          <div class="hb-title">일잘러 관점 — 둘 다 쓰는 게 정답</div>
+          <p class="hb-text">실무에서 가장 좋은 방법은 <strong>구글 시트로 협업·공유 → 최종본만 엑셀로 변환</strong>하는 방식이에요. 구글 시트에서 .xlsx로 다운로드가 되니까 호환도 완벽합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list">
+        <li>엑셀 — 대용량 데이터·피벗·VBA 자동화에서 압도적</li>
+        <li>구글 시트 — 협업·공유·버전관리·비용에서 압도적</li>
+        <li>구글 시트는 완전 무료, 엑셀은 월 9,900원~</li>
+        <li>실무 꿀팁: 구글 시트로 협업 → 최종본 .xlsx 변환</li>
+        <li>둘 다 쓸 줄 알면 어떤 직장에서도 통함</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-shortcuts.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">맥북·윈도우 단축키 모음</div>
+        <div class="rc-meta">2025.03.01 · 3분</div>
+      </a>
+      <a href="post-free-tools.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">유료인 줄 알았는데 무료 툴</div>
+        <div class="rc-meta">2025.02.25 · 4분</div>
+      </a>
+      <a href="post-apps.html" class="related-card">
+        <div class="rc-badge">📱 앱 리뷰</div>
+        <div class="rc-title">직장인 생산성 앱 TOP 5</div>
+        <div class="rc-meta">2025.03.09 · 4분</div>
+      </a>
+      <a href="post-desk-ergonomics.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">거북목 예방 데스크 황금 비율</div>
+        <div class="rc-meta">2026.03.14 · 4분</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><a href="index.html" style="color:inherit;text-decoration:none">일잘러<span style="color:#FF6B35">닷컴</span></a></div>
+      <div class="footer-desc">AI 도구, 앱 리뷰, 생활 꿀팁까지.<br>직접 써보고 정리한 정보만 올립니다.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">카테고리</div>
+      <div class="footer-links">
+        <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+        <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+        <a href="index.html?cat=생활정보">💡 생활정보</a>
+        <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">사이트 정보</div>
+      <div class="footer-links">
+        <a href="index.html">홈으로</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 일잘러닷컴 · All rights reserved</div>
+</footer>
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const progress = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>

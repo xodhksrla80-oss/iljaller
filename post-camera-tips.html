@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아이폰·갤럭시 카메라 숨겨진 기능 총정리 — 몰랐으면 손해 — 일잘러닷컴</title>
+<meta name="description" content="아이폰·갤럭시 카메라에 숨겨진 기능들, 알고 나면 사진 퀄리티가 달라져요. 프로 모드, 야간 모드, 숨은 설정까지 총정리.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --primary: #FF6B35; --primary-light: #FFF0EB; --blue: #3B82F6; --blue-light: #EFF6FF; --green: #10B981; --green-light: #ECFDF5; --yellow: #F59E0B; --yellow-light: #FFFBEB; --text: #1A1A2E; --text-sub: #64748B; --border: #E8EDF2; --bg: #F8FAFC; --white: #FFFFFF; }
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+header { background: var(--white); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.header-inner { max-width: 780px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; }
+.logo span { color: var(--primary); }
+.header-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 500; }
+.header-nav a { text-decoration: none; color: var(--text-sub); transition: color 0.15s; }
+.header-nav a:hover { color: var(--primary); }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+.article-header { background: var(--white); padding: 36px 0 0; }
+.cat-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--blue-light); color: var(--blue); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+.article-title { font-family: 'Noto Serif KR', serif; font-size: clamp(24px, 5vw, 34px); font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 14px; }
+.article-title em { font-style: normal; color: var(--primary); border-bottom: 3px solid var(--primary); }
+.article-desc { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+.meta-divider { color: var(--border); }
+.read-time { color: var(--primary); font-weight: 600; }
+.thumbnail-wrap { padding: 40px 20px; }
+.thumbnail-inner { max-width: 780px; margin: 0 auto; text-align: center; border-radius: 20px; padding: 40px 24px; }
+.article-content { background: var(--white); padding: 36px 0 48px; }
+.toc { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 36px; }
+.toc-title { font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li { font-size: 14px; color: var(--text-sub); display: flex; align-items: center; gap: 8px; }
+.toc-num { width: 20px; height: 20px; background: var(--primary); color: white; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section { margin-bottom: 44px; }
+.section-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.section-title .ico { width: 32px; height: 32px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+strong { color: var(--text); font-weight: 700; }
+.highlight-box { border-radius: 12px; padding: 20px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.hb-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.highlight-box.orange .hb-title { color: var(--primary); }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.green .hb-title { color: var(--green); }
+.highlight-box.yellow .hb-title { color: var(--yellow); }
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+.tip-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.tip-item { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; transition: box-shadow 0.15s; }
+.tip-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); border-color: var(--primary); }
+.tip-badge { min-width: 52px; height: 28px; border-radius: 6px; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.tip-badge.ios { background: #1C1C1E; color: white; }
+.tip-badge.aos { background: #0F9D58; color: white; }
+.tip-badge.both { background: var(--primary); color: white; }
+.tip-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+.tip-desc { font-size: 13px; color: var(--text-sub); margin: 0; line-height: 1.6; }
+.summary-box { background: linear-gradient(135deg, var(--primary) 0%, #FF8C5A 100%); border-radius: 16px; padding: 28px; margin: 36px 0; color: white; }
+.summary-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.summary-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.summary-list li { font-size: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+.summary-list li::before { content: '✓'; font-weight: 900; color: #FDE68A; flex-shrink: 0; margin-top: 1px; }
+.related { background: var(--bg); padding: 36px 0; border-top: 1px solid var(--border); }
+.related-title { font-size: 18px; font-weight: 700; margin-bottom: 18px; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.related-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 18px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: block; }
+.related-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(255,107,53,0.1); transform: translateY(-2px); }
+.rc-badge { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.rc-title { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+.rc-meta { font-size: 12px; color: var(--text-sub); }
+footer { background: var(--text); color: #94A3B8; font-size: 13px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 40px 24px 20px; display: flex; gap: 48px; flex-wrap: wrap; }
+.footer-logo { font-size: 20px; font-weight: 900; margin-bottom: 10px; }
+.footer-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+.footer-col-title { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; }
+.footer-links a:hover { color: #FF6B35; }
+.footer-bottom { text-align: center; padding: 16px; font-size: 12px; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.1); }
+.reading-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); z-index: 9999; transition: width 0.1s; width: 0%; }
+.legend { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-sub); }
+.legend-dot { width: 12px; height: 12px; border-radius: 3px; }
+@media (max-width: 600px) { .header-nav { display: none; } .related-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="reading-bar" id="readingBar"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+      <a href="index.html?cat=생활정보">💡 생활정보</a>
+      <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+      <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">📱 앱 리뷰</div>
+    <h1 class="article-title">아이폰·갤럭시 카메라<br><em>숨겨진 기능 총정리</em> — 몰랐으면 손해</h1>
+    <p class="article-desc">수백만 원짜리 카메라를 들고 다니면서 기본 기능만 쓰고 있진 않나요? 알고 나면 사진 퀄리티가 완전히 달라지는 숨겨진 기능들을 정리했습니다.</p>
+    <div class="article-meta">
+      <span>📅 2026.03.16</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 5분 읽기</span>
+    </div>
+  </div>
+</div>
+
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner" style="background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);">
+    <div style="font-size:64px; margin-bottom:12px">📷</div>
+    <div style="font-size:22px; font-weight:900; color:#fff; line-height:1.3;">수백만 원짜리 카메라<br><span style="color:#10B981">제대로 쓰고 있나요?</span></div>
+    <div style="font-size:13px; color:rgba(255,255,255,0.75); margin-top:12px">일잘러닷컴 직접 정리 | 2026년 기준</div>
+  </div>
+</div>
+
+<div class="article-content">
+  <div class="container">
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> 아이폰 숨겨진 기능 5가지</li>
+        <li><span class="toc-num">2</span> 갤럭시 숨겨진 기능 5가지</li>
+        <li><span class="toc-num">3</span> 공통 꿀팁 — 사진 퀄리티 높이는 법</li>
+        <li><span class="toc-num">4</span> 핵심 요약</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🍎</span> 아이폰 숨겨진 카메라 기능 5가지</h2>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#1C1C1E"></div> 아이폰 전용</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#0F9D58"></div> 갤럭시 전용</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#FF6B35"></div> 공통</div>
+      </div>
+      <div class="tip-list">
+        <div class="tip-item">
+          <div class="tip-badge ios">iOS</div>
+          <div>
+            <div class="tip-title">📸 셔터 버튼 길게 누르기 → 연속 촬영</div>
+            <p class="tip-desc">셔터를 길게 누르면 연속 촬영 모드로 전환돼요. 움직이는 피사체나 아이·반려동물 사진에 최고. 길게 누른 후 왼쪽으로 슬라이드하면 동영상 촬영.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-badge ios">iOS</div>
+          <div>
+            <div class="tip-title">🔒 AF/AE 잠금 — 초점·노출 고정</div>
+            <p class="tip-desc">피사체를 길게 누르면 AF/AE 잠금 표시가 뜨며 초점과 노출이 고정됩니다. 구도를 바꿔도 같은 밝기와 초점 유지 — 역광 사진에 필수.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-badge ios">iOS</div>
+          <div>
+            <div class="tip-title">🌙 야간 모드 수동 조절</div>
+            <p class="tip-desc">야간 모드 활성화 시 상단 타이머 아이콘을 눌러 노출 시간을 수동으로 조절할 수 있어요. 삼각대 있을 때 Max로 설정하면 놀라운 야경 사진이 나와요.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-badge ios">iOS</div>
+          <div>
+            <div class="tip-title">📐 수평계(레벨) 표시</div>
+            <p class="tip-desc">설정 → 카메라 → 격자 켜기. 격자와 함께 수평계가 표시돼 기울어진 사진을 막아줘요. 건물·음식 사진에서 프로처럼 찍히는 비결.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-badge ios">iOS</div>
+          <div>
+            <div class="tip-title">🎬 시네마틱 모드 심도 후편집</div>
+            <p class="tip-desc">시네마틱 모드로 찍은 영상은 사후에 초점 위치와 심도를 변경할 수 있어요. 사진 앱에서 영상 선택 → 편집 → 초점 포인트 변경.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🤖</span> 갤럭시 숨겨진 카메라 기능 5가지</h2>
+      <div class="tip-list">
+        <div class="tip-item">
+          <div class="tip-badge aos">Galaxy</div>
+          <div>
+            <div class="tip-title">🎛 프로 모드 — 수동 ISO·셔터스피드</div>
+            <p class="tip-desc">카메라 → 더보기 → 프로. ISO(빛 민감도)와 셔터스피드를 직접 조절할 수 있어요. 야경은 ISO 낮게 + 셔터 느리게, 운동 촬영은 셔터 빠르게.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-badge aos">Galaxy</div>
+          <div>
+            <div class="tip-title">🔭 Space Zoom 망원 활용법</div>
+            <p class="tip-desc">S 시리즈 기준 최대 100배 줌. 10~30배 구간이 실제 화질이 좋은 범위예요. 100배는 참고용으로만. 줌 시 화면 구석 미리보기 창으로 위치 확인 가능.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-badge aos">Galaxy</div>
+          <div>
+            <div class="tip-title">🎨 Expert RAW 앱 — 전문가급 촬영</div>
+            <p class="tip-desc">갤럭시 전용 무료 앱. RAW 파일로 저장해 후보정 폭이 넓어져요. 아스트로 모드로 별 궤적 사진도 촬영 가능. 갤럭시 S·Z 폴드 시리즈 지원.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-badge aos">Galaxy</div>
+          <div>
+            <div class="tip-title">📹 디렉터스 뷰 — 전·후면 동시 촬영</div>
+            <p class="tip-desc">카메라 → 더보기 → 디렉터스 뷰. 전면·후면 카메라를 동시에 촬영하며 분할 화면이나 PIP(화면 속 화면) 형태로 저장. 브이로그 유튜버에게 최고.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-badge aos">Galaxy</div>
+          <div>
+            <div class="tip-title">✨ 리마스터 — AI 사진 보정</div>
+            <p class="tip-desc">갤러리에서 사진 선택 → 연필 아이콘 → 리마스터. AI가 자동으로 노이즈 제거, 선명도 향상, 색상 최적화를 해줘요. 오래된 사진도 새것처럼.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">✨</span> 공통 꿀팁 — 사진 퀄리티 높이는 법</h2>
+      <div class="tip-list">
+        <div class="tip-item">
+          <div class="tip-badge both">공통</div>
+          <div>
+            <div class="tip-title">📏 볼륨 버튼으로 셔터 — 흔들림 방지</div>
+            <p class="tip-desc">화면을 터치하면 폰이 흔들려요. 볼륨 업/다운 버튼을 셔터로 쓰면 훨씬 안정적. 이어폰 볼륨 버튼으로도 찍을 수 있어요.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-badge both">공통</div>
+          <div>
+            <div class="tip-title">🌅 골든 아워를 노려라</div>
+            <p class="tip-desc">일출 후 1시간, 일몰 전 1시간이 빛이 가장 아름다운 골든 아워예요. 같은 구도라도 이 시간대에 찍으면 필터 없이도 SNS 퀄리티가 나옵니다.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-badge both">공통</div>
+          <div>
+            <div class="tip-title">🧽 렌즈 닦기 — 가장 기본이자 최강</div>
+            <p class="tip-desc">폰 카메라 렌즈에 지문이나 먼지가 묻으면 사진이 뿌옇게 나와요. 찍기 전 옷소매로 한 번 닦는 것만으로도 사진 선명도가 확 달라집니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box orange">
+        <div class="hb-icon">💡</div>
+        <div>
+          <div class="hb-title">가장 빠른 카메라 실행 방법</div>
+          <p class="hb-text">아이폰: 잠금 화면에서 오른쪽 하단 카메라 아이콘 길게 누르기. 갤럭시: 전원 버튼 2번 빠르게 누르기. 결정적인 순간을 놓치지 마세요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list">
+        <li>아이폰 — 셔터 길게 누르기(연속 촬영), AF/AE 잠금, 야간 모드 수동 조절</li>
+        <li>갤럭시 — 프로 모드 수동 설정, Expert RAW 앱, 리마스터 AI 보정</li>
+        <li>공통 — 볼륨 버튼 셔터, 렌즈 닦기, 골든 아워 활용</li>
+        <li>빠른 카메라: 아이폰 잠금화면 아이콘 / 갤럭시 전원 2번</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-apps.html" class="related-card">
+        <div class="rc-badge">📱 앱 리뷰</div>
+        <div class="rc-title">직장인 생산성 앱 TOP 5</div>
+        <div class="rc-meta">2025.03.09 · 4분</div>
+      </a>
+      <a href="post-phone-storage.html" class="related-card">
+        <div class="rc-badge">📱 앱 리뷰</div>
+        <div class="rc-title">스마트폰 용량 20GB 확보하기</div>
+        <div class="rc-meta">2026.03.14 · 4분</div>
+      </a>
+      <a href="post-free-tools.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">유료인 줄 알았는데 무료 툴</div>
+        <div class="rc-meta">2025.02.25 · 4분</div>
+      </a>
+      <a href="post-shortcuts.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">맥북·윈도우 단축키 모음</div>
+        <div class="rc-meta">2025.03.01 · 3분</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><a href="index.html" style="color:inherit;text-decoration:none">일잘러<span style="color:#FF6B35">닷컴</span></a></div>
+      <div class="footer-desc">AI 도구, 앱 리뷰, 생활 꿀팁까지.<br>직접 써보고 정리한 정보만 올립니다.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">카테고리</div>
+      <div class="footer-links">
+        <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+        <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+        <a href="index.html?cat=생활정보">💡 생활정보</a>
+        <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">사이트 정보</div>
+      <div class="footer-links">
+        <a href="index.html">홈으로</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 일잘러닷컴 · All rights reserved</div>
+</footer>
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const progress = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>

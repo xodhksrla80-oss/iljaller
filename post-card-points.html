@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>카드 포인트 현금화하는 법 — 모르면 그냥 소멸 — 일잘러닷컴</title>
+<meta name="description" content="신용카드 포인트 그냥 두면 소멸됩니다. 계좌 입금, 현금 인출, 기부까지 — 카드사별 포인트 현금화 방법 총정리.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --primary: #FF6B35; --primary-light: #FFF0EB; --blue: #3B82F6; --blue-light: #EFF6FF; --green: #10B981; --green-light: #ECFDF5; --yellow: #F59E0B; --yellow-light: #FFFBEB; --text: #1A1A2E; --text-sub: #64748B; --border: #E8EDF2; --bg: #F8FAFC; --white: #FFFFFF; }
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+header { background: var(--white); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.header-inner { max-width: 780px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; }
+.logo span { color: var(--primary); }
+.header-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 500; }
+.header-nav a { text-decoration: none; color: var(--text-sub); transition: color 0.15s; }
+.header-nav a:hover { color: var(--primary); }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+.article-header { background: var(--white); padding: 36px 0 0; }
+.cat-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--primary-light); color: var(--primary); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+.article-title { font-family: 'Noto Serif KR', serif; font-size: clamp(24px, 5vw, 34px); font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 14px; }
+.article-title em { font-style: normal; color: var(--primary); border-bottom: 3px solid var(--primary); }
+.article-desc { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+.meta-divider { color: var(--border); }
+.read-time { color: var(--primary); font-weight: 600; }
+.thumbnail-wrap { padding: 40px 20px; }
+.thumbnail-inner { max-width: 780px; margin: 0 auto; text-align: center; border-radius: 20px; padding: 40px 24px; }
+.article-content { background: var(--white); padding: 36px 0 48px; }
+.toc { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 36px; }
+.toc-title { font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li { font-size: 14px; color: var(--text-sub); display: flex; align-items: center; gap: 8px; }
+.toc-num { width: 20px; height: 20px; background: var(--primary); color: white; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section { margin-bottom: 44px; }
+.section-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.section-title .ico { width: 32px; height: 32px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+strong { color: var(--text); font-weight: 700; }
+.highlight-box { border-radius: 12px; padding: 20px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.hb-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.highlight-box.orange .hb-title { color: var(--primary); }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.green .hb-title { color: var(--green); }
+.highlight-box.yellow .hb-title { color: var(--yellow); }
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+.step-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.step-item { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; transition: box-shadow 0.15s; }
+.step-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); border-color: var(--primary); }
+.step-num { min-width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; font-size: 13px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0 4px; }
+.step-content-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+.step-content-desc { font-size: 13px; color: var(--text-sub); margin: 0; line-height: 1.6; }
+.compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+.compare-table th { padding: 14px 16px; font-size: 13px; font-weight: 700; text-align: center; }
+.compare-table th:first-child { background: #F1F5F9; color: var(--text-sub); }
+.compare-table th:nth-child(2) { background: var(--primary); color: white; }
+.compare-table th:nth-child(3) { background: var(--blue); color: white; }
+.compare-table td { padding: 13px 16px; font-size: 14px; border-bottom: 1px solid var(--border); text-align: center; }
+.compare-table td:first-child { text-align: left; font-weight: 600; background: #FAFAFA; color: var(--text); }
+.compare-table tr:last-child td { border-bottom: none; }
+.info-card { background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); border-radius: 16px; padding: 28px; margin: 28px 0; color: #1A1A2E; text-align: center; }
+.info-card-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; margin-bottom: 10px; font-weight: 700; }
+.info-card-num { font-family: 'Noto Serif KR', serif; font-size: 48px; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+.info-card-num span { font-size: 24px; }
+.info-card-desc { font-size: 14px; opacity: 0.85; font-weight: 600; }
+.summary-box { background: linear-gradient(135deg, var(--primary) 0%, #FF8C5A 100%); border-radius: 16px; padding: 28px; margin: 36px 0; color: white; }
+.summary-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.summary-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.summary-list li { font-size: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+.summary-list li::before { content: '✓'; font-weight: 900; color: #FDE68A; flex-shrink: 0; margin-top: 1px; }
+.related { background: var(--bg); padding: 36px 0; border-top: 1px solid var(--border); }
+.related-title { font-size: 18px; font-weight: 700; margin-bottom: 18px; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.related-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 18px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: block; }
+.related-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(255,107,53,0.1); transform: translateY(-2px); }
+.rc-badge { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.rc-title { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+.rc-meta { font-size: 12px; color: var(--text-sub); }
+footer { background: var(--text); color: #94A3B8; font-size: 13px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 40px 24px 20px; display: flex; gap: 48px; flex-wrap: wrap; }
+.footer-logo { font-size: 20px; font-weight: 900; margin-bottom: 10px; }
+.footer-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+.footer-col-title { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; }
+.footer-links a:hover { color: #FF6B35; }
+.footer-bottom { text-align: center; padding: 16px; font-size: 12px; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.1); }
+.reading-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); z-index: 9999; transition: width 0.1s; width: 0%; }
+@media (max-width: 600px) { .header-nav { display: none; } .related-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="reading-bar" id="readingBar"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+      <a href="index.html?cat=생활정보">💡 생활정보</a>
+      <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+      <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">💡 생활정보</div>
+    <h1 class="article-title">카드 포인트 현금화하는 법<br><em>모르면 그냥 소멸</em></h1>
+    <p class="article-desc">신용카드 포인트, 그냥 두면 5년 뒤 소멸됩니다. 계좌 입금, ATM 현금 인출, 세금 납부까지 — 포인트 하나도 남기지 않는 완벽 활용법 정리했어요.</p>
+    <div class="article-meta">
+      <span>📅 2026.03.16</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 4분 읽기</span>
+    </div>
+  </div>
+</div>
+
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner" style="background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);">
+    <div style="font-size:72px; margin-bottom:12px">💳</div>
+    <div style="font-size:22px; font-weight:900; color:#1A1A2E; line-height:1.3;">포인트는 현금이다<br><span style="color:#FF6B35">모르면 그냥 소멸</span></div>
+    <div style="font-size:13px; color:rgba(0,0,0,0.5); margin-top:12px">일잘러닷컴 직접 정리 | 2026년 기준</div>
+  </div>
+</div>
+
+<div class="article-content">
+  <div class="container">
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> 포인트 소멸, 얼마나 될까</li>
+        <li><span class="toc-num">2</span> 카드사별 현금화 방법</li>
+        <li><span class="toc-num">3</span> 여신금융협회 통합 조회</li>
+        <li><span class="toc-num">4</span> 포인트 똑똑하게 쓰는 법</li>
+        <li><span class="toc-num">5</span> 핵심 요약</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">💸</span> 포인트 소멸, 얼마나 될까</h2>
+      <p>매년 소멸되는 카드 포인트가 <strong>수천억 원</strong>에 달해요. 본인도 모르게 포인트가 쌓이고, 모르고 있다가 소멸되는 경우가 대부분입니다.</p>
+      <div class="info-card">
+        <div class="info-card-label">연간 소멸 카드 포인트 (업계 추산)</div>
+        <div class="info-card-num">3,000<span>억+</span></div>
+        <div class="info-card-desc">쓰지 않아 소멸되는 포인트 — 1인당 평균 수만 원 수준</div>
+      </div>
+      <div class="highlight-box yellow">
+        <div class="hb-icon">⚠️</div>
+        <div>
+          <div class="hb-title">포인트 유효기간은 보통 5년</div>
+          <p class="hb-text">대부분 카드사 포인트의 유효기간은 적립일로부터 5년이에요. 단, 카드사마다 다를 수 있으니 앱에서 확인 필수. 연회비 납부 카드는 연장되는 경우도 있어요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🏦</span> 카드사별 현금화 방법</h2>
+      <table class="compare-table">
+        <tr><th>카드사</th><th>현금화 방법</th><th>최소 포인트</th></tr>
+        <tr><td>삼성카드</td><td>앱 → 포인트 → 계좌 입금</td><td>1,000P~</td></tr>
+        <tr><td>신한카드</td><td>앱 → My → 포인트 조회 → 현금전환</td><td>1,000P~</td></tr>
+        <tr><td>KB국민카드</td><td>앱 → 포인트리 → 현금전환</td><td>1,000P~</td></tr>
+        <tr><td>현대카드</td><td>앱 → M포인트 → 현금화</td><td>500P~</td></tr>
+        <tr><td>롯데카드</td><td>앱 → 포인트 → 계좌 입금</td><td>1,000P~</td></tr>
+        <tr><td>우리카드</td><td>앱 → WON포인트 → 현금전환</td><td>1,000P~</td></tr>
+      </table>
+      <div class="highlight-box blue">
+        <div class="hb-icon">🏧</div>
+        <div>
+          <div class="hb-title">ATM에서도 포인트 현금 인출 가능</div>
+          <p class="hb-text">일부 카드사는 은행 ATM에서 포인트를 현금으로 뽑을 수 있어요. 해당 카드 삽입 → 포인트 현금서비스 선택. 수수료가 발생할 수 있으니 앱 입금이 더 유리합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🔍</span> 여신금융협회 통합 조회 — 한 번에 다 확인</h2>
+      <p>카드가 여러 장이라면 카드사 앱을 일일이 확인하기 번거로워요. <strong>여신금융협회 카드포인트 통합조회</strong>에서 한 번에 확인하고 계좌 입금까지 가능합니다.</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">카드포인트 통합조회 접속</div>
+            <p class="step-content-desc">포털에서 "카드포인트 통합조회" 검색 또는 cardpoint.or.kr 접속. 금융감독원 파인(fine.fss.or.kr)에서도 연결 가능.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">본인인증 → 전체 카드 포인트 조회</div>
+            <p class="step-content-desc">공동인증서 또는 간편인증으로 로그인. 보유한 모든 카드의 포인트를 한 화면에서 확인 가능.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">계좌 입금 신청</div>
+            <p class="step-content-desc">원하는 카드사 선택 → 입금할 계좌번호 입력 → 신청 완료. 1~3 영업일 내 입금돼요.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">💡</span> 포인트 똑똑하게 쓰는 법</h2>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">💰</div>
+          <div>
+            <div class="step-content-title">청구 할인으로 쓰는 게 가장 유리</div>
+            <p class="step-content-desc">포인트 1P = 1원이지만 청구 할인으로 쓰면 1.2~1.5배 가치가 나는 카드도 있어요. 카드사 앱에서 "청구 할인"으로 사용하는 옵션 확인하세요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">🏛</div>
+          <div>
+            <div class="step-content-title">세금·공과금 납부에 사용</div>
+            <p class="step-content-desc">위택스(지방세), 인터넷지로(국세)에서 카드 포인트로 세금 납부 가능. 포인트 소멸 걱정 없이 유용하게 쓸 수 있어요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">✈️</div>
+          <div>
+            <div class="step-content-title">항공 마일리지 전환 — 가치 극대화</div>
+            <p class="step-content-desc">일부 카드사는 포인트를 대한항공/아시아나 마일리지로 전환 가능. 마일리지 비즈니스석 발권 시 포인트 가치가 현금의 2~3배.</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box orange">
+        <div class="hb-icon">💡</div>
+        <div>
+          <div class="hb-title">일잘러 관점 — 연말에 꼭 챙기세요</div>
+          <p class="hb-text">12월에 포인트 만료가 몰려 있는 경우가 많아요. 연말 전에 여신금융협회 통합조회로 한 번씩 확인하는 습관만 들여도 <strong>매년 수만 원을 지킬 수 있어요.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list">
+        <li>연간 소멸 포인트 수천억 원 — 본인 카드 포인트 지금 확인하세요</li>
+        <li>카드사 앱 → 포인트 → 계좌 입금으로 즉시 현금화 (최소 500~1,000P)</li>
+        <li>여신금융협회 cardpoint.or.kr에서 모든 카드 한 번에 통합 조회 가능</li>
+        <li>청구 할인 &gt; 세금 납부 &gt; 현금화 순서로 활용하면 가치 극대화</li>
+        <li>연말에 꼭 한 번 포인트 만료 확인 루틴 만들기</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-tax.html" class="related-card">
+        <div class="rc-badge">💡 생활정보</div>
+        <div class="rc-title">연말정산 환급 최대로 받는 법</div>
+        <div class="rc-meta">2025.02.28 · 5분</div>
+      </a>
+      <a href="post-fuel-tax.html" class="related-card">
+        <div class="rc-badge">💡 생활정보</div>
+        <div class="rc-title">2026 유류세 인하 연장</div>
+        <div class="rc-meta">2026.03.13 · 3분</div>
+      </a>
+      <a href="post-electricity.html" class="related-card">
+        <div class="rc-badge">💡 생활정보</div>
+        <div class="rc-title">2026 전기요금 변화</div>
+        <div class="rc-meta">2026.03.13 · 4분</div>
+      </a>
+      <a href="post-rent.html" class="related-card">
+        <div class="rc-badge">💡 생활정보</div>
+        <div class="rc-title">월세 계약 전 체크리스트</div>
+        <div class="rc-meta">2025.03.03 · 6분</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><a href="index.html" style="color:inherit;text-decoration:none">일잘러<span style="color:#FF6B35">닷컴</span></a></div>
+      <div class="footer-desc">AI 도구, 앱 리뷰, 생활 꿀팁까지.<br>직접 써보고 정리한 정보만 올립니다.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">카테고리</div>
+      <div class="footer-links">
+        <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+        <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+        <a href="index.html?cat=생활정보">💡 생활정보</a>
+        <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">사이트 정보</div>
+      <div class="footer-links">
+        <a href="index.html">홈으로</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 일잘러닷컴 · All rights reserved</div>
+</footer>
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const progress = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>
