@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>네이버 앱 숨겨진 기능 총정리 — 몰랐으면 손해인 꿀기능 — 일잘러닷컴</title>
+<meta name="description" content="네이버 앱 매일 쓰면서 모르던 기능들. 클로바 노트, 스마트보드, 그린닷까지 — 알면 업무 속도가 달라지는 숨겨진 기능 총정리.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523482751370898" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --primary: #FF6B35; --primary-light: #FFF0EB; --blue: #3B82F6; --blue-light: #EFF6FF; --green: #10B981; --green-light: #ECFDF5; --yellow: #F59E0B; --yellow-light: #FFFBEB; --text: #1A1A2E; --text-sub: #64748B; --border: #E8EDF2; --bg: #F8FAFC; --white: #FFFFFF; }
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+header { background: var(--white); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.header-inner { max-width: 780px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; } .logo span { color: var(--primary); }
+.header-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 500; }
+.header-nav a { text-decoration: none; color: var(--text-sub); transition: color 0.15s; } .header-nav a:hover { color: var(--primary); }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+.article-header { background: var(--white); padding: 36px 0 0; }
+.cat-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+.article-title { font-family: 'Noto Serif KR', serif; font-size: clamp(24px, 5vw, 34px); font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 14px; }
+.article-title em { font-style: normal; color: var(--primary); border-bottom: 3px solid var(--primary); }
+.article-desc { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+.meta-divider { color: var(--border); } .read-time { color: var(--primary); font-weight: 600; }
+.thumbnail-wrap { padding: 40px 20px; }
+.thumbnail-inner { max-width: 780px; margin: 0 auto; text-align: center; border-radius: 20px; padding: 40px 24px; }
+.article-content { background: var(--white); padding: 36px 0 48px; }
+.toc { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 36px; }
+.toc-title { font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li { font-size: 14px; color: var(--text-sub); display: flex; align-items: center; gap: 8px; }
+.toc-num { width: 20px; height: 20px; background: var(--primary); color: white; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section { margin-bottom: 44px; }
+.section-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.section-title .ico { width: 32px; height: 32px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; } strong { color: var(--text); font-weight: 700; }
+.highlight-box { border-radius: 12px; padding: 20px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.hb-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.highlight-box.orange .hb-title { color: var(--primary); } .highlight-box.blue .hb-title { color: var(--blue); } .highlight-box.green .hb-title { color: var(--green); } .highlight-box.yellow .hb-title { color: var(--yellow); }
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+.step-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.step-item { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; transition: box-shadow 0.15s; }
+.step-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); border-color: var(--primary); }
+.step-num { min-width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; font-size: 13px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0 4px; }
+.step-content-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+.step-content-desc { font-size: 13px; color: var(--text-sub); margin: 0; line-height: 1.6; }
+.compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+.compare-table th { padding: 14px 16px; font-size: 13px; font-weight: 700; text-align: center; }
+.compare-table th:first-child { background: #F1F5F9; color: var(--text-sub); }
+.compare-table th:nth-child(2) { background: #03C75A; color: white; }
+.compare-table th:nth-child(3) { background: #7C3AED; color: white; }
+.compare-table td { padding: 13px 16px; font-size: 14px; border-bottom: 1px solid var(--border); text-align: center; }
+.compare-table td:first-child { text-align: left; font-weight: 600; background: #FAFAFA; color: var(--text); }
+.compare-table tr:last-child td { border-bottom: none; }
+.badge-yes { color: var(--green); font-weight: 700; } .badge-no { color: var(--text-sub); }
+.badge-limit { display: inline-block; background: var(--yellow-light); color: var(--yellow); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 100px; }
+.summary-box { background: linear-gradient(135deg, var(--primary) 0%, #FF8C5A 100%); border-radius: 16px; padding: 28px; margin: 36px 0; color: white; }
+.summary-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.summary-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.summary-list li { font-size: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+.summary-list li::before { content: '✓'; font-weight: 900; color: #FDE68A; flex-shrink: 0; margin-top: 1px; }
+.related { background: var(--bg); padding: 36px 0; border-top: 1px solid var(--border); }
+.related-title { font-size: 18px; font-weight: 700; margin-bottom: 18px; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.related-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 18px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: block; }
+.related-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(255,107,53,0.1); transform: translateY(-2px); }
+.rc-badge { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.rc-title { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+.rc-meta { font-size: 12px; color: var(--text-sub); }
+footer { background: var(--text); color: #94A3B8; font-size: 13px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 40px 24px 20px; display: flex; gap: 48px; flex-wrap: wrap; }
+.footer-logo { font-size: 20px; font-weight: 900; margin-bottom: 10px; }
+.footer-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+.footer-col-title { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; } .footer-links a:hover { color: #FF6B35; }
+.footer-bottom { text-align: center; padding: 16px; font-size: 12px; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.1); }
+.reading-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); z-index: 9999; transition: width 0.1s; width: 0%; }
+@media (max-width: 600px) { .header-nav { display: none; } .related-grid { grid-template-columns: 1fr; } }
+.cat-badge { background: var(--blue-light); color: var(--blue); }
+</style>
+</head>
+<body>
+<div class="reading-bar" id="readingBar"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+      <a href="index.html?cat=생활정보">💡 생활정보</a>
+      <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+      <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">📱 앱 리뷰</div>
+    <h1 class="article-title">네이버 앱 <em>숨겨진 기능 총정리</em><br>몰랐으면 진짜 손해</h1>
+    <p class="article-desc">매일 쓰는 네이버 앱, 검색만 하고 있나요? 클로바 노트, 그린닷, 스마트보드, 네이버 NOW까지 — 알고 나면 업무 생산성이 달라지는 기능들을 정리했습니다.</p>
+    <div class="article-meta">
+      <span>📅 2026.03.17</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 4분 읽기</span>
+    </div>
+  </div>
+</div>
+
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner" style="background: linear-gradient(135deg, #03C75A 0%, #00A8E8 100%);">
+    <div style="font-size:72px; margin-bottom:12px">🟢</div>
+    <div style="font-size:22px; font-weight:900; color:#fff; line-height:1.3;">네이버 앱<br><span style="color:#FDE68A">검색만 하면 10%도 못 쓰는 거예요</span></div>
+    <div style="font-size:13px; color:rgba(255,255,255,0.75); margin-top:12px">일잘러닷컴 직접 정리 | 2026년 기준</div>
+  </div>
+</div>
+
+<div class="article-content">
+  <div class="container">
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> 그린닷 — 화면 어디서든 네이버</li>
+        <li><span class="toc-num">2</span> 클로바 노트 — AI 회의록 자동 작성</li>
+        <li><span class="toc-num">3</span> 스마트보드 — 키보드 위의 네이버</li>
+        <li><span class="toc-num">4</span> 렌즈 — 카메라로 검색하기</li>
+        <li><span class="toc-num">5</span> 숨겨진 꿀기능 5가지 추가</li>
+        <li><span class="toc-num">6</span> 핵심 요약</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🟢</span> 그린닷 — 화면 어디서든 네이버 검색</h2>
+      <p>그린닷은 스마트폰 화면 어디서든 <strong>떠다니는 네이버 검색 버튼</strong>이에요. 다른 앱 쓰다가 앱 전환 없이 바로 검색할 수 있어요.</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">켜기</div>
+          <div>
+            <div class="step-content-title">네이버 앱 → 설정 → 그린닷 켜기</div>
+            <p class="step-content-desc">켜면 화면 가장자리에 초록 점이 생겨요. 언제든 탭하면 검색창이 뜹니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">활용</div>
+          <div>
+            <div class="step-content-title">텍스트 선택 → 그린닷으로 바로 검색</div>
+            <p class="step-content-desc">웹페이지나 카톡에서 모르는 단어 선택 → 그린닷 탭 → 앱 전환 없이 검색 결과 확인.</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box blue">
+        <div class="hb-icon">💡</div>
+        <div>
+          <div class="hb-title">번역도 바로 돼요</div>
+          <p class="hb-text">영어 텍스트 선택 → 그린닷 → 파파고 번역 바로 가능. 영문 계약서나 이메일 볼 때 앱 전환 없이 번역할 수 있어요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🎙</span> 클로바 노트 — AI가 회의록 자동 작성</h2>
+      <p>클로바 노트는 <strong>음성을 텍스트로 변환</strong>해주는 AI 서비스예요. 회의 녹음하면 자동으로 내용 정리까지 해줍니다.</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">네이버 앱 → 클로바 노트 or 별도 앱 설치</div>
+            <p class="step-content-desc">CLOVA Note 앱 또는 네이버 앱 내 클로바 노트 접속. 네이버 계정으로 로그인.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">녹음 시작 → AI가 실시간 텍스트 변환</div>
+            <p class="step-content-desc">회의 중 녹음 버튼만 누르면 돼요. AI가 화자를 구분하고 발언 내용을 텍스트로 정리해줍니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">AI 요약 기능으로 핵심만 추출</div>
+            <p class="step-content-desc">긴 회의도 AI가 핵심 내용만 요약. 회의록 작성 시간이 90% 줄어요.</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box green">
+        <div class="hb-icon">✅</div>
+        <div>
+          <div class="hb-title">무료로 월 300분 사용 가능</div>
+          <p class="hb-text">클로바 노트 무료 플랜으로 월 300분 녹음·변환 가능. 주 1~2회 회의라면 무료로 충분해요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">⌨️</span> 스마트보드 — 키보드 위의 네이버</h2>
+      <p>스마트보드는 네이버 전용 키보드예요. 타이핑하다가 <strong>키보드 위에서 바로 검색·번역·지도</strong>를 사용할 수 있어요.</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">설치</div>
+          <div>
+            <div class="step-content-title">네이버 스마트보드 앱 설치 → 기본 키보드 설정</div>
+            <p class="step-content-desc">앱 설치 후 스마트폰 키보드 설정에서 네이버 스마트보드로 변경. 10초면 완료.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">활용</div>
+          <div>
+            <div class="step-content-title">키보드 상단 바에서 검색·번역·이미지 검색</div>
+            <p class="step-content-desc">카톡 대화 중에도 키보드 상단에서 바로 검색 결과 공유 가능. "맛집 찾아서 링크 공유"가 앱 전환 없이 가능.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">📷</span> 렌즈 — 카메라로 뭐든 검색</h2>
+      <p>네이버 앱 검색창 옆 카메라 아이콘이 <strong>렌즈</strong>예요. 사진 찍으면 뭔지 바로 알려줘요.</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">🌸</div>
+          <div>
+            <div class="step-content-title">식물·꽃 인식</div>
+            <p class="step-content-desc">꽃이나 식물 사진 찍으면 이름과 특징을 알려줘요. 봄철 꽃 사진 찍을 때 딱.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">🍽</div>
+          <div>
+            <div class="step-content-title">음식 칼로리 확인</div>
+            <p class="step-content-desc">음식 사진 찍으면 예상 칼로리와 영양 정보 제공. 다이어트 중이라면 필수.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">📄</div>
+          <div>
+            <div class="step-content-title">문서·명함 텍스트 인식(OCR)</div>
+            <p class="step-content-desc">명함 찍으면 연락처 자동 저장. 종이 문서 찍으면 텍스트로 추출. 손으로 옮겨 적을 필요 없어요.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">⚡</span> 추가 꿀기능 5가지</h2>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">MY구독 — 관심 주제 뉴스만 모아보기</div>
+            <p class="step-content-desc">네이버 앱 홈 → MY구독 설정. 관심 언론사·주제만 골라서 피드 구성 가능. 불필요한 뉴스 없이 깔끔하게.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">네이버 지도 — 저장한 장소 공유</div>
+            <p class="step-content-desc">맛집 목록을 "내 장소"에 저장해두면 친구에게 컬렉션 전체를 링크로 공유 가능. 약속 잡을 때 유용.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">파파고 즉석 대화 통역</div>
+            <p class="step-content-desc">파파고 앱 → 대화 모드. 외국인과 번갈아 말하면 실시간 통역. 여행·업무에서 실제로 써보면 놀라워요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div>
+            <div class="step-content-title">네이버 NOW — 실시간 라이브 방송</div>
+            <p class="step-content-desc">네이버 앱 → NOW. 연예인·크리에이터 실시간 방송을 네이버 앱 안에서 바로 시청 가능.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div>
+            <div class="step-content-title">검색 히스토리 자동 삭제 설정</div>
+            <p class="step-content-desc">설정 → 검색 설정 → 최근 검색어 자동 삭제 주기 설정. 공용 기기 쓸 때 프라이버시 보호.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list">
+        <li>그린닷 — 화면 어디서든 검색·번역, 앱 전환 불필요</li>
+        <li>클로바 노트 — AI 회의록 자동 작성, 월 300분 무료</li>
+        <li>스마트보드 — 키보드에서 바로 검색·번역·이미지 공유</li>
+        <li>렌즈 — 꽃·음식·명함·문서 사진으로 바로 인식</li>
+        <li>MY구독으로 관심 뉴스만 깔끔하게 모아보기</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-apps.html" class="related-card">
+        <div class="rc-badge">📱 앱 리뷰</div>
+        <div class="rc-title">직장인 생산성 앱 TOP 5</div>
+        <div class="rc-meta">2025.03.09 · 4분</div>
+      </a>
+      <a href="post-camera-tips.html" class="related-card">
+        <div class="rc-badge">📱 앱 리뷰</div>
+        <div class="rc-title">아이폰·갤럭시 카메라 숨겨진 기능</div>
+        <div class="rc-meta">2026.03.16 · 5분</div>
+      </a>
+      <a href="post-phone-storage.html" class="related-card">
+        <div class="rc-badge">📱 앱 리뷰</div>
+        <div class="rc-title">스마트폰 용량 20GB 확보하기</div>
+        <div class="rc-meta">2026.03.14 · 4분</div>
+      </a>
+      <a href="post-free-tools.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">유료인 줄 알았는데 무료 툴</div>
+        <div class="rc-meta">2025.02.25 · 4분</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><a href="index.html" style="color:inherit;text-decoration:none">일잘러<span style="color:#FF6B35">닷컴</span></a></div>
+      <div class="footer-desc">AI 도구, 앱 리뷰, 생활 꿀팁까지.<br>직접 써보고 정리한 정보만 올립니다.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">카테고리</div>
+      <div class="footer-links">
+        <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+        <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+        <a href="index.html?cat=생활정보">💡 생활정보</a>
+        <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">사이트 정보</div>
+      <div class="footer-links">
+        <a href="index.html">홈으로</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 일잘러닷컴 · All rights reserved</div>
+</footer>
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const progress = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>
