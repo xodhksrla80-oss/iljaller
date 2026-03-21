@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523482751370898" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPT-5 나왔다 — ChatGPT, 진짜 얼마나 달라졌나? 버전별 총정리 — 일잘러닷컴</title>
+<meta name="description" content="GPT-5부터 GPT-5.4까지, ChatGPT 변화 버전별로 정리했어요. 실제로 체감되는 변화 3가지와 어떤 사람에게 맞는지까지 한눈에 확인하세요.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #FF6B35; --primary-light: #FFF0EB;
+  --blue: #3B82F6; --blue-light: #EFF6FF;
+  --green: #10B981; --green-light: #ECFDF5;
+  --purple: #8B5CF6; --purple-light: #F5F3FF;
+  --yellow: #F59E0B; --yellow-light: #FFFBEB;
+  --text: #1A1A2E; --text-sub: #64748B;
+  --border: #E8EDF2; --bg: #F8FAFC; --white: #FFFFFF;
+}
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+a { text-decoration: none; color: inherit; }
+header { background: var(--white); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.header-inner { max-width: 780px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; color: var(--text); }
+.logo span { color: var(--primary); }
+.header-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 500; }
+.header-nav a { color: var(--text-sub); transition: color 0.15s; }
+.header-nav a:hover { color: var(--primary); }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+.article-header { background: var(--white); padding: 36px 0 0; }
+.cat-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--primary-light); color: var(--primary); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+.article-title { font-family: 'Noto Serif KR', serif; font-size: clamp(22px, 5vw, 32px); font-weight: 700; line-height: 1.4; margin-bottom: 14px; }
+.article-title em { font-style: normal; color: var(--primary); border-bottom: 3px solid var(--primary); }
+.article-desc { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+.meta-divider { color: var(--border); }
+.read-time { color: var(--primary); font-weight: 600; }
+
+/* THUMBNAIL - VERSION TIMELINE */
+.thumbnail-wrap { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); padding: 36px 20px; }
+.thumbnail-inner { max-width: 780px; margin: 0 auto; }
+.thumb-label { font-size: 12px; color: #94A3B8; letter-spacing: 2px; text-transform: uppercase; text-align: center; margin-bottom: 24px; }
+.version-timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
+.version-timeline::before { content: ''; position: absolute; left: 22px; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.15); }
+.vt-item { display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; position: relative; }
+.vt-dot { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; position: relative; z-index: 1; }
+.vt-dot.v5 { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+.vt-dot.v51 { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
+.vt-dot.v54 { background: linear-gradient(135deg, #059669, #10b981); }
+.vt-content { padding-top: 4px; }
+.vt-version { font-size: 11px; font-weight: 700; color: #94A3B8; letter-spacing: 1px; margin-bottom: 3px; }
+.vt-title { font-size: 14px; font-weight: 700; color: white; margin-bottom: 4px; }
+.vt-desc { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.4; }
+.thumb-caption { text-align: center; font-size: 11px; color: #64748B; margin-top: 16px; }
+
+/* CONTENT */
+.article-content { background: var(--white); padding: 36px 0 48px; }
+.toc { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 36px; }
+.toc-title { font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: 1px; margin-bottom: 12px; }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li { font-size: 14px; color: var(--text-sub); display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.toc-list li:hover { color: var(--primary); }
+.toc-num { width: 20px; height: 20px; background: var(--primary); color: white; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section { margin-bottom: 44px; }
+.section-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.section-title .ico { width: 32px; height: 32px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+strong { color: var(--text); font-weight: 700; }
+
+/* VERSION CARDS */
+.version-cards { display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
+.vc-item { border-radius: 14px; padding: 20px; border: 2px solid var(--border); overflow: hidden; position: relative; }
+.vc-item.v5 { border-color: #BFDBFE; background: linear-gradient(135deg, #EFF6FF, white); }
+.vc-item.v51 { border-color: #DDD6FE; background: linear-gradient(135deg, #F5F3FF, white); }
+.vc-item.v54 { border-color: #A7F3D0; background: linear-gradient(135deg, #ECFDF5, white); }
+.vc-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.vc-badge { padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 700; }
+.v5 .vc-badge { background: var(--blue); color: white; }
+.v51 .vc-badge { background: var(--purple); color: white; }
+.v54 .vc-badge { background: var(--green); color: white; }
+.vc-date { font-size: 12px; color: var(--text-sub); }
+.vc-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.v5 .vc-title { color: var(--blue); }
+.v51 .vc-title { color: var(--purple); }
+.v54 .vc-title { color: var(--green); }
+.vc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.vc-tag { padding: 3px 10px; border-radius: 100px; font-size: 12px; font-weight: 600; }
+.v5 .vc-tag { background: var(--blue-light); color: var(--blue); }
+.v51 .vc-tag { background: var(--purple-light); color: var(--purple); }
+.v54 .vc-tag { background: var(--green-light); color: var(--green); }
+
+/* CHANGE ITEMS */
+.changes { display: flex; flex-direction: column; gap: 16px; margin: 20px 0; }
+.change-item { display: flex; gap: 14px; padding: 20px; background: var(--white); border: 1.5px solid var(--border); border-radius: 14px; transition: box-shadow 0.15s; }
+.change-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); border-color: var(--primary); }
+.change-num { width: 36px; height: 36px; background: var(--primary); color: white; border-radius: 10px; font-size: 16px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.change-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.change-desc { font-size: 14px; color: var(--text-sub); margin: 0; line-height: 1.6; }
+
+/* RECOMMEND TABLE */
+.rec-table { width: 100%; border-collapse: collapse; margin: 20px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+.rec-table th { padding: 14px 16px; font-size: 13px; font-weight: 700; background: var(--text); color: white; text-align: left; }
+.rec-table td { padding: 13px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
+.rec-table tr:last-child td { border-bottom: none; }
+.rec-table tr:hover td { background: var(--bg); }
+.rec-table td:first-child { color: var(--text-sub); font-size: 13px; }
+.rec-table td:nth-child(2) { font-weight: 700; color: var(--text); }
+.arrow { color: var(--primary); font-weight: 700; margin: 0 4px; }
+
+/* HIGHLIGHT BOX */
+.highlight-box { border-radius: 12px; padding: 20px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.hb-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.orange .hb-title { color: var(--primary); }
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+
+/* SUMMARY BOX */
+.summary-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border: 1px solid #BFDBFE; border-radius: 16px; padding: 24px; margin: 32px 0; }
+.summary-title { font-size: 16px; font-weight: 700; color: var(--blue); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.summary-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.summary-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--text); line-height: 1.5; }
+.summary-list li::before { content: "✅"; flex-shrink: 0; }
+
+/* RELATED */
+.related { background: var(--bg); padding: 36px 0; border-top: 1px solid var(--border); }
+.related-title { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.related-card { background: var(--white); border-radius: 12px; padding: 18px; border: 1px solid var(--border); transition: all 0.15s; display: block; }
+.related-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(255,107,53,0.1); transform: translateY(-2px); }
+.rc-badge { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.rc-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.4; }
+.rc-meta { font-size: 12px; color: var(--text-sub); }
+
+footer { background: var(--text); color: #94A3B8; padding: 28px 20px; text-align: center; font-size: 13px; }
+footer strong { color: white; }
+.reading-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); z-index: 9999; transition: width 0.1s; width: 0%; }
+@media (max-width: 600px) {
+  .header-nav { display: none; }
+  .related-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="reading-bar" id="readingBar"></div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html">AI 도구</a>
+      <a href="index.html">생활정보</a>
+      <a href="index.html">앱 리뷰</a>
+      <a href="index.html">꿀팁</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">🤖 AI 도구</div>
+    <h1 class="article-title"><em>GPT-5 나왔다</em> — ChatGPT, 진짜 얼마나 달라졌나?</h1>
+    <p class="article-desc">2025년 8월 GPT-5 공개 이후 꾸준히 업데이트, 2026년 3월 현재 GPT-5.4까지 나왔어요. 버전별로 뭐가 달라진 건지 한눈에 정리했습니다.</p>
+    <div class="article-meta">
+      <span>📅 2026.03.21</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 5분 읽기</span>
+    </div>
+  </div>
+</div>
+
+<!-- THUMBNAIL - VERSION TIMELINE -->
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner">
+    <div class="thumb-label">GPT-5 버전 업데이트 타임라인</div>
+    <div class="version-timeline">
+      <div class="vt-item">
+        <div class="vt-dot v5">🤖</div>
+        <div class="vt-content">
+          <div class="vt-version">2025년 8월 · GPT-5 출시</div>
+          <div class="vt-title">추론·멀티모달·작업 실행 통합</div>
+          <div class="vt-desc">환각 현상 대폭 감소 · 모델 자동 선택 시작</div>
+        </div>
+      </div>
+      <div class="vt-item">
+        <div class="vt-dot v51">🧠</div>
+        <div class="vt-content">
+          <div class="vt-version">2025년 11월 · GPT-5.1 출시</div>
+          <div class="vt-title">대화 자연스러움 개선</div>
+          <div class="vt-desc">Instant·Thinking 모드 분리 · 더 빠른 응답</div>
+        </div>
+      </div>
+      <div class="vt-item">
+        <div class="vt-dot v54">⚡</div>
+        <div class="vt-content">
+          <div class="vt-version">2026년 3월 · GPT-5.4 출시</div>
+          <div class="vt-title">익스트림 추론 도입</div>
+          <div class="vt-desc">웹 검색 없이도 최신 정보 정확도 향상</div>
+        </div>
+      </div>
+    </div>
+    <div class="thumb-caption">일잘러닷컴 직접 정리 | 2026년 3월 기준</div>
+  </div>
+</div>
+
+<div class="article-content">
+  <div class="container">
+
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> 버전별로 뭐가 달라졌나?</li>
+        <li><span class="toc-num">2</span> 실제로 체감되는 변화 3가지</li>
+        <li><span class="toc-num">3</span> 어떤 분께 어떤 모드가 맞을까?</li>
+        <li><span class="toc-num">4</span> 핵심 요약</li>
+      </ul>
+    </div>
+
+    <div class="section" id="s1">
+      <h2 class="section-title"><span class="ico">🗂</span> 버전별로 뭐가 달라졌나?</h2>
+      <p>GPT-5 출시 이후 불과 7개월 만에 5.4까지 나왔어요. 각 버전의 핵심 변화만 짚어볼게요.</p>
+      <div class="version-cards">
+        <div class="vc-item v5">
+          <div class="vc-header">
+            <div class="vc-badge">GPT-5</div>
+            <div class="vc-date">2025년 8월 출시</div>
+          </div>
+          <div class="vc-title">추론·멀티모달·작업 실행 한 번에 통합</div>
+          <div class="vc-tags">
+            <span class="vc-tag">환각 현상 대폭 감소</span>
+            <span class="vc-tag">이미지·텍스트 동시 처리</span>
+            <span class="vc-tag">모델 자동 선택</span>
+          </div>
+        </div>
+        <div class="vc-item v51">
+          <div class="vc-header">
+            <div class="vc-badge">GPT-5.1</div>
+            <div class="vc-date">2025년 11월 출시</div>
+          </div>
+          <div class="vc-title">대화가 훨씬 자연스러워짐 + 모드 분리</div>
+          <div class="vc-tags">
+            <span class="vc-tag">Instant 모드 (빠름)</span>
+            <span class="vc-tag">Thinking 모드 (정확)</span>
+            <span class="vc-tag">대화 흐름 개선</span>
+          </div>
+        </div>
+        <div class="vc-item v54">
+          <div class="vc-header">
+            <div class="vc-badge">GPT-5.4</div>
+            <div class="vc-date">2026년 3월 출시</div>
+          </div>
+          <div class="vc-title">익스트림 추론 도입, 정확도 최고점</div>
+          <div class="vc-tags">
+            <span class="vc-tag">익스트림 추론</span>
+            <span class="vc-tag">검색 없이 최신 정보</span>
+            <span class="vc-tag">지식 정확도 향상</span>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box blue">
+        <div class="hb-icon">📌</div>
+        <div>
+          <div class="hb-title">모델 출시 주기가 빨라지고 있어요</div>
+          <p class="hb-text">OpenAI가 2026년부터 <strong>모델 출시 주기를 한 달로 단축</strong>하겠다고 밝혔어요. 앞으로 업데이트 속도가 더 빨라질 것 같습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="s2">
+      <h2 class="section-title"><span class="ico">⚡</span> 실제로 체감되는 변화 3가지</h2>
+      <p>숫자나 벤치마크보다 실제로 쓸 때 뭐가 달라졌는지가 중요하죠.</p>
+      <div class="changes">
+        <div class="change-item">
+          <div class="change-num">1</div>
+          <div>
+            <div class="change-title">모델 고르는 고민이 사라졌다</div>
+            <p class="change-desc">이제 복잡한 질문은 알아서 Thinking 모드로, 간단한 건 Instant 모드로 자동 전환돼요. 사용자가 굳이 뭘 선택 안 해도 됩니다. 확실히 더 편해졌어요.</p>
+          </div>
+        </div>
+        <div class="change-item">
+          <div class="change-num">2</div>
+          <div>
+            <div class="change-title">거짓 정보가 눈에 띄게 줄었다</div>
+            <p class="change-desc">솔직히 예전엔 "이거 진짜 맞아?" 싶을 때가 많았잖아요. GPT-5부터는 말도 안 되는 답변이 거의 안 보여요. GPT-5.4에서는 더 개선됐습니다.</p>
+          </div>
+        </div>
+        <div class="change-item">
+          <div class="change-num">3</div>
+          <div>
+            <div class="change-title">생각 시간을 내 마음대로 조절할 수 있다</div>
+            <p class="change-desc">빠른 답이 필요할 땐 Instant, 정확한 분석이 필요할 땐 Thinking. 상황에 따라 골라 쓰니까 훨씬 유용합니다. GPT-5.4는 여기에 익스트림 추론까지 추가됐어요.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="s3">
+      <h2 class="section-title"><span class="ico">🎯</span> 어떤 분께 어떤 모드가 맞을까?</h2>
+      <table class="rec-table">
+        <tr>
+          <th>이런 분이라면</th>
+          <th>추천 모드</th>
+        </tr>
+        <tr>
+          <td>업무 처리 속도가 제일 중요해</td>
+          <td>GPT-5 Instant <span class="arrow">→</span> 빠른 응답 최우선</td>
+        </tr>
+        <tr>
+          <td>복잡한 분석·코딩까지 원해</td>
+          <td>GPT-5 Thinking / GPT-5.4</td>
+        </tr>
+        <tr>
+          <td>일단 무료로 써보고 싶어</td>
+          <td>기본 ChatGPT (GPT-5 기반 업그레이드됨)</td>
+        </tr>
+        <tr>
+          <td>최신 정보 정확도가 중요해</td>
+          <td>GPT-5.4 (익스트림 추론)</td>
+        </tr>
+      </table>
+      <div class="highlight-box orange">
+        <div class="hb-icon">💡</div>
+        <div>
+          <div class="hb-title">무료 플랜도 GPT-5 기반으로 업그레이드됐어요</div>
+          <p class="hb-text">과거엔 무료 플랜은 GPT-3.5만 됐는데, 이제 기본 ChatGPT도 GPT-5 기반으로 서비스됩니다. 비용 걱정 없이 최신 모델을 써볼 수 있어요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="s4">
+      <div class="summary-box">
+        <div class="summary-title">🎯 핵심 요약</div>
+        <ul class="summary-list">
+          <li>GPT-5 (2025.8) → GPT-5.1 (2025.11) → GPT-5.4 (2026.3) 순으로 업데이트</li>
+          <li>모델이 알아서 Instant·Thinking 모드를 골라준다</li>
+          <li>환각 현상(엉뚱한 답변)이 버전 올라갈수록 눈에 띄게 줄었다</li>
+          <li>GPT-5.4 익스트림 추론 — 검색 없이도 최신 정보 정확도 향상</li>
+          <li>무료 플랜도 이제 GPT-5 기반으로 업그레이드됨</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-ai-compare.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">GPT-5.4 vs Gemini 3.1 최신 AI 비교</div>
+        <div class="rc-meta">2026.03.13 · 5분</div>
+      </a>
+      <a href="post-claude-thinking.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">Claude 3.7 Extended Thinking 완벽 정리</div>
+        <div class="rc-meta">2026.03.21 · 4분</div>
+      </a>
+      <a href="post-gemini.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">Gemini 2.0 설치 및 사용법 완벽 가이드</div>
+        <div class="rc-meta">2025.03.11 · 4분</div>
+      </a>
+      <a href="post-vibe-compare.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">Cursor vs Lovable vs Bolt 바이브코딩 비교</div>
+        <div class="rc-meta">2026.03.21 · 5분</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>일잘러닷컴</strong> · 직장인 AI & 생산성 도구 전문 리뷰<br>
+  <span style="font-size:12px;opacity:0.6;margin-top:6px;display:block">© 2026 iljaller.pages.dev · All rights reserved</span>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    document.getElementById('readingBar').style.width = (scrollTop / scrollHeight * 100) + '%';
+  });
+</script>
+</body>
+</html>

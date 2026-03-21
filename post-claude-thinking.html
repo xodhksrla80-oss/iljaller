@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523482751370898" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude 3.7 Extended Thinking — 일반 Claude랑 뭐가 다를까? — 일잘러닷컴</title>
+<meta name="description" content="Claude 3.7 Sonnet Extended Thinking 모드, 일반 모드랑 실제로 뭐가 다른지 직접 써보고 정리했어요. 언제 켜야 하는지 명확하게 알려드립니다.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #FF6B35; --primary-light: #FFF0EB;
+  --blue: #3B82F6; --blue-light: #EFF6FF;
+  --green: #10B981; --green-light: #ECFDF5;
+  --purple: #8B5CF6; --purple-light: #F5F3FF;
+  --yellow: #F59E0B; --yellow-light: #FFFBEB;
+  --orange: #F97316;
+  --text: #1A1A2E; --text-sub: #64748B;
+  --border: #E8EDF2; --bg: #F8FAFC; --white: #FFFFFF;
+}
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+a { text-decoration: none; color: inherit; }
+header { background: var(--white); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.header-inner { max-width: 780px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; color: var(--text); }
+.logo span { color: var(--primary); }
+.header-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 500; }
+.header-nav a { color: var(--text-sub); transition: color 0.15s; }
+.header-nav a:hover { color: var(--primary); }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+.article-header { background: var(--white); padding: 36px 0 0; }
+.cat-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--primary-light); color: var(--primary); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+.article-title { font-family: 'Noto Serif KR', serif; font-size: clamp(22px, 5vw, 32px); font-weight: 700; line-height: 1.4; margin-bottom: 14px; }
+.article-title em { font-style: normal; color: var(--primary); border-bottom: 3px solid var(--primary); }
+.article-desc { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+.meta-divider { color: var(--border); }
+.read-time { color: var(--primary); font-weight: 600; }
+
+/* THUMBNAIL */
+.thumbnail-wrap { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); padding: 36px 20px; }
+.thumbnail-inner { max-width: 780px; margin: 0 auto; }
+.thumb-label { font-size: 12px; color: #94A3B8; letter-spacing: 2px; text-transform: uppercase; text-align: center; margin-bottom: 20px; }
+.mode-compare { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; }
+.mode-card { border-radius: 14px; padding: 22px 18px; text-align: center; }
+.mode-card.normal { background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.15); }
+.mode-card.extended { background: linear-gradient(135deg, #7c3aed, #a855f7); border: 1.5px solid rgba(168,85,247,0.5); }
+.mode-icon { font-size: 40px; margin-bottom: 10px; }
+.mode-name { font-size: 13px; font-weight: 900; color: white; margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; }
+.mode-stat { font-size: 28px; font-weight: 900; color: white; margin-bottom: 4px; }
+.mode-stat-label { font-size: 11px; color: rgba(255,255,255,0.6); }
+.mode-vs { font-size: 20px; font-weight: 900; color: #F59E0B; text-align: center; }
+.thumb-caption { text-align: center; font-size: 11px; color: #64748B; margin-top: 12px; }
+
+/* CONTENT */
+.article-content { background: var(--white); padding: 36px 0 48px; }
+.toc { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 36px; }
+.toc-title { font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: 1px; margin-bottom: 12px; }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li { font-size: 14px; color: var(--text-sub); display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.toc-list li:hover { color: var(--primary); }
+.toc-num { width: 20px; height: 20px; background: var(--primary); color: white; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section { margin-bottom: 44px; }
+.section-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.section-title .ico { width: 32px; height: 32px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+strong { color: var(--text); font-weight: 700; }
+
+/* TOKEN VISUAL */
+.token-visual { background: linear-gradient(135deg, #7c3aed, #a855f7); border-radius: 16px; padding: 28px; margin: 24px 0; text-align: center; color: white; }
+.tv-label { font-size: 12px; letter-spacing: 2px; opacity: 0.7; margin-bottom: 10px; }
+.tv-num { font-family: 'Noto Serif KR', serif; font-size: 64px; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+.tv-num span { font-size: 28px; }
+.tv-desc { font-size: 14px; opacity: 0.85; }
+.tv-compare { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 16px; }
+.tv-bar-wrap { text-align: center; }
+.tv-bar { height: 8px; border-radius: 100px; margin-bottom: 4px; }
+.tv-bar.small { width: 60px; background: rgba(255,255,255,0.3); }
+.tv-bar.big { width: 900px; max-width: 300px; background: #F59E0B; }
+.tv-bar-label { font-size: 11px; opacity: 0.7; }
+
+/* COMPARE TABLE */
+.compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+.compare-table th { padding: 14px 16px; font-size: 13px; font-weight: 700; text-align: center; }
+.compare-table th:first-child { background: #F1F5F9; color: var(--text-sub); text-align: left; }
+.compare-table th:nth-child(2) { background: #64748B; color: white; }
+.compare-table th:nth-child(3) { background: var(--purple); color: white; }
+.compare-table td { padding: 13px 16px; font-size: 14px; border-bottom: 1px solid var(--border); text-align: center; }
+.compare-table td:first-child { text-align: left; font-weight: 600; background: #FAFAFA; color: var(--text); }
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table tr:hover td { background: #F8FAFC; }
+.badge-yes { color: var(--green); font-weight: 700; font-size: 13px; }
+.badge-warn { display: inline-block; background: var(--yellow-light); color: var(--yellow); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 100px; }
+.badge-purple { display: inline-block; background: var(--purple-light); color: var(--purple); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 100px; }
+
+/* USE CASE CARDS */
+.use-cases { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.uc-item { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; border-radius: 12px; border: 1.5px solid var(--border); background: var(--white); transition: box-shadow 0.15s; }
+.uc-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); border-color: var(--purple); }
+.uc-icon { width: 40px; height: 40px; background: var(--purple-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.uc-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.uc-desc { font-size: 13px; color: var(--text-sub); margin: 0; line-height: 1.5; }
+
+/* NOT NEEDED SECTION */
+.not-needed { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
+.nn-item { padding: 14px 16px; background: var(--bg); border-radius: 10px; border: 1px solid var(--border); font-size: 14px; display: flex; align-items: center; gap: 8px; }
+.nn-emoji { font-size: 18px; flex-shrink: 0; }
+
+/* HIGHLIGHT BOX */
+.highlight-box { border-radius: 12px; padding: 20px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.highlight-box.purple { background: var(--purple-light); border: 1px solid #DDD6FE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.hb-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.highlight-box.orange .hb-title { color: var(--primary); }
+.highlight-box.purple .hb-title { color: var(--purple); }
+.highlight-box.green .hb-title { color: var(--green); }
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+
+/* SUMMARY BOX */
+.summary-box { background: linear-gradient(135deg, #F5F3FF, #EDE9FE); border: 1px solid #DDD6FE; border-radius: 16px; padding: 24px; margin: 32px 0; }
+.summary-title { font-size: 16px; font-weight: 700; color: var(--purple); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.summary-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.summary-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--text); line-height: 1.5; }
+.summary-list li::before { content: "✅"; flex-shrink: 0; }
+
+/* RELATED */
+.related { background: var(--bg); padding: 36px 0; border-top: 1px solid var(--border); }
+.related-title { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.related-card { background: var(--white); border-radius: 12px; padding: 18px; border: 1px solid var(--border); transition: all 0.15s; display: block; }
+.related-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(255,107,53,0.1); transform: translateY(-2px); }
+.rc-badge { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.rc-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.4; }
+.rc-meta { font-size: 12px; color: var(--text-sub); }
+
+footer { background: var(--text); color: #94A3B8; padding: 28px 20px; text-align: center; font-size: 13px; }
+footer strong { color: white; }
+.reading-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); z-index: 9999; transition: width 0.1s; width: 0%; }
+@media (max-width: 600px) {
+  .header-nav { display: none; }
+  .mode-compare { grid-template-columns: 1fr; }
+  .mode-vs { transform: rotate(90deg); }
+  .not-needed { grid-template-columns: 1fr; }
+  .related-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="reading-bar" id="readingBar"></div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html">AI 도구</a>
+      <a href="index.html">생활정보</a>
+      <a href="index.html">앱 리뷰</a>
+      <a href="index.html">꿀팁</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">🤖 AI 도구</div>
+    <h1 class="article-title">Claude 3.7 <em>Extended Thinking</em> — 일반 Claude랑 뭐가 다를까?</h1>
+    <p class="article-desc">Anthropic의 Claude 3.7 Sonnet에는 'Extended Thinking' 모드가 따로 있거든요. 그냥 Claude랑 뭐가 다른지 헷갈린 분들, 은근 많으시죠? 직접 써보고 느낀 차이만 싹 정리해봤어요.</p>
+    <div class="article-meta">
+      <span>📅 2026.03.21</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 4분 읽기</span>
+    </div>
+  </div>
+</div>
+
+<!-- THUMBNAIL -->
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner">
+    <div class="thumb-label">일반 모드 vs Extended Thinking 비교</div>
+    <div class="mode-compare">
+      <div class="mode-card normal">
+        <div class="mode-icon">💬</div>
+        <div class="mode-name">일반 모드</div>
+        <div class="mode-stat">8K<span>토큰</span></div>
+        <div class="mode-stat-label">최대 출력</div>
+      </div>
+      <div class="mode-vs">VS</div>
+      <div class="mode-card extended">
+        <div class="mode-icon">🧠</div>
+        <div class="mode-name">Extended Thinking</div>
+        <div class="mode-stat">128K<span>토큰</span></div>
+        <div class="mode-stat-label">최대 출력 (15배!)</div>
+      </div>
+    </div>
+    <div class="thumb-caption">일잘러닷컴 직접 정리 | 2026년 기준</div>
+  </div>
+</div>
+
+<div class="article-content">
+  <div class="container">
+
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> 일반 모드 vs Extended Thinking 비교표</li>
+        <li><span class="toc-num">2</span> Extended Thinking이 진짜 빛나는 순간</li>
+        <li><span class="toc-num">3</span> 이런 건 일반 모드로 충분해요</li>
+        <li><span class="toc-num">4</span> 핵심 요약</li>
+      </ul>
+    </div>
+
+    <div class="section" id="s1">
+      <h2 class="section-title"><span class="ico">📊</span> 한눈에 보는 차이 비교표</h2>
+      <p>숫자로 보면 확 와 닿아요. 특히 출력 길이 차이가 엄청납니다.</p>
+      <table class="compare-table">
+        <tr>
+          <th>항목</th>
+          <th>💬 일반 모드</th>
+          <th>🧠 Extended Thinking</th>
+        </tr>
+        <tr>
+          <td>⚡ 답변 속도</td>
+          <td><span class="badge-yes">✓ 빠른 편</span></td>
+          <td><span class="badge-warn">느림 (수십 초~수 분)</span></td>
+        </tr>
+        <tr>
+          <td>🔍 추론 깊이</td>
+          <td>보통</td>
+          <td><span class="badge-purple">단계별 자기 점검</span></td>
+        </tr>
+        <tr>
+          <td>📄 최대 출력 길이</td>
+          <td>8,192 토큰</td>
+          <td><span class="badge-purple">128,000 토큰 (15배!)</span></td>
+        </tr>
+        <tr>
+          <td>✅ 잘 맞는 작업</td>
+          <td>일상 질문, 글쓰기</td>
+          <td>수학, 코딩, 복잡한 분석</td>
+        </tr>
+        <tr>
+          <td>💰 비용</td>
+          <td>일반</td>
+          <td><span class="badge-warn">더 비싸요</span></td>
+        </tr>
+      </table>
+
+      <div class="token-visual">
+        <div class="tv-label">최대 출력 토큰 비교</div>
+        <div class="tv-num">128K<span>토큰</span></div>
+        <div class="tv-desc">Extended Thinking 모드 = 일반 모드의 15배</div>
+        <div class="tv-compare">
+          <div class="tv-bar-wrap">
+            <div class="tv-bar small"></div>
+            <div class="tv-bar-label">일반 (8K)</div>
+          </div>
+          <div class="tv-bar-wrap">
+            <div class="tv-bar big"></div>
+            <div class="tv-bar-label">Extended (128K)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="s2">
+      <h2 class="section-title"><span class="ico">🧠</span> Extended Thinking이 진가를 발휘할 때</h2>
+      <p>이런 상황에서 켜면 확실히 다릅니다.</p>
+      <div class="use-cases">
+        <div class="uc-item">
+          <div class="uc-icon">🔢</div>
+          <div>
+            <div class="uc-title">어려운 수학 문제 풀 때</div>
+            <p class="uc-desc">중간 계산 과정까지 스스로 검토해서 실수를 줄여줘요. 단순 암산이 아니라 단계별로 확인하는 방식이라 정확도가 올라갑니다.</p>
+          </div>
+        </div>
+        <div class="uc-item">
+          <div class="uc-icon">🐛</div>
+          <div>
+            <div class="uc-title">코드 디버깅할 때</div>
+            <p class="uc-desc">여러 파일을 이어서 원인까지 꼼꼼히 찾아줍니다. 단순한 오타 수정이 아니라 흐름 전체를 추적하는 방식이에요.</p>
+          </div>
+        </div>
+        <div class="uc-item">
+          <div class="uc-icon">📋</div>
+          <div>
+            <div class="uc-title">복잡한 계획 세울 때</div>
+            <p class="uc-desc">여러 조건을 한꺼번에 고려해서 플랜을 짜요. "A도 되고 B도 되면서 C는 안 되게" 같은 복합 조건에서 진가를 발휘합니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box purple">
+        <div class="hb-icon">🧠</div>
+        <div>
+          <div class="hb-title">Extended Thinking의 작동 원리</div>
+          <p class="hb-text">다른 모델로 전환하는 게 아니에요. 같은 Claude에게 <strong>더 많은 시간을 주고 더 많이 생각하게</strong> 하는 방식입니다. 답을 내기 전에 여러 번 자기 점검을 반복해요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="s3">
+      <h2 class="section-title"><span class="ico">💬</span> 이런 건 일반 모드로 충분해요</h2>
+      <p>Extended Thinking을 굳이 켤 필요 없는 상황들이에요. 느리고 비싸지기만 합니다.</p>
+      <div class="not-needed">
+        <div class="nn-item"><div class="nn-emoji">✉️</div> 이메일·문서 초안 쓰기</div>
+        <div class="nn-item"><div class="nn-emoji">🌐</div> 간단한 번역·요약</div>
+        <div class="nn-item"><div class="nn-emoji">💡</div> 아이디어 브레인스토밍</div>
+        <div class="nn-item"><div class="nn-emoji">💬</div> 일상적인 대화·질문</div>
+        <div class="nn-item"><div class="nn-emoji">📝</div> 블로그 글쓰기</div>
+        <div class="nn-item"><div class="nn-emoji">🔍</div> 간단한 정보 검색</div>
+      </div>
+      <div class="highlight-box green">
+        <div class="hb-icon">✅</div>
+        <div>
+          <div class="hb-title">이렇게 쓰면 딱이에요</div>
+          <p class="hb-text">일반 대화 → <strong>일반 모드</strong>로. 수학·코딩·복잡한 분석 → <strong>Extended Thinking 켜기</strong>. 필요한 순간에만 쓰면 시간도 비용도 아낄 수 있어요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="s4">
+      <div class="summary-box">
+        <div class="summary-title">🎯 핵심 요약</div>
+        <ul class="summary-list">
+          <li>Extended Thinking은 다른 모델이 아니라 더 오래 생각하게 하는 모드</li>
+          <li>출력 길이 최대 128K 토큰 — 일반 모드의 15배</li>
+          <li>수학·코딩 디버깅·복잡한 계획에서 진가 발휘</li>
+          <li>이메일·번역·브레인스토밍 같은 일상 작업엔 일반 모드로 충분</li>
+          <li>필요한 순간에만 켜는 게 시간·비용 절약 포인트</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-claude.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">Claude AI 기본 사용법 — ChatGPT랑 뭐가 달라?</div>
+        <div class="rc-meta">2025.02.25 · 5분</div>
+      </a>
+      <a href="post-chatgpt.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">ChatGPT 완벽 정리 — GPT-4 vs GPT-3.5</div>
+        <div class="rc-meta">2025.03.10 · 5분</div>
+      </a>
+      <a href="post-ai-compare.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">GPT-5.4 vs Gemini 3.1 최신 AI 비교</div>
+        <div class="rc-meta">2026.03.13 · 5분</div>
+      </a>
+      <a href="post-vibe-compare.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">Cursor vs Lovable vs Bolt 바이브코딩 툴 비교</div>
+        <div class="rc-meta">2026.03.21 · 5분</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>일잘러닷컴</strong> · 직장인 AI & 생산성 도구 전문 리뷰<br>
+  <span style="font-size:12px;opacity:0.6;margin-top:6px;display:block">© 2026 iljaller.pages.dev · All rights reserved</span>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    document.getElementById('readingBar').style.width = (scrollTop / scrollHeight * 100) + '%';
+  });
+</script>
+</body>
+</html>
