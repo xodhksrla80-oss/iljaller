@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한글 표 줄 추가 안될때 해결법 (2026) — 일잘러닷컴</title>
+<meta name="description" content="한글(HWP) 표에서 줄이 안 늘어날 때 해결법. Tab키 활용, 마우스 우클릭 행 삽입, 표 잠금 해제까지. 2026년 기준으로 정리했습니다.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523482751370898" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #FF6B35; --primary-light: #FFF0EB;
+  --blue: #3B82F6; --blue-light: #EFF6FF;
+  --green: #10B981; --green-light: #ECFDF5;
+  --yellow: #F59E0B; --yellow-light: #FFFBEB;
+  --text: #1A1A2E; --text-sub: #64748B;
+  --border: #E8EDF2; --bg: #F8FAFC; --white: #FFFFFF;
+}
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+header { background: var(--white); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.header-inner { max-width: 780px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; }
+.logo span { color: var(--primary); }
+.header-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 500; }
+.header-nav a { text-decoration: none; color: var(--text-sub); transition: color 0.15s; }
+.header-nav a:hover { color: var(--primary); }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+.article-header { background: var(--white); padding: 36px 0 0; }
+.cat-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--primary-light); color: var(--primary); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+.article-title { font-family: 'Noto Serif KR', serif; font-size: clamp(24px, 5vw, 34px); font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 14px; }
+.article-title em { font-style: normal; color: var(--primary); border-bottom: 3px solid var(--primary); }
+.article-desc { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+.meta-divider { color: var(--border); }
+.read-time { color: var(--primary); font-weight: 600; }
+.thumbnail-wrap { padding: 40px 20px; }
+.thumbnail-inner { max-width: 780px; margin: 0 auto; text-align: center; border-radius: 20px; padding: 40px 24px; }
+.article-content { background: var(--white); padding: 36px 0 48px; }
+.toc { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 36px; }
+.toc-title { font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li { font-size: 14px; color: var(--text-sub); display: flex; align-items: center; gap: 8px; }
+.toc-num { width: 20px; height: 20px; background: var(--primary); color: white; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section { margin-bottom: 44px; }
+.section-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.section-title .ico { width: 32px; height: 32px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+strong { color: var(--text); font-weight: 700; }
+.highlight-box { border-radius: 12px; padding: 20px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.hb-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.highlight-box.orange .hb-title { color: var(--primary); }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.green .hb-title { color: var(--green); }
+.highlight-box.yellow .hb-title { color: var(--yellow); }
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+.step-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.step-item { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; transition: box-shadow 0.15s; }
+.step-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); border-color: var(--primary); }
+.step-num { min-width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; font-size: 13px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0 6px; }
+.step-content-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+.step-content-desc { font-size: 13px; color: var(--text-sub); margin: 0; line-height: 1.6; }
+.key-badge { display: inline-block; background: #1E293B; color: #E2E8F0; font-family: monospace; font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 6px; margin: 0 3px; }
+.summary-box { background: linear-gradient(135deg, var(--primary) 0%, #FF8C5A 100%); border-radius: 16px; padding: 28px; margin: 36px 0; color: white; }
+.summary-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.summary-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.summary-list li { font-size: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+.summary-list li::before { content: '✓'; font-weight: 900; color: #FDE68A; flex-shrink: 0; margin-top: 1px; }
+.related { background: var(--bg); padding: 36px 0; border-top: 1px solid var(--border); }
+.related-title { font-size: 18px; font-weight: 700; margin-bottom: 18px; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.related-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 18px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: block; }
+.related-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(255,107,53,0.1); transform: translateY(-2px); }
+.rc-badge { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.rc-title { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+.rc-meta { font-size: 12px; color: var(--text-sub); }
+footer { background: var(--text); color: #94A3B8; font-size: 13px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 40px 24px 20px; display: flex; gap: 48px; flex-wrap: wrap; }
+.footer-logo { font-size: 20px; font-weight: 900; margin-bottom: 10px; }
+.footer-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+.footer-col-title { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; }
+.footer-links a:hover { color: #FF6B35; }
+.footer-bottom { text-align: center; padding: 16px; font-size: 12px; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.1); }
+.reading-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); z-index: 9999; transition: width 0.1s; width: 0%; }
+@media (max-width: 600px) { .header-nav { display: none; } .related-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="reading-bar" id="readingBar"></div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+      <a href="index.html?cat=생활정보">💡 생활정보</a>
+      <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+      <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">⚡ 꿀팁</div>
+    <h1 class="article-title">한글 표 줄 추가<br><em>안 될 때 해결법</em> 완전 정리</h1>
+    <p class="article-desc">한컴 한글(HWP)에서 표 작업하다가 줄이 안 늘어나서 답답했던 적 있으시죠? Tab키 하나만 알아도 대부분 해결됩니다. 마우스 우클릭 방법, 표 잠금 해제까지 상황별로 정리했어요.</p>
+    <div class="article-meta">
+      <span>📅 2026.03.22</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 4분 읽기</span>
+    </div>
+  </div>
+</div>
+
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner" style="background: linear-gradient(135deg, #312e81 0%, #4338ca 50%, #4f46e5 100%);">
+    <div style="font-size:72px; margin-bottom:16px">📝</div>
+    <div style="font-size:22px; font-weight:900; color:#fff; line-height:1.3;">한글 표 줄이 안 늘어날 때<br><span style="color:#A5B4FC">이렇게 해결하세요</span></div>
+    <div style="font-size:13px; color:rgba(255,255,255,0.75); margin-top:12px">일잘러닷컴 직접 정리 | 2026년 기준</div>
+  </div>
+</div>
+
+<div class="article-content">
+  <div class="container">
+
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> 한글 표에서 줄 추가가 안 되는 상황</li>
+        <li><span class="toc-num">2</span> Tab키로 맨 끝 칸에서 줄 추가하기</li>
+        <li><span class="toc-num">3</span> 마우스 우클릭으로 행·열 삽입하기</li>
+        <li><span class="toc-num">4</span> 표 잠금 해제하는 방법</li>
+        <li><span class="toc-num">5</span> 핵심 요약</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">❓</span> 한글 표에서 줄 추가가 안 되는 상황</h2>
+      <p>한글에서 표 줄 추가가 안 될 때 원인은 대부분 두 가지입니다. 첫 번째는 <strong>추가 방법 자체를 모르는 경우</strong>이고, 두 번째는 <strong>표 자체가 잠겨 있는 경우</strong>예요.</p>
+
+      <div class="highlight-box blue">
+        <div class="hb-icon">ℹ️</div>
+        <div>
+          <div class="hb-title">한글 표 vs 엑셀 표 차이</div>
+          <p class="hb-text">엑셀처럼 셀을 클릭하고 드래그해서 행을 추가하는 방식이 아닙니다. 한글 표는 <strong>커서 위치</strong>와 <strong>마우스 우클릭 메뉴</strong>를 이용해서 줄을 추가합니다. 이 차이만 알면 바로 해결돼요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">⌨️</span> Tab키로 맨 끝 칸에서 줄 추가하기</h2>
+      <p>가장 빠르고 쉬운 방법입니다. 표의 <strong>마지막 행, 마지막 칸</strong>에 커서를 놓고 Tab 키를 누르면 자동으로 새 행이 추가됩니다.</p>
+
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">표 안에 커서 넣기</div>
+            <p class="step-content-desc">표 안의 아무 셀이나 클릭해서 커서를 위치시킵니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">마지막 행, 마지막 칸으로 이동</div>
+            <p class="step-content-desc">Tab키를 계속 눌러서 맨 마지막 칸으로 이동하거나, 마우스로 마지막 칸을 직접 클릭합니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">Tab 키 누르기 → 새 행 자동 추가</div>
+            <p class="step-content-desc">마지막 칸에서 Tab을 누르면 새 행이 아래에 자동으로 생깁니다. 계속 누르면 계속 추가돼요.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box green">
+        <div class="hb-icon">✅</div>
+        <div>
+          <div class="hb-title">Tab키 활용 팁</div>
+          <p class="hb-text">표 안에서 Tab을 누르면 다음 칸으로 이동합니다. 반대 방향은 Shift+Tab이에요. 단, <strong>마지막 칸에서 Tab을 누를 때만</strong> 새 행이 추가됩니다. 가장 빠른 줄 추가 방법이에요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🖱</span> 마우스 우클릭으로 행·열 삽입하기</h2>
+      <p>원하는 위치에 행을 <strong>중간에 삽입</strong>하거나, 여러 행을 한 번에 추가할 때는 마우스 우클릭 메뉴를 쓰면 됩니다.</p>
+
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">행을 추가하고 싶은 위치의 셀에 커서 놓기</div>
+            <p class="step-content-desc">예: 3번째 행 아래에 새 행을 추가하고 싶다면 3번째 행의 아무 셀을 클릭합니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">마우스 우클릭 → "줄/칸 추가/삭제" 선택</div>
+            <p class="step-content-desc">메뉴에서 "줄/칸 추가/삭제"를 클릭합니다. 한글 버전에 따라 메뉴 이름이 약간 다를 수 있어요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">추가 위치(위/아래) 선택 → 개수 입력 → 넣기</div>
+            <p class="step-content-desc">현재 행의 위 또는 아래를 선택하고, 추가할 행 수를 입력합니다. 한 번에 여러 줄도 가능해요.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box orange">
+        <div class="hb-icon">💡</div>
+        <div>
+          <div class="hb-title">열(칸) 추가도 같은 방법</div>
+          <p class="hb-text">행 말고 열(칸)을 추가하고 싶을 때도 우클릭 → "줄/칸 추가/삭제"에서 동일하게 할 수 있어요. 왼쪽 또는 오른쪽 중 선택해서 추가하면 됩니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🔓</span> 표 잠금 해제하는 방법</h2>
+      <p>위 방법을 다 써봤는데도 줄 추가가 안 된다면 <strong>표가 잠겨 있는 것</strong>입니다. 공문서 양식이나 서식 파일에서 특히 많이 발생해요. 잠금을 해제해야 편집이 가능합니다.</p>
+
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">표 안에 커서를 두고 → 표 선택 (F5 또는 표 테두리 클릭)</div>
+            <p class="step-content-desc">표 전체를 선택 상태로 만들어야 합니다. 표 테두리를 클릭하면 표 전체가 선택되면서 테두리에 파란 선이 나타나요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">마우스 우클릭 → "개체 속성" 선택</div>
+            <p class="step-content-desc">개체 속성 창이 열립니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">"보호" 탭 → 체크 해제 → 설정</div>
+            <p class="step-content-desc">"개체 보호" 또는 "표 잠금" 관련 체크박스를 해제하고 확인을 클릭합니다. 이제 표 편집이 가능해집니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box yellow">
+        <div class="hb-icon">⚠️</div>
+        <div>
+          <div class="hb-title">문서 보호가 걸린 경우</div>
+          <p class="hb-text">문서 전체에 보호가 걸린 경우에는 개체 속성이 아닌 메뉴바 → 도구 → 문서 보호 설정에서 보호를 해제해야 합니다. 공문서 양식이라면 원본 제공처에 문의하는 게 나을 수 있어요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list">
+        <li>가장 빠른 방법 → 표 마지막 칸에서 Tab키 누르기 → 새 행 자동 추가</li>
+        <li>원하는 위치에 삽입 → 해당 행 우클릭 → "줄/칸 추가/삭제" 메뉴 이용</li>
+        <li>표 안 이동 → Tab(다음 칸), Shift+Tab(이전 칸)</li>
+        <li>위 방법으로 안 된다면 표가 잠긴 것 → 우클릭 → 개체 속성 → 보호 해제</li>
+        <li>문서 전체 잠금은 도구 → 문서 보호 설정에서 해제</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-excel-vlookup.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">엑셀 VLOOKUP 오류 해결법 완전 정리</div>
+        <div class="rc-meta">2026.03.22 · 5분</div>
+      </a>
+      <a href="post-excel-date.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">엑셀 날짜 자동입력 안될때 해결법</div>
+        <div class="rc-meta">2026.03.22 · 4분</div>
+      </a>
+      <a href="post-shortcuts.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">맥북·윈도우 단축키 모음</div>
+        <div class="rc-meta">2025.03.01 · 3분</div>
+      </a>
+      <a href="post-free-tools.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">유료인 줄 알았는데 무료 툴</div>
+        <div class="rc-meta">2025.02.25 · 4분</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><a href="index.html" style="color:inherit;text-decoration:none">일잘러<span style="color:#FF6B35">닷컴</span></a></div>
+      <div class="footer-desc">AI 도구, 앱 리뷰, 생활 꿀팁까지.<br>직접 써보고 정리한 정보만 올립니다.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">카테고리</div>
+      <div class="footer-links">
+        <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+        <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+        <a href="index.html?cat=생활정보">💡 생활정보</a>
+        <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">사이트 정보</div>
+      <div class="footer-links">
+        <a href="index.html">홈으로</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 일잘러닷컴 · All rights reserved</div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const progress = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>

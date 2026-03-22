@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>엑셀 셀 합치기 단축키 & 주의사항 (2026) — 일잘러닷컴</title>
+<meta name="description" content="엑셀 셀 합치기 단축키 설정법, 합치기의 함정(필터·정렬 오류), 그리고 합치기 없이 깔끔하게 처리하는 가운데 맞춤 활용법까지 정리했습니다.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523482751370898" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans++KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #FF6B35; --primary-light: #FFF0EB;
+  --blue: #3B82F6; --blue-light: #EFF6FF;
+  --green: #10B981; --green-light: #ECFDF5;
+  --yellow: #F59E0B; --yellow-light: #FFFBEB;
+  --text: #1A1A2E; --text-sub: #64748B;
+  --border: #E8EDF2; --bg: #F8FAFC; --white: #FFFFFF;
+}
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+header { background: var(--white); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.header-inner { max-width: 780px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; }
+.logo span { color: var(--primary); }
+.header-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 500; }
+.header-nav a { text-decoration: none; color: var(--text-sub); transition: color 0.15s; }
+.header-nav a:hover { color: var(--primary); }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+.article-header { background: var(--white); padding: 36px 0 0; }
+.cat-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--primary-light); color: var(--primary); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+.article-title { font-family: 'Noto Serif KR', serif; font-size: clamp(24px, 5vw, 34px); font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 14px; }
+.article-title em { font-style: normal; color: var(--primary); border-bottom: 3px solid var(--primary); }
+.article-desc { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+.meta-divider { color: var(--border); }
+.read-time { color: var(--primary); font-weight: 600; }
+.thumbnail-wrap { padding: 40px 20px; }
+.thumbnail-inner { max-width: 780px; margin: 0 auto; text-align: center; border-radius: 20px; padding: 40px 24px; }
+.article-content { background: var(--white); padding: 36px 0 48px; }
+.toc { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 36px; }
+.toc-title { font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li { font-size: 14px; color: var(--text-sub); display: flex; align-items: center; gap: 8px; }
+.toc-num { width: 20px; height: 20px; background: var(--primary); color: white; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section { margin-bottom: 44px; }
+.section-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.section-title .ico { width: 32px; height: 32px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+strong { color: var(--text); font-weight: 700; }
+.highlight-box { border-radius: 12px; padding: 20px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.hb-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.highlight-box.orange .hb-title { color: var(--primary); }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.green .hb-title { color: var(--green); }
+.highlight-box.yellow .hb-title { color: var(--yellow); }
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+.step-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.step-item { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; transition: box-shadow 0.15s; }
+.step-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); border-color: var(--primary); }
+.step-num { min-width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; font-size: 13px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0 6px; }
+.step-content-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+.step-content-desc { font-size: 13px; color: var(--text-sub); margin: 0; line-height: 1.6; }
+.pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.pros { background: var(--green-light); border: 1px solid #A7F3D0; border-radius: 12px; padding: 18px; }
+.cons { background: #FEF2F2; border: 1px solid #FECACA; border-radius: 12px; padding: 18px; }
+.pros-title { font-size: 14px; font-weight: 700; color: var(--green); margin-bottom: 10px; }
+.cons-title { font-size: 14px; font-weight: 700; color: #DC2626; margin-bottom: 10px; }
+.pros-cons-list { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--text-sub); }
+.pros-cons-list li { display: flex; align-items: flex-start; gap: 6px; }
+.pros-cons-list li::before { font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+.pros .pros-cons-list li::before { content: '✓'; color: var(--green); }
+.cons .pros-cons-list li::before { content: '✗'; color: #DC2626; }
+.summary-box { background: linear-gradient(135deg, var(--primary) 0%, #FF8C5A 100%); border-radius: 16px; padding: 28px; margin: 36px 0; color: white; }
+.summary-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.summary-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.summary-list li { font-size: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+.summary-list li::before { content: '✓'; font-weight: 900; color: #FDE68A; flex-shrink: 0; margin-top: 1px; }
+.related { background: var(--bg); padding: 36px 0; border-top: 1px solid var(--border); }
+.related-title { font-size: 18px; font-weight: 700; margin-bottom: 18px; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.related-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 18px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: block; }
+.related-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(255,107,53,0.1); transform: translateY(-2px); }
+.rc-badge { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.rc-title { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+.rc-meta { font-size: 12px; color: var(--text-sub); }
+footer { background: var(--text); color: #94A3B8; font-size: 13px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 40px 24px 20px; display: flex; gap: 48px; flex-wrap: wrap; }
+.footer-logo { font-size: 20px; font-weight: 900; margin-bottom: 10px; }
+.footer-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+.footer-col-title { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; }
+.footer-links a:hover { color: #FF6B35; }
+.footer-bottom { text-align: center; padding: 16px; font-size: 12px; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.1); }
+.reading-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); z-index: 9999; transition: width 0.1s; width: 0%; }
+@media (max-width: 600px) { .header-nav { display: none; } .related-grid { grid-template-columns: 1fr; } .pros-cons { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="reading-bar" id="readingBar"></div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+      <a href="index.html?cat=생활정보">💡 생활정보</a>
+      <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+      <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">⚡ 꿀팁</div>
+    <h1 class="article-title">엑셀 셀 합치기<br><em>단축키 & 주의사항</em> 완전 정리</h1>
+    <p class="article-desc">셀 합치기를 매번 리본 메뉴에서 클릭하고 있다면, 단축키 설정 한 번으로 훨씬 빠르게 쓸 수 있어요. 그리고 셀 합치기는 써서는 안 되는 상황이 있습니다. 어디에 쓰면 좋고 어디에 쓰면 안 되는지 함께 정리했습니다.</p>
+    <div class="article-meta">
+      <span>📅 2026.03.22</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 4분 읽기</span>
+    </div>
+  </div>
+</div>
+
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner" style="background: linear-gradient(135deg, #14532d 0%, #15803d 50%, #16a34a 100%);">
+    <div style="font-size:72px; margin-bottom:16px">📊</div>
+    <div style="font-size:22px; font-weight:900; color:#fff; line-height:1.3;">셀 합치기 단축키 설정 &<br><span style="color:#86EFAC">절대 쓰면 안 되는 경우</span></div>
+    <div style="font-size:13px; color:rgba(255,255,255,0.75); margin-top:12px">일잘러닷컴 직접 정리 | 2026년 기준</div>
+  </div>
+</div>
+
+<div class="article-content">
+  <div class="container">
+
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> 셀 합치기 기본 방법</li>
+        <li><span class="toc-num">2</span> 단축키로 빠르게 설정하기</li>
+        <li><span class="toc-num">3</span> 셀 합치기의 함정 — 이럴 땐 쓰지 마세요</li>
+        <li><span class="toc-num">4</span> 합치기 대신 "가운데 맞춤" 활용하기</li>
+        <li><span class="toc-num">5</span> 핵심 요약</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🔗</span> 셀 합치기 기본 방법</h2>
+      <p>엑셀 셀 합치기는 홈 탭에서 바로 쓸 수 있어요. 그런데 옵션이 세 가지라 처음 보면 어떤 걸 써야 할지 헷갈립니다.</p>
+
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">①</div>
+          <div>
+            <div class="step-content-title">셀 병합하고 가운데 맞춤</div>
+            <p class="step-content-desc">선택 범위를 하나로 합치고 텍스트를 가운데 정렬합니다. 제목 행 만들 때 가장 많이 씁니다. 단, 첫 번째 셀의 내용만 남고 나머지는 지워집니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">②</div>
+          <div>
+            <div class="step-content-title">전체 병합</div>
+            <p class="step-content-desc">선택한 범위를 하나의 셀로 합칩니다. 가운데 정렬 없이 기존 정렬 그대로 유지돼요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">③</div>
+          <div>
+            <div class="step-content-title">행별 병합</div>
+            <p class="step-content-desc">선택한 여러 행을 각 행 단위로 독립적으로 병합합니다. 여러 행을 한 번에 가로 방향으로 합칠 때 유용해요.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box blue">
+        <div class="hb-icon">ℹ️</div>
+        <div>
+          <div class="hb-title">합치기 해제 방법</div>
+          <p class="hb-text">합쳐진 셀을 선택하고 홈 탭 → "셀 병합하고 가운데 맞춤" 버튼을 다시 클릭하면 해제됩니다. 단, 원래 있던 데이터는 첫 번째 셀에만 남아 있어요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">⌨️</span> 단축키로 빠르게 설정하기</h2>
+      <p>셀 합치기에는 기본 단축키가 없어서 매번 리본 메뉴를 클릭해야 합니다. <strong>빠른 실행 도구 모음에 등록</strong>해두면 Alt+숫자로 바로 쓸 수 있어요.</p>
+
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">홈 탭 → "셀 병합하고 가운데 맞춤" 버튼에 마우스 우클릭</div>
+            <p class="step-content-desc">드롭다운 화살표가 아닌 버튼 자체를 우클릭합니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">"빠른 실행 도구 모음에 추가" 선택</div>
+            <p class="step-content-desc">엑셀 화면 맨 위 왼쪽에 셀 병합 버튼이 추가됩니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">Alt + 숫자 키로 접근</div>
+            <p class="step-content-desc">Alt를 누르면 빠른 실행 도구 모음 위에 숫자가 표시됩니다. 셀 병합이 몇 번째인지 확인하고, 예를 들어 4번째라면 Alt+4로 바로 실행할 수 있어요.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box orange">
+        <div class="hb-icon">💡</div>
+        <div>
+          <div class="hb-title">F4 반복 실행 활용</div>
+          <p class="hb-text">셀 병합을 한 번 실행한 후, 다른 범위를 선택하고 <strong>F4</strong>를 누르면 방금 한 작업이 반복됩니다. 여러 범위를 연달아 합칠 때 매우 유용해요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">⚠️</span> 셀 합치기의 함정 — 이럴 땐 쓰지 마세요</h2>
+      <p>셀을 합치면 보기엔 깔끔하지만, <strong>데이터를 다루는 표에서 쓰면 반드시 문제가 생깁니다.</strong> 인쇄용 서식과 데이터용 표를 구분해서 쓰는 게 핵심이에요.</p>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <div class="pros-title">✅ 써도 되는 경우</div>
+          <ul class="pros-cons-list">
+            <li>인쇄용 보고서 제목 행</li>
+            <li>보기용 서식 문서</li>
+            <li>데이터 정렬·필터가 없는 표</li>
+            <li>출력 전용 양식</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <div class="cons-title">❌ 쓰면 안 되는 경우</div>
+          <ul class="pros-cons-list">
+            <li>필터를 사용하는 데이터 표</li>
+            <li>정렬 기능을 쓰는 목록</li>
+            <li>VLOOKUP·SUMIF 등 함수가 포함된 범위</li>
+            <li>피벗 테이블의 원본 데이터</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box yellow">
+        <div class="hb-icon">⚠️</div>
+        <div>
+          <div class="hb-title">합친 셀이 있으면 필터가 제대로 안 됩니다</div>
+          <p class="hb-text">합쳐진 셀이 있는 열에 필터를 걸면 첫 번째 행만 표시되고 나머지 행은 사라지는 현상이 생겨요. 데이터를 다루는 표라면 절대 합치면 안 됩니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">✨</span> 합치기 대신 "가운데 맞춤" 활용하기</h2>
+      <p>셀을 합치지 않아도 합친 것처럼 보이게 할 수 있어요. <strong>"선택 영역의 가운데로"</strong> 기능입니다. 겉보기는 병합과 똑같고, 필터·정렬도 정상 작동해요.</p>
+
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">가운데로 표시하고 싶은 범위 선택</div>
+            <p class="step-content-desc">예: A1부터 D1까지 제목을 가운데로 표시하고 싶다면 A1:D1 선택.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">Ctrl + 1 → 셀 서식 → 맞춤 탭</div>
+            <p class="step-content-desc">셀 서식 대화상자의 "맞춤" 탭을 클릭합니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">가로 텍스트 맞춤 → "선택 영역의 가운데로" 선택 → 확인</div>
+            <p class="step-content-desc">셀은 합쳐지지 않지만, 텍스트가 선택한 범위의 가운데에 표시됩니다. 보기에는 병합된 것과 똑같이 보여요.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box green">
+        <div class="hb-icon">🎯</div>
+        <div>
+          <div class="hb-title">데이터 표라면 이 방법을 쓰세요</div>
+          <p class="hb-text">셀은 분리되어 있어서 필터, 정렬, 함수가 모두 정상 작동합니다. 외관은 합친 것과 같고, 기능은 일반 셀과 같아요. 데이터를 다루는 표에서는 항상 이 방법을 추천합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list">
+        <li>기본 방법 → 홈 탭 → 셀 병합하고 가운데 맞춤 (첫 번째 셀 내용만 남음)</li>
+        <li>단축키 → 빠른 실행 도구 모음에 추가 후 Alt+숫자 / 반복은 F4</li>
+        <li>필터·정렬·함수 쓰는 데이터 표에는 절대 셀 합치기 사용 금지</li>
+        <li>외관만 합친 것처럼 → Ctrl+1 → 맞춤 → "선택 영역의 가운데로" 활용</li>
+        <li>인쇄용 보고서·양식 → 셀 합치기 OK / 데이터 관리 표 → 선택 영역 가운데 맞춤 사용</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-excel-vlookup.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">엑셀 VLOOKUP 오류 해결법 완전 정리</div>
+        <div class="rc-meta">2026.03.22 · 5분</div>
+      </a>
+      <a href="post-excel-date.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">엑셀 날짜 자동입력 안될때 해결법</div>
+        <div class="rc-meta">2026.03.22 · 4분</div>
+      </a>
+      <a href="post-excel-vs-gsheet.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">엑셀 vs 구글 시트, 뭘 써야 할까?</div>
+        <div class="rc-meta">2026.03.09 · 4분</div>
+      </a>
+      <a href="post-shortcuts.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">맥북·윈도우 단축키 모음</div>
+        <div class="rc-meta">2025.03.01 · 3분</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><a href="index.html" style="color:inherit;text-decoration:none">일잘러<span style="color:#FF6B35">닷컴</span></a></div>
+      <div class="footer-desc">AI 도구, 앱 리뷰, 생활 꿀팁까지.<br>직접 써보고 정리한 정보만 올립니다.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">카테고리</div>
+      <div class="footer-links">
+        <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+        <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+        <a href="index.html?cat=생활정보">💡 생활정보</a>
+        <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">사이트 정보</div>
+      <div class="footer-links">
+        <a href="index.html">홈으로</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 일잘러닷컴 · All rights reserved</div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const progress = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>

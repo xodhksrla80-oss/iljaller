@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>엑셀 VLOOKUP 오류 해결법 완전 정리 (2026) — 일잘러닷컴</title>
+<meta name="description" content="#N/A, #VALUE!, #REF! 오류까지. VLOOKUP이 안 될 때 원인별 해결법을 2026년 기준으로 정리했어요. IFERROR 활용법과 XLOOKUP 전환 팁도 포함.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523482751370898" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #FF6B35; --primary-light: #FFF0EB;
+  --blue: #3B82F6; --blue-light: #EFF6FF;
+  --green: #10B981; --green-light: #ECFDF5;
+  --yellow: #F59E0B; --yellow-light: #FFFBEB;
+  --text: #1A1A2E; --text-sub: #64748B;
+  --border: #E8EDF2; --bg: #F8FAFC; --white: #FFFFFF;
+}
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+header { background: var(--white); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.header-inner { max-width: 780px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; }
+.logo span { color: var(--primary); }
+.header-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 500; }
+.header-nav a { text-decoration: none; color: var(--text-sub); transition: color 0.15s; }
+.header-nav a:hover { color: var(--primary); }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+.article-header { background: var(--white); padding: 36px 0 0; }
+.cat-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--primary-light); color: var(--primary); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+.article-title { font-family: 'Noto Serif KR', serif; font-size: clamp(24px, 5vw, 34px); font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 14px; }
+.article-title em { font-style: normal; color: var(--primary); border-bottom: 3px solid var(--primary); }
+.article-desc { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+.meta-divider { color: var(--border); }
+.read-time { color: var(--primary); font-weight: 600; }
+.thumbnail-wrap { padding: 40px 20px; }
+.thumbnail-inner { max-width: 780px; margin: 0 auto; text-align: center; border-radius: 20px; padding: 40px 24px; }
+.article-content { background: var(--white); padding: 36px 0 48px; }
+.toc { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 36px; }
+.toc-title { font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li { font-size: 14px; color: var(--text-sub); display: flex; align-items: center; gap: 8px; }
+.toc-num { width: 20px; height: 20px; background: var(--primary); color: white; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section { margin-bottom: 44px; }
+.section-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.section-title .ico { width: 32px; height: 32px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+strong { color: var(--text); font-weight: 700; }
+.highlight-box { border-radius: 12px; padding: 20px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.hb-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.highlight-box.orange .hb-title { color: var(--primary); }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.green .hb-title { color: var(--green); }
+.highlight-box.yellow .hb-title { color: var(--yellow); }
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+.step-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.step-item { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; transition: box-shadow 0.15s; }
+.step-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); border-color: var(--primary); }
+.step-num { min-width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; font-size: 13px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0 6px; }
+.step-content-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+.step-content-desc { font-size: 13px; color: var(--text-sub); margin: 0; line-height: 1.6; }
+.error-card { background: #FEF2F2; border: 1px solid #FECACA; border-radius: 12px; padding: 16px 20px; margin: 12px 0; }
+.error-title { font-size: 15px; font-weight: 700; color: #DC2626; margin-bottom: 6px; }
+.error-cause { font-size: 13px; color: #64748B; margin-bottom: 6px; }
+.error-fix { font-size: 13px; color: #1A1A2E; font-weight: 600; }
+.code-block { background: #1E293B; border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 13px; color: #94A3B8; overflow-x: auto; }
+.code-block .fn { color: #60A5FA; }
+.code-block .str { color: #86EFAC; }
+.code-block .comment { color: #475569; }
+.summary-box { background: linear-gradient(135deg, var(--primary) 0%, #FF8C5A 100%); border-radius: 16px; padding: 28px; margin: 36px 0; color: white; }
+.summary-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.summary-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.summary-list li { font-size: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+.summary-list li::before { content: '✓'; font-weight: 900; color: #FDE68A; flex-shrink: 0; margin-top: 1px; }
+.related { background: var(--bg); padding: 36px 0; border-top: 1px solid var(--border); }
+.related-title { font-size: 18px; font-weight: 700; margin-bottom: 18px; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.related-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 18px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: block; }
+.related-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(255,107,53,0.1); transform: translateY(-2px); }
+.rc-badge { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.rc-title { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+.rc-meta { font-size: 12px; color: var(--text-sub); }
+footer { background: var(--text); color: #94A3B8; font-size: 13px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 40px 24px 20px; display: flex; gap: 48px; flex-wrap: wrap; }
+.footer-logo { font-size: 20px; font-weight: 900; margin-bottom: 10px; }
+.footer-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+.footer-col-title { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; }
+.footer-links a:hover { color: #FF6B35; }
+.footer-bottom { text-align: center; padding: 16px; font-size: 12px; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.1); }
+.reading-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); z-index: 9999; transition: width 0.1s; width: 0%; }
+@media (max-width: 600px) { .header-nav { display: none; } .related-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="reading-bar" id="readingBar"></div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+      <a href="index.html?cat=생활정보">💡 생활정보</a>
+      <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+      <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">⚡ 꿀팁</div>
+    <h1 class="article-title">엑셀 VLOOKUP 오류<br><em>원인별 해결법 완전 정리</em> (2026)</h1>
+    <p class="article-desc">열심히 수식 입력했는데 #N/A, #VALUE!, #REF! 오류만 뜨는 엑셀. 원인을 알면 30초 만에 해결할 수 있어요. 가장 흔한 오류 유형부터 IFERROR 꿀팁, XLOOKUP 전환까지 한 번에 정리했습니다.</p>
+    <div class="article-meta">
+      <span>📅 2026.03.22</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 5분 읽기</span>
+    </div>
+  </div>
+</div>
+
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner" style="background: linear-gradient(135deg, #134e4a 0%, #065f46 50%, #064e3b 100%);">
+    <div style="font-size:72px; margin-bottom:16px">📊</div>
+    <div style="font-size:22px; font-weight:900; color:#fff; line-height:1.3;">VLOOKUP 오류<br><span style="color:#34D399">#N/A 해결 완전 정리</span></div>
+    <div style="font-size:13px; color:rgba(255,255,255,0.75); margin-top:12px">일잘러닷컴 직접 정리 | 2026년 기준</div>
+  </div>
+</div>
+
+<div class="article-content">
+  <div class="container">
+
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> VLOOKUP #N/A 오류 — 원인과 해결법</li>
+        <li><span class="toc-num">2</span> #VALUE!, #REF! 오류 처리하기</li>
+        <li><span class="toc-num">3</span> IFERROR로 오류 메시지 깔끔하게 감추기</li>
+        <li><span class="toc-num">4</span> VLOOKUP 대신 XLOOKUP 써야 하는 이유</li>
+        <li><span class="toc-num">5</span> 핵심 요약</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🔴</span> VLOOKUP #N/A 오류 — 원인과 해결법</h2>
+      <p>VLOOKUP에서 가장 많이 나오는 오류가 바로 <strong>#N/A</strong>입니다. "찾는 값이 없다"는 뜻인데, 실제로는 값이 있는데도 이 오류가 나타나는 경우가 훨씬 많습니다. 원인은 대부분 세 가지로 압축돼요.</p>
+
+      <div class="error-card">
+        <div class="error-title">원인 1 — 공백 문자가 숨어 있다</div>
+        <div class="error-cause">셀에 "서울" 과 " 서울" 은 눈에 똑같이 보이지만 엑셀은 다른 값으로 인식해요. 앞뒤 공백이 한 칸만 있어도 #N/A 오류가 생깁니다.</div>
+        <div class="error-fix">해결법: TRIM 함수로 공백 제거 → =VLOOKUP(TRIM(A2), 범위, 열, 0)</div>
+      </div>
+
+      <div class="error-card">
+        <div class="error-title">원인 2 — 숫자가 텍스트로 저장되어 있다</div>
+        <div class="error-cause">셀 왼쪽 위에 초록 삼각형이 보이면 숫자가 텍스트로 저장된 상태입니다. 숫자 1과 텍스트 "1"은 엑셀이 완전히 다른 값으로 인식해요.</div>
+        <div class="error-fix">해결법: 셀 선택 → 느낌표 아이콘 → "숫자로 변환" 클릭</div>
+      </div>
+
+      <div class="error-card">
+        <div class="error-title">원인 3 — 마지막 인수를 TRUE로 했다</div>
+        <div class="error-cause">VLOOKUP의 네 번째 인수를 TRUE(또는 1)로 설정하면 정확히 일치가 아닌 근사값을 찾아요. 이 경우 데이터가 오름차순 정렬이 아니면 엉뚱한 결과나 #N/A가 납니다.</div>
+        <div class="error-fix">해결법: 마지막 인수를 반드시 FALSE(또는 0)으로 → =VLOOKUP(A2, 범위, 2, 0)</div>
+      </div>
+
+      <div class="highlight-box blue">
+        <div class="hb-icon">💡</div>
+        <div>
+          <div class="hb-title">확인 순서 팁</div>
+          <p class="hb-text">오류가 나면 수식부터 고치려 하지 말고, 먼저 찾는 값 셀과 테이블 첫 열을 <strong>나란히 놓고 눈으로 비교</strong>해보세요. 공백이나 텍스트/숫자 형식 차이가 바로 보일 때가 대부분이에요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">⚠️</span> #VALUE!, #REF! 오류 처리하기</h2>
+      <p>#N/A 다음으로 자주 나오는 오류가 #VALUE!와 #REF!입니다. 이 두 오류는 원인이 명확해서 찾으면 바로 해결돼요.</p>
+
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">#VALUE!</div>
+          <div>
+            <div class="step-content-title">데이터 형식이 잘못됐을 때</div>
+            <p class="step-content-desc">찾을 값이 들어가는 셀에 날짜, 텍스트, 숫자가 섞여 있을 때 발생합니다. 해당 열 전체를 선택하고 셀 서식을 통일하면 해결돼요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">#REF!</div>
+          <div>
+            <div class="step-content-title">범위가 삭제되거나 잘못 지정됐을 때</div>
+            <p class="step-content-desc">VLOOKUP의 두 번째 인수(테이블 범위)에서 열이 삭제됐거나, 세 번째 인수(열 번호)가 범위보다 크면 발생합니다. 예: 범위가 2열인데 열 번호를 3으로 입력한 경우.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">범위</div>
+          <div>
+            <div class="step-content-title">범위를 절대참조($)로 고정하기</div>
+            <p class="step-content-desc">수식을 아래로 드래그할 때 테이블 범위가 같이 밀리면 #REF! 오류가 납니다. 범위를 선택하고 F4를 눌러 $B$2:$D$100 형식으로 고정하세요.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box orange">
+        <div class="hb-icon">🔧</div>
+        <div>
+          <div class="hb-title">수식 수정 전 범위 먼저 확인</div>
+          <p class="hb-text">수식 셀 클릭 → 수식 입력줄에서 두 번째 인수(테이블 범위) 부분을 클릭하면 해당 범위가 파란색으로 하이라이트됩니다. 범위가 제대로 잡혔는지 눈으로 확인하세요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🛡</span> IFERROR로 오류 메시지 깔끔하게 감추기</h2>
+      <p>공유용 자료에 #N/A 오류가 그대로 찍혀 있으면 보기 불편하죠. <strong>IFERROR 함수</strong>로 감싸면 오류 메시지 대신 원하는 문구나 빈 칸으로 표시할 수 있어요.</p>
+
+      <div class="code-block">
+        <span class="comment">// 오류가 나면 "미등록"으로 표시</span><br>
+        =<span class="fn">IFERROR</span>(<span class="fn">VLOOKUP</span>(A2, B:D, 2, 0), <span class="str">"미등록"</span>)<br><br>
+        <span class="comment">// 오류가 나면 빈 칸으로 표시</span><br>
+        =<span class="fn">IFERROR</span>(<span class="fn">VLOOKUP</span>(A2, B:D, 2, 0), <span class="str">""</span>)<br><br>
+        <span class="comment">// 오류가 나면 0으로 표시 (합계 계산할 때 유용)</span><br>
+        =<span class="fn">IFERROR</span>(<span class="fn">VLOOKUP</span>(A2, B:D, 2, 0), 0)
+      </div>
+
+      <div class="highlight-box green">
+        <div class="hb-icon">✅</div>
+        <div>
+          <div class="hb-title">IFERROR 활용 주의사항</div>
+          <p class="hb-text">오류를 무작정 감추면 실제 데이터 누락을 놓칠 수 있어요. 내부 작업용 파일에는 오류를 그대로 두고 원인을 파악하는 게 낫고, 보고용·공유용 파일에만 IFERROR를 쓰는 걸 추천합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🚀</span> VLOOKUP 대신 XLOOKUP 써야 하는 이유</h2>
+      <p>Office 2021, Microsoft 365 이상이라면 XLOOKUP을 쓰는 걸 추천해요. VLOOKUP보다 훨씬 쓰기 쉽고, 몇 가지 고질적인 문제를 원천 차단합니다.</p>
+
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">①</div>
+          <div>
+            <div class="step-content-title">열 번호 직접 입력 불필요</div>
+            <p class="step-content-desc">VLOOKUP은 결과 열 번호를 숫자로 입력해야 해서, 중간에 열이 추가되면 수식을 다 고쳐야 합니다. XLOOKUP은 결과 범위를 직접 지정해서 열 추가에도 자동 대응.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">②</div>
+          <div>
+            <div class="step-content-title">왼쪽 방향 검색 가능</div>
+            <p class="step-content-desc">VLOOKUP은 찾을 값이 항상 테이블 가장 왼쪽에 있어야 해요. XLOOKUP은 어디에 있든 상관없이 원하는 방향으로 검색할 수 있습니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">③</div>
+          <div>
+            <div class="step-content-title">기본값 설정 내장</div>
+            <p class="step-content-desc">IFERROR를 따로 감싸지 않아도 XLOOKUP 자체에 오류 시 표시할 값을 설정할 수 있어요. 수식이 훨씬 깔끔해집니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <span class="comment">// XLOOKUP 기본 형식</span><br>
+        =<span class="fn">XLOOKUP</span>(찾을값, 검색범위, 결과범위, <span class="str">"없음"</span>)<br><br>
+        <span class="comment">// 예시: A2를 B열에서 찾아 C열 값 반환, 없으면 "미등록"</span><br>
+        =<span class="fn">XLOOKUP</span>(A2, B:B, C:C, <span class="str">"미등록"</span>)
+      </div>
+
+      <div class="highlight-box yellow">
+        <div class="hb-icon">📌</div>
+        <div>
+          <div class="hb-title">엑셀 버전 확인 방법</div>
+          <p class="hb-text">XLOOKUP은 Excel 2021 / Microsoft 365에서 사용 가능합니다. 파일 → 계정 → 제품 정보에서 버전 확인. 이전 버전이라면 IFERROR + VLOOKUP 조합으로 충분히 커버됩니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list">
+        <li>#N/A 오류 → TRIM으로 공백 제거, 숫자/텍스트 형식 통일, 마지막 인수 0으로</li>
+        <li>#VALUE! → 셀 서식 통일 / #REF! → 범위 삭제 여부 확인, 절대참조($) 고정</li>
+        <li>IFERROR로 오류 감추기 → 보고용 파일에서 활용, 내부용은 오류 그대로 확인</li>
+        <li>Office 2021 이상이면 XLOOKUP으로 전환 — 열 삽입에 강하고 수식도 간단</li>
+        <li>오류 수정 전 찾는 값 셀과 테이블 첫 열을 나란히 비교하면 원인이 바로 보임</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-excel-vs-gsheet.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">엑셀 vs 구글 시트, 뭘 써야 할까?</div>
+        <div class="rc-meta">2026.03.09 · 4분</div>
+      </a>
+      <a href="post-shortcuts.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">맥북·윈도우 단축키 모음</div>
+        <div class="rc-meta">2025.03.01 · 3분</div>
+      </a>
+      <a href="post-google-calendar.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">구글 캘린더 100% 활용법</div>
+        <div class="rc-meta">2026.03.09 · 4분</div>
+      </a>
+      <a href="post-free-tools.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">유료인 줄 알았는데 무료 툴</div>
+        <div class="rc-meta">2025.02.25 · 4분</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><a href="index.html" style="color:inherit;text-decoration:none">일잘러<span style="color:#FF6B35">닷컴</span></a></div>
+      <div class="footer-desc">AI 도구, 앱 리뷰, 생활 꿀팁까지.<br>직접 써보고 정리한 정보만 올립니다.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">카테고리</div>
+      <div class="footer-links">
+        <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+        <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+        <a href="index.html?cat=생활정보">💡 생활정보</a>
+        <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">사이트 정보</div>
+      <div class="footer-links">
+        <a href="index.html">홈으로</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 일잘러닷컴 · All rights reserved</div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const progress = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>
