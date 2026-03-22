@@ -39,7 +39,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (url.pathname === '/sitemap.xml') {
+    if (url.pathname === '/sitemap.xml' || url.pathname === '/sitemap') {
       return new Response(SITEMAP, {
         headers: {
           'Content-Type': 'application/xml; charset=utf-8',
