@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>윈도우11 느려졌을때 해결법 — 5분 만에 빠르게 만드는 방법 — 일잘러닷컴</title>
+<meta name="description" content="윈도우11이 갑자기 느려졌을 때 바로 써먹을 수 있는 해결법. 시작 프로그램 정리, 가상 메모리, 전원 옵션까지 단계별로 정리했습니다.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523482751370898" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #FF6B35; --primary-light: #FFF0EB;
+  --blue: #3B82F6; --blue-light: #EFF6FF;
+  --green: #10B981; --green-light: #ECFDF5;
+  --yellow: #F59E0B; --yellow-light: #FFFBEB;
+  --text: #1A1A2E; --text-sub: #64748B;
+  --border: #E8EDF2; --bg: #F8FAFC; --white: #FFFFFF;
+}
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+header { background: var(--white); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.header-inner { max-width: 780px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; }
+.logo span { color: var(--primary); }
+.header-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 500; }
+.header-nav a { text-decoration: none; color: var(--text-sub); transition: color 0.15s; }
+.header-nav a:hover { color: var(--primary); }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+.article-header { background: var(--white); padding: 36px 0 0; }
+.cat-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--primary-light); color: var(--primary); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+.article-title { font-family: 'Noto Serif KR', serif; font-size: clamp(24px, 5vw, 34px); font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 14px; }
+.article-title em { font-style: normal; color: var(--primary); border-bottom: 3px solid var(--primary); }
+.article-desc { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+.meta-divider { color: var(--border); }
+.read-time { color: var(--primary); font-weight: 600; }
+.thumbnail-wrap { padding: 40px 20px; }
+.thumbnail-inner { max-width: 780px; margin: 0 auto; text-align: center; border-radius: 20px; padding: 40px 24px; }
+.article-content { background: var(--white); padding: 36px 0 48px; }
+.toc { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 36px; }
+.toc-title { font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li { font-size: 14px; color: var(--text-sub); display: flex; align-items: center; gap: 8px; }
+.toc-num { width: 20px; height: 20px; background: var(--primary); color: white; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section { margin-bottom: 44px; }
+.section-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.section-title .ico { width: 32px; height: 32px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+strong { color: var(--text); font-weight: 700; }
+.highlight-box { border-radius: 12px; padding: 20px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.hb-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.highlight-box.orange .hb-title { color: var(--primary); }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.green .hb-title { color: var(--green); }
+.highlight-box.yellow .hb-title { color: var(--yellow); }
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+.step-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.step-item { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; transition: box-shadow 0.15s; }
+.step-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); border-color: var(--primary); }
+.step-num { min-width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; font-size: 13px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0 6px; }
+.step-content-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+.step-content-desc { font-size: 13px; color: var(--text-sub); margin: 0; line-height: 1.6; }
+.info-card { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); border-radius: 16px; padding: 28px; margin: 28px 0; color: white; text-align: center; }
+.info-card-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; margin-bottom: 10px; }
+.info-card-num { font-family: 'Noto Serif KR', serif; font-size: 56px; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+.info-card-num span { font-size: 28px; }
+.info-card-desc { font-size: 14px; opacity: 0.85; }
+.compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+.compare-table th { padding: 14px 16px; font-size: 13px; font-weight: 700; text-align: center; }
+.compare-table th:first-child { background: #F1F5F9; color: var(--text-sub); }
+.compare-table th:nth-child(2) { background: #3B82F6; color: white; }
+.compare-table th:nth-child(3) { background: #10B981; color: white; }
+.compare-table td { padding: 13px 16px; font-size: 14px; border-bottom: 1px solid var(--border); text-align: center; }
+.compare-table td:first-child { text-align: left; font-weight: 600; background: #FAFAFA; color: var(--text); }
+.compare-table tr:last-child td { border-bottom: none; }
+.summary-box { background: linear-gradient(135deg, var(--primary) 0%, #FF8C5A 100%); border-radius: 16px; padding: 28px; margin: 36px 0; color: white; }
+.summary-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.summary-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.summary-list li { font-size: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+.summary-list li::before { content: '✓'; font-weight: 900; color: #FDE68A; flex-shrink: 0; margin-top: 1px; }
+.related { background: var(--bg); padding: 36px 0; border-top: 1px solid var(--border); }
+.related-title { font-size: 18px; font-weight: 700; margin-bottom: 18px; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.related-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 18px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: block; }
+.related-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(255,107,53,0.1); transform: translateY(-2px); }
+.rc-badge { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.rc-title { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+.rc-meta { font-size: 12px; color: var(--text-sub); }
+footer { background: var(--text); color: #94A3B8; font-size: 13px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 40px 24px 20px; display: flex; gap: 48px; flex-wrap: wrap; }
+.footer-logo { font-size: 20px; font-weight: 900; margin-bottom: 10px; }
+.footer-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+.footer-col-title { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; }
+.footer-links a:hover { color: #FF6B35; }
+.footer-bottom { text-align: center; padding: 16px; font-size: 12px; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.1); }
+.reading-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); z-index: 9999; transition: width 0.1s; width: 0%; }
+@media (max-width: 600px) { .header-nav { display: none; } .related-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="reading-bar" id="readingBar"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+      <a href="index.html?cat=생활정보">💡 생활정보</a>
+      <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+      <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ARTICLE HEADER -->
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">⚡ 꿀팁</div>
+    <h1 class="article-title">윈도우11 느려졌을 때<br><em>5분 만에 빠르게 만드는 해결법</em></h1>
+    <p class="article-desc">어느 날 갑자기 내 윈도우11이 평소보다 뚝뚝 끊기고, 마우스마저 버벅거릴 때 있잖아요? 재설치 안 해도, 기본 설정만 몇 군데 싹 손보면 정말 5분 만에 체감 속도가 확 좋아져요! 이대로만 따라오세요😊</p>
+    <div class="article-meta">
+      <span>📅 2026.03.23</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 5분 읽기</span>
+    </div>
+  </div>
+</div>
+
+<!-- THUMBNAIL -->
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner" style="background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);">
+    <div style="font-size:72px; margin-bottom:16px">💻</div>
+    <div style="font-size:22px; font-weight:900; color:#fff; line-height:1.3;">윈도우11 느려짐<br><span style="color:#60a5fa">5분 만에 해결하기</span></div>
+    <div style="font-size:13px; color:rgba(255,255,255,0.75); margin-top:12px">일잘러닷컴 직접 정리 | 2026년 기준</div>
+  </div>
+</div>
+
+<!-- ARTICLE CONTENT -->
+<div class="article-content">
+  <div class="container">
+
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> 윈도우11이 느려지는 주요 원인</li>
+        <li><span class="toc-num">2</span> 시작 프로그램 정리 — 가장 효과적인 방법</li>
+        <li><span class="toc-num">3</span> 전원 옵션 & 시각 효과 최적화</li>
+        <li><span class="toc-num">4</span> 가상 메모리 & 디스크 정리</li>
+        <li><span class="toc-num">5</span> 드라이버 업데이트 & 악성코드 점검</li>
+        <li><span class="toc-num">6</span> 핵심 요약</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🔍</span> 윈도우11이 느려지는 주요 원인</h2>
+      <p>설치하고 얼마 안 됐을 땐 날아가던 컴퓨터가, 서서히 느려지는 경험—다들 해본 적 있으시죠? 사실 원인만 딱 짚어보면, 괜히 재설치 안 해도 웬만한 건 금방 해결돼요. <strong>대부분 설정·습관 문제거든요!</strong> 지금부터 정말 자주 나오는 원인만 콕 짚어볼게요.</p>
+      <div class="info-card">
+        <div class="info-card-label">윈도우11 느려짐 원인 TOP</div>
+        <div class="info-card-num">5<span>가지</span></div>
+        <div class="info-card-desc">시작 프로그램 과부하, 잘못된 전원 옵션, 디스크 꽉 참, 드라이버 문제, 악성코드</div>
+      </div>
+      <table class="compare-table">
+        <tr><th>원인</th><th>영향도</th><th>해결 난이도</th></tr>
+        <tr><td>시작 프로그램 과부하</td><td>매우 높음</td><td>쉬움</td></tr>
+        <tr><td>전원 옵션 절전 모드</td><td>높음</td><td>쉬움</td></tr>
+        <tr><td>디스크 용량 부족</td><td>높음</td><td>쉬움</td></tr>
+        <tr><td>드라이버 오래됨</td><td>보통</td><td>보통</td></tr>
+        <tr><td>악성코드 감염</td><td>매우 높음</td><td>보통</td></tr>
+      </table>
+      <div class="highlight-box orange">
+        <div class="hb-icon">💡</div>
+        <div>
+          <div class="hb-title">이 글 순서대로만 해도 충분해요</div>
+          <p class="hb-text">레지스트리 만지는 특수한 방법 안 써도, 여기 있는 단계만 차근차근 따라오시면 9할은 끝! 어렵지 않으니 가볍게 시작해 보세요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🚀</span> 시작 프로그램 정리 — 가장 효과적인 방법</h2>
+      <p>컴퓨터를 켤 때 함께 '몰래' 켜지는 프로그램들 아시죠? 카카오톡, 원드라이브, 줌 등등… 의외로 많아서 놀랄걸요? 이런 것들이 <strong>부팅 속도를 잡아먹고, 느려지는 주범</strong>이에요.</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">작업 관리자 열기: Ctrl + Shift + Esc</div>
+            <p class="step-content-desc">가장 빠른 방법이에요! 아니면 작업표시줄 빈 곳에서 마우스 우클릭→작업 관리자 클릭해도 돼요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">"시작 프로그램" 탭 클릭</div>
+            <p class="step-content-desc">상단 탭에서 "시작 프로그램" 또는 영어로 "Startup apps"를 클릭하세요. 부팅 시 자동 실행되는 프로그램 목록이 뜹니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">불필요한 프로그램 우클릭 → "사용 안 함"</div>
+            <p class="step-content-desc">일이나 학교에서만 쓰는 프로그램, '당장 자주 안 쓰는 것'만 골라서 우클릭→'사용 안 함' 클릭! 삭제되는 게 아니라 자동실행만 꺼주는 거라 마음 놓고 해도 돼요. 카톡, 원드라이브, 디스코드 등은 꺼도 아무 문제 없더라고요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div>
+            <div class="step-content-title">컴퓨터 재시작 후 체감 확인</div>
+            <p class="step-content-desc">다 했으면 재시작 한 번! 그리고 부팅 속도가 얼마나 달라졌는지 한 번 느껴보세요. 특히 시작 프로그램이 10개 넘어갔던 분들은 효과 진짜 확 올 거예요.</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box blue">
+        <div class="hb-icon">ℹ️</div>
+        <div>
+          <div class="hb-title">남겨도 되는 프로그램은?</div>
+          <p class="hb-text">백신(윈도우 디펜더, V3 등)이나 그래픽 드라이버(엔비디아 알림 등) 관련 프로그램은 건드리지 마세요. 나머지는 웬만하면 꺼도 괜찮아요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">⚡</span> 전원 옵션 & 시각 효과 최적화</h2>
+      <p>윈도우11 기본값이 '절전 모드'라서, 성능이 제한돼 있는 거 혹시 알고 계셨나요? 특히 노트북 사용하는 분은 이 설정 한 번만 바꿔도 체감이 확 올라가요.</p>
+      <p style="font-weight:700; margin-bottom:8px">⚡ 전원 옵션을 "고성능"으로 변경하기</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">시작 버튼 우클릭 → "전원 옵션"</div>
+            <p class="step-content-desc">또는 검색창에 "전원 및 절전 설정"을 입력해도 됩니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">"추가 전원 설정" 클릭 → "고성능" 선택</div>
+            <p class="step-content-desc">'숨겨진 추가 계획 보기'가 보이면 그것도 클릭해 보세요. '고성능'이 있으면 바로 선택! 안 보이면 우측 "추가 전원 설정"을 먼저 클릭하세요.</p>
+          </div>
+        </div>
+      </div>
+      <p style="font-weight:700; margin-bottom:8px; margin-top:24px">🎨 시각 효과 줄이기 (저사양 PC 필수)</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">검색창에 "시스템 속성" 입력 → "고급 시스템 설정"</div>
+            <p class="step-content-desc">또는 내 컴퓨터 우클릭 → 속성 → 고급 시스템 설정.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">성능 → "설정" → "최적 성능으로 조정" 선택</div>
+            <p class="step-content-desc">불필요한 애니메이션·투명 효과 등이 깔끔하게 꺼져요. 디자인은 조금 투박해져도, 속도 차이는 꽤 크답니다!</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box green">
+        <div class="hb-icon">✅</div>
+        <div>
+          <div class="hb-title">투명 효과만 끄는 간단한 방법</div>
+          <p class="hb-text">설정→접근성→시각 효과→'투명 효과'만 꺼도 체감상 한결 부드러워져요. 전체 효과 끄기 부담된다면 이 방법도 충분해요!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">💾</span> 가상 메모리 & 디스크 정리</h2>
+      <p>혹시 디스크 사용량이 90% 넘게 꽉 차 있는 적 있으신가요? 이럴 때는 윈도우가 임시 파일을 저장할 공간이 부족해서 전체적으로 속도가 툭 떨어지더라고요. <strong>C 드라이브는 적어도 15~20% 정도는 여유 공간을 확보</strong>해 두는 게 좋으니 참고해두세요!</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">디스크 정리: 검색창에 "디스크 정리" 입력</div>
+            <p class="step-content-desc">C 드라이브 선택하고, 임시 파일이랑 다운로드 폴더, 휴지통까지 싹 정리해주면 깔끔해져요. 더 많은 공간을 비우고 싶다면 "시스템 파일 정리" 버튼도 한 번 눌러보세요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">저장소 관리 자동화: 설정 → 시스템 → 저장소 → "저장소 센스" 켜기</div>
+            <p class="step-content-desc">한 번만 켜두면 윈도우가 알아서 불필요한 임시 파일을 주기적으로 정리해줘서 진짜 편해요! 따로 신경 쓸 필요가 없다는 점, 완전 추천입니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">가상 메모리 늘리기 (RAM 4~8GB 사용자)</div>
+            <p class="step-content-desc">시스템 속성 → 고급 → 성능 설정 → 고급 탭 → 가상 메모리 "변경". 실제 RAM의 1.5배 정도로 설정하면 효과적입니다. 예: RAM 8GB → 가상 메모리 12,000MB.</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box yellow">
+        <div class="hb-icon">🎯</div>
+        <div>
+          <div class="hb-title">디스크 타입도 확인해보세요</div>
+          <p class="hb-text">SSD와 HDD의 속도 차이, 진짜 하늘 땅 차이에요. 무려 10배 가까이 차이 난다고 하니까요! 작업 관리자 → 성능 탭에서 디스크 종류 한번 확인해보시고, 만약 아직도 HDD라면 SSD로 갈아타는 것도 고민해볼 만해요. 특히 윈도우가 설치된 드라이브가 HDD라면… 솔직히 느린 게 당연해요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🛡</span> 드라이버 업데이트 & 악성코드 점검</h2>
+      <p>생각보다 오래된 드라이버가 문제의 원인인 경우가 진짜 많아요. 그래픽이나 칩셋 드라이버가 낡았다면 <strong>CPU 사용률이 이상하게 높아지거나 화면 끊김 현상</strong>이 생길 수도 있답니다.</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">🔄</div>
+          <div>
+            <div class="step-content-title">드라이버 업데이트: 설정 → Windows Update → 고급 옵션 → 선택적 업데이트</div>
+            <p class="step-content-desc">여기 들어가면 업데이트 다 한 묶음으로 확인하고 설치할 수 있어서 편하더라고요. 자동 업데이트도 켜두면 알아서 관리됩니다!</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">🛡</div>
+          <div>
+            <div class="step-content-title">Windows Defender 전체 검사 실행</div>
+            <p class="step-content-desc">검색창에 "Windows 보안" 입력해서 바이러스 및 위협 방지 들어가신 후, 검사 옵션에서 "전체 검사" 선택하면 돼요. 악성코드가 CPU랑 메모리를 몰래 잡아먹고 있을 수도 있으니 가끔씩은 꼭 한번씩 돌려주세요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">🔧</div>
+          <div>
+            <div class="step-content-title">시스템 파일 복구: 명령 프롬프트(관리자) → sfc /scannow 입력</div>
+            <p class="step-content-desc">딱 10~20분 정도 걸리는데, 이 과정에서 깨진 시스템 파일을 찾아서 자동으로 복구해줍니다. 이상하게 원인 모르게 느려지는 현상 있을 때 특히 효과 있어요.</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box orange">
+        <div class="hb-icon">⚠️</div>
+        <div>
+          <div class="hb-title">CPU 사용률이 100%라면?</div>
+          <p class="hb-text">작업 관리자 → 프로세스 탭에서 어떤 프로그램이 CPU를 잡아먹는지 꼭 체크해보세요. 혹시 "Antimalware Service Executable"이 유난히 많이 올라가 있다? 그럼 Windows Defender 예약 검사 시간을 조정하거나, 백그라운드에서 필요 없는 앱은 꺼주시면 좋아요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list">
+        <li>시작 프로그램 정리: Ctrl+Shift+Esc → 시작 프로그램 탭 → 불필요한 것 "사용 안 함"</li>
+        <li>전원 옵션 "고성능"으로 변경 — 절전 모드가 CPU를 throttling 함</li>
+        <li>저장소 센스 켜기 + C 드라이브 여유 공간 15% 이상 유지</li>
+        <li>시각 효과 줄이기: 투명 효과 끄기만 해도 체감 효과 있음</li>
+        <li>sfc /scannow로 시스템 파일 복구 + Defender 전체 검사</li>
+        <li>위 5가지 다 해도 느리면 → RAM 증설 또는 SSD 교체 고려</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- RELATED -->
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-screenshot-keys.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">화면 캡처 단축키 총정리 (2026)</div>
+        <div class="rc-meta">2026.03.23 · 4분</div>
+      </a>
+      <a href="post-win-update-error.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">윈도우 업데이트 오류 해결 완전 정리</div>
+        <div class="rc-meta">2026.03.23 · 5분</div>
+      </a>
+      <a href="post-shortcuts.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">맥북·윈도우 단축키 모음</div>
+        <div class="rc-meta">2025.03.01 · 3분</div>
+      </a>
+      <a href="post-free-tools.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">유료인 줄 알았는데 무료 툴</div>
+        <div class="rc-meta">2025.02.25 · 4분</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><a href="index.html" style="color:inherit;text-decoration:none">일잘러<span style="color:#FF6B35">닷컴</span></a></div>
+      <div class="footer-desc">AI 도구, 앱 리뷰, 생활 꿀팁까지.<br>직접 써보고 정리한 정보만 올립니다.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">카테고리</div>
+      <div class="footer-links">
+        <a href="index.html?cat=AI+도구">🤖 AI 도구</a>
+        <a href="index.html?cat=앱+리뷰">📱 앱 리뷰</a>
+        <a href="index.html?cat=생활정보">💡 생활정보</a>
+        <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">사이트 정보</div>
+      <div class="footer-links">
+        <a href="index.html">홈으로</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 일잘러닷컴 · All rights reserved</div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const progress = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>
