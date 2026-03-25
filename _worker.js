@@ -1,6 +1,6 @@
 const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://iljaller.pages.dev/</loc><lastmod>2026-03-22</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://iljaller.pages.dev/</loc><lastmod>2026-03-25</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
   <url><loc>https://iljaller.pages.dev/about.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://iljaller.pages.dev/privacy.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://iljaller.pages.dev/post-gpt5.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
@@ -23,22 +23,17 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
   <url><loc>https://iljaller.pages.dev/post-phone-storage.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://iljaller.pages.dev/post-camera-tips.html</loc><lastmod>2026-03-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://iljaller.pages.dev/post-desk-ergonomics.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-telecom-save.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://iljaller.pages.dev/post-ott-free.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-card-points.html</loc><lastmod>2026-03-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-tax.html</loc><lastmod>2025-02-28</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-fuel-tax.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-electricity.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-rent.html</loc><lastmod>2025-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-health-insurance.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-energy-checklist.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-heater-clean.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://iljaller.pages.dev/post-excel-vlookup.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.pages.dev/post-excel-date.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.pages.dev/post-hwp-table.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.pages.dev/post-word-pagebreak.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.pages.dev/post-excel-merge.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>`;
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-
     if (url.pathname === '/sitemap.xml' || url.pathname === '/sitemap') {
       return new Response(SITEMAP, {
         headers: {
@@ -48,7 +43,6 @@ export default {
         },
       });
     }
-
     // 나머지 모든 요청은 정적 파일로 전달
     return env.ASSETS.fetch(request);
   },
