@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 에이전틱 AI 직장인 완전 가이드 — 생성형 AI 이후, 에이전트 AI 혁명 — 일잘러닷컴</title>
+<meta name="description" content="생성형 AI 시대가 저물고 에이전틱 AI 시대가 열렸습니다. 직장인이 지금 알아야 할 AI 에이전트의 개념과 실전 활용법, 무료 서비스 3가지까지 완전 정리했습니다.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523482751370898" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #FF6B35;
+  --primary-light: #FFF0EB;
+  --blue: #3B82F6;
+  --blue-light: #EFF6FF;
+  --green: #10B981;
+  --green-light: #ECFDF5;
+  --yellow: #F59E0B;
+  --yellow-light: #FFFBEB;
+  --purple: #8B5CF6;
+  --purple-light: #F5F3FF;
+  --text: #1A1A2E;
+  --text-sub: #64748B;
+  --border: #E8EDF2;
+  --bg: #F8FAFC;
+  --white: #FFFFFF;
+}
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+header { background: var(--white); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.header-inner { max-width: 780px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 2px; }
+.logo span { color: var(--primary); }
+.header-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 500; color: var(--text-sub); }
+.header-nav a { text-decoration: none; color: var(--text-sub); transition: color 0.15s; }
+.header-nav a:hover { color: var(--primary); }
+.reading-bar { height: 3px; background: var(--primary); width: 0%; transition: width 0.1s; position: fixed; top: 0; left: 0; z-index: 200; }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+.article-header { background: var(--white); padding: 36px 0 0; }
+.cat-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--primary-light); color: var(--primary); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+.article-title { font-family: 'Noto Serif KR', serif; font-size: clamp(22px, 5vw, 32px); font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 14px; }
+.article-title em { font-style: normal; color: var(--primary); border-bottom: 3px solid var(--primary); }
+.article-desc { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+.meta-divider { color: var(--border); }
+.read-time { display: flex; align-items: center; gap: 4px; color: var(--primary); font-weight: 600; }
+.thumbnail-wrap { background: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #21262D 100%); padding: 40px 20px; }
+.thumbnail-inner { max-width: 780px; margin: 0 auto; text-align: center; }
+.thumb-title { font-size: 13px; color: #94A3B8; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+.thumb-big { font-family: 'Noto Serif KR', serif; font-size: clamp(18px, 4vw, 26px); font-weight: 700; color: white; line-height: 1.4; margin-bottom: 28px; }
+.thumb-big span { color: #FF6B35; }
+.evolution-row { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
+.evo-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 16px; text-align: center; }
+.evo-era { font-size: 10px; color: #64748B; margin-bottom: 4px; letter-spacing: 1px; }
+.evo-name { font-size: 13px; font-weight: 700; color: white; }
+.evo-arrow { color: #FF6B35; font-size: 20px; }
+.evo-box.active { background: rgba(255,107,53,0.15); border-color: rgba(255,107,53,0.4); }
+.evo-box.active .evo-name { color: #FF6B35; }
+.thumb-caption { font-size: 11px; color: #64748B; margin-top: 14px; }
+.article-content { background: var(--white); padding: 36px 0 48px; }
+.toc { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 36px; }
+.toc-title { font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li { font-size: 14px; color: var(--text-sub); display: flex; align-items: center; gap: 8px; cursor: pointer; transition: color 0.15s; }
+.toc-list li:hover { color: var(--primary); }
+.toc-num { width: 20px; height: 20px; background: var(--primary); color: white; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section { margin-bottom: 44px; }
+.section-title { font-family: 'Noto Serif KR', serif; font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
+.section-title .ico { font-size: 22px; }
+p { margin-bottom: 14px; }
+strong { color: var(--text); font-weight: 700; }
+.highlight-box { display: flex; gap: 14px; padding: 18px 20px; border-radius: 12px; margin: 20px 0; }
+.highlight-box.orange { background: var(--primary-light); border-left: 4px solid var(--primary); }
+.highlight-box.blue { background: var(--blue-light); border-left: 4px solid var(--blue); }
+.highlight-box.green { background: var(--green-light); border-left: 4px solid var(--green); }
+.highlight-box.yellow { background: var(--yellow-light); border-left: 4px solid var(--yellow); }
+.highlight-box.purple { background: var(--purple-light); border-left: 4px solid var(--purple); }
+.hb-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.hb-title { font-weight: 700; margin-bottom: 6px; font-size: 14px; }
+.hb-text { font-size: 14px; line-height: 1.7; color: var(--text-sub); margin: 0; }
+.info-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; margin: 16px 0; }
+.info-card-label { font-size: 12px; color: var(--text-sub); font-weight: 600; margin-bottom: 8px; }
+.info-card-num { font-size: 36px; font-weight: 900; color: var(--primary); line-height: 1; margin-bottom: 6px; }
+.info-card-num span { font-size: 16px; }
+.info-card-desc { font-size: 13px; color: var(--text-sub); }
+.step-list { display: flex; flex-direction: column; gap: 14px; margin: 16px 0; }
+.step-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 18px; background: var(--bg); border-radius: 12px; border: 1px solid var(--border); }
+.step-num { width: 28px; height: 28px; background: var(--primary); color: white; border-radius: 50%; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-content-title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.step-content-desc { font-size: 13px; color: var(--text-sub); margin: 0; line-height: 1.6; }
+.compare-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.compare-table th { background: var(--text); color: white; padding: 10px 12px; text-align: left; font-size: 13px; }
+.compare-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table tr:nth-child(even) td { background: var(--bg); }
+.summary-box { background: linear-gradient(135deg, var(--primary-light), #FFF8F5); border: 1px solid #FFCDB4; border-radius: 16px; padding: 24px 26px; margin-top: 20px; }
+.summary-title { font-weight: 900; font-size: 16px; margin-bottom: 14px; color: var(--primary); }
+.summary-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.summary-list li { font-size: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+.summary-list li::before { content: "✅"; flex-shrink: 0; }
+.related { background: var(--bg); padding: 36px 0; border-top: 1px solid var(--border); }
+.related-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.related-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-decoration: none; color: var(--text); transition: transform 0.15s, box-shadow 0.15s; }
+.related-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.rc-badge { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.rc-title { font-size: 13px; font-weight: 700; line-height: 1.5; margin-bottom: 6px; }
+.rc-meta { font-size: 11px; color: var(--text-sub); }
+footer { background: var(--text); color: rgba(255,255,255,0.7); text-align: center; padding: 28px 20px; font-size: 13px; line-height: 2; }
+</style>
+</head>
+<body>
+<div class="reading-bar" id="readingBar"></div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html?cat=AI 도구">AI 도구</a>
+      <a href="index.html?cat=생활정보">생활정보</a>
+      <a href="index.html?cat=꿀팁">꿀팁</a>
+      <a href="index.html?cat=앱 리뷰">앱 리뷰</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">🤖 AI 도구</div>
+    <h1 class="article-title">2026 <em>에이전틱 AI</em> 직장인 완전 가이드<br>생성형 AI 이후, AI 에이전트 혁명이 시작됐다</h1>
+    <p class="article-desc">'생성형 AI' 시대가 저물고 '에이전틱 AI' 시대가 열렸습니다. AI가 스스로 목표를 설정하고 다단계 작업을 자율 수행하는 에이전트 AI는 직장인 업무 방식을 근본적으로 바꾸고 있습니다. 지금 알아야 할 에이전트 AI 완전 가이드입니다.</p>
+    <div class="article-meta">
+      <span>2026.03.26</span>
+      <span class="meta-divider">|</span>
+      <span class="read-time">⏱ 6분</span>
+      <span class="meta-divider">|</span>
+      <span>🤖 AI 도구</span>
+    </div>
+  </div>
+</div>
+
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner">
+    <div class="thumb-title">AI 트렌드 2026</div>
+    <div class="thumb-big">이제 AI는 <span>답하지 않는다</span><br>스스로 <span>실행</span>한다</div>
+    <div class="evolution-row">
+      <div class="evo-box">
+        <div class="evo-era">2022~2023</div>
+        <div class="evo-name">생성형 AI</div>
+      </div>
+      <div class="evo-arrow">→</div>
+      <div class="evo-box">
+        <div class="evo-era">2024~2025</div>
+        <div class="evo-name">멀티모달 AI</div>
+      </div>
+      <div class="evo-arrow">→</div>
+      <div class="evo-box active">
+        <div class="evo-era">2026 NOW</div>
+        <div class="evo-name">에이전틱 AI</div>
+      </div>
+    </div>
+    <div class="thumb-caption">AI 발전 단계 — 2026년 현재 에이전틱 AI 시대</div>
+  </div>
+</div>
+
+<div class="article-content">
+  <div class="container">
+    <nav class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li onclick="document.getElementById('s1').scrollIntoView({behavior:'smooth'})"><span class="toc-num">1</span> 에이전틱 AI란 무엇인가 — 생성형 AI와의 차이</li>
+        <li onclick="document.getElementById('s2').scrollIntoView({behavior:'smooth'})"><span class="toc-num">2</span> 2026년 기업 환경에서 이미 일어나고 있는 변화</li>
+        <li onclick="document.getElementById('s3').scrollIntoView({behavior:'smooth'})"><span class="toc-num">3</span> 직장인 실전 활용 3가지</li>
+        <li onclick="document.getElementById('s4').scrollIntoView({behavior:'smooth'})"><span class="toc-num">4</span> 에이전트 AI 도입 시 반드시 알아야 할 주의사항</li>
+        <li onclick="document.getElementById('s5').scrollIntoView({behavior:'smooth'})"><span class="toc-num">5</span> 지금 무료로 시작할 수 있는 AI 에이전트 3가지</li>
+        <li onclick="document.getElementById('s6').scrollIntoView({behavior:'smooth'})"><span class="toc-num">6</span> 핵심 요약</li>
+      </ul>
+    </nav>
+
+    <div class="section" id="s1">
+      <h2 class="section-title"><span class="ico">🤖</span> 에이전틱 AI란 무엇인가 — 생성형 AI와의 차이</h2>
+      <p>혹시 2022년 ChatGPT 나왔던 거 기억하세요? 그때부터 '생성형 AI' 시대가 본격적으로 열렸거든요. 우리가 질문을 하면 AI가 척척 답을 만들어주고, 글도 대신 써주고 그랬어요. 즉, 내가 뭔가 입력하면 → AI가 결과를 바로 내놓는 구조였죠.</p>
+      <p>그런데 요즘 핫한 <strong>에이전틱 AI(Agentic AI)</strong>는 조금 다릅니다. 우리가 목표만 던져주면, AI가 알아서 방법을 찾고, 여러 단계에 걸쳐서 일도 처리하고, 중간중간 정보도 직접 찾아보고, 결과가 마음에 안 들면 스스로 수정까지 해요. 신기하죠? 사람은 처음 목표만 알려주면 된다는 점이 가장 큰 차이예요.</p>
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <tr><th>구분</th><th>생성형 AI</th><th>에이전틱 AI</th></tr>
+          <tr><td>작동 방식</td><td>질문 → 답변 생성</td><td>목표 → 자율 실행</td></tr>
+          <tr><td>단계 수</td><td>1단계</td><td>다단계 자율 처리</td></tr>
+          <tr><td>사람 개입</td><td>매 단계 필요</td><td>목표 설정 시 1회</td></tr>
+          <tr><td>도구 사용</td><td>없음</td><td>웹 검색, 파일 조작 가능</td></tr>
+          <tr><td>대표 예시</td><td>ChatGPT 답변</td><td>Agent 365, Copilot Cowork</td></tr>
+        </table>
+      </div>
+      <div class="highlight-box orange">
+        <div class="hb-icon">💡</div>
+        <div>
+          <div class="hb-title">이런 비유, 어떠세요?</div>
+          <p class="hb-text">생성형 AI는 "질문에 바로 답해주는 직원"이고, 에이전틱 AI는 "업무를 통째로 맡기면 스스로 척척 알아서 다 처리하는 직원"이랄까요? 앞의 경우는 계속 지시해야 하지만, 뒤의 경우엔 일단 목표만 주면 끝! 훨씬 편하죠.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="s2">
+      <h2 class="section-title"><span class="ico">🌐</span> 2026년 기업 환경에서 이미 일어나고 있는 변화</h2>
+      <p>에이전틱 AI, 사실 이미 많은 기업에서 쓰고 있어요. 2026년 현재, 글로벌 기업들은 어떻게 활용하는지 한 번 볼까요?</p>
+      <p>제일 먼저 떠오르는 곳은 <strong>이메일과 커뮤니케이션 자동화</strong> 분야예요. 예를 들어, 고객센터에는 에이전트 AI가 문의를 알아서 분류해서 쉬운 건 답변까지 자동으로 보내주고, 좀 복잡한 질문만 사람한테 넘기는 식이죠. 덕분에 고객 응대 시간이 예전에 비해 절반 이하로 줄었다는 곳도 계속 늘고 있다고 해요.</p>
+      <p>또, <strong>반복적인 업무 보고나 데이터 분석</strong>도 이제 AI가 다 해줍니다. 매주 실적 보고해야 할 때, 에이전트가 직접 데이터를 긁어와서 분석하고, 보고서까지 만들어서 팀에 자동 전송! 들으면 좀 부럽지 않나요?</p>
+      <div class="info-card">
+        <div class="info-card-label">2026년 에이전트 AI 도입 기업 비율 (글로벌 설문)</div>
+        <div class="info-card-num">68<span>%</span></div>
+        <div class="info-card-desc">전 세계 1,000명 이상 규모 기업들 중, AI 에이전트를 이미 도입했거나 도입 예정인 곳이 무려 68%나 된다고 하네요.</div>
+      </div>
+    </div>
+
+    <div class="section" id="s3">
+      <h2 class="section-title"><span class="ico">💼</span> 직장인 실전 활용 3가지</h2>
+      <p>'아니, 저런 건 대기업 얘기 아냐?' 하고 넘기지 마세요! 사실 우리 같은 직장인도 당장 써먹을 수 있는 방법이 있거든요. 제가 직접 찾아보고 써본 것 중, 제일 괜찮았던 3가지를 소개해드릴게요.</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">✉️ Shortwave — AI 이메일 자동 분류 및 답장</div>
+            <p class="step-content-desc">Shortwave는 Gmail과 연동되는 똑똑한 이메일 앱이에요. 메일을 중요도별로 자동 분류해주고, 빠르게 답할 수 있게 초안도 만들어줘요. "이 프로젝트 관련 메일만 따로 모아서 요약해줘" 같은 것까지 됩니다. 한국어도 지원하고, 무료 플랜도 있어요. 진짜 편해요!</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">🤖 Microsoft Copilot Agent — 반복 업무 자동화</div>
+            <p class="step-content-desc">Microsoft 365 사용자라면 Copilot을 '에이전트 모드'로 바꿔서 반복 업무를 자동화할 수 있어요. 예를 들어, "매주 월요일 아침에 Teams 채널에 있는 지난 주 메시지를 자동 요약해서 보내줘"도 가능하죠. 시간 아끼고 일도 덜어주는 꿀 기능이랍니다.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">📋 Notion AI — 프로젝트 문서 자동 정리</div>
+            <p class="step-content-desc">Notion AI는 그냥 글쓰기 도우미가 아니라, 이제는 회의록을 자동으로 요약해주고 다음에 할 일까지 정리해주는 에이전트 기능이 훨씬 강력해졌어요. 여러 관련 페이지도 알아서 연결해주니 프로젝트 관리가 한결 쉬워지더라고요. 게다가 기본 기능은 무료 플랜에서도 쓸 수 있으니까 부담도 없죠!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="s4">
+      <h2 class="section-title"><span class="ico">⚠️</span> 에이전트 AI 도입 시 반드시 알아야 할 주의사항</h2>
+      <p>에이전틱 AI가 요즘 정말 강력하다고들 하잖아요? 근데 아무 생각 없이 도입했다가 낭패보는 경우도 꽤 많더라고요. 특히 회사나 팀에서 쓸 때는 꼭 신경 써야 할 부분이 몇 가지 있어요. 제가 경험하면서 느꼈던 세 가지를 콕 집어 정리해볼게요!</p>
+      <div class="highlight-box yellow">
+        <div class="hb-icon">⚠️</div>
+        <div>
+          <div class="hb-title">첫 번째, 보안 문제!</div>
+          <p class="hb-text">연구 결과를 보니까, AI가 만들어낸 코드는 사람이 짠 코드보다 보안 구멍이 2.7배쯤 더 많대요. 막상 써보니 꼭 결과물을 다시 한 번 꼼꼼히 살펴보게 되더라고요. 에이전틱 AI가 혼자서 뚝딱 뭔가 했다면, 그냥 믿지 마시고 꼭 본인이 확인해주는 습관! 중요합니다.</p>
+        </div>
+      </div>
+      <div class="highlight-box blue">
+        <div class="hb-icon">🔒</div>
+        <div>
+          <div class="hb-title">두 번째, 데이터 유출 위험입니다</div>
+          <p class="hb-text">에이전트 AI에게 업무를 맡기면 직원 정보, 고객 데이터 같은 게 서버로 넘어갈 수 있어요. 민감한 자료를 AI에 넣었다가 괜찮을까 불안해질 수 있거든요. 꼭 그 서비스가 데이터 처리를 어떻게 하는지 미리 확인하고 이용하세요!</p>
+        </div>
+      </div>
+      <div class="highlight-box green">
+        <div class="hb-icon">✅</div>
+        <div>
+          <div class="hb-title">마지막으로, 사람이 한 번 더 확인해야 한다는 거예요</div>
+          <p class="hb-text">아무리 AI가 똑똑해도 이메일 보내기, 문서 최종 승인, 회사 대외 커뮤니케이션 같은 건 반드시 '사람'의 확인이 필수입니다. 실수도 은근 자주 있거든요. 특히 외부로 나가는 건 항상 내가 직접 보는 걸로!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="s5">
+      <h2 class="section-title"><span class="ico">🆓</span> 지금 무료로 시작할 수 있는 AI 에이전트 3가지</h2>
+      <p>돈 굳히면서 에이전틱 AI 경험해보고 싶으시죠? 저도 여러 가지 써봤는데, 한국어도 잘 되고 무료로 쓸 수 있는 서비스 세 가지를 추천해볼게요.</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-content-title">🌟 Claude.ai — Cowork 모드 (무료)</div>
+            <p class="step-content-desc">Claude의 Cowork 모드는 파일 관리, 문서 작성, 일정 잡기 등 자동화 작업에 딱이에요. 기본 에이전트 기능을 무료 플랜으로 써봤는데, 한국어 품질 정말 괜찮더라고요!</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-content-title">🔍 Perplexity AI — AI 검색 에이전트 (무료)</div>
+            <p class="step-content-desc">이건 단순 "검색" 그 이상이에요! 다양한 출처에서 정보를 모아 답을 만들어줘서, 예를 들어 "최근 3개월 국내 AI 스타트업 투자 동향" 같은 것도 한 번에 정리해줍니다. 무료 플랜 기준으로 하루종일 써도 모자람 없더라고요.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-content-title">📊 Notion AI — 문서 에이전트 (기본 무료)</div>
+            <p class="step-content-desc">회의록 올리면 요약도 해주고, 할 일 목록 추출까지 완전 '일잘러' 도구에요. Notion 무료 플랜에서도 AI 요약, 번역, 액션 아이템 뽑기 다 쓸 수 있으니까 가볍게 시작해보세요.</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box purple">
+        <div class="hb-icon">💜</div>
+        <div>
+          <div class="hb-title">처음 도전한다면</div>
+          <p class="hb-text">처음에는 Claude.ai에서 내가 자주 하는 일 하나 골라서 에이전트 모드로 시켜보세요. "이 내용으로 팀에 공유할 주간보고 초안 만들어줘" 이런 거부터 해보면 긴장도 덜 되고 금방 감 잡아요!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box" id="s6">
+      <div class="summary-title">🎯 한눈에 보는 정리</div>
+      <ul class="summary-list">
+        <li>에이전틱 AI는 목표만 던지면 AI가 여러 단계 작업을 자기 혼자서 척척 진행합니다! 기존 생성형 AI랑은 차원이 다르죠.</li>
+        <li>2026년엔 전 세계 기업 68%가 AI 에이전트 도입 예정 또는 이미 사용 중이래요.</li>
+        <li>실전에서 쓸만한 도구: Shortwave(이메일), Copilot Agent(반복 업무), Notion AI(문서 정리) 등등!</li>
+        <li>꼭 주의해야 할 점: 보안, 데이터 유출, 그리고 정말 중요한 일은 사람이 직접 최종 점검하기.</li>
+        <li>무료로 바로 써보고 싶으면 Claude.ai Cowork 모드, Perplexity AI, Notion AI로 오늘부터 체험 가능!</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-chatgpt.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">ChatGPT란? 2억 명이 쓰는 이유 완벽 정리</div>
+        <div class="rc-meta">2025.03.10 · 5분</div>
+      </a>
+      <a href="post-claude.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">Claude AI 사용법 — ChatGPT랑 뭐가 다른가요?</div>
+        <div class="rc-meta">2025.03.12 · 4분</div>
+      </a>
+      <a href="post-vibecoding.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">바이브코딩이란? 코딩 모르는 직장인이 앱 만드는 법</div>
+        <div class="rc-meta">2025.04.01 · 5분</div>
+      </a>
+      <a href="post-ryuton-vs-claude.html" class="related-card">
+        <div class="rc-badge">🤖 AI 도구</div>
+        <div class="rc-title">뤼튼 vs Claude — 한국인에게 더 맞는 AI는?</div>
+        <div class="rc-meta">2025.04.15 · 5분</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>일잘러닷컴</strong> · 생활정보 &amp; 유용툴 리뷰<br>
+  <span style="font-size:12px;opacity:0.6;margin-top:6px;display:block">© 2026 iljaller.com · All rights reserved</span>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>
