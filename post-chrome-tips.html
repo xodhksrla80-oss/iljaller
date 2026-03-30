@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523482751370898" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>크롬 브라우저 꿀팁 10가지 — 직장인 모르면 손해 — 일잘러닷컴</title>
+<meta name="description" content="하루 종일 크롬을 쓰면서 정작 편한 기능을 모르고 있지 않나요? 실수로 닫은 탭 복구, 탭 그룹, 주소창 계산기까지 당장 써먹을 수 있는 크롬 꿀팁 10가지입니다.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #FF6B35; --primary-light: #FFF0EB;
+  --blue: #3B82F6; --blue-light: #EFF6FF;
+  --green: #10B981; --green-light: #ECFDF5;
+  --yellow: #F59E0B; --yellow-light: #FFFBEB;
+  --text: #1A1A2E; --text-sub: #64748B;
+  --border: #E8EDF2; --bg: #F8FAFC; --white: #FFFFFF;
+  --chrome: #1A73E8;
+}
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+#readingBar { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); z-index: 999; width: 0%; }
+header { background: var(--white); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.header-inner { max-width: 780px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; }
+.logo span { color: var(--primary); }
+.header-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 500; }
+.header-nav a { text-decoration: none; color: var(--text-sub); }
+.header-nav a:hover { color: var(--primary); }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+.article-header { background: var(--white); padding: 36px 0 0; }
+.cat-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--primary-light); color: var(--primary); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+.article-title { font-family: 'Noto Serif KR', serif; font-size: clamp(22px, 5vw, 32px); font-weight: 700; line-height: 1.4; margin-bottom: 14px; }
+.article-title em { font-style: normal; color: var(--primary); border-bottom: 3px solid var(--primary); }
+.article-desc { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+.read-time { color: var(--primary); font-weight: 600; }
+.thumbnail-wrap { background: linear-gradient(135deg, #1557B0 0%, #1A73E8 60%, #4285F4 100%); padding: 40px 20px; }
+.thumbnail-inner { max-width: 780px; margin: 0 auto; text-align: center; }
+.thumb-emoji { font-size: 64px; margin-bottom: 16px; }
+.thumb-title-main { font-family: 'Noto Serif KR', serif; font-size: clamp(18px, 4.5vw, 26px); font-weight: 700; color: white; line-height: 1.4; margin-bottom: 20px; }
+.thumb-title-main span { color: #FCD34D; }
+.shortcut-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 14px; }
+.sc-chip { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); border-radius: 8px; padding: 6px 14px; font-size: 13px; font-weight: 700; color: white; font-family: monospace; }
+.thumb-caption { font-size: 11px; color: rgba(255,255,255,0.5); }
+.article-content { background: var(--white); padding: 36px 0 48px; }
+.toc { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--chrome); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 36px; }
+.toc-title { font-size: 13px; font-weight: 700; color: var(--chrome); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.toc-list { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+.toc-list li { font-size: 13px; color: var(--text-sub); display: flex; align-items: center; gap: 6px; }
+.toc-num { width: 18px; height: 18px; background: var(--chrome); color: white; border-radius: 50%; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section { margin-bottom: 44px; }
+.section-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.section-title .ico { width: 32px; height: 32px; background: var(--blue-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+strong { color: var(--text); font-weight: 700; }
+.highlight-box { border-radius: 12px; padding: 20px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.hb-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.green .hb-title { color: var(--green); }
+.highlight-box.yellow .hb-title { color: var(--yellow); }
+.highlight-box.orange .hb-title { color: var(--primary); }
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+/* TIP CARDS */
+.tip-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 20px 0; }
+@media (max-width: 540px) { .tip-grid { grid-template-columns: 1fr; } .toc-list { grid-template-columns: 1fr; } }
+.tip-card { border: 1.5px solid var(--border); border-radius: 14px; padding: 18px; }
+.tip-card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.tip-num-badge { width: 28px; height: 28px; background: var(--chrome); color: white; border-radius: 8px; font-size: 13px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.tip-title { font-size: 15px; font-weight: 700; }
+.tip-desc { font-size: 13.5px; color: var(--text-sub); line-height: 1.6; margin-bottom: 8px; }
+.tip-shortcut { display: inline-flex; align-items: center; gap: 4px; }
+.key { display: inline-block; background: #1E293B; color: #E2E8F0; font-family: monospace; font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 5px; }
+/* EXT TABLE */
+.ext-table { width: 100%; border-collapse: collapse; margin: 20px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+.ext-table th { padding: 12px 16px; background: var(--chrome); color: white; font-size: 13px; font-weight: 700; text-align: left; }
+.ext-table td { padding: 12px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
+.ext-table tr:last-child td { border-bottom: none; }
+.ext-table tr:hover td { background: #F0F4FF; }
+.ext-table td:first-child { font-weight: 700; }
+/* SUMMARY */
+.summary-box { background: linear-gradient(135deg, #1557B0 0%, #4285F4 100%); border-radius: 16px; padding: 28px; margin: 32px 0 0; color: white; }
+.summary-title { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 700; margin-bottom: 16px; color: #FCD34D; }
+.summary-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.summary-list li { font-size: 14px; line-height: 1.6; padding-left: 20px; position: relative; opacity: 0.92; }
+.summary-list li::before { content: '✓'; position: absolute; left: 0; color: #34D399; font-weight: 700; }
+.related { background: var(--bg); padding: 36px 0; }
+.related-title { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+@media (max-width: 540px) { .related-grid { grid-template-columns: 1fr; } }
+.related-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; text-decoration: none; transition: transform 0.15s, box-shadow 0.15s; }
+.related-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.rc-badge { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.rc-title { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+.rc-meta { font-size: 12px; color: var(--text-sub); }
+footer { background: var(--text); color: rgba(255,255,255,0.7); text-align: center; padding: 28px 20px; font-size: 14px; line-height: 1.8; }
+</style>
+</head>
+<body>
+<div id="readingBar"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+      <a href="index.html?cat=생활정보">💡 생활정보</a>
+      <a href="index.html?cat=AI 도구">🤖 AI도구</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">⚡ 꿀팁</div>
+    <h1 class="article-title">크롬 브라우저 <em>모르면 손해인 꿀팁 10가지</em> — 직장인 필수</h1>
+    <p class="article-desc">하루 종일 크롬을 쓰면서 정작 편한 기능을 모르고 있지 않나요? 닫은 탭 복구부터 주소창 계산기까지, 당장 써먹을 수 있는 크롬 꿀팁 10가지를 정리했습니다.</p>
+    <div class="article-meta">
+      <span>📅 2026.03.30</span>
+      <span>|</span>
+      <span class="read-time">⏱ 4분</span>
+      <span>|</span>
+      <span>⚡ 꿀팁</span>
+    </div>
+  </div>
+</div>
+
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner">
+    <div class="thumb-emoji">🌐</div>
+    <div class="thumb-title-main">크롬 브라우저<br><span>모르면 손해인 꿀팁 10가지</span></div>
+    <div class="shortcut-chips">
+      <div class="sc-chip">Ctrl+Shift+T</div>
+      <div class="sc-chip">Ctrl+L</div>
+      <div class="sc-chip">Ctrl+Shift+N</div>
+      <div class="sc-chip">F12</div>
+    </div>
+    <div class="thumb-caption">일잘러닷컴 직접 정리 | 2026년 기준</div>
+  </div>
+</div>
+
+<div class="article-content">
+  <div class="container">
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> 탭 관련 꿀팁</li>
+        <li><span class="toc-num">2</span> 주소창 활용</li>
+        <li><span class="toc-num">3</span> 단축키 모음</li>
+        <li><span class="toc-num">4</span> 확장 프로그램 추천</li>
+        <li><span class="toc-num">5</span> 숨겨진 설정</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">📑</span> 탭 관련 꿀팁 (1~4번)</h2>
+      <p>크롬 꿀팁, 한 번만 알아두면 쭉 써먹게 되니까 꼭 읽어보세요! 저도 평소에 자주 쓰는 기능들이고요, 몇 가지는 몰랐다면 정말 유용하게 느끼실 거예요.😄</p>
+      <div class="tip-grid">
+        <div class="tip-card">
+          <div class="tip-card-top">
+            <div class="tip-num-badge">1</div>
+            <div class="tip-title">실수로 닫은 탭 복구</div>
+          </div>
+          <p class="tip-desc">급하게 탭 닫았다가 멘붕 올 때 있잖아요? 이럴 땐 이 단축키만 한 구세주가 없더라고요. 누르면 마지막에 닫았던 탭이 그 상태 그대로 복구돼요. 여러 번 누르면 그 전 탭들까지 차례로 다 돌아옵니다!</p>
+          <div class="tip-shortcut"><span class="key">Ctrl</span>+<span class="key">Shift</span>+<span class="key">T</span></div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card-top">
+            <div class="tip-num-badge">2</div>
+            <div class="tip-title">탭 그룹으로 업무 정리</div>
+          </div>
+          <p class="tip-desc">탭이 너무 많아져서 뭘 보고 있었는지 헷갈린 적 있으시죠? 탭을 마우스 오른쪽 버튼으로 클릭해서 '새 그룹에 탭 추가'만 눌러보세요. 색상 정할 수도 있고, '기획 자료', '참고', '메일' 등 이름도 맘대로 붙일 수 있어요.</p>
+          <div class="tip-shortcut"><span class="key">탭 우클릭</span> → 새 그룹</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card-top">
+            <div class="tip-num-badge">3</div>
+            <div class="tip-title">탭 번호로 이동</div>
+          </div>
+          <p class="tip-desc">Ctrl 키랑 숫자키(1~8) 조합만 기억해두세요. 탭이 많을 때 마우스 찾느라 시간 버리는 경우 많은데, 이 단축키만 알면 손쉽게 원하는 탭으로 이동! Ctrl+9 누르면 언제나 맨 마지막 탭으로 갈 수 있어요.</p>
+          <div class="tip-shortcut"><span class="key">Ctrl</span>+<span class="key">1</span>~<span class="key">9</span></div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card-top">
+            <div class="tip-num-badge">4</div>
+            <div class="tip-title">탭 고정(핀)하기</div>
+          </div>
+          <p class="tip-desc">메일이나 캘린더처럼 항상 떠 있어야 하는 사이트, 그럴 땐 탭을 우클릭해서 '탭 고정'만 선택하면 끝! 자동으로 왼쪽에 작게 자리 잡고 실수로 닫혀버릴 일도 없어요.</p>
+          <div class="tip-shortcut"><span class="key">탭 우클릭</span> → 탭 고정</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🔍</span> 주소창 제대로 활용하기 (5~8번)</h2>
+      <div class="tip-grid">
+        <div class="tip-card">
+          <div class="tip-card-top">
+            <div class="tip-num-badge">5</div>
+            <div class="tip-title">주소창이 계산기?!</div>
+          </div>
+          <p class="tip-desc">Ctrl+L로 주소창에 바로 가서 숫자 계산식만 입력해도 바로 결과가 딱! "500 * 1.1"처럼 부가세 계산, "180cm in feet"처럼 단위 변환까지 다 됩니다. 한 번 써보면 습관돼요.</p>
+          <div class="tip-shortcut"><span class="key">Ctrl</span>+<span class="key">L</span> → 수식 입력</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card-top">
+            <div class="tip-num-badge">6</div>
+            <div class="tip-title">사이트 내 검색 단축키</div>
+          </div>
+          <p class="tip-desc">유튜브, 나무위키, 쿠팡처럼 자주 가는 사이트 이름을 주소창에 치고, 바로 Tab 키를 눌러보세요. 그러면 그 사이트 안에서 바로 검색할 수 있는 모드가 됩니다. 생각보다 엄청 편해요!</p>
+          <div class="tip-shortcut">사이트명 입력 후 <span class="key">Tab</span></div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card-top">
+            <div class="tip-num-badge">7</div>
+            <div class="tip-title">주소창 바로 포커스</div>
+          </div>
+          <p class="tip-desc">Ctrl+L 또는 F6만 누르면 주소창으로 바로 이동하고, URL 전체가 선택되어 있어요. 바로 새 주소를 입력하거나, 기존 주소 복사할 때 진짜 유용합니다. 마우스 필요 없어요!</p>
+          <div class="tip-shortcut"><span class="key">Ctrl</span>+<span class="key">L</span> 또는 <span class="key">F6</span></div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card-top">
+            <div class="tip-num-badge">8</div>
+            <div class="tip-title">시크릿 모드 열기</div>
+          </div>
+          <p class="tip-desc">Ctrl+Shift+N만 기억하면 어디서든 시크릿 창이 열립니다. 방문 기록이나 쿠키 남기고 싶지 않을 때, 여러 명이 같이 쓰는 PC 쓸 때, 항공권·호텔처럼 가격 자주 바뀌는 사이트 보기에도 최고예요!</p>
+          <div class="tip-shortcut"><span class="key">Ctrl</span>+<span class="key">Shift</span>+<span class="key">N</span></div>
+        </div>
+      </div>
+      <div class="highlight-box yellow">
+        <div class="hb-icon">💡</div>
+        <div>
+          <div class="hb-title">주소창 계산기 활용 예시</div>
+          <p class="hb-text">"500 * 1.1" → 부가세 포함 금액 / "180cm in feet" → 키 단위 변환 / "1달러 원화" → 실시간 환율 / "2026-01-01에서 오늘까지 며칠" → 날짜 계산</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🔌</span> 직장인 추천 확장 프로그램 (9~10번)</h2>
+      <p>저처럼 한 번에 탭을 20개, 30개씩 켜놓는 분들 많죠? 확장 프로그램 단축키를 설정하면 더 빠르게 씁니다. 주소창에 <strong>chrome://extensions/shortcuts</strong>을 입력하면 나만의 단축키 지정 페이지가 바로 열려요!</p>
+      <table class="ext-table">
+        <tr>
+          <th>확장 프로그램</th>
+          <th>핵심 기능</th>
+          <th>추천 이유</th>
+        </tr>
+        <tr>
+          <td>📌 OneTab</td>
+          <td>탭 전부 목록으로 저장</td>
+          <td>클릭 한 번에 모든 탭이 리스트로 모아져 브라우저 가벼워짐. 필요할 때만 다시 열 수 있어요</td>
+        </tr>
+        <tr>
+          <td>🖼️ GoFullPage</td>
+          <td>페이지 전체 스크린샷</td>
+          <td>길~게 스크롤하는 자료도 한 장짜리 이미지로 저장. 보고서 첨부에 아주 유용, 무료!</td>
+        </tr>
+        <tr>
+          <td>📝 Grammarly</td>
+          <td>영문 문법 교정</td>
+          <td>영어 메일·문서 작성 시 자동으로 오류 표시</td>
+        </tr>
+        <tr>
+          <td>🎵 Video Speed Controller</td>
+          <td>영상 재생 속도 조절</td>
+          <td>유튜브·강의를 2~4배속으로 재생. 학습 시간 절반</td>
+        </tr>
+      </table>
+      <div class="highlight-box green">
+        <div class="hb-icon">✅</div>
+        <div>
+          <div class="hb-title">확장 프로그램 단축키 설정법</div>
+          <p class="hb-text">chrome://extensions/shortcuts 접속 → 사용하고 싶은 확장 프로그램 옆 입력란 클릭 → 원하는 키 조합 입력. 예: Ctrl+Shift+1로 OneTab 활성화.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">⚙️</span> 숨겨진 설정들도 한번 써보세요</h2>
+      <p>크롬에 내장된 관리 페이지들은 북마크해두면 정말 편리합니다. 원하는 곳으로 곧장 이동 가능해서 설정 찾아 헤매는 시간이 확 줄어요!</p>
+      <div class="highlight-box blue">
+        <div class="hb-icon">🔧</div>
+        <div>
+          <div class="hb-title">크롬 내장 페이지 — 북마크해두면 편리</div>
+          <p class="hb-text">chrome://settings → 전체 설정 / chrome://extensions → 확장 프로그램 관리 / chrome://flags → 실험적 기능(고급 사용자용) / chrome://downloads → 다운로드 기록 / chrome://history → 방문 기록</p>
+        </div>
+      </div>
+      <div class="highlight-box orange">
+        <div class="hb-icon">🔒</div>
+        <div>
+          <div class="hb-title">쿠키 팝업 귀찮으셨죠? 이거 설치하면 신세계!</div>
+          <p class="hb-text"><strong>I don't care about cookies</strong> 확장 프로그램을 설치하면 대부분의 사이트에서 쿠키 동의 팝업이 자동으로 꺼집니다. 저도 이거 없으면 못 써요😆</p>
+        </div>
+      </div>
+      <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;">
+        <thead>
+          <tr style="background:#3B82F6;color:white;">
+            <th style="padding:10px 14px;text-align:left;border-radius:8px 0 0 0;">단축키</th>
+            <th style="padding:10px 14px;text-align:left;">기능</th>
+            <th style="padding:10px 14px;text-align:left;border-radius:0 8px 0 0;">언제 쓰면 좋을까?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f8fafc;border-bottom:1px solid #e8edf2;">
+            <td style="padding:9px 14px;font-family:monospace;font-weight:700;">Ctrl+Shift+T</td>
+            <td style="padding:9px 14px;">닫은 탭 복구</td>
+            <td style="padding:9px 14px;">실수로 탭 닫았을 때 즉시</td>
+          </tr>
+          <tr style="background:#fff;border-bottom:1px solid #e8edf2;">
+            <td style="padding:9px 14px;font-family:monospace;font-weight:700;">Ctrl+1~9</td>
+            <td style="padding:9px 14px;">탭 번호 이동</td>
+            <td style="padding:9px 14px;">탭 많을 때 마우스 없이 이동</td>
+          </tr>
+          <tr style="background:#f8fafc;border-bottom:1px solid #e8edf2;">
+            <td style="padding:9px 14px;font-family:monospace;font-weight:700;">Ctrl+L</td>
+            <td style="padding:9px 14px;">주소창 포커스 + 계산기</td>
+            <td style="padding:9px 14px;">URL 이동, 계산, 환율 변환</td>
+          </tr>
+          <tr style="background:#fff;border-bottom:1px solid #e8edf2;">
+            <td style="padding:9px 14px;font-family:monospace;font-weight:700;">Ctrl+Shift+N</td>
+            <td style="padding:9px 14px;">시크릿 모드</td>
+            <td style="padding:9px 14px;">공용 PC, 계정 전환, 가격 비교</td>
+          </tr>
+          <tr style="background:#f8fafc;border-bottom:1px solid #e8edf2;">
+            <td style="padding:9px 14px;font-family:monospace;font-weight:700;">사이트명+Tab</td>
+            <td style="padding:9px 14px;">사이트 내 검색</td>
+            <td style="padding:9px 14px;">유튜브, 쿠팡, 나무위키 검색</td>
+          </tr>
+          <tr style="background:#fff;">
+            <td style="padding:9px 14px;font-family:monospace;font-weight:700;">탭 우클릭</td>
+            <td style="padding:9px 14px;">탭 그룹·고정</td>
+            <td style="padding:9px 14px;">프로젝트별 탭 정리, 필수탭 고정</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약 — 오늘 바로 써보기</div>
+      <ul class="summary-list">
+        <li>닫은 탭 복구: Ctrl+Shift+T — 여러 번 누르면 그 전 탭들까지 차례로!</li>
+        <li>탭 그룹: 우클릭 → '새 그룹에 탭 추가' — 색상+이름으로 프로젝트별 정리</li>
+        <li>탭 번호 이동: Ctrl+1~9 — 마우스 없이 탭 전환, Ctrl+9는 마지막 탭</li>
+        <li>주소창 계산기: Ctrl+L 후 수식 입력 — 부가세·환율·단위변환 다 됨</li>
+        <li>시크릿 모드: Ctrl+Shift+N — 공용PC, 계정 전환, 가격 비교 시 활용</li>
+        <li>확장 단축키 설정: chrome://extensions/shortcuts 에서 나만의 단축키</li>
+        <li>필수 확장: OneTab(탭 정리) + GoFullPage(전체 캡처) — 둘 다 무료!</li>
+      </ul>
+      <p style="margin-top:16px;font-size:14px;color:rgba(255,255,255,0.75);line-height:1.7;">이 중에서 아직 안 써본 기능 있다면 꼭 한 번 써보세요! 혹시 저보다 더 쓸만한 꿀팁 알고 계신 분, 댓글로 하나씩 남겨주시면 저도 배우고 싶어요✨</p>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-windows-setup.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">윈도우 재설치 후 필수 무료 프로그램 TOP 12</div>
+        <div class="rc-meta">2026.03.30 · 5분</div>
+      </a>
+      <a href="post-windows-speed.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">느려진 윈도우11 PC 속도 올리는 7가지 방법</div>
+        <div class="rc-meta">2026.03.30 · 5분</div>
+      </a>
+      <a href="post-shortcuts.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">단축키 모음 — 윈도우·엑셀·크롬</div>
+        <div class="rc-meta">생산성 2배 올리는 단축키</div>
+      </a>
+      <a href="post-naver-tips.html" class="related-card">
+        <div class="rc-badge">📱 앱 리뷰</div>
+        <div class="rc-title">네이버 앱 숨겨진 기능 총정리</div>
+        <div class="rc-meta">직장인이 몰랐던 네이버 꿀팁</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>일잘러닷컴</strong> · 생활정보 & 유용툴 리뷰<br>
+  <span style="font-size:12px;opacity:0.6;margin-top:6px;display:block">© 2026 iljaller.com · All rights reserved</span>
+</footer>
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    document.getElementById('readingBar').style.width = (scrollTop / scrollHeight * 100) + '%';
+  });
+</script>
+</body>
+</html>

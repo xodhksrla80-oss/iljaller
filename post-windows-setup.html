@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523482751370898" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>윈도우 재설치 후 필수 무료 프로그램 TOP 12 — 일잘러닷컴</title>
+<meta name="description" content="새 PC 사거나 윈도우 재설치 후 꼭 깔아야 할 무료 프로그램 12가지. Everything, 반디집, PowerToys, Ninite 등 2026년 기준 검증된 목록입니다.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #FF6B35; --primary-light: #FFF0EB;
+  --blue: #3B82F6; --blue-light: #EFF6FF;
+  --green: #10B981; --green-light: #ECFDF5;
+  --yellow: #F59E0B; --yellow-light: #FFFBEB;
+  --text: #1A1A2E; --text-sub: #64748B;
+  --border: #E8EDF2; --bg: #F8FAFC; --white: #FFFFFF;
+}
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+#readingBar { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); z-index: 999; width: 0%; transition: width 0.1s; }
+header { background: var(--white); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.header-inner { max-width: 780px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; }
+.logo span { color: var(--primary); }
+.header-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 500; }
+.header-nav a { text-decoration: none; color: var(--text-sub); transition: color 0.15s; }
+.header-nav a:hover { color: var(--primary); }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+.article-header { background: var(--white); padding: 36px 0 0; }
+.cat-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--blue-light); color: var(--blue); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+.article-title { font-family: 'Noto Serif KR', serif; font-size: clamp(22px, 5vw, 32px); font-weight: 700; line-height: 1.4; margin-bottom: 14px; }
+.article-title em { font-style: normal; color: var(--primary); border-bottom: 3px solid var(--primary); }
+.article-desc { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+.read-time { color: var(--primary); font-weight: 600; }
+.thumbnail-wrap { background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%); padding: 40px 20px; }
+.thumbnail-inner { max-width: 780px; margin: 0 auto; text-align: center; }
+.thumb-emoji { font-size: 64px; margin-bottom: 16px; }
+.thumb-title-main { font-family: 'Noto Serif KR', serif; font-size: clamp(18px, 4.5vw, 26px); font-weight: 700; color: white; line-height: 1.4; margin-bottom: 20px; }
+.thumb-title-main span { color: #FCD34D; }
+.prog-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 14px; }
+.prog-chip { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; padding: 6px 12px; font-size: 13px; font-weight: 700; color: white; }
+.thumb-caption { font-size: 11px; color: rgba(255,255,255,0.5); }
+.article-content { background: var(--white); padding: 36px 0 48px; }
+.toc { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--blue); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 36px; }
+.toc-title { font-size: 13px; font-weight: 700; color: var(--blue); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li { font-size: 14px; color: var(--text-sub); display: flex; align-items: center; gap: 8px; }
+.toc-num { width: 20px; height: 20px; background: var(--blue); color: white; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section { margin-bottom: 44px; }
+.section-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.section-title .ico { width: 32px; height: 32px; background: var(--blue-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; color: #2D3748; }
+strong { color: var(--text); font-weight: 700; }
+.highlight-box { border-radius: 12px; padding: 20px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+.highlight-box.blue { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.highlight-box.green { background: var(--green-light); border: 1px solid #A7F3D0; }
+.highlight-box.yellow { background: var(--yellow-light); border: 1px solid #FDE68A; }
+.highlight-box.orange { background: var(--primary-light); border: 1px solid #FDDFD1; }
+.hb-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.hb-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.highlight-box.blue .hb-title { color: var(--blue); }
+.highlight-box.green .hb-title { color: var(--green); }
+.highlight-box.yellow .hb-title { color: var(--yellow); }
+.highlight-box.orange .hb-title { color: var(--primary); }
+.hb-text { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+/* PROGRAM CARDS */
+.prog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 20px 0; }
+@media (max-width: 540px) { .prog-grid { grid-template-columns: 1fr; } }
+.prog-card { border: 1.5px solid var(--border); border-radius: 14px; padding: 18px; transition: box-shadow 0.15s; }
+.prog-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.prog-card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.prog-icon { font-size: 26px; }
+.prog-name { font-size: 16px; font-weight: 900; }
+.prog-cat { font-size: 11px; color: var(--text-sub); }
+.prog-desc { font-size: 13.5px; color: #4A5568; line-height: 1.6; margin-bottom: 8px; }
+.prog-tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 100px; }
+.tag-free { background: var(--green-light); color: var(--green); }
+.tag-must { background: var(--primary-light); color: var(--primary); }
+/* NINITE STEP */
+.step-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.step-item { display: flex; gap: 14px; align-items: flex-start; }
+.step-num { width: 32px; height: 32px; background: var(--blue); color: white; border-radius: 50%; font-size: 14px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-content-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.step-content-desc { font-size: 14px; color: var(--text-sub); line-height: 1.6; margin: 0; }
+/* SUMMARY */
+.summary-box { background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%); border-radius: 16px; padding: 28px; margin: 32px 0 0; color: white; }
+.summary-title { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 700; margin-bottom: 16px; color: #FCD34D; }
+.summary-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.summary-list li { font-size: 14px; line-height: 1.6; padding-left: 20px; position: relative; opacity: 0.92; }
+.summary-list li::before { content: '✓'; position: absolute; left: 0; color: #34D399; font-weight: 700; }
+/* RELATED */
+.related { background: var(--bg); padding: 36px 0; }
+.related-title { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+@media (max-width: 540px) { .related-grid { grid-template-columns: 1fr; } }
+.related-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; text-decoration: none; transition: transform 0.15s, box-shadow 0.15s; }
+.related-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.rc-badge { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.rc-title { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+.rc-meta { font-size: 12px; color: var(--text-sub); }
+footer { background: var(--text); color: rgba(255,255,255,0.7); text-align: center; padding: 28px 20px; font-size: 14px; line-height: 1.8; }
+</style>
+</head>
+<body>
+<div id="readingBar"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html?cat=꿀팁">⚡ 꿀팁</a>
+      <a href="index.html?cat=생활정보">💡 생활정보</a>
+      <a href="index.html?cat=AI 도구">🤖 AI도구</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="container">
+    <div class="cat-badge">⚡ 꿀팁</div>
+    <h1 class="article-title">윈도우 재설치 후 <em>필수 무료 프로그램 TOP 12</em> — 2026년 최신 정리</h1>
+    <p class="article-desc">새 PC를 사거나 윈도우를 재설치했을 때 가장 먼저 깔아야 할 프로그램 목록입니다. 전부 무료, 전부 검증된 것들만 골랐습니다.</p>
+    <div class="article-meta">
+      <span>📅 2026.03.30</span>
+      <span>|</span>
+      <span class="read-time">⏱ 5분</span>
+      <span>|</span>
+      <span>⚡ 꿀팁</span>
+    </div>
+  </div>
+</div>
+
+<div class="thumbnail-wrap">
+  <div class="thumbnail-inner">
+    <div class="thumb-emoji">🖥️</div>
+    <div class="thumb-title-main">윈도우 재설치 후<br><span>반드시 깔아야 할 무료 프로그램</span></div>
+    <div class="prog-list">
+      <div class="prog-chip">Everything</div>
+      <div class="prog-chip">반디집</div>
+      <div class="prog-chip">VLC</div>
+      <div class="prog-chip">PowerToys</div>
+      <div class="prog-chip">Ninite</div>
+    </div>
+    <div class="thumb-caption">일잘러닷컴 직접 정리 | 2026년 기준</div>
+  </div>
+</div>
+
+<div class="article-content">
+  <div class="container">
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> 한 번에 설치하는 Ninite 꿀팁</li>
+        <li><span class="toc-num">2</span> 파일 관리 필수 도구</li>
+        <li><span class="toc-num">3</span> 미디어·문서 필수 도구</li>
+        <li><span class="toc-num">4</span> 보안·유지관리 도구</li>
+        <li><span class="toc-num">5</span> 생산성 & 윈도우 강화 도구</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🚀</span> 한 번에 다 깔기 — Ninite 먼저</h2>
+      <p>새 컴퓨터를 샀거나 윈도우를 다시 설치한 날, 프로그램 설치만 하다 보면 한 시간이 훌쩍 지나가 버리죠. 근데 귀찮은 사람에겐 <strong>Ninite</strong>가 정말 신세계예요. ninite.com에 접속해서 필요한 프로그램들에 체크만 딱 하고 설치 파일 하나만 받아 실행하면, 알아서 전부 깔아주니까요. 광고나 번들 프로그램도 모조리 피해가 줘서 초보자나 부모님 컴퓨터 셋업에도 강추!</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div><div class="step-content-title">ninite.com 접속</div><p class="step-content-desc">크롬에서 ninite.com 검색 → 원하는 프로그램 체크박스 클릭</p></div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div><div class="step-content-title">Get Your Ninite 클릭</div><p class="step-content-desc">설치 파일 하나 다운로드 → 실행하면 선택한 프로그램 전부 자동 설치</p></div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div><div class="step-content-title">커피 한 잔 마시고 오면 완료</div><p class="step-content-desc">모든 번들 광고·툴바를 자동으로 거부하고 최신 버전으로 설치합니다</p></div>
+        </div>
+      </div>
+      <div class="highlight-box blue">
+        <div class="hb-icon">💡</div>
+        <div>
+          <div class="hb-title">Ninite로 설치 가능한 주요 프로그램</div>
+          <p class="hb-text">VLC, 7-Zip, Chrome, Firefox, Zoom, Slack, VS Code, Notepad++, qBittorrent, Malwarebytes 등 100개 이상 지원합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">📁</span> 파일 관리 필수 도구</h2>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-card-top">
+            <div class="prog-icon">🔍</div>
+            <div><div class="prog-name">Everything</div><div class="prog-cat">파일 검색</div></div>
+          </div>
+          <p class="prog-desc">가장 먼저 추천하고 싶은 프로그램이에요. 윈도우 기본 검색이 느려서 답답할 때 많잖아요? Everything은 파일 이름만 치면 <strong>0.001초</strong> 만에 결과가 쏙쏙 뜹니다. 써보면 진짜 평생 쓰게 됩니다.</p>
+          <span class="prog-tag tag-free">무료</span> <span class="prog-tag tag-must">필수</span>
+        </div>
+        <div class="prog-card">
+          <div class="prog-card-top">
+            <div class="prog-icon">📦</div>
+            <div><div class="prog-name">반디집</div><div class="prog-cat">압축·해제 (한국어 최적화)</div></div>
+          </div>
+          <p class="prog-desc">한국에서 만들어서 한글 환경이 정말 편해요. 30가지 넘게 포맷 지원하고 무료라는 점이 매력! 부모님 컴퓨터 설치에도 강추하는 프로그램입니다.</p>
+          <span class="prog-tag tag-free">무료</span> <span class="prog-tag tag-must">필수</span>
+        </div>
+        <div class="prog-card">
+          <div class="prog-card-top">
+            <div class="prog-icon">🗜️</div>
+            <div><div class="prog-name">7-Zip</div><div class="prog-cat">압축·해제 (오픈소스)</div></div>
+          </div>
+          <p class="prog-desc">완전 오픈소스라 광고도 없고 기업에서도 맘 놓고 쓸 수 있어요. 반디집이랑 둘 다 좋아서 취향대로 하나만 골라서 설치하면 됩니다.</p>
+          <span class="prog-tag tag-free">무료</span>
+        </div>
+        <div class="prog-card">
+          <div class="prog-card-top">
+            <div class="prog-icon">📝</div>
+            <div><div class="prog-name">Notepad++</div><div class="prog-cat">텍스트 에디터</div></div>
+          </div>
+          <p class="prog-desc">기본 메모장보다 훨씬 똑똑해요. 탭도 쓸 수 있고, 코드 하이라이트, 멀티 커서 편집도 됩니다. 너무 가볍고 실행도 빠른 게 진짜 장점입니다.</p>
+          <span class="prog-tag tag-free">무료</span>
+        </div>
+      </div>
+
+      <!-- 한눈에 비교 표 -->
+      <table class="compare-table" style="margin-top:24px;">
+        <tr style="background:#1e3a5f;">
+          <th style="text-align:left;color:white;padding:12px 16px;">프로그램</th>
+          <th style="color:white;padding:12px 16px;">용도</th>
+          <th style="color:white;padding:12px 16px;">윈도우 기본 대비</th>
+          <th style="color:white;padding:12px 16px;">비용</th>
+        </tr>
+        <tr><td style="font-weight:700;">Everything</td><td style="text-align:center;">파일 검색</td><td style="text-align:center;color:#10B981;font-weight:700;">5000배 빠름</td><td style="text-align:center;">무료</td></tr>
+        <tr><td style="font-weight:700;">반디집 / 7-Zip</td><td style="text-align:center;">압축·해제</td><td style="text-align:center;color:#10B981;font-weight:700;">30+ 포맷 지원</td><td style="text-align:center;">무료</td></tr>
+        <tr><td style="font-weight:700;">Notepad++</td><td style="text-align:center;">텍스트 편집</td><td style="text-align:center;color:#10B981;font-weight:700;">탭·하이라이트 지원</td><td style="text-align:center;">무료</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🎬</span> 미디어 · 문서 필수 도구</h2>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-card-top">
+            <div class="prog-icon">🎥</div>
+            <div><div class="prog-name">VLC</div><div class="prog-cat">동영상 플레이어</div></div>
+          </div>
+          <p class="prog-desc">동영상 고민된다면 VLC 하나면 끝! MKV, AVI, MP4 같은 파일도 다 돌려주고, 심지어 약간 깨진 파일도 재생을 시도합니다. 무료고 오픈소스라 광고도 없어서 깔끔해요.</p>
+          <span class="prog-tag tag-free">무료</span> <span class="prog-tag tag-must">필수</span>
+        </div>
+        <div class="prog-card">
+          <div class="prog-card-top">
+            <div class="prog-icon">📄</div>
+            <div><div class="prog-name">LibreOffice</div><div class="prog-cat">오피스 대체</div></div>
+          </div>
+          <p class="prog-desc">MS Office가 없으면 LibreOffice를 설치해보세요. 워드, 엑셀, 파워포인트 파일도 척척 열리고 편집까지 가능합니다. 집이나 소규모 업무용으론 전혀 부족하지 않아요.</p>
+          <span class="prog-tag tag-free">무료</span>
+        </div>
+        <div class="prog-card">
+          <div class="prog-card-top">
+            <div class="prog-icon">📷</div>
+            <div><div class="prog-name">IrfanView</div><div class="prog-cat">이미지 뷰어</div></div>
+          </div>
+          <p class="prog-desc">초경량 이미지 뷰어. 사진 파일을 더블클릭하면 윈도우 기본 앱보다 훨씬 빠르게 열립니다. 배치 변환 기능도 강력해서 업무용으로도 자주 씁니다.</p>
+          <span class="prog-tag tag-free">무료</span>
+        </div>
+        <div class="prog-card">
+          <div class="prog-card-top">
+            <div class="prog-icon">🖼️</div>
+            <div><div class="prog-name">ShareX</div><div class="prog-cat">스크린샷·녹화</div></div>
+          </div>
+          <p class="prog-desc">스크린샷, 녹화, GIF 만들기까지 한 번에 다 할 수 있어요. 써보면 괜히 유료 앱 쓸 이유가 없어집니다. 업무용 화면을 공유할 때 특히 엄청 유용해요!</p>
+          <span class="prog-tag tag-free">무료</span> <span class="prog-tag tag-must">추천</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">🛡️</span> 보안 · 유지관리 도구</h2>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-card-top">
+            <div class="prog-icon">🔒</div>
+            <div><div class="prog-name">Malwarebytes</div><div class="prog-cat">악성코드 제거</div></div>
+          </div>
+          <p class="prog-desc">2026년 기준으로 Windows Defender 하나만 잘 관리해도 유료 백신에 크게 뒤지지 않아요. 여기에 가끔 Malwarebytes로 보조 점검 돌려주면 금상첨화! Defender가 못 잡는 악성코드도 찾아내줍니다.</p>
+          <span class="prog-tag tag-free">무료 버전 있음</span>
+        </div>
+        <div class="prog-card">
+          <div class="prog-card-top">
+            <div class="prog-icon">🧹</div>
+            <div><div class="prog-name">BleachBit</div><div class="prog-cat">정크파일 정리</div></div>
+          </div>
+          <p class="prog-desc">임시 파일이 쌓여서 느려지기 시작했다면 BleachBit으로 한방에 정리할 수 있어요. 브라우저 캐시, 쓸모없는 로그까지 한 번에 해결되고 오픈소스라 더 믿고 쓸 수 있습니다.</p>
+          <span class="prog-tag tag-free">무료</span>
+        </div>
+      </div>
+      <div class="highlight-box yellow">
+        <div class="hb-icon">⚠️</div>
+        <div>
+          <div class="hb-title">Windows Defender만으로 충분할까요?</div>
+          <p class="hb-text">2026년 기준 Windows Defender의 성능은 유료 백신과 거의 차이가 없습니다. 굳이 또 다른 백신 깔 필요 없이 Defender 업데이트만 꼼꼼하게 챙기는 게 더 나아요. 여기에 Malwarebytes로 가끔 보조 점검하는 조합이 가장 효율적입니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="ico">⚡</span> 생산성 & 윈도우 강화 도구</h2>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-card-top">
+            <div class="prog-icon">🛠️</div>
+            <div><div class="prog-name">PowerToys</div><div class="prog-cat">마이크로소프트 공식 유틸리티</div></div>
+          </div>
+          <p class="prog-desc">마이크로소프트에서 직접 만든 만큼, 윈도우를 훨씬 편리하게 만들어줍니다. FancyZones로 모니터 크기 상관없이 창을 원하는 구역에 쏙쏙 배치! 듀얼모니터, 울트라와이드 쓰는 분들은 감탄하실 거예요.</p>
+          <span class="prog-tag tag-free">무료</span> <span class="prog-tag tag-must">강추</span>
+        </div>
+        <div class="prog-card">
+          <div class="prog-card-top">
+            <div class="prog-icon">⌨️</div>
+            <div><div class="prog-name">AutoHotkey</div><div class="prog-cat">키보드 자동화</div></div>
+          </div>
+          <p class="prog-desc">반복 타이핑을 단축키로 대체합니다. "안녕하세요, 담당자님."을 단 3글자로 자동 완성하는 식으로 설정하면 업무 효율이 쭉쭉 올라가요.</p>
+          <span class="prog-tag tag-free">무료</span>
+        </div>
+      </div>
+
+      <!-- PowerToys 기능 표 -->
+      <table class="compare-table" style="margin-top:20px;">
+        <tr style="background:#1e3a5f;">
+          <th style="text-align:left;color:white;padding:12px 16px;">PowerToys 기능</th>
+          <th style="color:white;padding:12px 16px;">하는 일</th>
+          <th style="color:white;padding:12px 16px;">추천 대상</th>
+        </tr>
+        <tr><td style="font-weight:700;">FancyZones</td><td>창을 지정 영역에 딱 맞게 배치</td><td style="text-align:center;">듀얼모니터 사용자</td></tr>
+        <tr><td style="font-weight:700;">Text Extractor</td><td>화면 텍스트를 OCR로 복사</td><td style="text-align:center;">이미지 속 글자 복사</td></tr>
+        <tr><td style="font-weight:700;">Color Picker</td><td>화면 어디서든 색상 코드 추출</td><td style="text-align:center;">디자인 작업자</td></tr>
+        <tr><td style="font-weight:700;">Run (Alt+Space)</td><td>앱·파일을 이름으로 즉시 실행</td><td style="text-align:center;">키보드 위주 작업자</td></tr>
+      </table>
+      <div class="highlight-box green">
+        <div class="hb-icon">✅</div>
+        <div>
+          <div class="hb-title">PowerToys FancyZones — 모니터 활용의 혁명</div>
+          <p class="hb-text">울트라와이드 모니터나 듀얼 모니터를 쓴다면 FancyZones는 진짜 써보면 하나하나 신세계예요! Text Extractor로 화면에 보이는 글자까지 바로 복사할 수 있으니, 설치 후 생산성이 눈에 띄게 올라갑니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list">
+        <li>설치는 Ninite 한 번에 — ninite.com 체크 후 실행파일 하나로 끝</li>
+        <li>파일 검색은 Everything으로 순식간에 — 0.001초 검색, 평생 씁니다</li>
+        <li>압축툴은 반디집이나 7-Zip 중 골라서 — 둘 다 좋으니 취향대로</li>
+        <li>동영상은 VLC 하나로 고민 끝 — 모든 포맷 지원, 무료·광고 없음</li>
+        <li>보안은 Defender + Malwarebytes 조합이면 든든 — 이게 최적!</li>
+        <li>생산성은 PowerToys FancyZones만 있으면 만사 해결!</li>
+      </ul>
+      <p style="margin-top:16px;font-size:14px;color:rgba(255,255,255,0.75);line-height:1.7;">여러분도 혹시 꼭 쓰는 필수 프로그램 있으신가요? 저만의 픽이지만, 한 번씩 써보시면 정말 편해질 거예요 :)</p>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <div class="container">
+    <div class="related-title">📚 관련 글</div>
+    <div class="related-grid">
+      <a href="post-windows-speed.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">느려진 윈도우11 PC 속도 올리는 7가지 방법</div>
+        <div class="rc-meta">2026.03.30 · 5분</div>
+      </a>
+      <a href="post-chrome-tips.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">크롬 브라우저 꿀팁 10가지 — 직장인 필수</div>
+        <div class="rc-meta">2026.03.30 · 4분</div>
+      </a>
+      <a href="post-free-tools.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">유료인 줄 알았는데 무료였다</div>
+        <div class="rc-meta">직장인 필수 무료 도구 모음</div>
+      </a>
+      <a href="post-shortcuts.html" class="related-card">
+        <div class="rc-badge">⚡ 꿀팁</div>
+        <div class="rc-title">단축키 모음 — 윈도우·엑셀·크롬</div>
+        <div class="rc-meta">생산성 2배 올리는 단축키</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>일잘러닷컴</strong> · 생활정보 & 유용툴 리뷰<br>
+  <span style="font-size:12px;opacity:0.6;margin-top:6px;display:block">© 2026 iljaller.com · All rights reserved</span>
+</footer>
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    document.getElementById('readingBar').style.width = (scrollTop / scrollHeight * 100) + '%';
+  });
+</script>
+</body>
+</html>
