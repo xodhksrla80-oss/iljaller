@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>문의하기 — 일잘러닷컴</title>
+  <meta name="description" content="일잘러닷컴에 문의, 제보, 협업 요청을 남겨주세요." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e8e8e4;
+      --text-primary: #1a1a1a;
+      --text-secondary: #666660;
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --radius: 12px;
+      --font: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      background: linear-gradient(135deg, #1e40af 0%, #2563eb 60%, #3b82f6 100%);
+      color: #fff;
+      padding: 60px 24px 52px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 100px;
+      padding: 4px 14px;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .hero p { font-size: 15px; opacity: .85; }
+
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* CONTACT OPTIONS */
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .option-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      text-align: center;
+    }
+    .option-icon { font-size: 28px; margin-bottom: 8px; }
+    .option-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .option-card p { font-size: 13px; color: var(--text-secondary); }
+    .option-card a {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* FORM */
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+    .form-card h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .form-card .sub {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+
+    .form-group { margin-bottom: 20px; }
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 7px;
+      color: var(--text-primary);
+    }
+    .required { color: var(--accent); margin-left: 2px; }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 11px 14px;
+      font-size: 15px;
+      font-family: var(--font);
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+    }
+    textarea { resize: vertical; min-height: 140px; }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: background .2s;
+      margin-top: 8px;
+    }
+    .submit-btn:hover { background: #1d4ed8; }
+
+    .success-msg {
+      display: none;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 15px;
+      color: #166534;
+    }
+
+    .note {
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: var(--accent-light);
+      border-radius: 10px;
+      font-size: 14px;
+      color: #1e40af;
+    }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    footer p { font-size: 13px; color: var(--text-secondary); line-height: 2; }
+    footer a { color: var(--text-secondary); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 500px) {
+      .options { grid-template-columns: 1fr; }
+      .form-card { padding: 22px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">일잘러닷컴</a>
+  <ul class="nav-links">
+    <li><a href="/">홈</a></li>
+    <li><a href="/#posts">전체글</a></li>
+    <li><a href="/about.html">소개</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">✉️ Contact</div>
+  <h1>문의하기</h1>
+  <p>궁금한 점, 제보, 협업 요청 모두 환영합니다.</p>
+</div>
+
+<main>
+
+  <div class="options">
+    <div class="option-card">
+      <div class="option-icon">📧</div>
+      <h3>이메일 문의</h3>
+      <p>가장 빠르게 답변드립니다</p>
+      <a href="mailto:help@iljaller.com">help@iljaller.com</a>
+    </div>
+    <div class="option-card">
+      <div class="option-icon">⏱</div>
+      <h3>답변 소요시간</h3>
+      <p>영업일 기준 1~3일 이내 답변드립니다</p>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <h2>📝 문의 남기기</h2>
+    <p class="sub">아래 양식을 작성해주시면 이메일로 답변드립니다.</p>
+
+    <div id="contact-form">
+      <div class="form-group">
+        <label>문의 유형<span class="required">*</span></label>
+        <select id="type">
+          <option value="">선택해주세요</option>
+          <option value="info">정보 제보 / 오류 신고</option>
+          <option value="collab">협업 / 광고 문의</option>
+          <option value="content">콘텐츠 요청</option>
+          <option value="etc">기타</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>이름 (닉네임 가능)<span class="required">*</span></label>
+        <input type="text" id="name" placeholder="홍길동" />
+      </div>
+      <div class="form-group">
+        <label>이메일<span class="required">*</span></label>
+        <input type="email" id="email" placeholder="your@email.com" />
+      </div>
+      <div class="form-group">
+        <label>문의 내용<span class="required">*</span></label>
+        <textarea id="message" placeholder="자유롭게 작성해주세요.&#10;오류 신고의 경우 해당 글 URL을 함께 남겨주시면 빠르게 처리됩니다."></textarea>
+      </div>
+      <button class="submit-btn" onclick="handleSubmit()">문의 보내기 →</button>
+    </div>
+
+    <div class="success-msg" id="success">
+      ✅ 문의가 접수되었습니다!<br>
+      <strong>help@iljaller.com</strong>으로 영업일 1~3일 이내 답변드리겠습니다.
+    </div>
+
+    <div class="note">
+      💡 광고·협업 문의는 <strong>help@iljaller.com</strong>으로 직접 보내주셔도 됩니다.
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>
+    <a href="/">홈</a> &nbsp;·&nbsp;
+    <a href="/about.html">소개</a> &nbsp;·&nbsp;
+    <a href="/contact.html">문의하기</a> &nbsp;·&nbsp;
+    <a href="/privacy.html">개인정보처리방침</a>
+  </p>
+  <p style="margin-top: 12px;">© 2025 일잘러닷컴 · All rights reserved</p>
+</footer>
+
+<script>
+  function handleSubmit() {
+    const type = document.getElementById('type').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!type || !name || !email || !message) {
+      alert('모든 항목을 입력해주세요.');
+      return;
+    }
+    const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailReg.test(email)) {
+      alert('올바른 이메일 주소를 입력해주세요.');
+      return;
+    }
+
+    // mailto fallback (정적 사이트용)
+    const subject = encodeURIComponent('[일잘러닷컴 문의] ' + type);
+    const body = encodeURIComponent(
+      '이름: ' + name + '\n이메일: ' + email + '\n유형: ' + type + '\n\n내용:\n' + message
+    );
+    window.location.href = 'mailto:help@iljaller.com?subject=' + subject + '&body=' + body;
+
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

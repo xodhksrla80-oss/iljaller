@@ -814,17 +814,17 @@ footer {
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="javascript:void(0)" class="logo" onclick="showPage('home')">일잘러<span>닷컴</span></a>
+    <a href="/" class="logo" onclick="showPage('home'); return false;">일잘러<span>닷컴</span></a>
     <div class="search-bar">
       <span class="search-icon">🔍</span>
       <input type="text" placeholder="궁금한 거 검색해보세요">
     </div>
     <nav class="header-nav">
-      <a class="nav-link active" onclick="showPage('home')">홈</a>
-      <a class="nav-link" onclick="showPage('list')">전체글</a>
-      <a class="nav-link" onclick="showCat('AI 도구')">AI 도구</a>
-      <a class="nav-link" onclick="showCat('앱 리뷰')">앱 리뷰</a>
-      <a class="nav-link" onclick="showCat('생활정보')">생활정보</a>
+      <a href="/" class="nav-link active" onclick="showPage('home'); return false;">홈</a>
+      <a href="/#posts" class="nav-link" onclick="showPage('list'); return false;">전체글</a>
+      <a href="/?cat=AI%20%EB%8F%84%EA%B5%AC" class="nav-link" onclick="showCat('AI 도구'); return false;">AI 도구</a>
+      <a href="/?cat=%EC%95%B1%20%EB%A6%AC%EB%B7%B0" class="nav-link" onclick="showCat('앱 리뷰'); return false;">앱 리뷰</a>
+      <a href="/?cat=%EC%83%9D%ED%99%9C%EC%A0%95%EB%B3%B4" class="nav-link" onclick="showCat('생활정보'); return false;">생활정보</a>
     </nav>
   </div>
 </header>
@@ -858,7 +858,7 @@ footer {
       <div class="stat-item">
         <div class="stat-icon" style="background:#EFF6FF">📝</div>
         <div>
-          <div class="stat-num">42</div>
+          <div class="stat-num">33</div>
           <div class="stat-label">발행된 글</div>
         </div>
       </div>
@@ -919,6 +919,8 @@ footer {
 
       <div class="card-list">
 
+        <!-- [비공개] GPT-5.4 vs Gemini 3.1 Flash Lite — 존재하지 않는 버전명으로 인해 비공개 처리 -->
+        <!--
         <div class="list-card" onclick="location.href='post-ai-compare.html'" style="cursor:pointer">
           <div class="list-icon" style="background:#EDE9FE">🤖</div>
           <div>
@@ -931,6 +933,7 @@ footer {
             <div class="list-read">5분</div>
           </div>
         </div>
+        -->
 
         <div class="list-card" onclick="location.href='post-gemini.html'" style="cursor:pointer">
           <div class="list-icon" style="background:#F0FDF4">🟢</div>
@@ -1097,14 +1100,13 @@ footer {
   <div class="list-page-header">
     <div class="list-page-inner">
       <div class="list-page-title">📋 전체 글</div>
-      <div class="list-page-desc">총 39개의 글이 있습니다</div>
+      <div class="list-page-desc">총 33개의 글이 있습니다</div>
       <div class="filter-row">
         <div class="filter-chip active" onclick="filterCat(this,'전체')">전체</div>
         <div class="filter-chip" onclick="filterCat(this,'AI 도구')">🤖 AI 도구</div>
         <div class="filter-chip" onclick="filterCat(this,'앱 리뷰')">📱 앱 리뷰</div>
         <div class="filter-chip" onclick="filterCat(this,'생활정보')">💡 생활정보</div>
         <div class="filter-chip" onclick="filterCat(this,'꿀팁')">⚡ 꿀팁</div>
-        <div class="filter-chip" onclick="filterCat(this,'스포츠')">⚾ 스포츠</div>
         <select class="sort-select">
           <option>최신순</option>
           <option>인기순</option>
@@ -1294,6 +1296,8 @@ footer {
         </div>
       </div>
 
+      <!-- [비공개] 바이브코딩 도구 비교 — 실제 테스트 근거 보강 후 재발행 예정 -->
+      <!--
       <div class="post-card" data-cat="AI 도구" onclick="location.href='post-vibecoding-compare.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#1e1b4b,#4c1d95)">
           ⚔️
@@ -1309,6 +1313,7 @@ footer {
           </div>
         </div>
       </div>
+      -->
 
       <div class="post-card" data-cat="AI 도구" onclick="location.href='post-vibecoding.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#667eea,#764ba2)">
@@ -1326,6 +1331,8 @@ footer {
       </div>
 
 
+      <!-- [비공개] GPT-5.4 vs Gemini 3.1 Flash Lite — 존재하지 않는 버전명, 재발행 예정 -->
+      <!--
       <div class="post-card" data-cat="AI 도구" onclick="location.href='post-ai-compare.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#0f0c29,#302b63)">
           🤖
@@ -1341,6 +1348,7 @@ footer {
           </div>
         </div>
       </div>
+      -->
 
 
 
@@ -1535,6 +1543,8 @@ footer {
         </div>
       </div>
 
+      <!-- [비공개] MS 365 Copilot Wave 3 — 공식 발표 불분명, 보강 후 재발행 예정 -->
+      <!--
       <div class="post-card" data-cat="AI 도구" onclick="location.href='post-copilot-wave3.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#0078D4,#50E6FF)">🪟</div>
         <div class="post-body">
@@ -1547,7 +1557,10 @@ footer {
           </div>
         </div>
       </div>
+      -->
 
+      <!-- [비공개] Claude Code 멀티 에이전트 — 미존재 기능(TeammateTool·Swarm Mode), 보강 후 재발행 예정 -->
+      <!--
       <div class="post-card" data-cat="AI 도구" onclick="location.href='post-claude-code-agent.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#0F0F23,#2D1B69)">👥</div>
         <div class="post-body">
@@ -1560,7 +1573,10 @@ footer {
           </div>
         </div>
       </div>
+      -->
 
+      <!-- [비공개] 에이전틱 AI 가이드 — 실체 불분명 정보 혼재, 보강 후 재발행 예정 -->
+      <!--
       <div class="post-card" data-cat="AI 도구" onclick="location.href='post-agentic-ai.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#FF6B35,#FF9E53)">🤖</div>
         <div class="post-body">
@@ -1573,6 +1589,7 @@ footer {
           </div>
         </div>
       </div>
+      -->
 
 
 
@@ -1617,19 +1634,19 @@ footer {
     <div>
       <div class="footer-col-title">카테고리</div>
       <div class="footer-links">
-        <a href="javascript:void(0)" onclick="showCat('AI 도구')">🤖 AI 도구</a>
-        <a href="javascript:void(0)" onclick="showCat('앱 리뷰')">📱 앱 리뷰</a>
-        <a href="javascript:void(0)" onclick="showCat('생활정보')">💡 생활정보</a>
-        <a href="javascript:void(0)" onclick="showCat('꿀팁')">⚡ 꿀팁</a>
+        <a href="/?cat=AI%20%EB%8F%84%EA%B5%AC" onclick="showCat('AI 도구'); return false;">🤖 AI 도구</a>
+        <a href="/?cat=%EC%95%B1%20%EB%A6%AC%EB%B7%B0" onclick="showCat('앱 리뷰'); return false;">📱 앱 리뷰</a>
+        <a href="/?cat=%EC%83%9D%ED%99%9C%EC%A0%95%EB%B3%B4" onclick="showCat('생활정보'); return false;">💡 생활정보</a>
+        <a href="/?cat=%EA%BF%80%ED%8C%81" onclick="showCat('꿀팁'); return false;">⚡ 꿀팁</a>
       </div>
     </div>
     <div>
       <div class="footer-col-title">사이트 정보</div>
       <div class="footer-links">
-        <a href="javascript:void(0)">소개</a>
-        <a href="javascript:void(0)">문의하기</a>
+        <a href="about.html">소개</a>
+        <a href="contact.html">문의하기</a>
         <a href="privacy.html">개인정보처리방침</a>
-        <a href="javascript:void(0)">광고 문의</a>
+        <a href="contact.html#ad">광고 문의</a>
       </div>
     </div>
   </div>
