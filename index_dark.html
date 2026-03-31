@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>일잘러닷컴 — 생활정보 & 유용툴 리뷰</title>
+<meta name="description" content="AI 도구, 앱 리뷰, 생활 꿀팁까지. 일 잘하는 사람들이 찾는 정보만 모았습니다.">
+<!-- AdSense 제외: index.html은 JS SPA 목록 페이지 (콘텐츠 없는 화면 정책 위반 방지) -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --primary: #FF6B35;
+  --primary-light: rgba(255,107,53,0.12);
+  --primary-dark: #E85A24;
+  --text: #E8E8E8;
+  --text-sub: #6B7280;
+  --border: #1F1F1F;
+  --border2: #2A2A2A;
+  --bg: #0D0D0D;
+  --surface: #111111;
+  --surface2: #161616;
+  --white: #111111;
+  --blue: #3B82F6;
+  --green: #10B981;
+  --purple: #8B5CF6;
+  --yellow: #F59E0B;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ── HEADER ── */
+header {
+  background: #0D0D0D;
+  border-bottom: 1px solid var(--border2);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+  white-space: nowrap;
+}
+.logo span { color: var(--primary); }
+
+.search-bar {
+  flex: 1;
+  max-width: 360px;
+  display: flex;
+  align-items: center;
+  background: #161616;
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  padding: 0 16px;
+  gap: 8px;
+  transition: border-color 0.2s;
+}
+.search-bar:focus-within { border-color: var(--primary); }
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  color: var(--text);
+  outline: none;
+  padding: 9px 0;
+}
+.search-bar input::placeholder { color: #3A3A3A; }
+.search-icon { color: #3A3A3A; font-size: 15px; }
+
+.header-nav {
+  display: flex;
+  gap: 2px;
+}
+.nav-link {
+  padding: 7px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.nav-link:hover { background: #1a1a1a; color: #ccc; }
+.nav-link.active { background: var(--primary-light); color: var(--primary); font-weight: 700; }
+
+/* ── PAGE TABS ── */
+.page-tabs {
+  background: #0D0D0D;
+  border-bottom: 1px solid var(--border2);
+  display: flex;
+  justify-content: center;
+  gap: 0;
+}
+
+.page-tab {
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.page-tab:hover { color: #888; }
+.page-tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  font-weight: 700;
+}
+
+/* ── PAGES ── */
+.page { display: none; }
+.page.active { display: block; animation: fadeUp 0.35s cubic-bezier(0.16,1,0.3,1); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ────────────────────────────
+   PAGE 1: 메인
+──────────────────────────── */
+
+/* HERO */
+.hero {
+  background: #0D0D0D;
+  border-bottom: 1px solid var(--border2);
+  padding: 56px 24px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255,107,53,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,107,53,0.3), transparent);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,107,53,0.08);
+  border: 1px solid rgba(255,107,53,0.25);
+  color: #FF8C5A;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(26px, 5vw, 42px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.hero-title em {
+  font-style: normal;
+  color: var(--primary);
+}
+
+.hero-sub {
+  font-size: 15px;
+  color: #888;
+  line-height: 1.8;
+  margin-bottom: 32px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-tags {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-tag {
+  background: #111;
+  border: 1px solid #2A2A2A;
+  color: #555;
+  font-size: 13px;
+  padding: 7px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.hero-tag:hover { border-color: #444; color: #aaa; }
+.hero-tag.active { background: var(--primary); border-color: var(--primary); color: white; font-weight: 700; }
+
+/* STATS STRIP */
+.stats-strip {
+  background: #111;
+  border-bottom: 1px solid var(--border2);
+}
+
+.stats-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-item {
+  padding: 18px 20px;
+  border-right: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.stat-item:last-child { border-right: none; }
+
+.stat-icon {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  background: #1a1a1a !important;
+}
+
+.stat-num {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+.stat-label { font-size: 12px; color: #555; margin-top: 3px; }
+
+/* MAIN LAYOUT */
+.main-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 24px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* FEATURED */
+.sec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sec-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sec-more {
+  font-size: 13px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.15s;
+  cursor: pointer;
+}
+.sec-more:hover { color: var(--primary); }
+
+/* FEATURED CARD */
+.featured-card {
+  background: #111;
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+.featured-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.featured-thumb {
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 72px;
+  min-height: 180px;
+  background: #161616;
+}
+
+.featured-body { padding: 24px 24px 24px 20px; display: flex; flex-direction: column; justify-content: center; }
+
+.post-cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.cat-ai { background: rgba(59,130,246,0.12); color: #60A5FA; border: 1px solid rgba(59,130,246,0.2); }
+.cat-life { background: rgba(16,185,129,0.12); color: #34D399; border: 1px solid rgba(16,185,129,0.2); }
+.cat-app { background: rgba(139,92,246,0.12); color: #A78BFA; border: 1px solid rgba(139,92,246,0.2); }
+.cat-tip { background: rgba(245,158,11,0.12); color: #FBB93F; border: 1px solid rgba(245,158,11,0.2); }
+
+.post-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #E8E8E8;
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.post-desc {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-meta {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  color: #555;
+  align-items: center;
+}
+
+.post-views { color: var(--primary); font-weight: 600; }
+
+/* CARD LIST */
+.card-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+
+.list-card {
+  background: #111;
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.list-card:hover {
+  border-color: var(--primary);
+  background: #161616;
+}
+
+.list-icon {
+  width: 48px; height: 48px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+  background: #1a1a1a;
+}
+
+.list-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ddd;
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+
+.list-desc {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.list-right { text-align: right; flex-shrink: 0; }
+.list-date { font-size: 11px; color: #555; margin-bottom: 4px; }
+.list-read { font-size: 11px; color: var(--primary); font-weight: 600; }
+
+/* SIDEBAR */
+.sidebar { display: flex; flex-direction: column; gap: 16px; }
+
+.side-card {
+  background: #111;
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.side-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ccc;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* HOT POSTS */
+.hot-list { display: flex; flex-direction: column; gap: 12px; }
+
+.hot-item {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.hot-item:hover { opacity: 0.75; }
+
+.hot-rank {
+  width: 22px; height: 22px;
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.rank-1 { background: rgba(255,107,53,0.2); color: var(--primary); }
+.rank-2 { background: #1a1a1a; color: #555; }
+.rank-3 { background: #1a1a1a; color: #555; }
+.rank-n { background: #161616; color: #333; }
+
+.hot-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #aaa;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.hot-title:hover { color: var(--primary); }
+
+.hot-meta { font-size: 11px; color: #555; margin-top: 2px; }
+
+.hot-meta { font-size: 11px; color: #333; margin-top: 2px; }
+
+/* CAT LINKS */
+.cat-grid-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.cat-btn {
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  min-height: 44px;
+  white-space: nowrap;
+  background: #161616;
+  border: 1px solid #2a2a2a;
+  color: #666;
+}
+.cat-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+/* NEWSLETTER */
+.newsletter {
+  background: #161616;
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+}
+.newsletter::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--primary);
+}
+.nl-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: #ddd; }
+.nl-desc { font-size: 12px; color: #444; margin-bottom: 14px; line-height: 1.6; }
+.nl-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+  background: #111;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  color: #ccc;
+  outline: none;
+  margin-bottom: 8px;
+}
+.nl-input::placeholder { color: #333; }
+.nl-btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--primary);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+  transition: background 0.15s;
+  letter-spacing: 0.5px;
+}
+.nl-btn:hover { background: var(--primary-dark); }
+
+/* ────────────────────────────
+   PAGE 2: 글 목록
+──────────────────────────── */
+
+.list-page-header {
+  background: #111;
+  border-bottom: 1px solid var(--border2);
+  padding: 28px 24px;
+}
+
+.list-page-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.list-page-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.list-page-desc {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* FILTER BAR */
+.filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-chip {
+  padding: 6px 16px;
+  border-radius: 4px;
+  border: 1px solid #2a2a2a;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  background: #161616;
+  transition: all 0.15s;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.filter-chip:hover { border-color: var(--primary); color: var(--primary); }
+.filter-chip.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  font-weight: 700;
+}
+
+.sort-select {
+  margin-left: auto;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  color: #555;
+  background: #161616;
+  outline: none;
+  cursor: pointer;
+}
+
+/* POST GRID */
+.post-grid-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 36px;
+  align-items: stretch;
+}
+
+.post-card {
+  background: #111;
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  background: #161616;
+  box-shadow: 0 8px 32px rgba(255,107,53,0.08);
+}
+
+.post-thumb {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  position: relative;
+  background: #161616 !important;
+  filter: saturate(0.5) brightness(0.75);
+  transition: filter 0.2s;
+}
+.post-card:hover .post-thumb { filter: saturate(0.85) brightness(0.95); }
+
+.post-thumb-badge {
+  position: absolute;
+  top: 10px; left: 10px;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.badge-hot { background: rgba(239,68,68,0.15); color: #F87171; border: 1px solid rgba(239,68,68,0.25); }
+.badge-new { background: rgba(255,107,53,0.15); color: var(--primary); border: 1px solid rgba(255,107,53,0.25); }
+
+.post-body { padding: 14px; flex: 1; display: flex; flex-direction: column; }
+
+.post-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ccc;
+  line-height: 1.45;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.post-card:hover .post-card-title { color: #fff; }
+
+.post-card-desc {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid #1a1a1a;
+  margin-top: auto;
+}
+
+.post-card-date { font-size: 11px; color: #555; }
+.post-card-views { font-size: 11px; color: var(--primary); font-weight: 600; }
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.page-btn {
+  width: 36px; height: 36px;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+  background: #111;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.page-btn:hover { border-color: var(--primary); color: var(--primary); }
+.page-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
+
+/* FOOTER */
+footer {
+  background: #080808;
+  border-top: 1px solid var(--border2);
+  color: #444;
+  padding: 40px 24px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+.footer-logo { font-size: 20px; font-weight: 900; color: white; margin-bottom: 8px; }
+.footer-logo span { color: var(--primary); }
+.footer-desc { font-size: 13px; line-height: 1.8; color: #555; }
+
+.footer-col-title { font-size: 11px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 14px; }
+.footer-links { display: flex; flex-direction: column; gap: 9px; }
+.footer-links a { font-size: 13px; color: #555; transition: color 0.15s; }
+.footer-links a:hover { color: var(--primary); }
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 28px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid #1a1a1a;
+  font-size: 12px;
+  text-align: center;
+  color: #333;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .post-grid { grid-template-columns: repeat(2, 1fr); }
+  .main-layout { grid-template-columns: 1fr 260px; }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .main-layout { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .post-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .featured-card { grid-template-columns: 1fr; }
+  .featured-thumb { min-height: 120px; padding: 20px; }
+  .featured-body { padding: 0 18px 18px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+  .search-bar { display: none; }
+  .header-nav { display: none; }
+  .page-tab { padding: 12px 16px; font-size: 13px; }
+  .list-card { grid-template-columns: 48px 1fr auto; gap: 10px; }
+  .list-icon { width: 48px; height: 48px; font-size: 24px; }
+  .post-grid-wrap { padding: 20px 16px 36px; }
+  .main-layout { padding: 24px 16px; }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  .post-grid { grid-template-columns: 1fr; }
+  .list-card { grid-template-columns: 44px 1fr; }
+  .list-right { display: none; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo" onclick="showPage('home'); return false;">일잘러<span>닷컴</span></a>
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="궁금한 거 검색해보세요">
+    </div>
+    <nav class="header-nav">
+      <a href="/" class="nav-link active" onclick="showPage('home'); return false;">홈</a>
+      <a href="/#posts" class="nav-link" onclick="showPage('list'); return false;">전체글</a>
+      <a href="/?cat=AI%20%EB%8F%84%EA%B5%AC" class="nav-link" onclick="showCat('AI 도구'); return false;">AI 도구</a>
+      <a href="/?cat=%EC%95%B1%20%EB%A6%AC%EB%B7%B0" class="nav-link" onclick="showCat('앱 리뷰'); return false;">앱 리뷰</a>
+      <a href="/?cat=%EC%83%9D%ED%99%9C%EC%A0%95%EB%B3%B4" class="nav-link" onclick="showCat('생활정보'); return false;">생활정보</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE TABS -->
+<div class="page-tabs">
+  <div class="page-tab active" id="tab-home" onclick="showPage('home')">🏠 메인</div>
+  <div class="page-tab" id="tab-list" onclick="showPage('list')">📋 전체 글</div>
+</div>
+
+<!-- ========= PAGE: 메인 ========= -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">✨ NEW — Gemini 2.0 사용법 올라왔어요</div>
+    <h1 class="hero-title">일 잘하는 사람들이<br><em>찾는 정보</em>만 모았습니다</h1>
+    <p class="hero-sub">AI 도구, 앱 리뷰, 생활 꿀팁까지.<br>알고리즘 추천 말고, 직접 써보고 정리한 콘텐츠만요.</p>
+    <div class="hero-tags">
+      <div class="hero-tag active">전체</div>
+      <div class="hero-tag">🤖 AI 도구</div>
+      <div class="hero-tag">📱 앱 리뷰</div>
+      <div class="hero-tag">💡 생활정보</div>
+      <div class="hero-tag">⚡ 꿀팁</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-icon" style="background:#1a1a1a">📝</div>
+        <div>
+          <div class="stat-num">33</div>
+          <div class="stat-label">발행된 글</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon" style="background:#1a1a1a">📈</div>
+        <div>
+          <div class="stat-num">-</div>
+          <div class="stat-label">월간 방문자</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon" style="background:#1a1a1a">🤖</div>
+        <div>
+          <div class="stat-num">11</div>
+          <div class="stat-label">AI 툴 리뷰</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon" style="background:#1a1a1a">⭐</div>
+        <div>
+          <div class="stat-num">2025</div>
+          <div class="stat-label">서비스 시작</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-layout">
+    <div>
+
+      <!-- 추천 글 -->
+      <div class="sec-header">
+        <div class="sec-title">🔥 이번 주 추천</div>
+        <div class="sec-more" onclick="showPage('list')">전체 보기 →</div>
+      </div>
+
+      <div class="featured-card" onclick="location.href='post-chatgpt.html'">
+        <div class="featured-thumb" style="background:#0D1B2A">🤖</div>
+        <div class="featured-body">
+          <div class="post-cat cat-ai">🤖 AI 도구</div>
+          <div class="post-title">ChatGPT란? 2억 명이 쓰는 이유 GPT-4 vs GPT-3.5 완벽 정리</div>
+          <div class="post-desc">ChatGPT가 2억 명을 모으는 데 단 2개월밖에 안 걸렸습니다. GPT-4와 GPT-3.5 차이부터 실제 사용법까지 한 번에 정리했어요.</div>
+          <div class="post-meta">
+            <span>2025.03.10</span>
+            <span>·</span>
+            <span>5분 읽기</span>
+            <span>·</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 최신 글 -->
+      <div class="sec-header">
+        <div class="sec-title">🆕 최신 글</div>
+        <div class="sec-more" onclick="showPage('list')">더 보기 →</div>
+      </div>
+
+      <div class="card-list">
+
+        <!-- [비공개] GPT-5.4 vs Gemini 3.1 Flash Lite — 존재하지 않는 버전명 -->
+        <!--
+        <div class="list-card" onclick="location.href='post-ai-compare.html'" style="cursor:pointer">
+          <div class="list-icon" style="background:#1A0D2E">🤖</div>
+          <div>
+            <div class="post-cat cat-ai" style="font-size:11px;font-weight:700;margin-bottom:3px">🤖 AI 도구</div>
+            <div class="list-title">GPT-5.4 vs Gemini 3.1 Flash Lite 비교</div>
+            <div class="list-desc">2026년 최신 AI, 용도별 어떤 걸 써야 할까?</div>
+          </div>
+          <div class="list-right">
+            <div class="list-date">03.13</div>
+            <div class="list-read">5분</div>
+          </div>
+        </div>
+        -->
+
+        <div class="list-card" onclick="location.href='post-gemini.html'" style="cursor:pointer">
+          <div class="list-icon" style="background:#0D2218">🟢</div>
+          <div>
+            <div class="post-cat cat-ai" style="margin-bottom:5px">🤖 AI 도구</div>
+            <div class="list-title">Gemini 2.0 설치 및 사용법 — 구글 최신 AI 완벽 가이드</div>
+            <div class="list-desc">구글이 공개한 Gemini 2.0, 직접 써봤습니다. ChatGPT랑 뭐가 다른지 비교해드렸어요.</div>
+          </div>
+          <div class="list-right">
+            <div class="list-date">03.11</div>
+            <div class="list-read">3분</div>
+          </div>
+        </div>
+
+        <div class="list-card" onclick="location.href='post-apps.html'" style="cursor:pointer">
+          <div class="list-icon" style="background:#1C0D00">🧰</div>
+          <div>
+            <div class="post-cat cat-app" style="margin-bottom:5px">📱 앱 리뷰</div>
+            <div class="list-title">직장인이 매일 쓰는 생산성 앱 TOP 5 (2025 최신)</div>
+            <div class="list-desc">노션, 토스트, 클로바노트... 실제로 써보고 진짜 쓸만한 것만 골랐습니다.</div>
+          </div>
+          <div class="list-right">
+            <div class="list-date">03.09</div>
+            <div class="list-read">4분</div>
+          </div>
+        </div>
+
+        <div class="list-card" onclick="location.href='post-google-search.html'" style="cursor:pointer">
+          <div class="list-icon" style="background:#1C1500">💡</div>
+          <div>
+            <div class="post-cat cat-tip" style="margin-bottom:5px">⚡ 꿀팁</div>
+            <div class="list-title">구글 검색 10배 잘하는 법 — 아무도 안 알려준 검색 연산자</div>
+            <div class="list-desc">따옴표, 별표, 마이너스... 알면 검색 결과가 완전히 달라지는 꿀팁들을 모았어요.</div>
+          </div>
+          <div class="list-right">
+            <div class="list-date">03.07</div>
+            <div class="list-read">3분</div>
+          </div>
+        </div>
+
+        <div class="list-card" onclick="location.href='post-ai-image.html'" style="cursor:pointer">
+          <div class="list-icon" style="background:#1A0D2E">🎨</div>
+          <div>
+            <div class="post-cat cat-ai" style="margin-bottom:5px">🤖 AI 도구</div>
+            <div class="list-title">미드저니 없이 무료로 AI 이미지 만드는 법 3가지</div>
+            <div class="list-desc">Adobe Firefly, Bing Image Creator, Canva AI — 무료로 쓸 수 있는 이미지 AI 비교.</div>
+          </div>
+          <div class="list-right">
+            <div class="list-date">03.05</div>
+            <div class="list-read">4분</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 카테고리별 -->
+      <div class="sec-header">
+        <div class="sec-title">💡 생활정보 인기글</div>
+        <div class="sec-more" onclick="showCat('생활정보')">더 보기 →</div>
+      </div>
+
+      <div class="card-list">
+
+        <div class="list-card" onclick="location.href='post-telecom-save.html'" style="cursor:pointer">
+          <div class="list-icon" style="background:#0D2218">💡</div>
+          <div>
+            <div class="post-cat cat-life" style="font-size:11px;font-weight:700;margin-bottom:3px">💡 생활정보</div>
+            <div class="list-title">통신비 줄이는 법 — 월 3만원 아끼는 요금제 변경 가이드</div>
+            <div class="list-desc">알뜰폰, 결합할인, 가족 결합까지. 안 바꾸면 매달 손해 보는 통신비 절약법.</div>
+          </div>
+          <div class="list-right">
+            <div class="list-date">03.03</div>
+            <div class="list-read">6분</div>
+          </div>
+        </div>
+
+        <div class="list-card" onclick="location.href='post-electricity.html'" style="cursor:pointer">
+          <div class="list-icon" style="background:#1C1500">⚡</div>
+          <div>
+            <div class="post-cat cat-life" style="font-size:11px;font-weight:700;margin-bottom:3px">💡 생활정보</div>
+            <div class="list-title">전기요금 폭탄 피하는 법 — 누진세 구간·절약 꿀팁 총정리</div>
+            <div class="list-desc">여름철 에어컨, 겨울철 전기장판... 누진세 2단계로 올라가기 전에 꼭 읽어보세요.</div>
+          </div>
+          <div class="list-right">
+            <div class="list-date">02.28</div>
+            <div class="list-read">5분</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- HOT -->
+      <div class="side-card">
+        <div class="side-title">🔥 추천 글</div>
+        <div class="hot-list">
+          <div class="hot-item">
+            <div class="hot-rank rank-1">1</div>
+            <div>
+              <div class="hot-title" onclick="location.href='post-chatgpt.html'" style="cursor:pointer">ChatGPT 2억 명 돌파, GPT-4 vs 3.5 비교</div>
+              <div class="hot-meta">⏱ 5분</div>
+            </div>
+          </div>
+          <div class="hot-item">
+            <div class="hot-rank rank-2">2</div>
+            <div>
+              <div class="hot-title" onclick="location.href='post-apps.html'" style="cursor:pointer">직장인 생산성 앱 TOP 5 (2025)</div>
+              <div class="hot-meta">⏱ 4분</div>
+            </div>
+          </div>
+          <div class="hot-item">
+            <div class="hot-rank rank-3">3</div>
+            <div>
+              <div class="hot-title" onclick="location.href='post-gemini.html'" style="cursor:pointer">Gemini 2.0 설치 및 사용법 완벽 가이드</div>
+              <div class="hot-meta">⏱ 3분</div>
+            </div>
+          </div>
+          <div class="hot-item">
+            <div class="hot-rank rank-n">4</div>
+            <div>
+              <div class="hot-title" onclick="location.href='post-google-search.html'" style="cursor:pointer">구글 검색 10배 잘하는 법</div>
+              <div class="hot-meta">⏱ 3분</div>
+            </div>
+          </div>
+          <div class="hot-item">
+            <div class="hot-rank rank-n">5</div>
+            <div>
+              <div class="hot-title" onclick="location.href='post-ai-image.html'" style="cursor:pointer">무료 AI 이미지 생성 3가지</div>
+              <div class="hot-meta">⏱ 4분</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATEGORIES -->
+      <div class="side-card">
+        <div class="side-title">📂 카테고리</div>
+        <div class="cat-grid-side">
+          <div class="cat-btn" style="background:#161616;color:#60A5FA;border:1px solid #1e3a5f" onclick="showCat('AI 도구')">🤖 AI 도구</div>
+          <div class="cat-btn" style="background:#161616;color:#A78BFA;border:1px solid #2a1f3d" onclick="showCat('앱 리뷰')">📱 앱 리뷰</div>
+          <div class="cat-btn" style="background:#161616;color:#34D399;border:1px solid #1a3a2a" onclick="showCat('생활정보')">💡 생활정보</div>
+          <div class="cat-btn" style="background:#161616;color:#FBB93F;border:1px solid #3a2a0a" onclick="showCat('꿀팁')">⚡ 꿀팁</div>
+        </div>
+      </div>
+
+      <!-- NEWSLETTER -->
+      <div class="newsletter">
+        <div class="nl-title">📬 새 글 알림 받기</div>
+        <div class="nl-desc">유용한 정보가 올라오면 이메일로 알려드려요. 스팸 없이 주 1회만.</div>
+        <input class="nl-input" type="email" id="nlEmail" placeholder="이메일 주소 입력">
+        <button class="nl-btn" onclick="subscribeEmail()">구독하기 →</button>
+        <div id="nlMsg" style="font-size:12px;margin-top:8px;color:#10B981;display:none">✅ 구독 완료! 감사합니다 😊</div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- ========= PAGE: 전체 글 ========= -->
+<div id="page-list" class="page">
+
+  <div class="list-page-header">
+    <div class="list-page-inner">
+      <div class="list-page-title">📋 전체 글</div>
+      <div class="list-page-desc">총 33개의 글이 있습니다</div>
+      <div class="filter-row">
+        <div class="filter-chip active" onclick="filterCat(this,'전체')">전체</div>
+        <div class="filter-chip" onclick="filterCat(this,'AI 도구')">🤖 AI 도구</div>
+        <div class="filter-chip" onclick="filterCat(this,'앱 리뷰')">📱 앱 리뷰</div>
+        <div class="filter-chip" onclick="filterCat(this,'생활정보')">💡 생활정보</div>
+        <div class="filter-chip" onclick="filterCat(this,'꿀팁')">⚡ 꿀팁</div>
+        <select class="sort-select">
+          <option>최신순</option>
+          <option>인기순</option>
+          <option>읽기 빠른 순</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-grid-wrap">
+    <div class="post-grid" id="postGrid">
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-win-update-error.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#0f2027,#203a43,#2c5364)">
+          🔄
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat" style="background:rgba(245,158,11,0.12);color:#FBB93F;border:1px solid rgba(245,158,11,0.2)">⚡ 꿀팁</div>
+          <div class="post-card-title">윈도우 업데이트 오류 해결 완전 정리</div>
+          <div class="post-card-desc">0x80070005, 0x80073712 등 오류 코드별 해결법. 캐시 초기화와 수동 업데이트까지.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.23</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-screenshot-keys.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)">
+          📸
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat" style="background:rgba(245,158,11,0.12);color:#FBB93F;border:1px solid rgba(245,158,11,0.2)">⚡ 꿀팁</div>
+          <div class="post-card-title">화면 캡처 단축키 총정리 (2026)</div>
+          <div class="post-card-desc">Win+Shift+S부터 맥 Command+Shift+4까지. 부분 캡처, 전체 저장, 화면 녹화 단축키 완전판.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.23</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-win11-slow.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#0f2027,#203a43,#2c5364)">
+          💻
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat" style="background:rgba(245,158,11,0.12);color:#FBB93F;border:1px solid rgba(245,158,11,0.2)">⚡ 꿀팁</div>
+          <div class="post-card-title">윈도우11 느려졌을 때 해결법</div>
+          <div class="post-card-desc">시작 프로그램 정리, 전원 옵션 고성능, 디스크 정리까지. 재설치 없이 5분 만에 빠르게.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.23</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-excel-vlookup.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#134e4a,#065f46)">
+          📊
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat" style="background:rgba(245,158,11,0.12);color:#FBB93F;border:1px solid rgba(245,158,11,0.2)">⚡ 꿀팁</div>
+          <div class="post-card-title">엑셀 VLOOKUP 오류 해결법 완전 정리 (2026)</div>
+          <div class="post-card-desc">#N/A, #VALUE!, #REF! 오류 원인별 해결법. IFERROR 활용과 XLOOKUP 전환 팁까지.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.22</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-excel-date.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#1e3a8a,#1d4ed8)">
+          📅
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat" style="background:rgba(245,158,11,0.12);color:#FBB93F;border:1px solid rgba(245,158,11,0.2)">⚡ 꿀팁</div>
+          <div class="post-card-title">엑셀 날짜 자동입력 안될때 해결법</div>
+          <div class="post-card-desc">날짜가 45300 같은 숫자로 보일 때 해결법. 오늘 날짜 단축키와 자동 채우기 완전 정리.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.22</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-hwp-table.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#312e81,#4338ca)">
+          📝
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat" style="background:rgba(245,158,11,0.12);color:#FBB93F;border:1px solid rgba(245,158,11,0.2)">⚡ 꿀팁</div>
+          <div class="post-card-title">한글 표 줄 추가 안될때 해결법</div>
+          <div class="post-card-desc">Tab키 하나로 새 행 추가하는 법, 마우스 우클릭 삽입, 표 잠금 해제까지 정리.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.22</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-word-pagebreak.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#0c4a6e,#075985)">
+          📄
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat" style="background:rgba(245,158,11,0.12);color:#FBB93F;border:1px solid rgba(245,158,11,0.2)">⚡ 꿀팁</div>
+          <div class="post-card-title">워드 페이지 나누기 제대로 하는 방법</div>
+          <div class="post-card-desc">엔터로 나누면 나중에 전부 무너져요. Ctrl+Enter 하나로 깔끔하게 해결하는 법.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.22</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-excel-merge.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#14532d,#15803d)">
+          📊
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat" style="background:rgba(245,158,11,0.12);color:#FBB93F;border:1px solid rgba(245,158,11,0.2)">⚡ 꿀팁</div>
+          <div class="post-card-title">엑셀 셀 합치기 단축키 & 주의사항</div>
+          <div class="post-card-desc">빠른 실행 도구로 단축키 등록하는 법. 필터·정렬 표에서 절대 쓰면 안 되는 이유.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.22</div>
+            
+          </div>
+        </div>
+      </div>
+
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-chrome-tips.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#1557B0,#4285F4)">
+          🌐
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat cat-tip">⚡ 꿀팁</div>
+          <div class="post-card-title">크롬 브라우저 모르면 손해인 꿀팁 10가지 — 직장인 필수</div>
+          <div class="post-card-desc">닫은 탭 복구, 탭 그룹, 주소창 계산기까지. 하루 종일 쓰는 크롬을 200% 활용하는 법.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.30</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-windows-speed.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#1a1a2e,#0f3460)">
+          ⚡
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat cat-tip">⚡ 꿀팁</div>
+          <div class="post-card-title">느려진 윈도우11 PC 속도 올리는 7가지 방법 — 설치 없이 바로 적용</div>
+          <div class="post-card-desc">작업 관리자 원인 파악부터 시작 프로그램 정리, C드라이브 관리까지. 직장인 5분 최적화 가이드.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.30</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-windows-setup.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#0f2027,#2c5364)">
+          🖥️
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat cat-tip">⚡ 꿀팁</div>
+          <div class="post-card-title">윈도우 재설치 후 필수 무료 프로그램 TOP 12 — 2026년 최신</div>
+          <div class="post-card-desc">Everything, 반디집, PowerToys, Ninite까지. 새 PC라면 반드시 깔아야 할 무료 프로그램 총정리.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.30</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- [비공개] 바이브코딩 도구 비교 — 실제 테스트 근거 보강 후 재발행 예정 -->
+      <!--
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-vibecoding-compare.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#1e1b4b,#4c1d95)">
+          ⚔️
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat cat-ai">🤖 AI 도구</div>
+          <div class="post-card-title">바이브코딩 도구 비교 2026 — Cursor vs v0 vs Claude Code, 비개발자도 쓸 수 있나?</div>
+          <div class="post-card-desc">3대 바이브코딩 도구를 직장인 관점에서 비교. 코딩 몰라도 쓸 수 있는지, 어떤 걸 먼저 써야 할지 정리.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.30</div>
+          </div>
+        </div>
+      </div>
+      -->
+
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-vibecoding.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+          💻
+        </div>
+        <div class="post-body">
+          <div class="post-cat cat-ai">🤖 AI 도구</div>
+          <div class="post-card-title">바이브코딩 시작하려면 뭘 깔아야 할까? 필수 프로그램 설치 가이드</div>
+          <div class="post-card-desc">코딩 몰라도 OK. Cursor, Lovable 설치법부터 시작 방법까지 단계별 정리.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.13</div>
+            
+          </div>
+        </div>
+      </div>
+
+
+      <!-- [비공개] GPT-5.4 vs Gemini 3.1 Flash Lite — 존재하지 않는 버전명, 재발행 예정 -->
+      <!--
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-ai-compare.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#0f0c29,#302b63)">
+          🤖
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat cat-ai">🤖 AI 도구</div>
+          <div class="post-card-title">GPT-5.4 vs Gemini 3.1 Flash Lite — 2026 최신 AI 비교</div>
+          <div class="post-card-desc">속도·정확도·무료 범위·한국어 능력까지. 용도별 어떤 AI를 써야 할지 정리.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.13</div>
+          </div>
+        </div>
+      </div>
+      -->
+
+
+
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-chatgpt.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:#0D1B2A">
+          🤖
+          <div class="post-thumb-badge badge-hot">🔥 HOT</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat cat-ai">🤖 AI 도구</div>
+          <div class="post-card-title">ChatGPT란? 2억 명이 쓰는 이유 GPT-4 vs GPT-3.5 완벽 정리</div>
+          <div class="post-card-desc">ChatGPT가 2억 명을 모으는 데 단 2개월. GPT-4와 GPT-3.5 차이부터 실제 사용법까지.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2025.03.10</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-gemini.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#F0FDF4,#DCFCE7)">
+          🟢
+          <div class="post-thumb-badge badge-new">✨ NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-cat cat-ai">🤖 AI 도구</div>
+          <div class="post-card-title">Gemini 2.0 설치 및 사용법 완벽 가이드</div>
+          <div class="post-card-desc">구글 최신 AI Gemini 2.0, 직접 써봤습니다. ChatGPT와 무엇이 다른지 비교.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2025.03.11</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-apps.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#F5F3FF,#EDE9FE)">🧰</div>
+        <div class="post-body">
+          <div class="post-cat cat-app">📱 앱 리뷰</div>
+          <div class="post-card-title">직장인이 매일 쓰는 생산성 앱 TOP 5 (2025 최신)</div>
+          <div class="post-card-desc">노션, 토스트, 클로바노트... 실제로 써보고 진짜 쓸만한 것만 골랐습니다.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2025.03.09</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-google-search.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#FFFBEB,#FEF3C7)">🔍</div>
+        <div class="post-body">
+          <div class="post-cat cat-tip">⚡ 꿀팁</div>
+          <div class="post-card-title">구글 검색 10배 잘하는 법 — 검색 연산자 완벽 정리</div>
+          <div class="post-card-desc">아무도 안 알려준 구글 검색 연산자. 알면 검색 결과가 완전히 달라집니다.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2025.03.07</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-ai-image.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#FDF4FF,#FAE8FF)">🎨</div>
+        <div class="post-body">
+          <div class="post-cat cat-ai">🤖 AI 도구</div>
+          <div class="post-card-title">미드저니 없이 무료로 AI 이미지 만드는 법 3가지</div>
+          <div class="post-card-desc">Adobe Firefly, Bing Image Creator, Canva AI — 무료 이미지 AI 완벽 비교.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2025.03.05</div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-claude.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:#0D1B2A">📊</div>
+        <div class="post-body">
+          <div class="post-cat cat-app">📱 앱 리뷰</div>
+          <div class="post-card-title">클로드 AI 사용법 — ChatGPT랑 뭐가 다른가요?</div>
+          <div class="post-card-desc">Anthropic이 만든 Claude, 직접 써보니 이런 점이 달랐습니다.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2025.02.25</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-shortcuts.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#FEF9C3,#FEF08A)">⌨️</div>
+        <div class="post-body">
+          <div class="post-cat cat-tip">⚡ 꿀팁</div>
+          <div class="post-card-title">맥북 단축키 50개 — 알면 속도 2배 빨라지는 것만</div>
+          <div class="post-card-desc">맥 쓴 지 3년인데 몰랐던 단축키들. 알고 나서 업무 속도가 달라졌습니다.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2025.02.20</div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-desk-ergonomics.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#E0E7FF,#C7D2FE)">🖥️</div>
+        <div class="post-body">
+          <div class="post-cat cat-tip">⚡ 꿀팁</div>
+          <div class="post-card-title">거북목 예방! 일잘러의 데스크테리어 황금 비율</div>
+          <div class="post-card-desc">모니터 높이, 키보드 배치, 50분 스트레칭 루틴까지. 지속 가능한 업무의 기본 인프라.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.14</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-phone-storage.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#EDE9FE,#DDD6FE)">📱</div>
+        <div class="post-body">
+          <div class="post-cat cat-app">📱 앱 리뷰</div>
+          <div class="post-card-title">스마트폰 찌꺼기 제거 — 10분 만에 용량 20GB 확보하기</div>
+          <div class="post-card-desc">카카오톡 캐시 삭제, 중복 사진 정리, 클라우드 최적화. 사진 한 장 안 지우고 20GB 확보.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.14</div>
+            
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-excel-vs-gsheet.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:#0D2218">📊</div>
+        <div class="post-body">
+          <div class="post-cat cat-tip">⚡ 꿀팁</div>
+          <div class="post-card-title">엑셀 vs 구글 시트 — 직장인 뭐 써야 할까? 2026 완벽 비교</div>
+          <div class="post-card-desc">기능·협업·가격·속도 완벽 비교. 상황별 추천까지. 둘 다 쓰는 게 정답인 이유.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.16</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-camera-tips.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:#0D1B2A">📷</div>
+        <div class="post-body">
+          <div class="post-cat cat-app">📱 앱 리뷰</div>
+          <div class="post-card-title">아이폰·갤럭시 카메라 숨겨진 기능 총정리 — 몰랐으면 손해</div>
+          <div class="post-card-desc">AF/AE 잠금, 프로 모드, 디렉터스 뷰까지. 알고 나면 사진 퀄리티가 달라지는 기능들.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.16</div>
+            
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-google-calendar.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:#0D2218">📅</div>
+        <div class="post-body">
+          <div class="post-cat cat-tip">⚡ 꿀팁</div>
+          <div class="post-card-title">구글 캘린더 100% 활용법 — 직장인 일정 관리 꿀팁 총정리</div>
+          <div class="post-card-desc">색상 분류, 반복 일정, Meet 링크 자동 생성까지. 10%만 쓰고 있다면 꼭 읽어보세요.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.17</div>
+            
+          </div>
+        </div>
+      </div>
+
+
+      <div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-naver-tips.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:#0D2218">🟢</div>
+        <div class="post-body">
+          <div class="post-cat cat-app">📱 앱 리뷰</div>
+          <div class="post-card-title">네이버 앱 숨겨진 기능 총정리 — 몰랐으면 진짜 손해</div>
+          <div class="post-card-desc">그린닷, 클로바 노트, 스마트보드, 렌즈까지. 매일 쓰는 앱인데 이 기능 모르면 손해.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.17</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-ryuton-vs-claude.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:#1A0D2E">🤖</div>
+        <div class="post-body">
+          <div class="post-cat cat-ai">🤖 AI 도구</div>
+          <div class="post-card-title">뤼튼 vs 클로드 — 무료 AI 한국어 비교 2026</div>
+          <div class="post-card-desc">GPT-4o 무료인 뤼튼 vs 긴 문서 최강 클로드. 상황별로 뭘 써야 하는지 직접 비교.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.17</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- [비공개] MS 365 Copilot Wave 3 — 공식 발표 불분명, 보강 후 재발행 예정 -->
+      <!--
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-copilot-wave3.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#0078D4,#50E6FF)">🪟</div>
+        <div class="post-body">
+          <div class="post-cat cat-ai">🤖 AI 도구</div>
+          <div class="post-card-title">MS 365 Copilot Wave 3 — 직장인이 알아야 할 핵심 기능 총정리</div>
+          <div class="post-card-desc">2026년 3월 공개된 Copilot Wave 3, 뭐가 달라졌나. AI 비서에서 AI 동료로 진화한 기능들을 쉽게 정리했습니다.</div>
+          <div class="post-card-footer"><div class="post-card-date">2026.03.26</div></div>
+        </div>
+      </div>
+      -->
+
+      <!-- [비공개] Claude Code 멀티 에이전트 — 미존재 기능(TeammateTool·Swarm Mode) -->
+      <!--
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-claude-code-agent.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#0F0F23,#2D1B69)">👥</div>
+        <div class="post-body">
+          <div class="post-cat cat-ai">🤖 AI 도구</div>
+          <div class="post-card-title">Claude Code 2026 멀티 에이전트 팀 모드 총정리</div>
+          <div class="post-card-desc">AI 팀이 동시에 코드를 짠다. TeammateTool·Swarm Mode·Computer Use까지, 2026년 3월 업데이트 완전 가이드.</div>
+          <div class="post-card-footer"><div class="post-card-date">2026.03.26</div></div>
+        </div>
+      </div>
+      -->
+
+      <!-- [비공개] 에이전틱 AI 가이드 — 실체 불분명 정보 혼재, 보강 후 재발행 예정 -->
+      <!--
+      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-agentic-ai.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,#FF6B35,#FF9E53)">🤖</div>
+        <div class="post-body">
+          <div class="post-cat cat-ai">🤖 AI 도구</div>
+          <div class="post-card-title">2026 에이전틱 AI 직장인 완전 가이드</div>
+          <div class="post-card-desc">생성형 AI 이후, 에이전트 AI 혁명이 시작됐다. 기존 AI와 뭐가 다른지, 직장인이 지금 써볼 수 있는 무료 도구까지 정리.</div>
+          <div class="post-card-footer"><div class="post-card-date">2026.03.26</div></div>
+        </div>
+      </div>
+      -->
+
+
+
+
+
+
+      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-ott-free.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:#0D0D1E">📺</div>
+        <div class="post-body">
+          <div class="post-cat cat-tip">⚡ 꿀팁</div>
+          <div class="post-card-title">체험단 활용법 — 무료로 즐기는 OTT 관리 완벽 가이드</div>
+          <div class="post-card-desc">넷플릭스·티빙·쿠팡플레이 체험단 돌려쓰기, 카드 캐시백, 좀비 구독 차단까지. OTT 0원으로 즐기는 법.</div>
+          <div class="post-card-footer">
+            <div class="post-card-date">2026.03.19</div>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+      <button class="page-btn">‹</button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <button class="page-btn">4</button>
+      <button class="page-btn">5</button>
+      <button class="page-btn">›</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">일잘러<span>닷컴</span></div>
+      <div class="footer-desc">AI 도구, 앱 리뷰, 생활 꿀팁까지.<br>직접 써보고 정리한 정보만 올립니다.<br>광고보다 독자를 먼저 생각합니다.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">카테고리</div>
+      <div class="footer-links">
+        <a href="/?cat=AI%20%EB%8F%84%EA%B5%AC" onclick="showCat('AI 도구'); return false;">🤖 AI 도구</a>
+        <a href="/?cat=%EC%95%B1%20%EB%A6%AC%EB%B7%B0" onclick="showCat('앱 리뷰'); return false;">📱 앱 리뷰</a>
+        <a href="/?cat=%EC%83%9D%ED%99%9C%EC%A0%95%EB%B3%B4" onclick="showCat('생활정보'); return false;">💡 생활정보</a>
+        <a href="/?cat=%EA%BF%80%ED%8C%81" onclick="showCat('꿀팁'); return false;">⚡ 꿀팁</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">사이트 정보</div>
+      <div class="footer-links">
+        <a href="about.html">소개</a>
+        <a href="contact.html">문의하기</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="contact.html#ad">광고 문의</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 일잘러닷컴 · iljaller.com · All rights reserved</div>
+</footer>
+
+<script>
+// ── 페이지 전환 ──
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.page-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+  var pg = document.getElementById('page-' + name);
+  var tb = document.getElementById('tab-' + name);
+  if (pg) pg.classList.add('active');
+  if (tb) tb.classList.add('active');
+  if (name === 'home') {
+    var nl = document.querySelector('.nav-link[onclick*="home"]');
+    if (nl) nl.classList.add('active');
+  } else if (name === 'list') {
+    var nl = document.querySelector('.nav-link[onclick*="list"]');
+    if (nl) nl.classList.add('active');
+  }
+  window.scrollTo(0, 0);
+}
+
+// ── 카테고리 이동 ──
+function showCat(cat) {
+  showPage('list');
+  setTimeout(function() {
+    document.querySelectorAll('.filter-chip').forEach(function(chip) {
+      chip.classList.toggle('active', chip.textContent.trim().includes(cat));
+    });
+    filterByCat(cat);
+  }, 50);
+}
+
+function filterCat(el, cat) {
+  document.querySelectorAll('.filter-chip').forEach(function(c) { c.classList.remove('active'); });
+  el.classList.add('active');
+  filterByCat(cat);
+}
+
+function filterByCat(cat) {
+  document.querySelectorAll('.post-card').forEach(function(card) {
+    if (cat === '전체' || card.dataset.cat === cat) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// ── 이메일 구독 ──
+function subscribeEmail() {
+  var email = document.getElementById('nlEmail') ? document.getElementById('nlEmail').value.trim() : '';
+  if (!email || !email.includes('@')) {
+    alert('올바른 이메일 주소를 입력해주세요.');
+    return;
+  }
+  var msg = document.getElementById('nlMsg');
+  if (msg) { msg.style.display = 'block'; }
+  if (document.getElementById('nlEmail')) document.getElementById('nlEmail').value = '';
+  setTimeout(function() { if (msg) msg.style.display = 'none'; }, 4000);
+}
+
+// ── DOMContentLoaded ──
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Hero 태그 → 카테고리 이동
+  document.querySelectorAll('.hero-tag').forEach(function(tag) {
+    tag.addEventListener('click', function() {
+      document.querySelectorAll('.hero-tag').forEach(function(t) { t.classList.remove('active'); });
+      tag.classList.add('active');
+      var txt = tag.textContent.trim();
+      var catMap = {'🤖 AI 도구':'AI 도구','📱 앱 리뷰':'앱 리뷰','💡 생활정보':'생활정보','⚡ 꿀팁':'꿀팁'};
+      if (txt === '전체') {
+        showPage('list');
+        setTimeout(function() { filterByCat('전체'); }, 50);
+      } else if (catMap[txt]) {
+        showCat(catMap[txt]);
+      }
+    });
+  });
+
+  // 페이지네이션
+  document.querySelectorAll('.page-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.page-btn').forEach(function(b) { b.classList.remove('active'); });
+      if (btn.textContent !== '‹' && btn.textContent !== '›') btn.classList.add('active');
+    });
+  });
+
+  // URL querystring으로 카테고리 자동 진입 (포스트에서 헤더 클릭 시)
+  var params = new URLSearchParams(window.location.search);
+  var cat = params.get('cat');
+  if (cat) {
+    showCat(decodeURIComponent(cat));
+  }
+});
+</script>
+</body>
+</html>
