@@ -7,6 +7,9 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
   <url><loc>https://iljaller.kr/post-chatgpt.html</loc><lastmod>2026-04-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://iljaller.kr/post-gemini.html</loc><lastmod>2026-04-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://iljaller.kr/post-gemini-switching.html</loc><lastmod>2026-03-31</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://iljaller.kr/post-chatgpt-prompt.html</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://iljaller.kr/post-excel-shortcuts.html</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://iljaller.kr/post-google-drive.html</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://iljaller.kr/post-claude.html</loc><lastmod>2026-04-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://iljaller.kr/post-ai-image.html</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://iljaller.kr/post-ai-compare.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
