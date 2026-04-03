@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<!--
+    DARK REDESIGN TEMPLATE — algorithmic-art skill
+    ================================================
+    WHAT TO KEEP:
+    ✓ Overall structure (topbar, right-sidebar, canvas)
+    ✓ Dark branding (colors, fonts, layout)
+    ✓ Seed navigation section
+    ✓ Self-contained artifact
+
+    WHAT TO CREATIVELY EDIT:
+    ✗ The p5.js algorithm
+    ✗ The parameters
+    ✗ The UI controls (sliders, color pickers)
+    ✗ Title / subtitle
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative Art Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:        #0D0D0D;
+            --surface:   #111111;
+            --surface2:  #161616;
+            --surface3:  #1C1C1C;
+            --border:    #222222;
+            --border2:   #2A2A2A;
+            --text:      #E0E0E0;
+            --text-sub:  #555555;
+            --text-dim:  #333333;
+            --accent:    #FF6B35;
+            --accent-dim: rgba(255,107,53,0.12);
+            --accent-border: rgba(255,107,53,0.3);
+            --blue:      #3B82F6;
+            --blue-dim:  rgba(59,130,246,0.12);
+            --green:     #10B981;
+            --green-dim: rgba(16,185,129,0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* ── TOP BAR ── */
+        .topbar {
+            height: 52px;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            gap: 16px;
+            flex-shrink: 0;
+            z-index: 10;
+        }
+
+        .topbar-logo {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-sub);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .topbar-logo::before {
+            content: '';
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .topbar-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text);
+            flex: 1;
+        }
+
+        .topbar-subtitle {
+            font-size: 12px;
+            color: var(--text-sub);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* top-right action buttons */
+        .topbar-actions {
+            display: flex;
+            gap: 6px;
+        }
+
+        .tb-btn {
+            height: 30px;
+            padding: 0 12px;
+            border-radius: 4px;
+            border: 1px solid var(--border2);
+            background: var(--surface2);
+            color: var(--text-sub);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Noto Sans KR', sans-serif;
+            transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+        .tb-btn:hover { border-color: var(--border2); color: var(--text); background: var(--surface3); }
+        .tb-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+        .tb-btn.primary:hover { background: #e85a24; border-color: #e85a24; }
+
+        /* ── MAIN LAYOUT ── */
+        .main {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* ── CANVAS AREA ── */
+        .canvas-wrap {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg);
+            overflow: hidden;
+            position: relative;
+        }
+
+        #canvas-container {
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        #canvas-container canvas {
+            display: block;
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        .loading {
+            color: var(--text-sub);
+            font-size: 13px;
+            font-family: 'JetBrains Mono', monospace;
+            padding: 40px;
+        }
+
+        /* seed badge on canvas */
+        .canvas-seed-badge {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            background: rgba(0,0,0,0.6);
+            border: 1px solid var(--border2);
+            border-radius: 4px;
+            padding: 4px 10px;
+            font-size: 11px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-sub);
+            pointer-events: none;
+        }
+
+        /* ── RIGHT SIDEBAR ── */
+        .sidebar {
+            width: 280px;
+            flex-shrink: 0;
+            background: var(--surface);
+            border-left: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .sidebar-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border2) transparent;
+        }
+
+        /* ── SECTION ── */
+        .sec {
+            margin-bottom: 24px;
+        }
+
+        .sec-title {
+            font-size: 9px;
+            font-weight: 700;
+            color: var(--text-dim);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* ── SEED CONTROLS ── */
+        .seed-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .seed-input {
+            flex: 1;
+            background: var(--surface2);
+            border: 1px solid var(--border2);
+            border-radius: 4px;
+            padding: 7px 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--text);
+            outline: none;
+            min-width: 0;
+        }
+        .seed-input:focus { border-color: var(--accent); }
+
+        .seed-nav {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 5px;
+        }
+
+        /* ── BUTTONS ── */
+        .btn {
+            height: 30px;
+            border-radius: 4px;
+            border: 1px solid var(--border2);
+            background: var(--surface2);
+            color: var(--text-sub);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Noto Sans KR', sans-serif;
+            transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+        .btn:hover { color: var(--text); border-color: #333; background: var(--surface3); }
+        .btn:active { transform: scale(0.97); }
+        .btn.accent { background: var(--accent-dim); border-color: var(--accent-border); color: var(--accent); }
+        .btn.accent:hover { background: rgba(255,107,53,0.2); }
+        .btn.full { width: 100%; }
+        .btn.blue { background: var(--blue-dim); border-color: rgba(59,130,246,0.3); color: #60A5FA; }
+        .btn.blue:hover { background: rgba(59,130,246,0.2); }
+        .btn.green { background: var(--green-dim); border-color: rgba(16,185,129,0.3); color: #34D399; }
+        .btn.green:hover { background: rgba(16,185,129,0.2); }
+
+        /* ── SLIDERS ── */
+        .control-group {
+            margin-bottom: 16px;
+        }
+
+        .control-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 7px;
+        }
+
+        .control-label span:first-child {
+            font-size: 12px;
+            font-weight: 500;
+            color: #888;
+        }
+
+        .value-display {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--accent);
+            background: var(--accent-dim);
+            border: 1px solid var(--accent-border);
+            border-radius: 3px;
+            padding: 1px 6px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 2px;
+            background: var(--border2);
+            border-radius: 1px;
+            outline: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.15s;
+            border: 2px solid var(--bg);
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+        input[type="range"]::-moz-range-thumb {
+            width: 14px; height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 2px solid var(--bg);
+            cursor: pointer;
+        }
+
+        /* ── COLOR PICKERS ── */
+        .color-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .color-group label {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .color-right {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        input[type="color"] {
+            width: 28px;
+            height: 28px;
+            border: 1px solid var(--border2);
+            border-radius: 4px;
+            cursor: pointer;
+            background: none;
+            padding: 2px;
+        }
+
+        .color-hex {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-sub);
+        }
+
+        /* ── DIVIDER ── */
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 8px 0 16px;
+        }
+
+        /* ── STATUS BAR ── */
+        .statusbar {
+            height: 28px;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        .status-item {
+            font-size: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .status-dot {
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: var(--green);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 680px) {
+            .main { flex-direction: column; }
+            .sidebar {
+                width: 100%;
+                border-left: none;
+                border-top: 1px solid var(--border);
+                max-height: 300px;
+            }
+            .topbar-subtitle { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <div class="topbar-logo">Generative Art</div>
+    <div class="topbar-title">TITLE — EDIT THIS</div>  <!-- ← CUSTOMIZE -->
+    <div class="topbar-subtitle">seed: <span id="topbar-seed">12345</span></div>
+    <div class="topbar-actions">
+        <button class="tb-btn" onclick="downloadPNG()">↓ PNG</button>
+        <button class="tb-btn primary" onclick="randomSeedAndUpdate()">↻ Random</button>
+    </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- CANVAS -->
+    <div class="canvas-wrap">
+        <div id="canvas-container">
+            <div class="loading">Initializing...</div>
+        </div>
+        <div class="canvas-seed-badge" id="seed-badge">seed: 12345</div>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-body">
+
+            <!-- SEED SECTION — ALWAYS KEEP -->
+            <div class="sec">
+                <div class="sec-title">Seed</div>
+                <div class="seed-row">
+                    <input type="number" id="seed-input" class="seed-input" value="12345" onchange="updateSeed()">
+                </div>
+                <div class="seed-nav">
+                    <button class="btn blue" onclick="previousSeed()">← Prev</button>
+                    <button class="btn blue" onclick="nextSeed()">Next →</button>
+                    <button class="btn blue" onclick="randomSeedAndUpdate()">⚄ Rand</button>
+                </div>
+            </div>
+
+            <!-- PARAMETERS SECTION — CUSTOMIZE THIS ↓ -->
+            <div class="sec">
+                <div class="sec-title">Parameters</div>
+
+                <!-- Particle Count -->
+                <div class="control-group">
+                    <div class="control-label">
+                        <span>Particle Count</span>
+                        <span class="value-display" id="particleCount-value">5000</span>
+                    </div>
+                    <input type="range" id="particleCount" min="1000" max="10000" step="500" value="5000"
+                           oninput="updateParam('particleCount', this.value)">
+                </div>
+
+                <!-- Flow Speed -->
+                <div class="control-group">
+                    <div class="control-label">
+                        <span>Flow Speed</span>
+                        <span class="value-display" id="flowSpeed-value">0.5</span>
+                    </div>
+                    <input type="range" id="flowSpeed" min="0.1" max="2.0" step="0.1" value="0.5"
+                           oninput="updateParam('flowSpeed', this.value)">
+                </div>
+
+                <!-- Noise Scale -->
+                <div class="control-group">
+                    <div class="control-label">
+                        <span>Noise Scale</span>
+                        <span class="value-display" id="noiseScale-value">0.005</span>
+                    </div>
+                    <input type="range" id="noiseScale" min="0.001" max="0.02" step="0.001" value="0.005"
+                           oninput="updateParam('noiseScale', this.value)">
+                </div>
+
+                <!-- Trail Length -->
+                <div class="control-group">
+                    <div class="control-label">
+                        <span>Trail Length</span>
+                        <span class="value-display" id="trailLength-value">8</span>
+                    </div>
+                    <input type="range" id="trailLength" min="2" max="20" step="1" value="8"
+                           oninput="updateParam('trailLength', this.value)">
+                </div>
+                <!-- ADD MORE control-group divs HERE as needed ↑ -->
+            </div>
+
+            <!-- COLORS SECTION — OPTIONAL, REMOVE IF NOT NEEDED -->
+            <div class="sec">
+                <div class="sec-title">Colors</div>
+
+                <div class="color-group">
+                    <label>Primary</label>
+                    <div class="color-right">
+                        <input type="color" id="color1" value="#FF6B35" onchange="updateColor('color1', this.value)">
+                        <span class="color-hex" id="color1-value">#FF6B35</span>
+                    </div>
+                </div>
+
+                <div class="color-group">
+                    <label>Secondary</label>
+                    <div class="color-right">
+                        <input type="color" id="color2" value="#3B82F6" onchange="updateColor('color2', this.value)">
+                        <span class="color-hex" id="color2-value">#3B82F6</span>
+                    </div>
+                </div>
+
+                <div class="color-group">
+                    <label>Accent</label>
+                    <div class="color-right">
+                        <input type="color" id="color3" value="#10B981" onchange="updateColor('color3', this.value)">
+                        <span class="color-hex" id="color3-value">#10B981</span>
+                    </div>
+                </div>
+                <!-- ADD MORE color-group divs HERE as needed ↑ -->
+            </div>
+
+            <!-- ACTIONS SECTION — ALWAYS KEEP -->
+            <div class="sec">
+                <div class="sec-title">Actions</div>
+                <div style="display:flex; gap:6px;">
+                    <button class="btn accent full" onclick="regenerate()">↺ Regenerate</button>
+                    <button class="btn full" onclick="resetParameters()">Reset</button>
+                </div>
+            </div>
+
+        </div><!-- /sidebar-body -->
+    </div><!-- /sidebar -->
+
+</div><!-- /main -->
+
+<!-- STATUS BAR -->
+<div class="statusbar">
+    <div class="status-item"><div class="status-dot"></div>Running</div>
+    <div class="status-item" id="status-seed">seed: 12345</div>
+    <div class="status-item" id="status-fps">—</div>
+</div>
+
+<script>
+    // ═══════════════════════════════════════════
+    // PARAMETERS — CUSTOMIZE FOR YOUR ALGORITHM
+    // ═══════════════════════════════════════════
+    let params = {
+        seed: 12345,
+        particleCount: 5000,
+        flowSpeed: 0.5,
+        noiseScale: 0.005,
+        trailLength: 8,
+        colorPalette: ['#FF6B35', '#3B82F6', '#10B981']
+    };
+
+    let defaultParams = { ...params };
+
+    // ═══════════════════════════════════════════
+    // P5.JS ALGORITHM — REPLACE WITH YOUR VISION
+    // ═══════════════════════════════════════════
+
+    let particles = [];
+    let flowField = [];
+    let cols, rows;
+    let scl = 10;
+    let frameCount_ = 0;
+    let lastFpsUpdate = 0;
+
+    function setup() {
+        let canvas = createCanvas(900, 900);
+        canvas.parent('canvas-container');
+        document.querySelector('.loading').style.display = 'none';
+        initializeSystem();
+    }
+
+    function initializeSystem() {
+        randomSeed(params.seed);
+        noiseSeed(params.seed);
+        particles = [];
+        for (let i = 0; i < params.particleCount; i++) {
+            particles.push(new Particle());
+        }
+        cols = floor(width / scl);
+        rows = floor(height / scl);
+        generateFlowField();
+        background(13, 13, 13);
+        updateSeedUI(params.seed);
+    }
+
+    function generateFlowField() {
+        flowField = [];
+        let zOff = 0;
+        for (let y = 0; y < rows; y++) {
+            flowField[y] = [];
+            for (let x = 0; x < cols; x++) {
+                let angle = noise(x * params.noiseScale * 100, y * params.noiseScale * 100, zOff) * TWO_PI * 2;
+                flowField[y][x] = p5.Vector.fromAngle(angle);
+            }
+        }
+    }
+
+    function draw() {
+        for (let p of particles) {
+            p.follow(flowField);
+            p.update();
+            p.show();
+            p.edges();
+        }
+
+        // FPS counter
+        frameCount_++;
+        let now = millis();
+        if (now - lastFpsUpdate > 1000) {
+            document.getElementById('status-fps').textContent = frameCount_ + ' fps';
+            frameCount_ = 0;
+            lastFpsUpdate = now;
+        }
+    }
+
+    class Particle {
+        constructor() {
+            this.pos = createVector(random(width), random(height));
+            this.vel = createVector(0, 0);
+            this.acc = createVector(0, 0);
+            this.maxSpeed = params.flowSpeed;
+            this.prev = this.pos.copy();
+            this.col = random(params.colorPalette);
+            this.life = random(100, 300);
+            this.age = 0;
+        }
+
+        follow(field) {
+            let x = floor(this.pos.x / scl);
+            let y = floor(this.pos.y / scl);
+            x = constrain(x, 0, cols - 1);
+            y = constrain(y, 0, rows - 1);
+            let force = field[y][x];
+            this.acc.add(force);
+        }
+
+        update() {
+            this.vel.add(this.acc);
+            this.vel.limit(params.flowSpeed);
+            this.prev = this.pos.copy();
+            this.pos.add(this.vel);
+            this.acc.mult(0);
+            this.age++;
+            if (this.age > this.life) this.reset();
+        }
+
+        show() {
+            let alpha = map(this.age, 0, this.life, 200, 0);
+            let c = color(this.col);
+            c.setAlpha(alpha * 0.3);
+            stroke(c);
+            strokeWeight(1);
+            line(this.prev.x, this.prev.y, this.pos.x, this.pos.y);
+        }
+
+        edges() {
+            if (this.pos.x > width || this.pos.x < 0 ||
+                this.pos.y > height || this.pos.y < 0) {
+                this.reset();
+            }
+        }
+
+        reset() {
+            this.pos = createVector(random(width), random(height));
+            this.prev = this.pos.copy();
+            this.vel = createVector(0, 0);
+            this.age = 0;
+            this.life = random(100, 300);
+            this.col = random(params.colorPalette);
+        }
+    }
+
+    // ═══════════════════════════════════════════
+    // UI HANDLERS — CUSTOMIZE FOR YOUR PARAMS
+    // ═══════════════════════════════════════════
+
+    function updateParam(name, val) {
+        val = parseFloat(val);
+        params[name] = val;
+        document.getElementById(name + '-value').textContent = val;
+
+        // Re-init only if structural change (not just speed/color)
+        if (name === 'particleCount' || name === 'noiseScale') {
+            initializeSystem();
+        }
+    }
+
+    function updateColor(id, val) {
+        const idx = parseInt(id.replace('color', '')) - 1;
+        params.colorPalette[idx] = val;
+        document.getElementById(id + '-value').textContent = val;
+    }
+
+    function regenerate() {
+        initializeSystem();
+    }
+
+    function resetParameters() {
+        params = { ...defaultParams, colorPalette: [...defaultParams.colorPalette] };
+        document.getElementById('particleCount').value = params.particleCount;
+        document.getElementById('particleCount-value').textContent = params.particleCount;
+        document.getElementById('flowSpeed').value = params.flowSpeed;
+        document.getElementById('flowSpeed-value').textContent = params.flowSpeed;
+        document.getElementById('noiseScale').value = params.noiseScale;
+        document.getElementById('noiseScale-value').textContent = params.noiseScale;
+        document.getElementById('trailLength').value = params.trailLength;
+        document.getElementById('trailLength-value').textContent = params.trailLength;
+        document.getElementById('color1').value = params.colorPalette[0];
+        document.getElementById('color1-value').textContent = params.colorPalette[0];
+        document.getElementById('color2').value = params.colorPalette[1];
+        document.getElementById('color2-value').textContent = params.colorPalette[1];
+        document.getElementById('color3').value = params.colorPalette[2];
+        document.getElementById('color3-value').textContent = params.colorPalette[2];
+        updateSeedUI(params.seed);
+        initializeSystem();
+    }
+
+    // ═══════════════════════════════════════════
+    // SEED CONTROLS — ALWAYS KEEP
+    // ═══════════════════════════════════════════
+
+    function updateSeedUI(s) {
+        document.getElementById('seed-input').value = s;
+        document.getElementById('seed-badge').textContent = 'seed: ' + s;
+        document.getElementById('topbar-seed').textContent = s;
+        document.getElementById('status-seed').textContent = 'seed: ' + s;
+    }
+
+    function updateSeed() {
+        let val = parseInt(document.getElementById('seed-input').value);
+        if (val && val > 0) {
+            params.seed = val;
+            initializeSystem();
+        } else {
+            updateSeedUI(params.seed);
+        }
+    }
+
+    function previousSeed() {
+        params.seed = Math.max(1, params.seed - 1);
+        initializeSystem();
+    }
+
+    function nextSeed() {
+        params.seed = params.seed + 1;
+        initializeSystem();
+    }
+
+    function randomSeedAndUpdate() {
+        params.seed = Math.floor(Math.random() * 999999) + 1;
+        initializeSystem();
+    }
+
+    function downloadPNG() {
+        saveCanvas('generative-art-seed-' + params.seed, 'png');
+    }
+
+    window.addEventListener('load', () => updateSeedUI(params.seed));
+</script>
+</body>
+</html>
