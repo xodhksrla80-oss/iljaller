@@ -1,26 +1,9 @@
-# Cloudflare Pages 헤더 설정
-# sitemap.xml MIME 타입 명시 → 구글 서치콘솔 "가져올 수 없음" 해결
-
 /sitemap.xml
   Content-Type: application/xml; charset=utf-8
-  X-Content-Type-Options: nosniff
 
 /sitemap.txt
   Content-Type: text/plain; charset=utf-8
 
-# 전체 페이지 보안 헤더
 /*
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
-
-# HTML 캐시 설정 (최신 콘텐츠 즉시 반영)
-/*.html
-  Cache-Control: public, max-age=0, must-revalidate
-
-# 정적 자산 캐시
-/*.css
-  Cache-Control: public, max-age=31536000, immutable
-/*.js
-  Cache-Control: public, max-age=31536000, immutable
