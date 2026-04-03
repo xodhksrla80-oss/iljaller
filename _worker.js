@@ -75,10 +75,10 @@ export default {
       return Response.redirect('https://iljaller.kr' + url.pathname + url.search, 301);
     }
 
-    // pages.dev → iljaller.kr 리다이렉트
-    if (url.hostname === 'iljaller.pages.dev') {
-      return Response.redirect('https://iljaller.kr' + url.pathname + url.search, 301);
-    }
+    // ⚠️ iljaller.kr 도메인 반영 완료 후 아래 주석 해제
+    // if (url.hostname === 'iljaller.pages.dev') {
+    //   return Response.redirect('https://iljaller.kr' + url.pathname + url.search, 301);
+    // }
 
     return env.ASSETS.fetch(request);
   },
