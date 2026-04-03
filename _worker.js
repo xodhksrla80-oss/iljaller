@@ -1,39 +1,65 @@
 const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://iljaller.pages.dev/</loc><lastmod>2026-03-25</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
-  <url><loc>https://iljaller.pages.dev/about.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/privacy.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-gpt5.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-claude-thinking.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-vibe-compare.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-chatgpt.html</loc><lastmod>2025-03-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-gemini.html</loc><lastmod>2025-03-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-claude.html</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-ai-compare.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-ai-image.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-vibecoding.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-ryuton-vs-claude.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-apps.html</loc><lastmod>2025-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-google-calendar.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-excel-vs-gsheet.html</loc><lastmod>2026-03-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-free-tools.html</loc><lastmod>2025-02-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-google-search.html</loc><lastmod>2025-03-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-naver-tips.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-shortcuts.html</loc><lastmod>2025-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-phone-storage.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-camera-tips.html</loc><lastmod>2026-03-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-desk-ergonomics.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-ott-free.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-excel-vlookup.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-excel-date.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-hwp-table.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-word-pagebreak.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://iljaller.pages.dev/post-excel-merge.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- 메인 및 고정 페이지 -->
+  <url><loc>https://iljaller.kr/</loc><lastmod>2026-04-03</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://iljaller.kr/about.html</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://iljaller.kr/contact.html</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://iljaller.kr/privacy.html</loc><lastmod>2026-04-03</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+
+  <!-- AI 도구 -->
+  <url><loc>https://iljaller.kr/post-chatgpt.html</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://iljaller.kr/post-gemini.html</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://iljaller.kr/post-gemini-switching.html</loc><lastmod>2026-03-31</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-claude.html</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-claude-thinking.html</loc><lastmod>2026-03-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-ryuton-vs-claude.html</loc><lastmod>2026-03-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-ai-image.html</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-vibecoding.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-gpt5.html</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- 앱 리뷰 -->
+  <url><loc>https://iljaller.kr/post-apps.html</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-camera-tips.html</loc><lastmod>2026-03-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-naver-tips.html</loc><lastmod>2026-03-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-phone-storage.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- 꿀팁 -->
+  <url><loc>https://iljaller.kr/post-google-search.html</loc><lastmod>2026-03-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-chrome-tips.html</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-shortcuts.html</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-free-tools.html</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-windows-speed.html</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-windows-setup.html</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-win11-slow.html</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-win-update-error.html</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-screenshot-keys.html</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-excel-vlookup.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-excel-date.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-excel-merge.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-excel-vs-gsheet.html</loc><lastmod>2026-03-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-hwp-table.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-word-pagebreak.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-google-calendar.html</loc><lastmod>2026-03-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-desk-ergonomics.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- 생활정보 -->
+  <url><loc>https://iljaller.kr/post-telecom-save.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-electricity.html</loc><lastmod>2026-02-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-ott-free.html</loc><lastmod>2026-03-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-tax.html</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-card-points.html</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-health-insurance.html</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-rent.html</loc><lastmod>2026-03-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://iljaller.kr/post-energy-checklist.html</loc><lastmod>2026-03-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
 </urlset>`;
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    // sitemap.xml 요청 처리
     if (url.pathname === '/sitemap.xml' || url.pathname === '/sitemap') {
       return new Response(SITEMAP, {
         headers: {
@@ -43,7 +69,17 @@ export default {
         },
       });
     }
-    // 나머지 모든 요청은 정적 파일로 전달
+
+    // www → non-www 리다이렉트 (iljaller.kr 통일)
+    if (url.hostname === 'www.iljaller.kr') {
+      return Response.redirect('https://iljaller.kr' + url.pathname + url.search, 301);
+    }
+
+    // pages.dev → iljaller.kr 리다이렉트
+    if (url.hostname === 'iljaller.pages.dev') {
+      return Response.redirect('https://iljaller.kr' + url.pathname + url.search, 301);
+    }
+
     return env.ASSETS.fetch(request);
   },
 };

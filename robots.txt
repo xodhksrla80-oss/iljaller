@@ -1,3 +1,27 @@
 User-agent: *
 Allow: /
-Sitemap: https://iljaller.pages.dev/sitemap.xml
+
+# 컨셉 이탈 파일 색인 차단 (AI/IT/생활정보 컨셉과 무관)
+Disallow: /post-wbc.html
+Disallow: /post-flower-festival.html
+Disallow: /post-hongdae-bars.html
+Disallow: /post-fuel-tax.html
+Disallow: /post-heater-clean.html
+Disallow: /post-spring-clean.html
+Disallow: /post-spring-fruits.html
+
+# 비공개 처리된 AI 글 (내용 보강 전)
+Disallow: /post-ai-compare.html
+Disallow: /post-claude-code-agent.html
+Disallow: /post-agentic-ai.html
+Disallow: /post-copilot-wave3.html
+Disallow: /post-vibe-compare.html
+Disallow: /post-vibecoding-compare.html
+
+# 중복/임시 파일
+Disallow: /index%20(1).html
+Disallow: /sitemap%20(1).xml
+Disallow: /sitemap.txt
+Disallow: /sitemap.xml.js
+
+Sitemap: https://iljaller.kr/sitemap.xml
