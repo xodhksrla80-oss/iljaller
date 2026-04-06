@@ -51,17 +51,16 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // www → non-www 리다이렉트
     if (url.hostname === 'www.iljaller.kr') {
       return Response.redirect('https://iljaller.kr' + url.pathname + url.search, 301);
     }
 
-    // sitemap 직접 서빙 (ASSETS 우회 → Beacon 스크립트 삽입 방지)
     if (url.pathname === '/sitemap.xml' || url.pathname === '/sitemap') {
       return new Response(SITEMAP, {
         headers: {
           'Content-Type': 'application/xml; charset=utf-8',
-          'Cache-Control': 'public, max-age=3600',
+          'Cache-Control': 'no-transform, public, max-age=3600',
+          'X-Content-Type-Options': 'nosniff',
         },
       });
     }
