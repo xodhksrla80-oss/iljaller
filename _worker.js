@@ -2,7 +2,6 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // www → non-www 리다이렉트 (iljaller.kr 통일)
     if (url.hostname === 'www.iljaller.kr') {
       return Response.redirect('https://iljaller.kr' + url.pathname + url.search, 301);
     }
