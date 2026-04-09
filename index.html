@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>일잘러닷컴 — 생활정보 & 유용툴 리뷰</title>
-<meta name="description" content="AI 도구, 앱 리뷰, 생활 꿀팁까지. 일 잘하는 사람들이 찾는 정보만 모았습니다.">
+<title>일잘러닷컴 — AI 도구·앱 리뷰·꿀팁</title>
+<meta name="description" content="AI 도구, 앱 리뷰, 직장인 꿀팁까지. 일 잘하는 사람들이 찾는 정보만 모았습니다.">
 <!-- AdSense 제외: index.html은 JS SPA 목록 페이지 (콘텐츠 없는 화면 정책 위반 방지) -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
 <style>
@@ -817,14 +817,13 @@ footer {
     <a href="/" class="logo" onclick="showPage('home'); return false;">일잘러<span>닷컴</span></a>
     <div class="search-bar">
       <span class="search-icon">🔍</span>
-      <input type="text" placeholder="궁금한 거 검색해보세요">
+      <input type="text" placeholder="제목으로 검색...">
     </div>
     <nav class="header-nav">
       <a href="/" class="nav-link active" onclick="showPage('home'); return false;">홈</a>
       <a href="/#posts" class="nav-link" onclick="showPage('list'); return false;">전체글</a>
       <a href="/?cat=AI%20%EB%8F%84%EA%B5%AC" class="nav-link" onclick="showCat('AI 도구'); return false;">AI 도구</a>
       <a href="/?cat=%EC%95%B1%20%EB%A6%AC%EB%B7%B0" class="nav-link" onclick="showCat('앱 리뷰'); return false;">앱 리뷰</a>
-      <a href="/?cat=%EC%83%9D%ED%99%9C%EC%A0%95%EB%B3%B4" class="nav-link" onclick="showCat('생활정보'); return false;">생활정보</a>
     </nav>
   </div>
 </header>
@@ -842,12 +841,11 @@ footer {
   <div class="hero">
     <div class="hero-badge">✨ NEW — Gemini 3.1 사용법 올라왔어요 (2026)</div>
     <h1 class="hero-title">일 잘하는 사람들이<br><em>찾는 정보</em>만 모았습니다</h1>
-    <p class="hero-sub">AI 도구, 앱 리뷰, 생활 꿀팁까지.<br>알고리즘 추천 말고, 직접 써보고 정리한 콘텐츠만요.</p>
+    <p class="hero-sub">AI 도구, 앱 리뷰, 직장인 꿀팁까지.<br>알고리즘 추천 말고, 직접 써보고 정리한 콘텐츠만요.</p>
     <div class="hero-tags">
       <div class="hero-tag active">전체</div>
       <div class="hero-tag">🤖 AI 도구</div>
       <div class="hero-tag">📱 앱 리뷰</div>
-      <div class="hero-tag">💡 생활정보</div>
       <div class="hero-tag">⚡ 꿀팁</div>
     </div>
   </div>
@@ -858,7 +856,7 @@ footer {
       <div class="stat-item">
         <div class="stat-icon" style="background:#EFF6FF">📝</div>
         <div>
-          <div class="stat-num">39</div>
+          <div class="stat-num">34</div>
           <div class="stat-label">발행된 글</div>
         </div>
       </div>
@@ -872,7 +870,7 @@ footer {
       <div class="stat-item">
         <div class="stat-icon" style="background:#FFFBEB">⭐</div>
         <div>
-          <div class="stat-num">2026</div>
+          <div class="stat-num">2025</div>
           <div class="stat-label">서비스 시작</div>
         </div>
       </div>
@@ -1020,41 +1018,6 @@ footer {
         </div>
       </div>
 
-      <!-- 카테고리별 -->
-      <div class="sec-header">
-        <div class="sec-title">💡 생활정보 인기글</div>
-        <div class="sec-more" onclick="showCat('생활정보')">더 보기 →</div>
-      </div>
-
-      <div class="card-list">
-
-        <div class="list-card" onclick="location.href='post-telecom-save.html'" style="cursor:pointer">
-          <div class="list-icon" style="background:#0D2218">💡</div>
-          <div>
-            <div class="post-cat cat-life" style="font-size:11px;font-weight:700;margin-bottom:3px">💡 생활정보</div>
-            <div class="list-title">통신비 줄이는 법 — 월 3만원 아끼는 요금제 변경 가이드</div>
-            <div class="list-desc">알뜰폰, 결합할인, 가족 결합까지. 안 바꾸면 매달 손해 보는 통신비 절약법.</div>
-          </div>
-          <div class="list-right">
-            <div class="list-date">03.03</div>
-            <div class="list-read">6분</div>
-          </div>
-        </div>
-
-        <div class="list-card" onclick="location.href='post-electricity.html'" style="cursor:pointer">
-          <div class="list-icon" style="background:#1C1500">⚡</div>
-          <div>
-            <div class="post-cat cat-life" style="font-size:11px;font-weight:700;margin-bottom:3px">💡 생활정보</div>
-            <div class="list-title">전기요금 폭탄 피하는 법 — 누진세 구간·절약 꿀팁 총정리</div>
-            <div class="list-desc">여름철 에어컨, 겨울철 전기장판... 누진세 2단계로 올라가기 전에 꼭 읽어보세요.</div>
-          </div>
-          <div class="list-right">
-            <div class="list-date">02.28</div>
-            <div class="list-read">5분</div>
-          </div>
-        </div>
-
-      </div>
     </div>
 
     <!-- SIDEBAR -->
@@ -1108,18 +1071,8 @@ footer {
         <div class="cat-grid-side">
           <div class="cat-btn" style="background:#EFF6FF;color:#3B82F6" onclick="showCat('AI 도구')">🤖 AI 도구</div>
           <div class="cat-btn" style="background:#F5F3FF;color:#8B5CF6" onclick="showCat('앱 리뷰')">📱 앱 리뷰</div>
-          <div class="cat-btn" style="background:#F0FDF4;color:#10B981" onclick="showCat('생활정보')">💡 생활정보</div>
           <div class="cat-btn" style="background:#FFFBEB;color:#F59E0B" onclick="showCat('꿀팁')">⚡ 꿀팁</div>
         </div>
-      </div>
-
-      <!-- NEWSLETTER -->
-      <div class="newsletter">
-        <div class="nl-title">📬 새 글 알림 신청</div>
-        <div class="nl-desc">이메일을 남겨주시면 새 글 소식을 보내드립니다.</div>
-        <input class="nl-input" type="email" id="nlEmail" placeholder="이메일 주소 입력">
-        <button class="nl-btn" onclick="subscribeEmail()">알림 신청하기 →</button>
-        <div id="nlMsg" style="font-size:12px;margin-top:8px;color:#10B981;display:none">✅ 구독 완료! 감사합니다 😊</div>
       </div>
 
     </aside>
@@ -1132,12 +1085,11 @@ footer {
   <div class="list-page-header">
     <div class="list-page-inner">
       <div class="list-page-title">📋 전체 글</div>
-      <div class="list-page-desc">총 35개의 글이 있습니다</div>
+      <div class="list-page-desc">총 34개의 글이 있습니다</div>
       <div class="filter-row">
         <div class="filter-chip active" onclick="filterCat(this,'전체')">전체</div>
         <div class="filter-chip" onclick="filterCat(this,'AI 도구')">🤖 AI 도구</div>
         <div class="filter-chip" onclick="filterCat(this,'앱 리뷰')">📱 앱 리뷰</div>
-        <div class="filter-chip" onclick="filterCat(this,'생활정보')">💡 생활정보</div>
         <div class="filter-chip" onclick="filterCat(this,'꿀팁')">⚡ 꿀팁</div>
         <select class="sort-select">
           <option>최신순</option>
@@ -1622,23 +1574,6 @@ footer {
         </div>
       </div>
       -->
-
-
-
-
-
-
-      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-ott-free.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#1a1a2e,#302b63)">📺</div>
-        <div class="post-body">
-          <div class="post-cat cat-tip">⚡ 꿀팁</div>
-          <div class="post-card-title">체험단 활용법 — 무료로 즐기는 OTT 관리 완벽 가이드</div>
-          <div class="post-card-desc">넷플릭스·티빙·쿠팡플레이 체험단 돌려쓰기, 카드 캐시백, 좀비 구독 차단까지. OTT 0원으로 즐기는 법.</div>
-          <div class="post-card-footer">
-            <div class="post-card-date">2026.03.19</div>
-            
-          </div>
-        </div>
       </div>
 
     </div>
@@ -1682,16 +1617,6 @@ footer {
         </div>
       </div>
 
-    <!-- PAGINATION -->
-    <div class="pagination">
-      <button class="page-btn">‹</button>
-      <button class="page-btn active">1</button>
-      <button class="page-btn">2</button>
-      <button class="page-btn">3</button>
-      <button class="page-btn">4</button>
-      <button class="page-btn">5</button>
-      <button class="page-btn">›</button>
-    </div>
   </div>
 </div>
 
@@ -1700,14 +1625,13 @@ footer {
   <div class="footer-inner">
     <div>
       <div class="footer-logo">일잘러<span>닷컴</span></div>
-      <div class="footer-desc">AI 도구, 앱 리뷰, 생활 꿀팁까지.<br>직접 써보고 정리한 정보만 올립니다.<br>광고보다 독자를 먼저 생각합니다.</div>
+      <div class="footer-desc">AI 도구, 앱 리뷰, 직장인 꿀팁까지.<br>직접 써보고 정리한 정보만 올립니다.<br>광고보다 독자를 먼저 생각합니다.</div>
     </div>
     <div>
       <div class="footer-col-title">카테고리</div>
       <div class="footer-links">
         <a href="/?cat=AI%20%EB%8F%84%EA%B5%AC" onclick="showCat('AI 도구'); return false;">🤖 AI 도구</a>
         <a href="/?cat=%EC%95%B1%20%EB%A6%AC%EB%B7%B0" onclick="showCat('앱 리뷰'); return false;">📱 앱 리뷰</a>
-        <a href="/?cat=%EC%83%9D%ED%99%9C%EC%A0%95%EB%B3%B4" onclick="showCat('생활정보'); return false;">💡 생활정보</a>
         <a href="/?cat=%EA%BF%80%ED%8C%81" onclick="showCat('꿀팁'); return false;">⚡ 꿀팁</a>
       </div>
     </div>
@@ -1784,6 +1708,33 @@ function subscribeEmail() {
   setTimeout(function() { if (msg) msg.style.display = 'none'; }, 4000);
 }
 
+
+// ── 검색 기능 ──
+document.addEventListener('DOMContentLoaded', function() {
+  var searchInput = document.querySelector('.search-bar input');
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      var query = this.value.trim().toLowerCase();
+      if (!query) {
+        document.querySelectorAll('.post-card').forEach(function(c) { c.style.display = ''; });
+        return;
+      }
+      showPage('list');
+      setTimeout(function() {
+        document.querySelectorAll('.filter-chip').forEach(function(c) { c.classList.remove('active'); });
+        var allChip = document.querySelector('.filter-chip');
+        if (allChip) allChip.classList.add('active');
+        document.querySelectorAll('.post-card').forEach(function(card) {
+          var title = (card.querySelector('.post-card-title') || {}).textContent || '';
+          var desc = (card.querySelector('.post-card-desc') || {}).textContent || '';
+          var match = title.toLowerCase().includes(query) || desc.toLowerCase().includes(query);
+          card.style.display = match ? '' : 'none';
+        });
+      }, 50);
+    });
+  }
+});
+
 // ── DOMContentLoaded ──
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -1793,7 +1744,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.hero-tag').forEach(function(t) { t.classList.remove('active'); });
       tag.classList.add('active');
       var txt = tag.textContent.trim();
-      var catMap = {'🤖 AI 도구':'AI 도구','📱 앱 리뷰':'앱 리뷰','💡 생활정보':'생활정보','⚡ 꿀팁':'꿀팁'};
+      var catMap = {'🤖 AI 도구':'AI 도구','📱 앱 리뷰':'앱 리뷰','⚡ 꿀팁':'꿀팁'};
       if (txt === '전체') {
         showPage('list');
         setTimeout(function() { filterByCat('전체'); }, 50);
