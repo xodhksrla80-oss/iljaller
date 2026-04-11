@@ -6,6 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>일잘러닷컴 — AI 도구·앱 리뷰·꿀팁</title>
 <meta name="description" content="AI 도구, 앱 리뷰, 직장인 꿀팁까지. 일 잘하는 사람들이 찾는 정보만 모았습니다.">
+<meta property="og:title" content="일잘러닷컴 — AI 도구·앱 리뷰·꿀팁">
+<meta property="og:description" content="AI 도구, 앱 리뷰, 직장인 꿀팁까지. 일 잘하는 사람들이 찾는 정보만 모았습니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://iljaller.kr/">
+<meta name="twitter:card" content="summary">
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
 <style>
@@ -1350,7 +1355,7 @@ footer {
         </div>
       </div>
 
-      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-claude.html'" style="cursor:pointer">
+      <div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-claude.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:#0D1B2A">📊</div>
         <div class="post-body">
           <div class="post-cat cat-app">📱 앱 리뷰</div>
@@ -1473,10 +1478,6 @@ footer {
 
       
       
-      </div>
-
-    </div>
-
       <div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-kakao-tips.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#FFF9E0,#FDE68A)">💬</div>
         <div class="post-body">
@@ -1516,6 +1517,7 @@ footer {
         </div>
       </div>
 
+    </div>
   </div>
 </div>
 
@@ -1593,13 +1595,6 @@ function filterByCat(cat) {
   });
 }
 
-// ── 이메일 구독 ──
-function subscribeEmail() {
-  var email = document.getElementById('nlEmail') ? document.getElementById('nlEmail').value.trim() : '';
-  if (!email || !email.includes('@')) {
-    alert('올바른 이메일 주소를 입력해주세요.');
-    return;
-  }
   var msg = document.getElementById('nlMsg');
   if (msg) { msg.style.display = 'block'; }
   if (document.getElementById('nlEmail')) document.getElementById('nlEmail').value = '';
