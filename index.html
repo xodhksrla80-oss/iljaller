@@ -1705,4 +1705,122 @@ footer {
         </div>
       </div>
 
-      <!-- PAGINATION -->
+      
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">일잘러<span>닷컴</span></div>
+      <div class="footer-desc">AI 도구, 앱 리뷰, 직장인 꿀팁까지.<br>직접 써보고 정리한 정보만 올립니다.<br>광고보다 독자를 먼저 생각합니다.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">카테고리</div>
+      <div class="footer-links">
+        <a href="/?cat=AI%20%EB%8F%84%EA%B5%AC" onclick="showCat('AI 도구'); return false;">🤖 AI 도구</a>
+        <a href="/?cat=%EC%95%B1%20%EB%A6%AC%EB%B7%B0" onclick="showCat('앱 리뷰'); return false;">📱 앱 리뷰</a>
+        <a href="/?cat=%EA%BF%80%ED%8C%81" onclick="showCat('꿀팁'); return false;">⚡ 꿀팁</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">사이트 정보</div>
+      <div class="footer-links">
+        <a href="about.html">소개</a>
+        <a href="contact.html">문의하기</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="contact.html#ad">광고 문의</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 일잘러닷컴 · iljaller.kr · All rights reserved</div>
+</footer>
+
+<script>
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.page-tab').forEach(function(t) { t.classList.remove('active'); });
+  document.querySelectorAll('.nav-link').forEach(function(n) { n.classList.remove('active'); });
+  var pg = document.getElementById('page-' + name);
+  var tb = document.getElementById('tab-' + name);
+  if (pg) pg.classList.add('active');
+  if (tb) tb.classList.add('active');
+  if (name === 'home') {
+    var nl = document.querySelector('.nav-link[onclick*="home"]');
+    if (nl) nl.classList.add('active');
+  } else if (name === 'list') {
+    var nl = document.querySelector('.nav-link[onclick*="list"]');
+    if (nl) nl.classList.add('active');
+  }
+  window.scrollTo(0, 0);
+}
+
+function showCat(cat) {
+  showPage('list');
+  setTimeout(function() {
+    document.querySelectorAll('.filter-chip').forEach(function(chip) {
+      chip.classList.toggle('active', chip.textContent.trim().includes(cat));
+    });
+    filterByCat(cat);
+  }, 50);
+}
+
+function filterCat(el, cat) {
+  document.querySelectorAll('.filter-chip').forEach(function(c) { c.classList.remove('active'); });
+  el.classList.add('active');
+  filterByCat(cat);
+}
+
+function filterByCat(cat) {
+  document.querySelectorAll('.post-card').forEach(function(card) {
+    card.style.display = (cat === '전체' || card.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var searchInput = document.querySelector('.search-bar input');
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      var query = this.value.trim().toLowerCase();
+      if (!query) {
+        document.querySelectorAll('.post-card').forEach(function(c) { c.style.display = ''; });
+        return;
+      }
+      showPage('list');
+      setTimeout(function() {
+        document.querySelectorAll('.filter-chip').forEach(function(c) { c.classList.remove('active'); });
+        var allChip = document.querySelector('.filter-chip');
+        if (allChip) allChip.classList.add('active');
+        document.querySelectorAll('.post-card').forEach(function(card) {
+          var title = (card.querySelector('.post-card-title') || {}).textContent || '';
+          var desc = (card.querySelector('.post-card-desc') || {}).textContent || '';
+          card.style.display = (title.toLowerCase().includes(query) || desc.toLowerCase().includes(query)) ? '' : 'none';
+        });
+      }, 50);
+    });
+  }
+
+  document.querySelectorAll('.hero-tag').forEach(function(tag) {
+    tag.addEventListener('click', function() {
+      document.querySelectorAll('.hero-tag').forEach(function(t) { t.classList.remove('active'); });
+      tag.classList.add('active');
+      var txt = tag.textContent.trim();
+      var catMap = {'🤖 AI 도구':'AI 도구','📱 앱 리뷰':'앱 리뷰','⚡ 꿀팁':'꿀팁'};
+      if (txt === '전체') {
+        showPage('list');
+        setTimeout(function() { filterByCat('전체'); }, 50);
+      } else if (catMap[txt]) {
+        showCat(catMap[txt]);
+      }
+    });
+  });
+
+  var params = new URLSearchParams(window.location.search);
+  var cat = params.get('cat');
+  if (cat) showCat(decodeURIComponent(cat));
+});
+</script>
+</body>
+</html>
