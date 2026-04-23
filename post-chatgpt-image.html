@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523482751370898" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VH0N9FDN4X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VH0N9FDN4X');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT로 이미지 만들기 — DALL-E 3 직장인 실전 활용법 (2026) — 일잘러닷컴</title>
+<meta name="description" content="ChatGPT에서 대화하듯 이미지를 만드는 법. 보고서 삽화, SNS 카드뉴스, 프레젠테이션 이미지까지. DALL-E 3 직장인 실전 프롬프트 총정리.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#FF6B35;--text:#E0E0E0;--text-sub:#555;--bg:#0D0D0D;--surface:#111;--surface2:#161616}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:15px}
+a{text-decoration:none;color:inherit}
+header{background:#0D0D0D;border-bottom:1px solid #2A2A2A;position:sticky;top:0;z-index:200}
+.header-inner{max-width:860px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:900}.logo span{color:var(--primary)}
+.header-nav{display:flex;gap:4px}
+.nav-link{padding:7px 14px;border-radius:6px;font-size:13px;font-weight:500;color:#555;transition:all 0.15s}
+.nav-link:hover{background:#1a1a1a;color:#ccc}
+.reading-bar{position:fixed;top:0;left:0;height:2px;background:var(--primary);z-index:9999;width:0%}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 64px}
+.hero{padding:48px 0 0}
+.cat-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;margin-bottom:16px}
+.cat-ai{background:rgba(59,130,246,0.12);color:#60A5FA;border:1px solid rgba(59,130,246,0.2)}
+.cat-tip{background:rgba(245,158,11,0.12);color:#FBB93F;border:1px solid rgba(245,158,11,0.2)}
+h1{font-family:'Noto Serif KR',serif;font-size:clamp(24px,4vw,34px);font-weight:700;color:#fff;line-height:1.4;margin-bottom:14px}
+h1 em{font-style:normal;color:var(--primary)}
+.desc{font-size:14px;color:#555;line-height:1.8;margin-bottom:20px}
+.meta{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid #1F1F1F;font-size:12px;color:#555}
+.meta-read{color:var(--primary);font-weight:600}
+.thumb{background:linear-gradient(135deg,#0D0D0D,#111,#0a0a1a);border:1px solid #2A2A2A;border-radius:10px;padding:36px 24px;margin:28px 0;text-align:center;position:relative;overflow:hidden}
+.thumb::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(59,130,246,0.06),transparent 70%);pointer-events:none}
+.thumb-title{font-family:'Noto Serif KR',serif;font-size:clamp(18px,4vw,26px);font-weight:700;color:#fff;line-height:1.4;margin-bottom:20px}
+.thumb-title span{color:#60A5FA}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:480px;margin:0 auto}
+.stat-box{background:#111;border:1px solid #2A2A2A;border-radius:8px;padding:14px 10px;text-align:center}
+.stat-num{font-size:18px;font-weight:900;color:var(--primary);margin-bottom:3px}
+.stat-label{font-size:11px;color:#555}
+.body{margin-top:36px}
+.toc{background:#111;border:1px solid #222;border-left:3px solid var(--primary);border-radius:0 8px 8px 0;padding:18px 20px;margin-bottom:36px}
+.toc-title{font-size:12px;font-weight:700;color:var(--primary);letter-spacing:1px;margin-bottom:10px}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:5px}
+.toc-list li{font-size:13px;color:#555;display:flex;align-items:center;gap:8px}
+.toc-num{width:18px;height:18px;background:rgba(255,107,53,0.15);color:var(--primary);border-radius:4px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.section{margin-bottom:44px}
+h2{font-family:'Noto Serif KR',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #1F1F1F;display:flex;align-items:center;gap:8px}
+.s-ico{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;background:rgba(59,130,246,0.12)}
+p{margin-bottom:14px;font-size:14.5px;line-height:1.85;color:#C0C0C0}
+strong{color:#E0E0E0;font-weight:700}
+.hbox{border-radius:8px;padding:16px 18px;margin:20px 0;display:flex;gap:12px;align-items:flex-start}
+.hbox.blue{background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.15)}
+.hbox.orange{background:rgba(255,107,53,0.06);border:1px solid rgba(255,107,53,0.15)}
+.hbox.green{background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15)}
+.hbox.yellow{background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.15)}
+.hb-ico{font-size:20px;flex-shrink:0;margin-top:1px}
+.hb-title{font-size:13px;font-weight:700;margin-bottom:3px}
+.hbox.blue .hb-title{color:#60A5FA}
+.hbox.orange .hb-title{color:var(--primary)}
+.hbox.green .hb-title{color:#34D399}
+.hbox.yellow .hb-title{color:#FBB93F}
+.hb-text{font-size:13px;color:#555;line-height:1.7;margin:0}
+/* 프롬프트 카드 */
+.prompt-card{background:#111;border:1px solid #222;border-radius:8px;overflow:hidden;margin:12px 0}
+.prompt-header{padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #1A1A1A;background:#161616}
+.prompt-num{width:24px;height:24px;background:var(--primary);color:#fff;border-radius:6px;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.prompt-title{font-size:14px;font-weight:700;color:#E0E0E0}
+.prompt-body{padding:14px 16px}
+.prompt-label{font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:6px;color:#555}
+.prompt-box{background:#0a0a0a;border:1px solid #2A2A2A;border-radius:6px;padding:12px 14px;font-size:13px;color:#A0A0A0;line-height:1.7;margin-bottom:8px;font-family:'Noto Sans KR',monospace}
+.prompt-tip{background:#161616;border-radius:6px;padding:8px 12px;font-size:12px;color:#555}
+.compare-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.compare-box{background:#111;border:1px solid #222;border-radius:8px;padding:14px}
+.compare-label{font-size:11px;font-weight:700;margin-bottom:8px}
+.compare-label.good{color:#34D399}
+.compare-label.bad{color:#EF4444}
+.compare-text{font-size:13px;color:#888;line-height:1.6}
+.summary-box{background:#111;border:1px solid #222;border-top:2px solid var(--primary);border-radius:0 0 10px 10px;padding:24px;margin:32px 0 0}
+.summary-title{font-family:'Noto Serif KR',serif;font-size:16px;font-weight:700;color:#FCD34D;margin-bottom:14px}
+.summary-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.summary-list li{font-size:13px;line-height:1.6;padding-left:18px;position:relative;color:#C0C0C0}
+.summary-list li::before{content:'✓';position:absolute;left:0;color:#34D399;font-weight:700}
+.related{margin-top:48px;padding-top:32px;border-top:1px solid #1F1F1F}
+.related-title{font-size:16px;font-weight:700;color:#ccc;margin-bottom:16px}
+.related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.rc{background:#111;border:1px solid #222;border-radius:8px;padding:16px;transition:all 0.15s}
+.rc:hover{border-color:var(--primary);background:#161616}
+.rc-b{font-size:10px;font-weight:700;margin-bottom:5px}
+.rc-t{font-size:13px;font-weight:700;color:#ccc;line-height:1.4;margin-bottom:5px}
+.rc-m{font-size:11px;color:#555}
+footer{background:#0a0a0a;border-top:1px solid #1F1F1F;color:#555;padding:24px 20px;text-align:center;font-size:12px;margin-top:48px}
+@media(max-width:600px){.header-nav{display:none}.related-grid{grid-template-columns:1fr}.stat-row{grid-template-columns:1fr 1fr}.compare-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="reading-bar" id="rb"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">일잘러<span>닷컴</span></a>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">홈</a>
+      <a href="index.html?cat=AI+도구" class="nav-link">🤖 AI 도구</a>
+      <a href="index.html?cat=꿀팁" class="nav-link">⚡ 꿀팁</a>
+      <a href="index.html?cat=앱+리뷰" class="nav-link">📱 앱 리뷰</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap">
+  <div class="hero">
+    <div class="cat-badge cat-ai">🤖 AI 도구</div>
+    <h1>ChatGPT로 이미지 만들기 —<br><em>DALL-E 3 직장인 실전 활용법</em> (2026)</h1>
+    <p class="desc">프롬프트 어렵게 쓸 필요 없어요. <strong>대화하듯 요청하면</strong> 됩니다. 보고서 삽화, SNS 카드뉴스, PT 이미지까지. 바로 쓰는 프롬프트 예시 모았어요.</p>
+    <div class="meta"><span>📅 2026.04.17</span><span>|</span><span class="meta-read">⏱ 5분 읽기</span></div>
+  </div>
+
+  <div class="thumb">
+    <div class="thumb-title">ChatGPT 이미지 생성<br><span>대화하듯 만드는 게 핵심이에요</span></div>
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-num">무료</div><div class="stat-label">기본 이미지 생성</div></div>
+      <div class="stat-box"><div class="stat-num">DALL-E 3</div><div class="stat-label">내장 모델</div></div>
+      <div class="stat-box"><div class="stat-num">1024px</div><div class="stat-label">기본 출력 해상도</div></div>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="toc">
+      <div class="toc-title">📋 목차</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">1</span> Midjourney랑 뭐가 다른가</li>
+        <li><span class="toc-num">2</span> 직장인 실전 프롬프트 5가지</li>
+        <li><span class="toc-num">3</span> 잘 나오는 프롬프트 작성법</li>
+        <li><span class="toc-num">4</span> 저작권·업무 사용 주의사항</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><span class="s-ico">💡</span> Midjourney랑 뭐가 다른가</h2>
+      <p>ChatGPT의 DALL-E 3는 <strong>별도 앱 없이 ChatGPT 대화창에서 바로</strong> 이미지를 만들 수 있어요. Midjourney처럼 복잡한 파라미터 없이, 말하듯 요청하면 됩니다.</p>
+      <div class="compare-row">
+        <div class="compare-box">
+          <div class="compare-label good">✅ ChatGPT DALL-E 3</div>
+          <div class="compare-text">• 대화하듯 수정 요청 가능<br>• 텍스트 → 이미지 동시 생성<br>• ChatGPT Plus에 포함<br>• 한국어 프롬프트 OK</div>
+        </div>
+        <div class="compare-box">
+          <div class="compare-label bad">⚡ Midjourney</div>
+          <div class="compare-text">• 디스코드 기반 (별도 가입)<br>• 파라미터 학습 필요<br>• 영문 프롬프트 권장<br>• 예술적 품질은 더 높음</div>
+        </div>
+      </div>
+      <div class="hbox blue">
+        <div class="hb-ico">💡</div>
+        <div>
+          <div class="hb-title">직장인에겐 ChatGPT가 더 편해요</div>
+          <p class="hb-text">Midjourney는 예술적 결과물에 강하지만, <strong>보고서 삽화·PT 이미지·카드뉴스</strong> 같은 업무용은 ChatGPT로도 충분해요. 무엇보다 이미 쓰고 있는 앱이라 진입장벽이 없어요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="s-ico">🎨</span> 직장인 실전 프롬프트 5가지</h2>
+
+      <div class="prompt-card">
+        <div class="prompt-header"><div class="prompt-num">1</div><div class="prompt-title">📊 보고서·PT용 인포그래픽</div></div>
+        <div class="prompt-body">
+          <div class="prompt-label">프롬프트 예시</div>
+          <div class="prompt-box">직장인이 노트북 앞에서 데이터 차트를 보며 분석하는 모습을 깔끔한 플랫 일러스트 스타일로 그려줘. 배경은 어두운 네이비 계열, 강조색은 오렌지. 16:9 비율.</div>
+          <div class="prompt-tip">💡 "플랫 일러스트", "아이소메트릭", "미니멀" 등 스타일을 명시하면 훨씬 일관된 결과가 나와요.</div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header"><div class="prompt-num">2</div><div class="prompt-title">📱 SNS 카드뉴스 배경</div></div>
+        <div class="prompt-body">
+          <div class="prompt-label">프롬프트 예시</div>
+          <div class="prompt-box">인스타그램 카드뉴스 배경 이미지를 만들어줘. 주제는 '직장인 생산성'. 텍스트 없이 배경만, 1:1 정사각형 비율, 밝고 깔끔한 그라데이션 블루 계열. 여백 충분히.</div>
+          <div class="prompt-tip">💡 "텍스트 없이"를 명시해야 AI가 임의로 글자를 넣지 않아요.</div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header"><div class="prompt-num">3</div><div class="prompt-title">🖼️ 블로그·뉴스레터 썸네일</div></div>
+        <div class="prompt-body">
+          <div class="prompt-label">프롬프트 예시</div>
+          <div class="prompt-box">블로그 썸네일용 이미지. 주제: AI 업무 자동화. 로봇과 사람이 함께 일하는 모습, 따뜻하고 친근한 3D 렌더링 스타일, 밝은 색감, 16:9 비율, 텍스트 없음.</div>
+          <div class="prompt-tip">💡 이전 결과가 마음에 안 들면 "더 밝게 해줘", "로봇을 오른쪽으로 옮겨줘"처럼 대화로 수정 요청.</div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header"><div class="prompt-num">4</div><div class="prompt-title">🏢 회사 행사·이벤트 포스터 배경</div></div>
+        <div class="prompt-body">
+          <div class="prompt-label">프롬프트 예시</div>
+          <div class="prompt-box">회사 워크숍 행사 포스터 배경 이미지. 팀워크, 협업 느낌. 다양한 사람들이 모여 있는 추상적인 일러스트, 파스텔 톤, A4 세로 비율, 상단 1/3은 텍스트 넣을 수 있게 여백.</div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header"><div class="prompt-num">5</div><div class="prompt-title">🔄 스타일 유지하며 시리즈 제작</div></div>
+        <div class="prompt-body">
+          <div class="prompt-label">프롬프트 예시</div>
+          <div class="prompt-box">위에서 만든 이미지와 동일한 스타일로, 이번엔 '이메일 자동화'를 주제로 한 이미지를 만들어줘. 색상 팔레트와 일러스트 스타일 동일하게 유지.</div>
+          <div class="prompt-tip">💡 같은 대화창에서 "동일한 스타일로"라고 하면 일관된 시리즈 이미지를 만들 수 있어요.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="s-ico">✍️</span> 잘 나오는 프롬프트 작성법</h2>
+      <div class="hbox green">
+        <div class="hb-ico">✅</div>
+        <div>
+          <div class="hb-title">이 4가지를 포함하면 결과가 확 달라져요</div>
+          <p class="hb-text">① <strong>주제</strong> (무엇을 그릴지)<br>② <strong>스타일</strong> (플랫 일러스트 / 3D 렌더링 / 수채화 / 미니멀 등)<br>③ <strong>색상</strong> (밝은 / 어두운 / 파스텔 / 네이비 등)<br>④ <strong>비율·용도</strong> (16:9 / 1:1 / 세로형 / 텍스트 여백 필요 등)</p>
+        </div>
+      </div>
+      <div class="hbox orange">
+        <div class="hb-ico">⚠️</div>
+        <div>
+          <div class="hb-title">텍스트 포함 이미지는 아직 부정확해요</div>
+          <p class="hb-text">DALL-E 3는 이미지 안에 한글·영문 텍스트를 넣으면 오탈자·글자 깨짐이 자주 발생해요. <strong>텍스트는 Canva·파워포인트에서 별도로 추가</strong>하는 방식을 추천합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="s-ico">⚖️</span> 저작권·업무 사용 주의사항</h2>
+      <div class="hbox yellow">
+        <div class="hb-ico">📋</div>
+        <div>
+          <div class="hb-title">ChatGPT Plus 생성 이미지는 상업 사용 가능</div>
+          <p class="hb-text">OpenAI 정책 기준, ChatGPT Plus로 생성한 이미지는 <strong>상업적 목적으로 사용 가능</strong>합니다. 단, 실제 사람 얼굴·유명 브랜드 로고·저작권 있는 캐릭터를 그리도록 요청하는 건 금지돼요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">🎯 핵심 요약</div>
+      <ul class="summary-list">
+        <li>ChatGPT 대화창에서 바로 — 별도 앱·복잡한 파라미터 불필요</li>
+        <li>프롬프트 공식: 주제 + 스타일 + 색상 + 비율 4가지 포함</li>
+        <li>"텍스트 없음" 명시 → Canva·PPT에서 글씨는 별도 추가</li>
+        <li>같은 대화창에서 "동일 스타일로"로 시리즈 이미지 제작 가능</li>
+        <li>ChatGPT Plus 생성 이미지는 상업 사용 가능 (실존 인물·브랜드 제외)</li>
+      </ul>
+    </div>
+
+    <div class="related">
+      <div class="related-title">📚 관련 글</div>
+      <div class="related-grid">
+        <a href="post-chatgpt.html" class="rc"><div class="rc-b cat-ai">🤖 AI 도구</div><div class="rc-t">ChatGPT란? 9억 명이 쓰는 이유 GPT-5.4 완벽 정리</div><div class="rc-m">2025.03.10 · 5분</div></a>
+        <a href="post-chatgpt-prompt.html" class="rc"><div class="rc-b cat-ai">🤖 AI 도구</div><div class="rc-t">ChatGPT 프롬프트 잘 쓰는 법 — 실전 예시 10가지</div><div class="rc-m">2026.04.03 · 6분</div></a>
+        <a href="post-gamma-ai-ppt.html" class="rc"><div class="rc-b cat-tip">⚡ 꿀팁</div><div class="rc-t">Gamma AI 사용법 — PPT 5분 만에 자동 완성</div><div class="rc-m">2026.04.10 · 5분</div></a>
+        <a href="post-perplexity-ai.html" class="rc"><div class="rc-b cat-ai">🤖 AI 도구</div><div class="rc-t">퍼플렉시티 AI 사용법 — 구글 검색보다 빠른 리서치</div><div class="rc-m">2026.04.10 · 5분</div></a>
+      </div>
+    </div>
+  </div>
+</div>
+<footer><strong style="color:#ccc">일잘러닷컴</strong> · AI 도구·앱 리뷰·꿀팁<br><span style="font-size:11px;opacity:0.4;margin-top:4px;display:block">© 2026 iljaller.kr · All rights reserved</span></footer>
+<script>window.addEventListener('scroll',()=>{const d=document.documentElement;document.getElementById('rb').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%'});</script>
+</body>
+</html>

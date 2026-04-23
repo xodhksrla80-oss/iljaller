@@ -3,9 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>일잘러닷컴 — AI 도구·앱 리뷰·꿀팁</title>
-<meta name="description" content="AI 도구, 앱 리뷰, 직장인 꿀팁까지. 일 잘하는 사람들이 찾는 정보만 모았습니다.">
-<!-- AdSense 제외: index.html은 JS SPA 목록 페이지 (콘텐츠 없는 화면 정책 위반 방지) -->
+<title>일잘러닷컴 — 생활정보 & 유용툴 리뷰</title>
+<meta property="og:title" content="일잘러닷컴 — AI 도구·앱 리뷰·꿀팁">
+<meta property="og:description" content="AI 도구, 앱 리뷰, 직장인 꿀팁까지. 일 잘하는 사람들이 찾는 정보만 모았습니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://iljaller.kr/">
+<meta name="twitter:card" content="summary">
+<meta name="description" content="AI 도구, 앱 리뷰, 생활 꿀팁까지. 일 잘하는 사람들이 찾는 정보만 모았습니다.">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VH0N9FDN4X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VH0N9FDN4X');
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -802,7 +814,6 @@ footer {
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-inner">
     <a href="/" class="logo" onclick="showPage('home'); return false;">일잘러<span>닷컴</span></a>
@@ -815,39 +826,39 @@ footer {
       <a href="/#posts" class="nav-link" onclick="showPage('list'); return false;">전체글</a>
       <a href="/?cat=AI%20%EB%8F%84%EA%B5%AC" class="nav-link" onclick="showCat('AI 도구'); return false;">AI 도구</a>
       <a href="/?cat=%EC%95%B1%20%EB%A6%AC%EB%B7%B0" class="nav-link" onclick="showCat('앱 리뷰'); return false;">앱 리뷰</a>
+      <a href="/?cat=%EC%83%9D%ED%99%9C%EC%A0%95%EB%B3%B4" class="nav-link" onclick="showCat('생활정보'); return false;">생활정보</a>
     </nav>
   </div>
 </header>
 
-<!-- PAGE TABS -->
 <div class="page-tabs">
   <div class="page-tab active" id="tab-home" onclick="showPage('home')">🏠 메인</div>
   <div class="page-tab" id="tab-list" onclick="showPage('list')">📋 전체 글</div>
 </div>
 
-<!-- ========= PAGE: 메인 ========= -->
 <div id="page-home" class="page active">
 
-  <!-- HERO -->
+  
   <div class="hero">
     <div class="hero-badge">✨ NEW — Gemini 3.1 사용법 올라왔어요 (2026)</div>
     <h1 class="hero-title">일 잘하는 사람들이<br><em>찾는 정보</em>만 모았습니다</h1>
-    <p class="hero-sub">AI 도구, 앱 리뷰, 직장인 꿀팁까지.<br>알고리즘 추천 말고, 직접 써보고 정리한 콘텐츠만요.</p>
+    <p class="hero-sub">AI 도구, 앱 리뷰, 생활 꿀팁까지.<br>알고리즘 추천 말고, 직접 써보고 정리한 콘텐츠만요.</p>
     <div class="hero-tags">
       <div class="hero-tag active">전체</div>
       <div class="hero-tag">🤖 AI 도구</div>
       <div class="hero-tag">📱 앱 리뷰</div>
+      <div class="hero-tag">💡 생활정보</div>
       <div class="hero-tag">⚡ 꿀팁</div>
     </div>
   </div>
 
-  <!-- STATS -->
+  
   <div class="stats-strip">
     <div class="stats-inner">
       <div class="stat-item">
         <div class="stat-icon" style="background:#1a1a1a">📝</div>
         <div>
-          <div class="stat-num">35</div>
+          <div class="stat-num">33</div>
           <div class="stat-label">발행된 글</div>
         </div>
       </div>
@@ -875,11 +886,11 @@ footer {
     </div>
   </div>
 
-  <!-- MAIN CONTENT -->
+  
   <div class="main-layout">
     <div>
 
-      <!-- 추천 글 -->
+      
       <div class="sec-header">
         <div class="sec-title">🔥 이번 주 추천</div>
         <div class="sec-more" onclick="showPage('list')">전체 보기 →</div>
@@ -900,7 +911,7 @@ footer {
         </div>
       </div>
 
-      <!-- 최신 글 -->
+      
       <div class="sec-header">
         <div class="sec-title">🆕 최신 글</div>
         <div class="sec-more" onclick="showPage('list')">더 보기 →</div>
@@ -908,54 +919,11 @@ footer {
 
       <div class="card-list">
 
-        <!-- [비공개] GPT-5.4 vs Gemini 3.1 Flash Lite — 존재하지 않는 버전명으로 인해 비공개 처리 -->
-        <!--
-        <div class="list-card" onclick="location.href='post-zapier-automation.html'" style="cursor:pointer">
-              <div class="list-icon" style="background:rgba(255,107,53,0.1);font-size:24px;display:flex;align-items:center;justify-content:center">⚡</div>
-              <div>
-                <div class="post-cat cat-ai" style="margin-bottom:5px">🤖 AI 도구</div>
-                <div class="list-title">Zapier 사용법 — 반복 업무 자동화로 하루 1시간 아끼는 법 (2026)</div>
-                <div class="list-desc">코딩 없이 이메일·슬랙·구글시트 자동화. 바로 쓰는 Zap 5가지 공개.</div>
-              </div>
-              <div class="list-right"><div class="list-date">04.14</div><div class="list-read">5분</div></div>
-            </div>
-
-            <div class="list-card" onclick="location.href='post-samsung-health.html'" style="cursor:pointer">
-              <div class="list-icon" style="background:rgba(139,92,246,0.1);font-size:24px;display:flex;align-items:center;justify-content:center">💪</div>
-              <div>
-                <div class="post-cat cat-app" style="margin-bottom:5px">📱 앱 리뷰</div>
-                <div class="list-title">삼성 헬스 앱 제대로 쓰는 법 — 갤럭시 워치 없어도 되는 기능 총정리 (2026)</div>
-                <div class="list-desc">설치만 하고 방치하셨나요? 수면 분석·걸음수·스트레스 꿀기능 총정리.</div>
-              </div>
-              <div class="list-right"><div class="list-date">04.14</div><div class="list-read">4분</div></div>
-            </div>
-
-            <div class="list-card" onclick="location.href='post-ipad-productivity.html'" style="cursor:pointer">
-              <div class="list-icon" style="background:rgba(139,92,246,0.1);font-size:24px;display:flex;align-items:center;justify-content:center">📱</div>
-              <div>
-                <div class="post-cat cat-app" style="margin-bottom:5px">📱 앱 리뷰</div>
-                <div class="list-title">아이패드 직장인 활용법 — 업무 생산성 200% 올리는 앱과 세팅 (2026)</div>
-                <div class="list-desc">Split View·PDF 편집·보조 모니터까지. 유튜브 말고 업무 도구로 쓰는 법.</div>
-              </div>
-              <div class="list-right"><div class="list-date">04.14</div><div class="list-read">5분</div></div>
-            </div>
-
-            <div class="list-card" onclick="location.href='post-ai-compare.html'" style="cursor:pointer">
-          <div class="list-icon" style="background:#1A0D2E">🤖</div>
-          <div>
-            <div class="post-cat cat-ai" style="font-size:11px;font-weight:700;margin-bottom:3px">🤖 AI 도구</div>
-            <div class="list-title">GPT-5.4 vs Gemini 3.1 Flash Lite 비교</div>
-            <div class="list-desc">2026년 최신 AI, 용도별 어떤 걸 써야 할까?</div>
-          </div>
-          <div class="list-right">
-            <div class="list-date">03.13</div>
-            <div class="list-read">5분</div>
-          </div>
-        </div>
-        -->
+        
+        
 
         <div class="list-card" onclick="location.href='post-kakao-tips.html'" style="cursor:pointer">
-              <div class="list-icon" style="background:#FFF9E0">💬</div>
+              <div class="list-icon" style="background:#1C1800">💬</div>
               <div>
                 <div class="post-cat cat-app" style="margin-bottom:5px">📱 앱 리뷰</div>
                 <div class="list-title">카카오톡 숨겨진 기능 총정리 — 몰랐으면 손해인 꿀팁 15가지 (2026)</div>
@@ -981,7 +949,7 @@ footer {
             </div>
 
             <div class="list-card" onclick="location.href='post-pdf-tools.html'" style="cursor:pointer">
-              <div class="list-icon" style="background:#FEF2F2">📄</div>
+              <div class="list-icon" style="background:#200A10">📄</div>
               <div>
                 <div class="post-cat cat-tip" style="margin-bottom:5px">⚡ 꿀팁</div>
                 <div class="list-title">PDF 무료로 편집하는 법 — 직장인 필수 툴 5가지 (2026)</div>
@@ -1046,16 +1014,47 @@ footer {
         </div>
       </div>
 
-      <!-- 카테고리별 -->
-<div class="card-list">
+      
+      <div class="sec-header">
+        <div class="sec-title">💡 생활정보 인기글</div>
+        <div class="sec-more" onclick="showCat('생활정보')">더 보기 →</div>
+      </div>
+
+      <div class="card-list">
+
+        <div class="list-card" onclick="location.href='post-telecom-save.html'" style="cursor:pointer">
+          <div class="list-icon" style="background:#1a1a1a">💡</div>
+          <div>
+            <div class="post-cat cat-life" style="font-size:11px;font-weight:700;margin-bottom:3px">💡 생활정보</div>
+            <div class="list-title">통신비 줄이는 법 — 월 3만원 아끼는 요금제 변경 가이드</div>
+            <div class="list-desc">알뜰폰, 결합할인, 가족 결합까지. 안 바꾸면 매달 손해 보는 통신비 절약법.</div>
+          </div>
+          <div class="list-right">
+            <div class="list-date">03.03</div>
+            <div class="list-read">6분</div>
+          </div>
+        </div>
+
+        <div class="list-card" onclick="location.href='post-electricity.html'" style="cursor:pointer">
+          <div class="list-icon" style="background:#1a1a1a">⚡</div>
+          <div>
+            <div class="post-cat cat-life" style="font-size:11px;font-weight:700;margin-bottom:3px">💡 생활정보</div>
+            <div class="list-title">전기요금 폭탄 피하는 법 — 누진세 구간·절약 꿀팁 총정리</div>
+            <div class="list-desc">여름철 에어컨, 겨울철 전기장판... 누진세 2단계로 올라가기 전에 꼭 읽어보세요.</div>
+          </div>
+          <div class="list-right">
+            <div class="list-date">02.28</div>
+            <div class="list-read">5분</div>
+          </div>
+        </div>
 
       </div>
     </div>
 
-    <!-- SIDEBAR -->
+    
     <aside class="sidebar">
 
-      <!-- HOT -->
+      
       <div class="side-card">
         <div class="side-title">🔥 추천 글</div>
         <div class="hot-list">
@@ -1097,40 +1096,32 @@ footer {
         </div>
       </div>
 
-      <!-- CATEGORIES -->
+      
       <div class="side-card">
         <div class="side-title">📂 카테고리</div>
         <div class="cat-grid-side">
           <div class="cat-btn" style="background:#161616;color:#60A5FA;border:1px solid #1e3a5f" onclick="showCat('AI 도구')">🤖 AI 도구</div>
           <div class="cat-btn" style="background:#161616;color:#A78BFA;border:1px solid #2a1f3d" onclick="showCat('앱 리뷰')">📱 앱 리뷰</div>
+          <div class="cat-btn" style="background:#161616;color:#34D399;border:1px solid #1a3a2a" onclick="showCat('생활정보')">💡 생활정보</div>
           <div class="cat-btn" style="background:#161616;color:#FBB93F;border:1px solid #3a2a0a" onclick="showCat('꿀팁')">⚡ 꿀팁</div>
         </div>
-      </div>
-
-      <!-- NEWSLETTER -->
-      <div class="newsletter">
-        <div class="nl-title">📬 새 글 알림 받기</div>
-        <div class="nl-desc">유용한 정보가 올라오면 이메일로 알려드려요. 스팸 없이 주 1회만.</div>
-        <input class="nl-input" type="email" id="nlEmail" placeholder="이메일 주소 입력">
-        <button class="nl-btn" onclick="subscribeEmail()">구독하기 →</button>
-        <div id="nlMsg" style="font-size:12px;margin-top:8px;color:#10B981;display:none">✅ 구독 완료! 감사합니다 😊</div>
       </div>
 
     </aside>
   </div>
 </div>
 
-<!-- ========= PAGE: 전체 글 ========= -->
 <div id="page-list" class="page">
 
   <div class="list-page-header">
     <div class="list-page-inner">
       <div class="list-page-title">📋 전체 글</div>
-      <div class="list-page-desc">총 35개의 글이 있습니다</div>
+      <div class="list-page-desc">총 33개의 글이 있습니다</div>
       <div class="filter-row">
         <div class="filter-chip active" onclick="filterCat(this,'전체')">전체</div>
         <div class="filter-chip" onclick="filterCat(this,'AI 도구')">🤖 AI 도구</div>
         <div class="filter-chip" onclick="filterCat(this,'앱 리뷰')">📱 앱 리뷰</div>
+        <div class="filter-chip" onclick="filterCat(this,'생활정보')">💡 생활정보</div>
         <div class="filter-chip" onclick="filterCat(this,'꿀팁')">⚡ 꿀팁</div>
         <select class="sort-select">
           <option>최신순</option>
@@ -1272,7 +1263,6 @@ footer {
         </div>
       </div>
 
-
       <div class="post-card" data-cat="꿀팁" onclick="location.href='post-chrome-tips.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:#0A1628">
           🌐
@@ -1321,24 +1311,8 @@ footer {
         </div>
       </div>
 
-      <!-- [비공개] 바이브코딩 도구 비교 — 실제 테스트 근거 보강 후 재발행 예정 -->
-      <!--
-      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-vibecoding-compare.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#1e1b4b,#4c1d95)">
-          ⚔️
-          <div class="post-thumb-badge badge-new">✨ NEW</div>
-        </div>
-        <div class="post-body">
-          <div class="post-cat cat-ai">🤖 AI 도구</div>
-          <div class="post-card-title">바이브코딩 도구 비교 2026 — Cursor vs v0 vs Claude Code, 비개발자도 쓸 수 있나?</div>
-          <div class="post-card-desc">3대 바이브코딩 도구를 직장인 관점에서 비교. 코딩 몰라도 쓸 수 있는지, 어떤 걸 먼저 써야 할지 정리.</div>
-          <div class="post-card-footer">
-            <div class="post-card-date">2026.03.30</div>
-            
-          </div>
-        </div>
-      </div>
-      -->
+      
+      
 
       <div class="post-card" data-cat="AI 도구" onclick="location.href='post-vibecoding.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:linear-gradient(135deg,#667eea,#764ba2)">
@@ -1355,27 +1329,8 @@ footer {
         </div>
       </div>
 
-
-      <!-- [비공개] GPT-5.4 vs Gemini 3.1 Flash Lite — 존재하지 않는 버전명, 재발행 예정 -->
-      <!--
-      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-ai-compare.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#0f0c29,#302b63)">
-          🤖
-          <div class="post-thumb-badge badge-new">✨ NEW</div>
-        </div>
-        <div class="post-body">
-          <div class="post-cat cat-ai">🤖 AI 도구</div>
-          <div class="post-card-title">GPT-5.4 vs Gemini 3.1 Flash Lite — 2026 최신 AI 비교</div>
-          <div class="post-card-desc">속도·정확도·무료 범위·한국어 능력까지. 용도별 어떤 AI를 써야 할지 정리.</div>
-          <div class="post-card-footer">
-            <div class="post-card-date">2026.03.13</div>
-            
-          </div>
-        </div>
-      </div>
-      -->
-
-
+      
+      
 
       <div class="post-card" data-cat="AI 도구" onclick="location.href='post-chatgpt.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:#0D1B2A">
@@ -1408,7 +1363,7 @@ footer {
       </div>
 
       <div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-apps.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#F5F3FF,#EDE9FE)">🧰</div>
+        <div class="post-thumb" style="background:#1A0D2E">🧰</div>
         <div class="post-body">
           <div class="post-cat cat-app">📱 앱 리뷰</div>
           <div class="post-card-title">직장인이 매일 쓰는 생산성 앱 TOP 5 (2026 최신)</div>
@@ -1420,7 +1375,7 @@ footer {
       </div>
 
       <div class="post-card" data-cat="꿀팁" onclick="location.href='post-google-search.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#FFFBEB,#FEF3C7)">🔍</div>
+        <div class="post-thumb" style="background:#1C1500">🔍</div>
         <div class="post-body">
           <div class="post-cat cat-tip">⚡ 꿀팁</div>
           <div class="post-card-title">구글 검색 10배 잘하는 법 — 검색 연산자 완벽 정리</div>
@@ -1432,7 +1387,7 @@ footer {
       </div>
 
       <div class="post-card" data-cat="AI 도구" onclick="location.href='post-ai-image.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#FDF4FF,#FAE8FF)">🎨</div>
+        <div class="post-thumb" style="background:#200D28">🎨</div>
         <div class="post-body">
           <div class="post-cat cat-ai">🤖 AI 도구</div>
           <div class="post-card-title">미드저니 없이 무료로 AI 이미지 만드는 법 3가지</div>
@@ -1442,8 +1397,6 @@ footer {
           </div>
         </div>
       </div>
-
-
 
       <div class="post-card" data-cat="AI 도구" onclick="location.href='post-claude.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:#0D1B2A">📊</div>
@@ -1458,7 +1411,7 @@ footer {
       </div>
 
       <div class="post-card" data-cat="꿀팁" onclick="location.href='post-shortcuts.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#FEF9C3,#FEF08A)">⌨️</div>
+        <div class="post-thumb" style="background:#1C1800">⌨️</div>
         <div class="post-body">
           <div class="post-cat cat-tip">⚡ 꿀팁</div>
           <div class="post-card-title">맥북 단축키 50개 — 알면 속도 2배 빨라지는 것만</div>
@@ -1469,11 +1422,8 @@ footer {
         </div>
       </div>
 
-
-
-
       <div class="post-card" data-cat="꿀팁" onclick="location.href='post-desk-ergonomics.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#E0E7FF,#C7D2FE)">🖥️</div>
+        <div class="post-thumb" style="background:#0D1020">🖥️</div>
         <div class="post-body">
           <div class="post-cat cat-tip">⚡ 꿀팁</div>
           <div class="post-card-title">거북목 예방! 일잘러의 데스크테리어 황금 비율</div>
@@ -1486,7 +1436,7 @@ footer {
       </div>
 
       <div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-phone-storage.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#EDE9FE,#DDD6FE)">📱</div>
+        <div class="post-thumb" style="background:#1A0D2E">📱</div>
         <div class="post-body">
           <div class="post-cat cat-app">📱 앱 리뷰</div>
           <div class="post-card-title">스마트폰 찌꺼기 제거 — 10분 만에 용량 20GB 확보하기</div>
@@ -1497,8 +1447,6 @@ footer {
           </div>
         </div>
       </div>
-
-
 
       <div class="post-card" data-cat="꿀팁" onclick="location.href='post-excel-vs-gsheet.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:#0D2218">📊</div>
@@ -1526,8 +1474,6 @@ footer {
         </div>
       </div>
 
-
-
       <div class="post-card" data-cat="꿀팁" onclick="location.href='post-google-calendar.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:#0D2218">📅</div>
         <div class="post-body">
@@ -1540,7 +1486,6 @@ footer {
           </div>
         </div>
       </div>
-
 
       <div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-naver-tips.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:#0D2218">🟢</div>
@@ -1568,58 +1513,14 @@ footer {
         </div>
       </div>
 
-      <!-- [비공개] MS 365 Copilot Wave 3 — 공식 발표 불분명, 보강 후 재발행 예정 -->
-      <!--
-      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-copilot-wave3.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:#001828">🪟</div>
-        <div class="post-body">
-          <div class="post-cat cat-ai">🤖 AI 도구</div>
-          <div class="post-card-title">MS 365 Copilot Wave 3 — 직장인이 알아야 할 핵심 기능 총정리</div>
-          <div class="post-card-desc">2026년 3월 공개된 Copilot Wave 3, 뭐가 달라졌나. AI 비서에서 AI 동료로 진화한 기능들을 쉽게 정리했습니다.</div>
-          <div class="post-card-footer">
-            <div class="post-card-date">2026.03.26</div>
-            
-          </div>
-        </div>
-      </div>
-      -->
+      
+      
 
-      <!-- [비공개] Claude Code 멀티 에이전트 — 미존재 기능(TeammateTool·Swarm Mode), 보강 후 재발행 예정 -->
-      <!--
-      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-claude-code-agent.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:#0A0915">👥</div>
-        <div class="post-body">
-          <div class="post-cat cat-ai">🤖 AI 도구</div>
-          <div class="post-card-title">Claude Code 2026 멀티 에이전트 팀 모드 총정리</div>
-          <div class="post-card-desc">AI 팀이 동시에 코드를 짠다. TeammateTool·Swarm Mode·Computer Use까지, 2026년 3월 업데이트 완전 가이드.</div>
-          <div class="post-card-footer">
-            <div class="post-card-date">2026.03.26</div>
-            
-          </div>
-        </div>
-      </div>
-      -->
+      
+      
 
-      <!-- [비공개] 에이전틱 AI 가이드 — 실체 불분명 정보 혼재, 보강 후 재발행 예정 -->
-      <!--
-      <div class="post-card" data-cat="AI 도구" onclick="location.href='post-agentic-ai.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:#1C0A00">🤖</div>
-        <div class="post-body">
-          <div class="post-cat cat-ai">🤖 AI 도구</div>
-          <div class="post-card-title">2026 에이전틱 AI 직장인 완전 가이드</div>
-          <div class="post-card-desc">생성형 AI 이후, 에이전트 AI 혁명이 시작됐다. 기존 AI와 뭐가 다른지, 직장인이 지금 써볼 수 있는 무료 도구까지 정리.</div>
-          <div class="post-card-footer">
-            <div class="post-card-date">2026.03.26</div>
-            
-          </div>
-        </div>
-      </div>
-      -->
-
-
-
-
-
+      
+      
 
       <div class="post-card" data-cat="꿀팁" onclick="location.href='post-ott-free.html'" style="cursor:pointer">
         <div class="post-thumb" style="background:#0D0D1E">📺</div>
@@ -1634,10 +1535,9 @@ footer {
         </div>
       </div>
 
-    </div>
-
-      <div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-kakao-tips.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#FFF9E0,#FDE68A)">💬</div>
+    
+<div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-kakao-tips.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:#1C1800">💬</div>
         <div class="post-body">
           <div class="post-cat cat-app">📱 앱 리뷰</div>
           <div class="post-card-title">카카오톡 숨겨진 기능 총정리 — 몰랐으면 손해인 꿀팁 15가지 (2026)</div>
@@ -1649,8 +1549,8 @@ footer {
         </div>
       </div>
 
-      <div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-notion.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#F5F3FF,#DDD6FE)">📋</div>
+<div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-notion.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:#1A0D2E">📋</div>
         <div class="post-body">
           <div class="post-cat cat-app">📱 앱 리뷰</div>
           <div class="post-card-title">노션 사용법 완벽 정리 — 직장인 무료로 시작하는 법 (2026)</div>
@@ -1662,8 +1562,8 @@ footer {
         </div>
       </div>
 
-      <div class="post-card" data-cat="꿀팁" onclick="location.href='post-pdf-tools.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#FEF2F2,#FECACA)">📄</div>
+<div class="post-card" data-cat="꿀팁" onclick="location.href='post-pdf-tools.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:#200A10">📄</div>
         <div class="post-body">
           <div class="post-cat cat-tip">⚡ 꿀팁</div>
           <div class="post-card-title">PDF 무료로 편집하는 법 — 직장인 필수 툴 5가지 (2026)</div>
@@ -1675,152 +1575,39 @@ footer {
         </div>
       </div>
 
-    <div class="post-card" data-cat="AI 도구" onclick="location.href='post-zapier-automation.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,rgba(255,107,53,0.15),rgba(255,107,53,0.05));display:flex;align-items:center;justify-content:center;font-size:56px;min-height:140px">⚡</div>
+<div class="post-card" data-cat="AI 도구" onclick="location.href='post-chatgpt-image.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(59,130,246,0.05));display:flex;align-items:center;justify-content:center;font-size:56px;min-height:140px">🎨</div>
         <div class="post-body" style="padding:16px">
           <div class="post-cat cat-ai">🤖 AI 도구</div>
-          <div class="post-title" style="font-size:15px;margin:8px 0">Zapier 사용법 — 반복 업무 자동화로 하루 1시간 아끼는 법 (2026)</div>
-          <div class="post-desc">코딩 없이 이메일·슬랙·구글시트 자동화. 바로 쓰는 Zap 5가지.</div>
-          <div class="post-meta"><span>2026.04.14</span><span class="post-views">⏱ 5분</span></div>
+          <div class="post-title" style="font-size:15px;margin:8px 0">ChatGPT로 이미지 만들기 — DALL-E 3 직장인 실전 활용법 (2026)</div>
+          <div class="post-desc">대화하듯 요청. 보고서 삽화·카드뉴스·PT 이미지 프롬프트 공개.</div>
+          <div class="post-meta"><span>2026.04.17</span><span class="post-views">⏱ 5분</span></div>
         </div>
       </div>
 
-      <div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-samsung-health.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(139,92,246,0.05));display:flex;align-items:center;justify-content:center;font-size:56px;min-height:140px">💪</div>
+<div class="post-card" data-cat="AI 도구" onclick="location.href='post-notion-ai.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(139,92,246,0.05));display:flex;align-items:center;justify-content:center;font-size:56px;min-height:140px">🤖</div>
         <div class="post-body" style="padding:16px">
-          <div class="post-cat cat-app">📱 앱 리뷰</div>
-          <div class="post-title" style="font-size:15px;margin:8px 0">삼성 헬스 앱 제대로 쓰는 법 — 워치 없어도 되는 기능 총정리 (2026)</div>
-          <div class="post-desc">수면 분석·걸음수·스트레스 측정까지. 설치만 하고 방치한 분 필독.</div>
-          <div class="post-meta"><span>2026.04.14</span><span class="post-views">⏱ 4분</span></div>
+          <div class="post-cat cat-ai">🤖 AI 도구</div>
+          <div class="post-title" style="font-size:15px;margin:8px 0">노션 AI 사용법 — 문서 작성 시간 반으로 줄이는 법 (2026)</div>
+          <div class="post-desc">스페이스바로 AI 호출. 회의록 요약·초안·번역 실전 총정리.</div>
+          <div class="post-meta"><span>2026.04.17</span><span class="post-views">⏱ 5분</span></div>
         </div>
       </div>
 
-      <div class="post-card" data-cat="앱 리뷰" onclick="location.href='post-ipad-productivity.html'" style="cursor:pointer">
-        <div class="post-thumb" style="background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(59,130,246,0.05));display:flex;align-items:center;justify-content:center;font-size:56px;min-height:140px">📱</div>
+<div class="post-card" data-cat="꿀팁" onclick="location.href='post-outlook-tips.html'" style="cursor:pointer">
+        <div class="post-thumb" style="background:linear-gradient(135deg,rgba(0,120,212,0.15),rgba(0,120,212,0.05));display:flex;align-items:center;justify-content:center;font-size:56px;min-height:140px">📧</div>
         <div class="post-body" style="padding:16px">
-          <div class="post-cat cat-app">📱 앱 리뷰</div>
-          <div class="post-title" style="font-size:15px;margin:8px 0">아이패드 직장인 활용법 — 생산성 200% 올리는 앱과 세팅 (2026)</div>
-          <div class="post-desc">Split View·PDF 편집·맥북 보조 모니터. 업무 도구로 제대로 쓰는 법.</div>
-          <div class="post-meta"><span>2026.04.14</span><span class="post-views">⏱ 5분</span></div>
+          <div class="post-cat cat-tip">⚡ 꿀팁</div>
+          <div class="post-title" style="font-size:15px;margin:8px 0">아웃룩 꿀팁 — 직장인 이메일 관리 기능 15가지 (2026)</div>
+          <div class="post-desc">규칙 자동분류·예약발송·Copilot AI. 하루 30분 아끼는 기능들.</div>
+          <div class="post-meta"><span>2026.04.17</span><span class="post-views">⏱ 5분</span></div>
         </div>
+      </div>
+
+      </div>
+      </div>
+      </div>
       </div>
 
       
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo">일잘러<span>닷컴</span></div>
-      <div class="footer-desc">AI 도구, 앱 리뷰, 직장인 꿀팁까지.<br>직접 써보고 정리한 정보만 올립니다.<br>광고보다 독자를 먼저 생각합니다.</div>
-    </div>
-    <div>
-      <div class="footer-col-title">카테고리</div>
-      <div class="footer-links">
-        <a href="/?cat=AI%20%EB%8F%84%EA%B5%AC" onclick="showCat('AI 도구'); return false;">🤖 AI 도구</a>
-        <a href="/?cat=%EC%95%B1%20%EB%A6%AC%EB%B7%B0" onclick="showCat('앱 리뷰'); return false;">📱 앱 리뷰</a>
-        <a href="/?cat=%EA%BF%80%ED%8C%81" onclick="showCat('꿀팁'); return false;">⚡ 꿀팁</a>
-      </div>
-    </div>
-    <div>
-      <div class="footer-col-title">사이트 정보</div>
-      <div class="footer-links">
-        <a href="about.html">소개</a>
-        <a href="contact.html">문의하기</a>
-        <a href="privacy.html">개인정보처리방침</a>
-        <a href="contact.html#ad">광고 문의</a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">© 2026 일잘러닷컴 · iljaller.kr · All rights reserved</div>
-</footer>
-
-<script>
-function showPage(name) {
-  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
-  document.querySelectorAll('.page-tab').forEach(function(t) { t.classList.remove('active'); });
-  document.querySelectorAll('.nav-link').forEach(function(n) { n.classList.remove('active'); });
-  var pg = document.getElementById('page-' + name);
-  var tb = document.getElementById('tab-' + name);
-  if (pg) pg.classList.add('active');
-  if (tb) tb.classList.add('active');
-  if (name === 'home') {
-    var nl = document.querySelector('.nav-link[onclick*="home"]');
-    if (nl) nl.classList.add('active');
-  } else if (name === 'list') {
-    var nl = document.querySelector('.nav-link[onclick*="list"]');
-    if (nl) nl.classList.add('active');
-  }
-  window.scrollTo(0, 0);
-}
-
-function showCat(cat) {
-  showPage('list');
-  setTimeout(function() {
-    document.querySelectorAll('.filter-chip').forEach(function(chip) {
-      chip.classList.toggle('active', chip.textContent.trim().includes(cat));
-    });
-    filterByCat(cat);
-  }, 50);
-}
-
-function filterCat(el, cat) {
-  document.querySelectorAll('.filter-chip').forEach(function(c) { c.classList.remove('active'); });
-  el.classList.add('active');
-  filterByCat(cat);
-}
-
-function filterByCat(cat) {
-  document.querySelectorAll('.post-card').forEach(function(card) {
-    card.style.display = (cat === '전체' || card.dataset.cat === cat) ? '' : 'none';
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  var searchInput = document.querySelector('.search-bar input');
-  if (searchInput) {
-    searchInput.addEventListener('input', function() {
-      var query = this.value.trim().toLowerCase();
-      if (!query) {
-        document.querySelectorAll('.post-card').forEach(function(c) { c.style.display = ''; });
-        return;
-      }
-      showPage('list');
-      setTimeout(function() {
-        document.querySelectorAll('.filter-chip').forEach(function(c) { c.classList.remove('active'); });
-        var allChip = document.querySelector('.filter-chip');
-        if (allChip) allChip.classList.add('active');
-        document.querySelectorAll('.post-card').forEach(function(card) {
-          var title = (card.querySelector('.post-card-title') || {}).textContent || '';
-          var desc = (card.querySelector('.post-card-desc') || {}).textContent || '';
-          card.style.display = (title.toLowerCase().includes(query) || desc.toLowerCase().includes(query)) ? '' : 'none';
-        });
-      }, 50);
-    });
-  }
-
-  document.querySelectorAll('.hero-tag').forEach(function(tag) {
-    tag.addEventListener('click', function() {
-      document.querySelectorAll('.hero-tag').forEach(function(t) { t.classList.remove('active'); });
-      tag.classList.add('active');
-      var txt = tag.textContent.trim();
-      var catMap = {'🤖 AI 도구':'AI 도구','📱 앱 리뷰':'앱 리뷰','⚡ 꿀팁':'꿀팁'};
-      if (txt === '전체') {
-        showPage('list');
-        setTimeout(function() { filterByCat('전체'); }, 50);
-      } else if (catMap[txt]) {
-        showCat(catMap[txt]);
-      }
-    });
-  });
-
-  var params = new URLSearchParams(window.location.search);
-  var cat = params.get('cat');
-  if (cat) showCat(decodeURIComponent(cat));
-});
-</script>
-</body>
-</html>
